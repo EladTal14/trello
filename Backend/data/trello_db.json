@@ -1,9 +1,4 @@
-// Guidelines
-// *. Save the entire board, dont handle mini-updates
-// *. No need for saving an activities array per task, those activities are easily filtered from the board activities
-
-
-var dbJSON = {
+{
     "board": {
         "_id": "b101",
         "title": "Robot dev proj",
@@ -24,7 +19,7 @@ var dbJSON = {
         "groups": [
             {
                 "id": "g101",
-                "title": "Group 1",
+                "title": "Todos",
                 "cards": [
                     {
                         "id": "c101",
@@ -39,11 +34,15 @@ var dbJSON = {
             },
             {
                 "id": "g102",
-                "title": "Group 2",
+                "title": "In Progress",
                 "cards": [
                     {
                         "id": "c103",
                         "title": "Do that"
+                    },
+                    {
+                        "id": "c1089sdasd",
+                        "title": "Go to sleep"
                     },
                     {
                         "id": "c104",
@@ -61,6 +60,61 @@ var dbJSON = {
                                 }
                             }
                         ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "title": "To Do 1",
+                                        "isDone": false,
+                                        "id": "212jX"
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u101",
+                                "username": "Tal",
+                                "fullname": "Tal Tarablus",
+                                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "101",
+                                "title": "done",
+                                "color": "#61bd4f"
+                            }
+                        ],
+                        "createdAt": 1590999730348,
+                        "dueDate": 16156215211,
+                        "byMember": {
+                            "_id": "u101",
+                            "username": "Tal",
+                            "fullname": "Tal Tarablus",
+                            "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                        },
+                        "style": {
+                            "bgColor": "#26de81"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g103",
+                "title": "Done",
+                "cards": [
+                    {
+                        "id": "c1089",
+                        "title": "eat cupcake"
+                    },
+                    {
+                        "id": "c10894",
+                        "title": "eat soup",
+                        "description": "3 cups of oil",
                         "checklists": [
                             {
                                 "id": "YEhmF",
@@ -122,11 +176,27 @@ var dbJSON = {
             }
         ]
     },
-    "user": {
-        "_id": "u101",
-        "fullname": "Abi Abambi",
-        "username": "abi@ababmi.com",
-        "password": "aBambi123",
-        "imgUrl": "http://some-img.jpg"
-    }
+    "user": [
+        {
+            "_id": "u101",
+            "fullname": "Adir Hagag",
+            "username": "abasdasdi@ababmi.com",
+            "password": "123",
+            "imgUrl": "http://some-img.jpg"
+        },
+        {
+            "_id": "u102",
+            "fullname": "Elad Tal",
+            "username": "abasdi@ababmi.com",
+            "password": "123",
+            "imgUrl": "http://some-img.jpg"
+        },
+        {
+            "_id": "u103",
+            "fullname": "Basya Kritchker",
+            "username": "abasdasdi@ababmi.com",
+            "password": "123",
+            "imgUrl": "http://some-img.jpg"
+        }
+    ]
 }
