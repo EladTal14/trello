@@ -1,4 +1,27 @@
-@import "./cmps/AppHeader";
-body {
-  background-color: lightblue;
+@import "basics/variables.scss";
+@import "basics/functions.scss";
+// @import "basics/mixins.scss";
+@import "basics/typography.scss";
+
+// Basics
+@import "basics/helpers.scss";
+@import "basics/layout.scss";
+@import "basics/base.scss";
+// @import "basics/buttons.scss";
+
+// Components
+@import "cmps/AppHeader.scss";
+@import "cmps/CardPreview.scss";
+@import "pages/BoardApp.scss";
+// @import "components/cat-card.scss";
+
+.my-input{
+  border: none;
+  background-color: unset;
+  
+}
+
+.my-input:focus{
+  background-color: white;
+  outline: 2px solid rgb(46, 140, 228);
 }
