@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { App } from './App.jsx';
+// import { Provider } from 'react-redux';
+// import { store } from '../src/store/store';
+import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import './assets/styles/main.scss';
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <Provider store={store}>
+  <Router>
     <App />
-  </React.StrictMode>,
+  </Router>
+  // </Provider>
+  ,
   document.getElementById('root')
 );
 
