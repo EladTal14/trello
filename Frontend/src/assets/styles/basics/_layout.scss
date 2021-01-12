@@ -1,0 +1,28 @@
+.main-container{
+    display: grid;
+    grid-template-columns: 
+    minmax(1.2rem, 1fr)
+    minmax(auto, $normal-breakpoint)
+    minmax(1.2rem, 1fr)
+    ;
+
+    & > * {
+        grid-column: 2;
+    }
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.group-list{
+    display: grid;
+    grid-template-columns: repeat(5, 300px);
+    gap: 15px;
+    margin: 20px auto;
+    justify-items: center;
+}
+
+

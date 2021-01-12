@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './App.jsx';
-// import { Provider } from 'react-redux';
-// import { store } from '../src/store/store';
+import { Provider } from 'react-redux';
+import { store } from '../src/store/store';
 import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import './assets/styles/main.scss';
 
 ReactDOM.render(
-  // <Provider store={store}>
-  <Router>
-    <App />
-  </Router>
-  // </Provider>
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
   ,
   document.getElementById('root')
 );
