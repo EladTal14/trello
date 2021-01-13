@@ -10,7 +10,6 @@ export class _BoardApp extends Component {
     //     board: null
     // }
 
-    // check
     componentDidMount() {
         this.loadBoard()
         console.log('page is ready')
