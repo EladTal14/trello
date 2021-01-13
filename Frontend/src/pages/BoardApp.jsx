@@ -27,12 +27,22 @@ export class _BoardApp extends Component {
         this.loadBoard()
         console.log('saving... new board', board.groups);
     }
-    onDragCard = async (groups) => {
+    // onDragCard = async (groups) => {
+    //     const { board } = this.props
+    //     board.groups = [...groups]
+    //     await this.props.saveBoard(board)
+    //     this.loadBoard()
+    // }
+    onDragCard = async (dragbbleGroups) => {
         const { board } = this.props
-        board.groups = [...groups]
+        const updatedGroups = boardService.getUpdatedGroups(board.groups, dragbbleGroups)
+        // console.log('updated board!!!!', updatedGroups)
+        board.groups = updatedGroups
         await this.props.saveBoard(board)
         this.loadBoard()
     }
+
+
     // onUpdateGroupTitle = () => {
 
     // }
