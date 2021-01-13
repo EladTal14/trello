@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CardPreview } from "./CardPreview.jsx"
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-export function CardList({ cards, id }) {
+export function CardList({ cards, id, groupTitle }) {
 
 
     // console.log(cards);
@@ -18,7 +18,7 @@ export function CardList({ cards, id }) {
                 >
                     {cards.map((card, index) => {
                         return (
-                            <CardPreview key={card.id} card={card} index={index} />
+                            <CardPreview key={card.id} card={card} index={index} groupId={id} groupTitle={groupTitle}/>
                         )
                     })}
                     {provided.placeholder}

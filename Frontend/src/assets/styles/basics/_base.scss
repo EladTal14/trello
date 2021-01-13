@@ -29,25 +29,29 @@ h1, h2,h3,h4,h5,h6 {
 }
 
 p {
-    margin: 0 0 0.8em;
+    margin: 0;
 }
 
-button{
-    background-color: unset;
-    border: none;
-    border-radius: 7px;
-    outline: none;
-    height: 35px;
-    font-family: 'montserrat', sans-serif;
-    font-size: rem(16px);
-    color: $clr4;
-    cursor: pointer;
-    transition: all 0.7s;
+// p {
+//     margin: 0 0 0.8em;
+// }
 
-    &:hover{
-        background-color: $clr6;
-        transition: all 0.7s;
-    }
-}
+// button{
+//     background-color: unset;
+//     border: none;
+//     border-radius: 7px;
+//     outline: none;
+//     height: 35px;
+//     font-family: 'montserrat', sans-serif;
+//     font-size: rem(16px);
+//     color: $clr4;
+//     cursor: pointer;
+//     transition: all 0.7s;
+
+//     &:hover{
+//         background-color: $clr6;
+//         transition: all 0.7s;
+//     }
+// }
 
 

@@ -2,15 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { GroupList } from '../cmps/GroupList';
 import { BoardHeader } from '../cmps/BoardHeader'
-import { loadBoard } from '../store/actions/boardAction'
+import { loadBoard, saveBoard } from '../store/actions/boardAction'
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { GroupAdd } from '../cmps/GroupAdd';
+import { boardService } from '../services/boardService';
 export class _BoardApp extends Component {
 
-    // state = {
-    //     board: null
-    // }
-
-    // check
     componentDidMount() {
         this.loadBoard()
         console.log('page is ready')
@@ -18,29 +15,50 @@ export class _BoardApp extends Component {
 
     loadBoard = async () => {
         const { boardId } = this.props.match.params
-        this.props.loadBoard(boardId)
-        // this.setState({ board })
-
+        await this.props.loadBoard(boardId)
+        console.log('BOARD CUURR', this.props.board);
     }
 
-    // onRemove = (boardId) => {
-    //     this.props.removeBoard(boardId)
+    onAddGroup = async (group) => {
+        const { board } = this.props
+        const boardCopy = { ...board }
+        boardCopy.groups.push(group)
+        await this.props.saveBoard(boardCopy)
+        this.loadBoard()
+        console.log('saving... new board', board.groups);
+    }
+    onDragCard = async (groups) => {
+        const { board } = this.props
+        board.groups = [...groups]
+        await this.props.saveBoard(board)
+        this.loadBoard()
+    }
+    // onUpdateGroupTitle = () => {
 
     // }
+
+    onAddCard = async (card, groupId) => {
+        const { board } = this.props
+        const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
+        console.log('index', groupIdx)
+        board.groups[groupIdx].cards.push(card)
+        console.log('saving... new board', board.groups);
+        await this.props.saveBoard(board)
+        this.loadBoard()
+    }
 
 
     render() {
         const { board } = this.props
-        // console.log('board', board);
+        console.log('board', board);
         const load = <p>Loading...</p>
-        return (!board.title ? load :
+        return (!board ? load :
             <section className="board-container">
-                <BoardHeader />
-                {/* input <input type="text" className="my-input" placeholder="something...." /> */}
-                <button className="add-board-btn">+ Add another group</button>
+                <BoardHeader title={board.title} />
+                < GroupAdd onAddGroup={this.onAddGroup} />
                 <DragDropContext>
+                    <GroupList groups={board.groups} onAddCard={this.onAddCard} onDragCard={this.onDragCard} />
 
-                    <GroupList groups={board.groups} />
 
                 </DragDropContext>
             </section>
@@ -58,9 +76,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     loadBoard,
-    // removeBoard,
-    // setFilter,
-    // logout,
+    saveBoard,
 }
 
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { CardList } from './CardList'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { CardAdd } from './CardAdd';
+import { GroupTitle } from './GroupTitle';
 
 export function GroupPreview({ group, idx, onAddCard }) {
 
@@ -8,9 +10,10 @@ export function GroupPreview({ group, idx, onAddCard }) {
 
     return (
         <div className="group-preview">
-            <h1 >{group.title}</h1>
-            <CardList cards={group.cards} id={idx} />
-            <button>+ Add another card</button>
+            {/* <h1 >{group.title}</h1> */}
+            <GroupTitle group={group} />
+            <CardList cards={group.cards} id={idx} grpTitle={group.title} groupId={group.id} />
+            <CardAdd groupId={group.id} onAddCard={onAddCard} />
         </div>
     )
 }

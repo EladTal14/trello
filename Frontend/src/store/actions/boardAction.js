@@ -16,7 +16,6 @@ export function loadBoards() { // Action Creator
 export function loadBoard(boardId) {
     return async (dispatch) => {
         const board = await boardService.getBoardById(boardId)
-        // console.log('action board', board);
         const action = {
             type: 'SET_BOARD',
             board
@@ -30,7 +29,7 @@ export function saveBoard(board) {
     return async (dispatch) => {
         const saveBoard = await boardService.save(board)
         const action = {
-            type: (board._id) ? 'SAVE_BOARD' : 'ADD_BOARD',
+            type: (board._id) ? 'UPDATE_BOARD' : 'ADD_BOARD',
             board: saveBoard
         }
         dispatch(action)

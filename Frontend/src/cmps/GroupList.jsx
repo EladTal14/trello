@@ -1,9 +1,8 @@
 import { GroupPreview } from "./GroupPreview.jsx"
+import { connect } from 'react-redux'
 import React, { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-
-export function GroupList({ groups }) {
-
+export function GroupList({ groups, onAddCard, onDragCard }) {
     const [state, setState] = useState(groups);
     window.statest = state
     function onDragEnd(result) {
@@ -19,12 +18,15 @@ export function GroupList({ groups }) {
             const newState = [...state];
             newState[sInd].cards = items;
             setState(newState);
+            onDragCard(newState)
         } else {
+            console.log('state[dInd]', state);
             const result = move(state[sInd].cards, state[dInd].cards, source, destination);
             const newState = [...state];
             newState[sInd].cards = result[sInd];
             newState[dInd].cards = result[dInd];
             setState(newState);
+            onDragCard(newState)
             // setState(newState.filter(group => group.length));
         }
     }
@@ -32,8 +34,11 @@ export function GroupList({ groups }) {
         <DragDropContext onDragEnd={onDragEnd}>
 
             {groups.map((group, idx) => {
-                return <GroupPreview key={group.id} group={group} idx={idx} />
-            })}
+                return <GroupPreview key={group.id} group={group} idx={idx} onAddCard={onAddCard} />
+            })
+            }
+            {/* <DragDropContext> */}
+
         </DragDropContext>
     </article>
 
@@ -58,3 +63,13 @@ const move = (source, destination, droppableSource, droppableDestination) => {
     result[droppableDestination.droppableId] = destClone;
     return result;
 };
+
+const mapStateToProps = (state) => ({
+    board: state.boardModule.currBoard
+})
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GroupList)

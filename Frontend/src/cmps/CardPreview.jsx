@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { CardDetails } from './CardDetails'
 
@@ -9,20 +8,18 @@ export class CardPreview extends Component {
         isDetailsShown: false
     }
 
-    toggleDetails = (ev, needPrevent) => {
-        // if (needPrevent) ev.stoppropagation()
-
+    toggleDetails = () => {
         this.setState({ isDetailsShown: !this.state.isDetailsShown })
     }
 
     render() {
-        const { card, index } = this.props
+        const { card, index , groupId, groupTitle } = this.props
         return (
             <div className="card-preview">
                 {this.state.isDetailsShown &&
                     <React.Fragment>
                         <div className="modalcover" onClick={(ev) => this.toggleDetails(ev, true)}> </div>
-                        <CardDetails card={card} />
+                        <CardDetails card={card} groupId={groupId} groupTitle={groupTitle}/>
                     </React.Fragment>}
 
                 <Draggable key={card.id} draggableId={card.id} index={index}>
