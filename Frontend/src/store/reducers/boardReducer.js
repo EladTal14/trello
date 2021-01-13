@@ -2,7 +2,6 @@
 const initialState = {
   currBoard: null,
   boards: [],
-  // groups: [],
 }
 
 export function boardReducer(state = initialState, action) {

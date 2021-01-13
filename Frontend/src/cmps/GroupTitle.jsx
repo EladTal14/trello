@@ -40,7 +40,7 @@ export class GroupTitle extends Component {
         const { group } = this.state
         return <section className="group-title">
                     <input type="text" name="title" value={group.title} onChange={this.handleInput}
-                        className="my-input" placeholder="Enter group title..."/>
+                        className="my-input" placeholder="Enter group title..." autoComplete="off"/>
         </section>
     }
 }
