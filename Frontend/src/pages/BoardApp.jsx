@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { GroupList } from '../cmps/GroupList';
 import { BoardHeader } from '../cmps/BoardHeader'
 import { loadBoard } from '../store/actions/boardAction'
-
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
 export class _BoardApp extends Component {
 
 
@@ -22,15 +22,19 @@ export class _BoardApp extends Component {
 
     render() {
         const { groups } = this.props.board
-        console.log('groups',groups);
+        console.log('groups', groups);
         const load = <p>Loading...</p>
-        return (!groups? load :
+        return (!groups ? load :
             <section className="board-container">
                 <h1>groups...</h1>
-                input <input type="text" className="my-input" placeholder="something...."/>
+                input <input type="text" className="my-input" placeholder="something...." />
                 <BoardHeader />
                 <button className="add-board-btn">+ Add another group</button>
-                <GroupList groups={groups}/>
+                <DragDropContext>
+
+                    <GroupList groups={groups} />
+
+                </DragDropContext>
             </section>
         )
     }
