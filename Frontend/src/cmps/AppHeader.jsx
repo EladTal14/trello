@@ -11,7 +11,6 @@ export function AppHeader(props) {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/boards">Boards</Link></li>
           <li><Link to="/board">Board</Link></li>
-          <li><Link to="/board/edit/c104">Edit Todo</Link></li>
         </ul>
       </nav>
     </header>

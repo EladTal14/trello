@@ -1,5 +1,5 @@
 {
-    "board": {
+    "board": [{
         "_id": "b101",
         "title": "Robot dev proj",
         "createdAt": 1589983468418,
@@ -175,7 +175,7 @@
                 }
             }
         ]
-    },
+    }],
     "user": [
         {
             "_id": "u101",

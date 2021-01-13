@@ -12,14 +12,17 @@
 // Components
 @import "cmps/AppHeader.scss";
 @import "cmps/CardPreview.scss";
-@import "cmps/CardEdit.scss";
+@import "cmps/CardDetails.scss";
 @import "pages/BoardApp.scss";
 // @import "components/cat-card.scss";
+
+.App {
+  height: 100vh;
+}
 
 .my-input{
   border: none;
   background-color: unset;
-  
 }
 
 .my-input:focus{
