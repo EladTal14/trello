@@ -15,7 +15,7 @@ export function App() {
       <AppHeader />
       <Switch>
           <Route component={CardEdit} path="/board/edit/:cardId" />
-          <Route component={BoardApp} path="/board" />
+          <Route component={BoardApp} path="/board/:boardId" />
           <Route component={Boards} path="/boards" />
           <Route component={Home} path="/" />
         </Switch>
