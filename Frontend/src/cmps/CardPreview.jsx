@@ -42,8 +42,6 @@ export class CardPreview extends Component {
                     )}
 
                 </Draggable>
-
-
             </div>
         )
     }

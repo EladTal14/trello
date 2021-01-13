@@ -39,7 +39,7 @@ async function save(board) {
 }
 
 async function getBoardById(boardId) {
-    console.log(boardId)
+    // console.log(boardId)
     const res = await axios.get(`${baseUrl}/${boardId}`);
     return res.data;
 }

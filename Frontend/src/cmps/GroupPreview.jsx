@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { CardList } from './CardList'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
+<<<<<<< HEAD
 export class GroupPreview extends Component {
 
 
@@ -20,4 +21,21 @@ export class GroupPreview extends Component {
         )
     }
 }
+=======
+export function GroupPreview({ group, idx }) {
 
+
+
+    return (
+        <div className="group-preview">
+            {/* <h1 >{group.title}</h1> */}
+>>>>>>> liel
+
+            <CardList cards={group.cards} id={idx} />
+
+            {/* <button>+ Add another card</button> */}
+
+        </div>
+    )
+
+}
