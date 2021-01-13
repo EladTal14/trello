@@ -4,7 +4,7 @@ import { AppHeader } from './cmps/AppHeader';
 import { Home } from './pages/Home';
 import { Boards } from './pages/Boards';
 import { BoardApp } from './pages/BoardApp';
-import { CardEdit } from './cmps/CardEdit';
+import { CardEdit } from './cmps/CardEdit.jsx'
 import { Switch, Route } from 'react-router-dom';
 
 
