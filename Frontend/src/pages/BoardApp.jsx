@@ -6,12 +6,21 @@ import { loadBoard } from '../store/actions/boardAction'
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 export class _BoardApp extends Component {
 
+    // state = {
+    //     board: null
+    // }
 
+    // check
     componentDidMount() {
-        // this.props.loadBoard(this.props.filterBy)
+        this.loadBoard()
         console.log('page is ready')
-        this.props.loadBoard()
-        console.log('Got from store:', this.props);
+    }
+
+    loadBoard = async () => {
+        const { boardId } = this.props.match.params
+        this.props.loadBoard(boardId)
+        // this.setState({ board })
+
     }
 
     // onRemove = (boardId) => {
@@ -21,18 +30,17 @@ export class _BoardApp extends Component {
 
 
     render() {
-        const { groups } = this.props.board
-        console.log('groups', groups);
+        const { board } = this.props
+        console.log('board', board);
         const load = <p>Loading...</p>
-        return (!groups ? load :
+        return (!board.title ? load :
             <section className="board-container">
-                <h1>groups...</h1>
-                input <input type="text" className="my-input" placeholder="something...." />
                 <BoardHeader />
+                {/* input <input type="text" className="my-input" placeholder="something...." /> */}
                 <button className="add-board-btn">+ Add another group</button>
                 <DragDropContext>
 
-                    <GroupList groups={groups} />
+                    <GroupList groups={board.groups} />
 
                 </DragDropContext>
             </section>
@@ -42,7 +50,7 @@ export class _BoardApp extends Component {
 
 const mapStateToProps = state => {
     return {
-        board: state.boardModule.board,
+        board: state.boardModule.currBoard,
         // filterBy: state.boardModule.filterBy,
         // loggedInUser: state.userModule.loggedInUser,
     }
