@@ -8,7 +8,8 @@ export const boardService = {
     query,
     remove,
     save,
-    getBoardById
+    getBoardById,
+    getGroupIdxById
 
 }
 
@@ -18,6 +19,7 @@ const baseUrl = 'http://localhost:3030/board';
 
 async function query() {
     const res = await axios.get(baseUrl);
+    console.log(res.data);
     return res.data;
     // return gBoard.board
 }
@@ -39,9 +41,15 @@ async function save(board) {
 }
 
 async function getBoardById(boardId) {
-    console.log(boardId)
     const res = await axios.get(`${baseUrl}/${boardId}`);
     return res.data;
+}
+
+async function getGroupIdxById(boardId, groupId){
+    const board = await getBoardById(boardId)
+    const groupIdx = board.groups.findIndex(group => group.id === groupId)
+    console.log('index', groupIdx)
+    return groupIdx
 }
 
 

@@ -1,7 +1,7 @@
 import { GroupPreview } from "./GroupPreview.jsx"
 import React, { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-export function GroupList({ groups }) {
+export function GroupList({ groups, onAddCard }) {
     const [state, setState] = useState(groups);
     function onDragEnd(result) {
         const { source, destination } = result;
@@ -32,7 +32,7 @@ export function GroupList({ groups }) {
         <DragDropContext onDragEnd={onDragEnd}>
             {/* <DragDropContext> */}
             {groups.map(group => {
-                return <GroupPreview key={group.id} group={group} />
+                return <GroupPreview key={group.id} group={group} onAddCard={onAddCard}/>
             })}
         </DragDropContext>
     </article>

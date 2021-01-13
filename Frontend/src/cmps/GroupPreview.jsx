@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { CardList } from './CardList'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { CardAdd } from './CardAdd';
+import { GroupTitle } from './GroupTitle';
 
 export class GroupPreview extends Component {
 
@@ -32,15 +34,16 @@ export class GroupPreview extends Component {
     }
 
     render() {
-        const { group } = this.props
+        const { group, onAddCard } = this.props
         console.log(group);
         return (
             <div className="group-preview">
-                <h1 >{group.title}</h1>
+                {/* <h1 >{group.title}</h1> */}
+                <GroupTitle group={group}/>
                 <DragDropContext onDragEnd={this.onDragEnd}>
-                    <CardList cards={group.cards} id={group.id} />
-                    <button>+ Add another card</button>
+                    <CardList cards={group.cards} id={group.id}  groupTitle={group.title}/>
                 </DragDropContext>
+                    <CardAdd groupId={group.id} onAddCard={onAddCard}/>
 
             </div>
         )

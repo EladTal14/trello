@@ -16,7 +16,6 @@ export  function loadBoards() { // Action Creator
 export  function loadBoard(boardId) { 
     return async (dispatch) => {
         const board = await boardService.getBoardById(boardId)
-        console.log('action board', board);
         const action = {
             type: 'SET_BOARD',
             board

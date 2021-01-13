@@ -16,13 +16,13 @@ export class CardPreview extends Component {
     }
 
     render() {
-        const { card, index } = this.props
+        const { card, index , groupId, groupTitle } = this.props
         return (
             <div className="card-preview">
                 {this.state.isDetailsShown &&
                     <React.Fragment>
                         <div className="modalcover" onClick={(ev) => this.toggleDetails(ev, true)}> </div>
-                        <CardDetails card={card} />
+                        <CardDetails card={card} groupId={groupId} groupTitle={groupTitle}/>
                     </React.Fragment>}
 
                 <Draggable key={card.id} draggableId={card.id} index={index}>
