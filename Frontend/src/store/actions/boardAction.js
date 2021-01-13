@@ -15,7 +15,7 @@ export  function loadBoard() { // Action Creator
 
 export  function saveBoard(board) { 
     return async (dispatch) => {
-        const saveBoard = await boardService.query(board)
+        const saveBoard = await boardService.save(board)
         const action = {
             type: (board._id) ? 'SAVE_BOARD' : 'ADD_BOARD',
             board: saveBoard
@@ -25,12 +25,12 @@ export  function saveBoard(board) {
     }
 }
 
-export  function saveBoard(board) { 
+export  function removeBoard(boardId) { 
     return async (dispatch) => {
-        const saveBoard = await boardService.query(board)
+        await boardService.remove(boardId)
         const action = {
-            type: (board._id) ? 'SAVE_BOARD' : 'ADD_BOARD',
-            board: saveBoard
+            type: 'REMOVE_BOARD',
+            boardId
           }
         dispatch(action)
 
