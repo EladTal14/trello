@@ -31,7 +31,7 @@ export class _BoardApp extends Component {
 
     render() {
         const { board } = this.props
-        console.log('board', board);
+        // console.log('board', board);
         const load = <p>Loading...</p>
         return (!board.title ? load :
             <section className="board-container">

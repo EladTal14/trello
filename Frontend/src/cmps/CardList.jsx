@@ -4,7 +4,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 export function CardList({ cards, id }) {
 
 
-    console.log(cards);
+    // console.log(cards);
     if (!cards) return <div>Loading Cards...</div>
     return <article className="card-list">
 
