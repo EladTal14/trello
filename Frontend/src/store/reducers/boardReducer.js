@@ -18,12 +18,8 @@ export function boardReducer(state = initialState, action) {
 
         }
       }
-
-
-
     case 'UPDATE_BOARD':
-      console.log('curr board', state.currBoard);
-      return { ...state, currBoard: action.board }
+      return { ...state, currBoard: { ...action.board } }
     case 'SAVE_BOARD':
       return {
         ...state, boards: state.boards.map(board => {

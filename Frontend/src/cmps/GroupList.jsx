@@ -20,7 +20,7 @@ export function GroupList({ groups, onAddCard, onDragCard }) {
             setState(newState);
             onDragCard(newState)
         } else {
-            console.log('state[dInd]', state);
+            // console.log('state[dInd]', state);
             const result = move(state[sInd].cards, state[dInd].cards, source, destination);
             const newState = [...state];
             newState[sInd].cards = result[sInd];

@@ -23,8 +23,8 @@
           "title": "Ideas",
           "cards": [
             {
-              "id": "c101",
-              "title": "Replace logo"
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
             },
             {
               "id": "c102",
@@ -47,7 +47,7 @@
           "cards": [
             {
               "id": "c103",
-              "title": "Do that"
+              "title": "Do that and that"
             },
             {
               "id": "c1089sdasd",
@@ -115,6 +115,21 @@
         {
           "id": "g103",
           "title": "Done",
+          "cards": [
+            {
+              "id": "c103",
+              "title": "Do that"
+            },
+            {
+              "title": "hhh",
+              "id": "9O6"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "title": "basya",
+          "id": "HKM",
           "cards": [
             {
               "id": "c10894",
