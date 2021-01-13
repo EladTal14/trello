@@ -3,38 +3,12 @@ import { CardPreview } from "./CardPreview.jsx"
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 export function CardList({ cards, id }) {
 
-    // const [state, setState] = useState(cards);
-
-    // function onDragEnd(result) {
-    //     const { source, destination } = result;
-
-    //     // dropped outside the list
-    //     if (!destination) {
-    //         return;
-    //     }
-    //     const sInd = +source.droppableId;
-    //     const dInd = +destination.droppableId;
-
-    //     if (sInd === dInd) {
-    //         const items = reorder(state[sInd], source.index, destination.index);
-    //         const newState = [...state];
-    //         newState[sInd] = items;
-    //         setState(newState);
-    //     } else {
-    //         const result = move(state[sInd], state[dInd], source, destination);
-    //         const newState = [...state];
-    //         newState[sInd] = result[sInd];
-    //         newState[dInd] = result[dInd];
-
-    //         setState(newState.filter(group => group.length));
-    //     }
-    // }
 
 
     console.log(cards);
     if (!cards) return <div>Loading Cards...</div>
     return <article className="card-list">
-        {/* <DragDropContext onDragEnd={onDragEnd}> */}
+
         <Droppable key={id} droppableId={`${id}`}>
             {(provided, snapshot) => (
                 <div
@@ -51,7 +25,7 @@ export function CardList({ cards, id }) {
                 </div>
             )}
         </Droppable>
-        {/* </DragDropContext> */}
+
     </article >
 
 }
