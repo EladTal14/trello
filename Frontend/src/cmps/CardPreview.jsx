@@ -19,13 +19,14 @@ export class CardPreview extends Component {
         const { card, index } = this.props
         return (
             <div className="card-preview">
-                {this.state.isDetailsShown &&
-                    <React.Fragment>
-                        <div className="modalcover" onClick={(ev) => this.toggleDetails(ev, true)}> </div>
-                        <CardDetails card={card} />
-                    </React.Fragment>}
+
 
                 <Draggable key={card.id} draggableId={card.id} index={index}>
+                    {this.state.isDetailsShown &&
+                        <React.Fragment>
+                            <div className="modalcover" onClick={(ev) => this.toggleDetails(ev, true)}> </div>
+                            <CardDetails card={card} />
+                        </React.Fragment>}
                     {(provided, snapshot) => (
                         <div
                             ref={provided.innerRef}
@@ -42,8 +43,6 @@ export class CardPreview extends Component {
                     )}
 
                 </Draggable>
-
-
             </div>
         )
     }

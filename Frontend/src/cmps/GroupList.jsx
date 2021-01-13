@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 export function GroupList({ groups }) {
     const [state, setState] = useState(groups);
+
     function onDragEnd(result) {
         const { source, destination } = result;
 
@@ -28,9 +29,7 @@ export function GroupList({ groups }) {
         }
     }
     return <article className="group-list">
-
         <DragDropContext onDragEnd={onDragEnd}>
-            {/* <DragDropContext> */}
             {groups.map(group => {
                 return <GroupPreview key={group.id} group={group} />
             })}
@@ -38,20 +37,30 @@ export function GroupList({ groups }) {
     </article>
 
 }
-const move = (source, destination, droppableSource, droppableDestination) => {
-    const sourceClone = Array.from(source);
-    const destClone = Array.from(destination);
-    const [removed] = sourceClone.splice(droppableSource.index, 1);
-    destClone.splice(droppableDestination.index, 0, removed);
-    const result = {};
-    result[droppableSource.droppableId] = sourceClone;
-    result[droppableDestination.droppableId] = destClone;
-    return result;
-};
 const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
 
+    return result;
+};
+
+/**
+ * Moves an item from one list to another list.
+ */
+const move = (source, destination, droppableSource, droppableDestination) => {
+    console.log(source, destination, droppableSource, droppableDestination);
+    const sourceClone = Array.from(source);
+    console.log('Clones ', sourceClone);
+    const destClone = Array.from(destination);
+    console.log('destClone ', destClone);
+    const [removed] = sourceClone.splice(droppableSource.index, 1);
+    console.log([removed]);
+    destClone.splice(droppableDestination.index, 0, removed);
+
+    const result = {};
+    result[droppableSource.droppableId] = sourceClone;
+    result[droppableDestination.droppableId] = destClone;
+    console.log('result', result);
     return result;
 };
