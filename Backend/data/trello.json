@@ -27,12 +27,12 @@
               "title": "Replace logo"
             },
             {
-              "title": "gggg",
-              "id": "cMP"
-            },
-            {
               "id": "c102",
               "title": "Add Samples"
+            },
+            {
+              "title": "gggg",
+              "id": "cMP"
             },
             {
               "title": "vjfjfj",
@@ -45,6 +45,14 @@
           "id": "g102",
           "title": "In Progress",
           "cards": [
+            {
+              "id": "c103",
+              "title": "Do that"
+            },
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
+            },
             {
               "id": "c104",
               "title": "Help me",
@@ -100,14 +108,6 @@
               "style": {
                 "bgColor": "#26DE81"
               }
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
-              "title": "hhh",
-              "id": "9O6"
             }
           ],
           "style": {}
@@ -161,15 +161,25 @@
               }
             },
             {
-              "id": "c103",
-              "title": "Do that"
-            },
-            {
-              "id": "c1089",
-              "title": "eat cupcake"
+              "title": "hhh and digi",
+              "id": "9O6"
             }
           ],
           "style": {}
+        },
+        {
+          "title": "aaa",
+          "id": "yNQ",
+          "cards": [
+            {
+              "id": "c1089",
+              "title": "eat cupcake"
+            },
+            {
+              "title": "assa",
+              "id": "jEf"
+            }
+          ]
         }
       ],
       "activities": [
