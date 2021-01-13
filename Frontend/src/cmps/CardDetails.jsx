@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import { CardHeader } from './CardHeader';
+import {boardService} from '../services/boardService.js'
 
 export class CardDetails extends Component {
 
@@ -22,7 +23,18 @@ export class CardDetails extends Component {
     const domNode = ReactDOM.findDOMNode(this);
     if (!domNode || !domNode.contains(event.target)) {
       console.log('send the card')
+
     }
+  }
+
+  updateCard = async (card, groupId) => {
+    // const { board } = this.props
+    // const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
+    // console.log('index', groupIdx)
+    // board.groups[groupIdx].cards.push(card)
+    // console.log('saving... new board', board.groups);
+    // await this.props.saveBoard(board)
+    // this.loadBoard()
   }
 
   onHandleInputChange = ({ target }) => {
@@ -37,6 +49,7 @@ export class CardDetails extends Component {
 
   render() {
     const { card } = this.state
+    const { groupTitle } = this.props
     if (!card) return <div>Loading...</div>
     // let cardWithTxt = (
     //   <input
@@ -54,22 +67,7 @@ export class CardDetails extends Component {
       <div className="card-details flex justify-center align-center">
 
         <div className="card-details-wrapper flex column">
-          <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} />
-          {/* <div className="card-header">
-            <div className="card-title-area flex">
-              <span>L</span>
-              <textarea
-                className="title-textarea my-input"
-                type="text"
-                name="title"
-                value={card.title}
-                onChange={this.onHandleInputChange}
-                placeholder={card.title}
-              />
-            </div>
-            <p>In List in progress</p>
-          </div> */}
-
+          <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} groupTitle={groupTitle} />
 
           <div className="card-content flex">
 

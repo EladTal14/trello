@@ -11,6 +11,10 @@
     resize: none;
   }
 
+  & input:not([type=checkbox]), textarea {
+    background-color: rgba(165, 165, 165, 0.726);
+  }
+
   .card-details-wrapper {
     height: 90%;
     width: 90%;
@@ -71,7 +75,7 @@
     .add-todo-input {
       flex-grow: 1;
     }
-    
+
   }
   
   .add-todo {
