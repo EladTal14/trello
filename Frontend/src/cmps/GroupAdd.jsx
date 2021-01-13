@@ -19,7 +19,7 @@ export class GroupAdd extends Component {
     onSaveGroup = (ev) => {
         ev.preventDefault()
         const group = { title: this.state.group.title, id: utilService.makeId(), cards: [] }
-        console.log('saving new group...', group)
+        // console.log('saving new group...', group)
         this.props.onAddGroup(group)
         this.setState(
             {

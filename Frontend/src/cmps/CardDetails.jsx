@@ -21,7 +21,7 @@ export class CardDetails extends Component {
   handleClickOutside = event => {
     const domNode = ReactDOM.findDOMNode(this);
     if (!domNode || !domNode.contains(event.target)) {
-      console.log('send the card')
+      // console.log('send the card')
     }
   }
 
