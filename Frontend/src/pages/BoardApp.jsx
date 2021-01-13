@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { GroupList } from '../cmps/GroupList';
 import { BoardHeader } from '../cmps/BoardHeader'
 import { loadBoard } from '../store/actions/boardAction'
-
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
 export class _BoardApp extends Component {
 
     // state = {
@@ -37,7 +37,11 @@ export class _BoardApp extends Component {
                 <BoardHeader />
                 {/* input <input type="text" className="my-input" placeholder="something...." /> */}
                 <button className="add-board-btn">+ Add another group</button>
-                <GroupList groups={board.groups} />
+                <DragDropContext>
+
+                    <GroupList groups={board.groups} />
+
+                </DragDropContext>
             </section>
         )
     }
