@@ -13,7 +13,12 @@ export function App() {
     <div className="App">
       <AppHeader />
       <Switch>
+<<<<<<< HEAD
           <Route component={BoardApp} path="/board" />
+=======
+          <Route component={CardEdit} path="/board/edit/:cardId" />
+          <Route component={BoardApp} path="/board/:boardId" />
+>>>>>>> 3aee3ca8aad867683223f1b0398a23cb3995df2c
           <Route component={Boards} path="/boards" />
           <Route component={Home} path="/" />
         </Switch>

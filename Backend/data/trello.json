@@ -1,7 +1,7 @@
 {
     "board": [{
         "_id": "b101",
-        "title": "Robot dev proj",
+        "title": "Sprint 4 proj",
         "createdAt": 1589983468418,
         "createdBy": {
             "_id": "u101",
@@ -19,7 +19,7 @@
         "groups": [
             {
                 "id": "g101",
-                "title": "Todos",
+                "title": "Ideas",
                 "cards": [
                     {
                         "id": "c101",

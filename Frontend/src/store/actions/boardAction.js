@@ -1,12 +1,25 @@
 import { boardService } from '../../services/boardService.js'
 
 
-export  function loadBoard() { // Action Creator
+export  function loadBoards() { // Action Creator
     return async (dispatch) => {
-        const board = await boardService.query()
+        const boards = await boardService.query()
+        const action = {
+            type: 'SET_BOARDS',
+            boards,
+        }
+        dispatch(action)
+
+    }
+}
+
+export  function loadBoard(boardId) { 
+    return async (dispatch) => {
+        const board = await boardService.getBoardById(boardId)
+        console.log('action board', board);
         const action = {
             type: 'SET_BOARD',
-            board,
+            board
         }
         dispatch(action)
 
