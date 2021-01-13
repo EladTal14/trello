@@ -50,7 +50,7 @@ export class CardAdd extends Component {
                     {/* <input type="text" name="title" value={card.title} onChange={this.handleInput}
                         className="my-input" placeholder="Enter a title card title..." autoFocus /> */}
                     <textarea type="text" name="title" value={card.title} onChange={this.handleInput}
-                        className="my-input" placeholder="Enter a title card title..." autoFocus 
+                        className="my-input" placeholder="Enter a title card title..." autoFocus
                         cols="26" rows="5"></textarea>
                     <button className="submit-card-btn">Add card</button>
                 </form>

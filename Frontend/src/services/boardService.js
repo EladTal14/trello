@@ -24,14 +24,16 @@ async function query() {
     // return gBoard.board
 }
 
-function remove(boardId) {
-    return axios.delete(`${baseUrl}/${boardId}`)
+async function remove(boardId) {
+    return await axios.delete(`${baseUrl}/${boardId}`)
 }
 
 
 async function save(board) {
     if (board._id) {
-        return axios.put(`${baseUrl}/${board._id}`, board)
+        const res = await axios.put(`${baseUrl}/${board._id}`, board)
+        const savedBoard = res.data;
+        return savedBoard;
     }
     else {
         const res = await axios.post(`${baseUrl}`, board);
@@ -45,7 +47,7 @@ async function getBoardById(boardId) {
     return res.data;
 }
 
-async function getGroupIdxById(boardId, groupId){
+async function getGroupIdxById(boardId, groupId) {
     const board = await getBoardById(boardId)
     const groupIdx = board.groups.findIndex(group => group.id === groupId)
     console.log('index', groupIdx)

@@ -18,7 +18,7 @@ export class GroupAdd extends Component {
 
     onSaveGroup = (ev) => {
         ev.preventDefault()
-        const group = { title: this.state.group.title, id: utilService.makeId() }
+        const group = { title: this.state.group.title, id: utilService.makeId(), cards: [] }
         console.log('saving new group...', group)
         this.props.onAddGroup(group)
         this.setState(
@@ -49,7 +49,7 @@ export class GroupAdd extends Component {
             {isAddOpen &&
                 <form onSubmit={this.onSaveGroup}>
                     <input type="text" name="title" value={group.title} onChange={this.handleInput}
-                        className="my-input" placeholder="Enter group title..." autoFocus/>
+                        className="my-input" placeholder="Enter group title..." autoFocus />
                     <button className="submit-group-btn">Add group</button>
                 </form>
             }

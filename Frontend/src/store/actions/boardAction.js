@@ -1,7 +1,7 @@
 import { boardService } from '../../services/boardService.js'
 
 
-export  function loadBoards() { // Action Creator
+export function loadBoards() { // Action Creator
     return async (dispatch) => {
         const boards = await boardService.query()
         const action = {
@@ -13,7 +13,7 @@ export  function loadBoards() { // Action Creator
     }
 }
 
-export  function loadBoard(boardId) { 
+export function loadBoard(boardId) {
     return async (dispatch) => {
         const board = await boardService.getBoardById(boardId)
         const action = {
@@ -25,25 +25,25 @@ export  function loadBoard(boardId) {
     }
 }
 
-export  function saveBoard(board) { 
+export function saveBoard(board) {
     return async (dispatch) => {
         const saveBoard = await boardService.save(board)
         const action = {
-            type: (board._id) ? 'SAVE_BOARD' : 'ADD_BOARD',
+            type: (board._id) ? 'UPDATE_BOARD' : 'ADD_BOARD',
             board: saveBoard
-          }
+        }
         dispatch(action)
 
     }
 }
 
-export  function removeBoard(boardId) { 
+export function removeBoard(boardId) {
     return async (dispatch) => {
         await boardService.remove(boardId)
         const action = {
             type: 'REMOVE_BOARD',
             boardId
-          }
+        }
         dispatch(action)
 
     }
