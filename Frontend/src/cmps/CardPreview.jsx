@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { CardDetails } from './CardDetails'
 
@@ -9,9 +8,7 @@ export class CardPreview extends Component {
         isDetailsShown: false
     }
 
-    toggleDetails = (ev, needPrevent) => {
-        // if (needPrevent) ev.stoppropagation()
-
+    toggleDetails = () => {
         this.setState({ isDetailsShown: !this.state.isDetailsShown })
     }
 
