@@ -16,7 +16,7 @@ export class _BoardApp extends Component {
     loadBoard = async () => {
         const { boardId } = this.props.match.params
         await this.props.loadBoard(boardId)
-        console.log('BOARD CUURR', this.props.board);
+        // console.log('BOARD CUURR', this.props.board);
     }
 
     onAddGroup = async (group) => {
@@ -25,7 +25,7 @@ export class _BoardApp extends Component {
         boardCopy.groups.push(group)
         await this.props.saveBoard(boardCopy)
         this.loadBoard()
-        console.log('saving... new board', board.groups);
+        // console.log('saving... new board', board.groups);
     }
     // onDragCard = async (groups) => {
     //     const { board } = this.props
@@ -51,9 +51,9 @@ export class _BoardApp extends Component {
     onAddCard = async (card, groupId) => {
         const { board } = this.props
         const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
-        console.log('index', groupIdx)
+        // console.log('index', groupIdx)
         board.groups[groupIdx].cards.push(card)
-        console.log('saving... new board', board.groups);
+        // console.log('saving... new board', board.groups);
         await this.props.saveBoard(board)
         this.loadBoard()
     }
@@ -69,8 +69,6 @@ export class _BoardApp extends Component {
                 < GroupAdd onAddGroup={this.onAddGroup} />
                 <DragDropContext>
                     <GroupList groups={board.groups} onAddCard={this.onAddCard} onDragCard={this.onDragCard} />
-
-
                 </DragDropContext>
             </section>
         )

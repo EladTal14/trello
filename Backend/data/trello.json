@@ -23,8 +23,8 @@
           "title": "Ideas",
           "cards": [
             {
-              "id": "c101",
-              "title": "Replace logo"
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
             },
             {
               "id": "c102",
@@ -38,12 +38,8 @@
           "title": "In Progress",
           "cards": [
             {
-              "id": "c103",
-              "title": "Do that"
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
+              "id": "c102",
+              "title": "Add Samples"
             },
             {
               "id": "c104",
@@ -109,9 +105,20 @@
           "title": "Done",
           "cards": [
             {
-              "id": "c1089",
-              "title": "eat cupcake"
+              "id": "c103",
+              "title": "Do that"
             },
+            {
+              "title": "hhh",
+              "id": "9O6"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "title": "basya",
+          "id": "HKM",
+          "cards": [
             {
               "id": "c10894",
               "title": "eat soup",
@@ -155,14 +162,16 @@
               "style": {
                 "bgColor": "#26DE81"
               }
+            },
+            {
+              "id": "c1089",
+              "title": "eat cupcake"
+            },
+            {
+              "id": "c101",
+              "title": "Replace logo"
             }
-          ],
-          "style": {}
-        },
-        {
-          "title": "geHtaey",
-          "id": "jik",
-          "cards": []
+          ]
         }
       ],
       "activities": [
