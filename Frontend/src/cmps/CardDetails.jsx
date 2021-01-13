@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import { CardHeader } from './CardHeader';
-import {boardService} from '../services/boardService.js'
+// import {boardService} from '../services/boardService.js'
 
 export class CardDetails extends Component {
 
