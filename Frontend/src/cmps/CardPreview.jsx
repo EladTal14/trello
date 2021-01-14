@@ -26,7 +26,6 @@ export class CardPreview extends Component {
         const { isLableTitleShown } = this.state
         return (
             <div className="card-preview">
-                {/* <div className="card-preview"> */}
                 {this.state.isDetailsShown &&
                     <React.Fragment>
                         <div className="modalcover" onClick={(ev) => this.toggleDetails(ev, true)}> </div>

@@ -24,12 +24,49 @@
       ],
       "groups": [
         {
+<<<<<<< HEAD
+=======
+          "id": "g101",
+          "title": "Ideas",
+          "cards": [
+            {
+              "id": "c101",
+              "title": "Replace logo"
+            },
+            {
+              "id": "c102",
+              "title": "Add Samples"
+            },
+            {
+              "title": "gggg",
+              "id": "cMP"
+            },
+            {
+              "title": "vjfjfj",
+              "id": "eTa"
+            }
+          ],
+          "style": {}
+        },
+        {
+>>>>>>> 34ffcd8ed4e7be89d7af6a8fb01ec55cc313139c
           "id": "g102",
           "title": "In Progress",
           "cards": [
             {
+<<<<<<< HEAD
+=======
+              "id": "c103",
+              "title": "Do that"
+            },
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
+            },
+            {
+>>>>>>> 34ffcd8ed4e7be89d7af6a8fb01ec55cc313139c
               "id": "c104",
-              "title": "Help me",
+              "title": "Help mefdsfdsffsfsfds",
               "description": "description",
               "comments": [
                 {
@@ -43,19 +80,17 @@
                   }
                 }
               ],
-              "checklists": [
-                {
-                  "id": "YEhmF",
-                  "title": "Checklist",
-                  "todos": [
-                    {
-                      "title": "To Do 1",
-                      "isDone": false,
-                      "id": "212jX"
-                    }
-                  ]
-                }
-              ],
+              "checklist": {
+                "id": "YEhmF",
+                "title": "Checklistdddfdsfdsfsdf",
+                "todos": [
+                  {
+                    "title": "To Dvssdfsdfo 1",
+                    "isDone": false,
+                    "id": "212jX"
+                  }
+                ]
+              },
               "members": [
                 {
                   "_id": "u101",
@@ -87,6 +122,7 @@
               "style": {
                 "bgColor": "#26DE81"
               }
+<<<<<<< HEAD
             }
           ],
           "style": {}
@@ -102,6 +138,8 @@
             {
               "id": "c102",
               "title": "Add Samples"
+=======
+>>>>>>> 34ffcd8ed4e7be89d7af6a8fb01ec55cc313139c
             }
           ],
           "style": {}
@@ -115,6 +153,7 @@
               "title": "eat cupcake"
             },
             {
+<<<<<<< HEAD
               "id": "c1089sdasd",
               "title": "Go to sleep"
             },
@@ -123,22 +162,22 @@
               "title": "Do that"
             },
             {
+=======
+>>>>>>> 34ffcd8ed4e7be89d7af6a8fb01ec55cc313139c
               "id": "c10894",
               "title": "eat soup",
               "description": "3 cups of oil",
-              "checklists": [
-                {
-                  "id": "YEhmF",
-                  "title": "Checklist",
-                  "todos": [
-                    {
-                      "title": "To Do 1",
-                      "isDone": false,
-                      "id": "212jX"
-                    }
-                  ]
-                }
-              ],
+              "checklist": {
+                "id": "YEhmF",
+                "title": "Checklist",
+                "todos": [
+                  {
+                    "title": "To Do 1",
+                    "isDone": false,
+                    "id": "212jX"
+                  }
+                ]
+              },
               "members": [
                 {
                   "_id": "u101",
@@ -165,6 +204,14 @@
               "style": {
                 "bgColor": "#26DE81"
               }
+<<<<<<< HEAD
+=======
+            },
+            {
+              "title": "hhh",
+              "id": "9O6",
+              "description": "asasadsas"
+>>>>>>> 34ffcd8ed4e7be89d7af6a8fb01ec55cc313139c
             }
           ],
           "style": {}
