@@ -18,21 +18,22 @@
 @import "cmps/CardList";
 @import "cmps/GroupPreview";
 @import "cmps/CardAdd";
+@import "cmps/GroupAdd";
 // @import "components/cat-card.scss";
 .App {
   height: 100vh;
 }
 
-.my-input {
-  border: none;
-  border-radius: 3px;
-  background-color: unset;
-}
+// .my-input {
+//   border: none;
+//   border-radius: 3px;
+//   background-color: unset;
+// }
 
-.my-input:focus {
-  background-color: white;
-  outline: 2px solid rgb(46, 140, 228);
-}
+// .my-input:focus {
+//   background-color: white;
+//   outline: 2px solid rgb(46, 140, 228);
+// }
 
 .board-preview {
   background-color: lightcoral;

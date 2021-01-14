@@ -15,32 +15,42 @@
           "_id": "u101",
           "fullname": "Tal Tarablus",
           "imgUrl": "https://www.google.com"
+        },
+        {
+          "_id": "u102",
+          "fullname": "Abi Bamia",
+          "imgUrl": "https://www.google.com"
         }
       ],
       "groups": [
         {
-          "id": "g103",
+          "id": "g102",
           "title": "In Progress",
           "cards": [
             {
-<<<<<<< HEAD
-              "id": "c103",
-              "title": "Do that"
+              "id": "c1089",
+              "title": "eat cupcake"
             },
             {
-              "id": "c10894",
-              "title": "eat soup",
-              "description": "3 cups of oil",
-              "checklist": {
-                "id": "YEhmF",
-                "title": "Checklist",
-                "todos": [
-                  {
-                    "title": "To Do 1",
-                    "isDone": false,
-                    "id": "212jX"
-                  }
-=======
+              "id": "c102",
+              "title": "Add Samples"
+            },
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
+            },
+            {
+              "id": "c103",
+              "title": "Do that"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "id": "g101",
+          "title": "Ideas",
+          "cards": [
+            {
               "id": "c101",
               "title": "Replace logo"
             },
@@ -69,7 +79,6 @@
                     "isDone": false,
                     "id": "212jX"
                   }
->>>>>>> a186123e4f73fbb7310de893a2635977598c3314
                 ]
               },
               "members": [
@@ -100,85 +109,8 @@
               }
             },
             {
-<<<<<<< HEAD
-              "title": "hhh",
-              "id": "9O6",
-              "description": "asasadsas"
-            },
-            {
-              "title": "fsdfdsf",
-              "id": "opX"
-            },
-            {
-              "title": "dfddd",
-              "id": "9ot"
-            },
-            {
-              "title": "sdfdfdf",
-              "id": "CBg"
-=======
               "title": "gggg",
               "id": "cMP"
-            },
-            {
-              "title": "vjfjfj",
-              "id": "eTa"
->>>>>>> a186123e4f73fbb7310de893a2635977598c3314
-            }
-          ],
-          "style": {}
-        },
-        {
-<<<<<<< HEAD
-          "id": "g101",
-          "title": "Ideas",
-=======
-          "id": "g102",
-          "title": "In Progress",
->>>>>>> a186123e4f73fbb7310de893a2635977598c3314
-          "cards": [
-            {
-              "id": "c1089",
-              "title": "eat cupcake"
-<<<<<<< HEAD
-            },
-            {
-              "id": "c102",
-              "title": "Add Samples"
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
-            },
-            {
-              "id": "c104",
-              "title": "Help me",
-              "description": "description",
-              "comments": [
-                {
-                  "id": "ZdPnm",
-                  "txt": "a comment",
-                  "createdAt": 1590999817436,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
-                }
-              ],
-=======
-            },
-            {
-              "id": "c102",
-              "title": "Add Samples"
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
-              "id": "c103",
-              "title": "Do that"
             }
           ],
           "style": {}
@@ -191,7 +123,6 @@
               "id": "c10894",
               "title": "eat soup",
               "description": "3 cups of oil",
->>>>>>> a186123e4f73fbb7310de893a2635977598c3314
               "checklist": {
                 "id": "YEhmF",
                 "title": "Checklist",
@@ -231,41 +162,13 @@
               }
             },
             {
-<<<<<<< HEAD
               "title": "vjfjfj",
               "id": "eTa"
             },
             {
-              "title": "asdadasd",
-              "id": "MYU"
-            },
-            {
-              "title": "asdasdasd",
-              "id": "kXN"
-            }
-          ],
-          "style": {}
-        },
-        {
-          "id": "g102",
-          "title": "In Progress",
-          "cards": [
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
-              "id": "c101",
-              "title": "Replace logo"
-            },
-            {
-              "title": "",
-              "id": "MOx"
-=======
               "title": "hhh",
               "id": "9O6",
               "description": "asasadsas"
->>>>>>> a186123e4f73fbb7310de893a2635977598c3314
             }
           ],
           "style": {}

@@ -46,9 +46,10 @@ export class _GroupTitle extends Component {
     render() {
         const { group } = this.state
         return <section className="group-title">
-            <form onBlur={this.onSaveTitle}>
+            <form onBlur={this.onSaveTitle} className="title-form flex space-between">
                 <input type="text" name="title" value={group.title} onChange={this.handleInput}
-                    className="my-input" placeholder="Enter group title..." autoComplete="off" />
+                    className="title-input" placeholder="Enter group title..." autoComplete="off" />
+                    <button className="more-options-btn" ><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/more_e8mezf.png" alt="" /></button>
             </form>
         </section>
     }

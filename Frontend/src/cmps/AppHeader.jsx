@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 export function AppHeader(props) {
   return (
-    <header className="app-header">
+    <header className="app-header flex space-between">
       <h1>Tello header</h1>
       <nav>
         <ul className="header-list flex justify-center">
