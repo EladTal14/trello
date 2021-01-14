@@ -22,13 +22,8 @@ export function loadBoard(boardId) {
 
 export function saveBoard(board) {
     return async (dispatch) => {
-        const saveBoard = await boardService.save(board)
-        const action = {
-            type: (board._id) ? 'UPDATE_BOARD' : 'ADD_BOARD',
-            board: saveBoard
-        }
-        dispatch(action)
-
+        const savedBoard = await boardService.save(board)
+        dispatch({ type: (board._id) ? 'UPDATE_BOARD' : 'ADD_BOARD', board: savedBoard })
     }
 }
 

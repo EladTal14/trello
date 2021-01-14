@@ -9,8 +9,13 @@ export class BoardHeader extends Component {
     const { title, members } = this.props
     console.log('memebers...', members)
     return (
-      <header className="app-header flex space-between">
-        <h1>{title}</h1>
+      <header className="board-header flex space-between">
+        <div className="header-options flex">
+        <h2>{title}</h2>
+        <button className="board-header-btn flex space-around">
+        <h3>Statistics</h3>
+        <img src="https://res.cloudinary.com/basimgs/image/upload/v1610626728/pie-chart_fnvwct.png" alt=""/>
+        </button>
         <div className="header-members flex">
         <ul className="member-list flex">
           {members.map(member => {
@@ -23,11 +28,10 @@ export class BoardHeader extends Component {
         <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625640/add-user_qxgidw.png" alt=""/>
         </div>
         </div>
+          </div>
         {/* <BoardFilter /> */}
-        <button className="board-header-btn flex space-around">
-        <h3>Statistics</h3>
-        <img src="https://res.cloudinary.com/basimgs/image/upload/v1610626728/pie-chart_fnvwct.png" alt=""/>
-        </button>
+        <button className="menu-btn"><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt=""/></button>
+        
       </header>
     )
   }

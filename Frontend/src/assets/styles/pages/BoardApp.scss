@@ -1,6 +1,7 @@
-.app-header{
+.board-header{
 
     align-items: center;
+    padding: 0 10px;
 
     .board-header-btn{
         border-radius: 3px;
@@ -8,7 +9,7 @@
         cursor: pointer;
         border: none;
         height: 32px;
-        margin: 0 4px 4px 0;
+        margin: 0 10px 4px;
         max-width: 220px;
         padding: 0 10px ;
         align-items: center;
@@ -23,7 +24,30 @@
             margin-right: 10px;
         }
     }
+    
+    .menu-btn{
+        width: 32px;
+        height: 32px;
+        background-color: unset;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        background-color: rgba(34, 34, 34, 0.11);
 
+        &:hover{
+            background-color: rgba(34, 34, 34, 0.185);  
+        }
+
+
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .header-options{
+        align-items: center;
+    }
     .header-members{
         align-items: center;
     }
