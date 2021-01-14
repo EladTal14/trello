@@ -1,11 +1,11 @@
-.new-card-form{
+.new-group-form{
     display: flex;
     flex-direction: column;
     max-width: 220px;
     margin: auto;
     text-align: start;
 
-    textarea{
+    input{
         outline: none;
         border: none;
         background-color: #fff;
@@ -18,7 +18,7 @@
         font-family: 'montserrat', sans-serif;
     }
 
-    .submit-card-btn{
+    .submit-group-btn{
         border-radius: 3px;
         background-color: #5aac44;
         box-shadow: none;
@@ -64,7 +64,8 @@
 
 }
 
-.add-card-btn{
+
+.add-group-btn{
     border-radius: 3px;
     border: none;
     outline: none;
@@ -77,6 +78,7 @@
     background-color: rgba(34, 34, 34, 0.11);
     font-family: 'montserrat', sans-serif;
     align-items: center;
+    cursor: pointer;
 
     &:hover{
         background-color: rgba(34, 34, 34, 0.185); 
@@ -92,4 +94,10 @@
         opacity: 0.7;
         margin-right: 15px;
     }
+}
+
+.add-group-container{
+    margin: 7px auto;
+    padding: 10px 0;
+    text-align: center;
 }
