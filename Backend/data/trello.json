@@ -23,16 +23,16 @@
           "title": "Ideas",
           "cards": [
             {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
+              "id": "c101",
+              "title": "Replace logo"
             },
             {
               "id": "c102",
               "title": "Add Samples"
+            },
+            {
+              "title": "gggg",
+              "id": "cMP"
             },
             {
               "title": "vjfjfj",
@@ -46,8 +46,12 @@
           "title": "In Progress",
           "cards": [
             {
-              "id": "c102",
-              "title": "Add Samples"
+              "id": "c103",
+              "title": "Do that"
+            },
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
             },
             {
               "id": "c104",
@@ -104,14 +108,6 @@
               "style": {
                 "bgColor": "#26DE81"
               }
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
-              "title": "hhh",
-              "id": "9O6"
             }
           ],
           "style": {}
@@ -121,20 +117,9 @@
           "title": "Done",
           "cards": [
             {
-              "id": "c103",
-              "title": "Do that"
+              "id": "c1089",
+              "title": "eat cupcake"
             },
-            {
-              "title": "hhh",
-              "id": "9O6"
-            }
-          ],
-          "style": {}
-        },
-        {
-          "title": "basya",
-          "id": "HKM",
-          "cards": [
             {
               "id": "c10894",
               "title": "eat soup",
@@ -180,14 +165,21 @@
               }
             },
             {
-              "id": "c1089",
-              "title": "eat cupcake"
-            },
-            {
-              "id": "c101",
-              "title": "Replace logo"
+              "title": "hhh",
+              "id": "9O6"
             }
-          ]
+          ],
+          "style": {}
+        },
+        {
+          "title": "cvxcv",
+          "id": "r8N",
+          "cards": []
+        },
+        {
+          "title": "cxvxcv",
+          "id": "ONV",
+          "cards": []
         }
       ],
       "activities": [
