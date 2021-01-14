@@ -61,7 +61,7 @@ export class _BoardApp extends Component {
         if (!board) return <p>Loading...</p>
         return (
             <>
-                <BoardHeader title={board.title} />
+                <BoardHeader title={board.title} members={board.members} />
                 <GroupAdd onAddGroup={this.onAddGroup} />
                 <section className="board-container">
                     <DragDropContext onDragEnd={this.onDragEnd}>

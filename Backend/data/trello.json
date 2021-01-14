@@ -24,32 +24,9 @@
       ],
       "groups": [
         {
-          "id": "g101",
-          "title": "Ideas",
-          "cards": [
-            {
-              "id": "c101",
-              "title": "Replace logo"
-            },
-            {
-              "id": "c102",
-              "title": "Add Samples"
-            }
-          ],
-          "style": {}
-        },
-        {
           "id": "g102",
           "title": "In Progress",
           "cards": [
-            {
-              "id": "c1089",
-              "title": "eat cupcake"
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
             {
               "id": "c104",
               "title": "Help me",
@@ -115,9 +92,32 @@
           "style": {}
         },
         {
-          "id": "g103",
-          "title": "Done",
+          "id": "g101",
+          "title": "Ideas",
           "cards": [
+            {
+              "id": "c101",
+              "title": "Replace logo"
+            },
+            {
+              "id": "c102",
+              "title": "Add Samples"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "id": "g103",
+          "title": "In Progress",
+          "cards": [
+            {
+              "id": "c1089",
+              "title": "eat cupcake"
+            },
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
+            },
             {
               "id": "c103",
               "title": "Do that"
