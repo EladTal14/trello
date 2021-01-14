@@ -11,47 +11,54 @@ export class _BoardApp extends Component {
 
     componentDidMount() {
         this.loadBoard()
-        console.log('page is ready')
     }
 
     loadBoard = async () => {
         const { boardId } = this.props.match.params
         await this.props.loadBoard(boardId)
-        // console.log('BOARD CUURR', this.props.board);
     }
 
     onAddGroup = async (group) => {
         const { board } = this.props
-        const boardCopy = { ...board }
-        boardCopy.groups.push(group)
-        await this.props.saveBoard(boardCopy)
-        this.loadBoard()
-        // console.log('saving... new board', board.groups);
-    }
-    onDragCard = async (groups) => {
-        const { board } = this.props
-        board.groups = [...groups]
+        board.groups.push(group)
         await this.props.saveBoard(board)
-        this.loadBoard()
     }
 
+    onDragCard = async () => {
+        const { board } = this.props
+        await this.props.saveBoard(board)
+    }
 
-    // onUpdateGroupTitle = () => {
-
-    // }
-    // 
 
     onAddCard = async (card, groupId) => {
         const { board } = this.props
         const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
         board.groups[groupIdx].cards.push(card)
         await this.props.saveBoard(board)
-        this.loadBoard()
     }
 
+    onDragEnd = (result) => {
+        const { destination, source, draggableId, type } = result
+        const { groups } = this.props.board
+        if (!destination) return
+        if (type === 'group') {
+            const dragGroup = groups.find(group => group.id === draggableId)
+            groups.splice(source.index, 1)
+            groups.splice(destination.index, 0, dragGroup)
+            this.onDragCard()
+            return
+        }
+        const sourceGroup = groups.find(group => group.id === source.droppableId)
+        const destinationGroup = groups.find(group => group.id === destination.droppableId)
+        const draggingCard = sourceGroup.cards.find(card => card.id === draggableId)
+        sourceGroup.cards.splice(source.index, 1)
+        destinationGroup.cards.splice(destination.index, 0, draggingCard)
+        this.onDragCard()
+    }
 
     render() {
         const { board } = this.props
+<<<<<<< HEAD
         console.log('board', board);
         const load = <p>Loading...</p>
         return (!board ? load :
@@ -62,6 +69,26 @@ export class _BoardApp extends Component {
                     <GroupList groups={board.groups} onAddCard={this.onAddCard} onDragCard={this.onDragCard} />
                 </DragDropContext>
             </section>
+=======
+        if (!board) return <p>Loading...</p>
+        return (
+            <>
+                <BoardHeader title={board.title} />
+                <GroupAdd onAddGroup={this.onAddGroup} />
+                <section className="board-container">
+                    <DragDropContext onDragEnd={this.onDragEnd}>
+                        <Droppable droppableId="app" type="group" direction="horizontal">
+                            {(provided) => (
+                                <div ref={provided.innerRef} {...provided.droppableProps}>
+                                    <GroupList groups={board.groups} onAddCard={this.onAddCard} />
+                                    {provided.placeholder}
+                                </div>
+                            )}
+                        </Droppable>
+                    </DragDropContext>
+                </section>
+            </>
+>>>>>>> c35931349dbd81e6c10dde0c7b9cb7dcef3d19d5
         )
     }
 }
@@ -78,7 +105,5 @@ const mapDispatchToProps = {
     loadBoard,
     saveBoard,
 }
-
-
 
 export const BoardApp = connect(mapStateToProps, mapDispatchToProps)(_BoardApp);
