@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import { utilService } from '../services/utilService.js'
+import { loadBoard, saveBoard } from '../store/actions/boardAction'
+import { boardService } from '../services/boardService';
+import { connect } from 'react-redux'
 
-export class GroupTitle extends Component {
+export class _GroupTitle extends Component {
 
     state = {
         group: {
@@ -33,6 +35,17 @@ export class GroupTitle extends Component {
                 }
             }
         })
+        this.onSaveTitle()
+    }
+
+    onSaveTitle = async () => {
+        const groupId = this.props.group.groupId
+        const title = this.state.group
+        const { board } = this.props
+        const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
+        const boardCopy = { ...board }
+        boardCopy.groups[groupIdx].title = title
+        await this.props.saveBoard(boardCopy)
     }
 
 
@@ -44,3 +57,20 @@ export class GroupTitle extends Component {
         </section>
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        board: state.boardModule.currBoard,
+        // filterBy: state.boardModule.filterBy,
+        // loggedInUser: state.userModule.loggedInUser,
+    }
+}
+
+const mapDispatchToProps = {
+    loadBoard,
+    saveBoard,
+}
+
+
+
+export const GroupTitle = connect(mapStateToProps, mapDispatchToProps)(_GroupTitle);

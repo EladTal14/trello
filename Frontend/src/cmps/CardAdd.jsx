@@ -16,6 +16,12 @@ export class CardAdd extends Component {
         })
     }
 
+    closeInput = () => {
+        this.setState({
+            isAddOpen: false
+        })
+    }
+
     onSaveCard = (ev) => {
         ev.preventDefault()
         const card = { title: this.state.card.title, id: utilService.makeId() }
@@ -53,6 +59,7 @@ export class CardAdd extends Component {
                         className="my-input" placeholder="Enter a title card title..." autoFocus
                         cols="26" rows="5"></textarea>
                     <button className="submit-card-btn">Add card</button>
+                    <button onClick={this.closeInput} >X</button>
                 </form>
             }
             {!isAddOpen && <button className="add-card-btn" onClick={this.openInput}>+ Add another card</button>}

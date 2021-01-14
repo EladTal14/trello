@@ -6,6 +6,7 @@ import { loadBoard, saveBoard } from '../store/actions/boardAction'
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { GroupAdd } from '../cmps/GroupAdd';
 import { boardService } from '../services/boardService';
+
 export class _BoardApp extends Component {
 
     componentDidMount() {
@@ -34,16 +35,6 @@ export class _BoardApp extends Component {
         this.loadBoard()
     }
 
-    
-    // onDragCard = async (dragbbleGroups) => {
-    //     const { board } = this.props
-    //     const updatedGroups = boardService.getUpdatedGroups(board.groups, dragbbleGroups)
-    //     // console.log('updated board!!!!', updatedGroups)
-    //     board.groups = updatedGroups
-    //     await this.props.saveBoard(board)
-    //     this.loadBoard()
-    // }
-
 
     // onUpdateGroupTitle = () => {
 
@@ -53,9 +44,7 @@ export class _BoardApp extends Component {
     onAddCard = async (card, groupId) => {
         const { board } = this.props
         const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
-        // console.log('index', groupIdx)
         board.groups[groupIdx].cards.push(card)
-        // console.log('saving... new board', board.groups);
         await this.props.saveBoard(board)
         this.loadBoard()
     }
