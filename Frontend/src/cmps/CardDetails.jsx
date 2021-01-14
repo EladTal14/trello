@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ReactDOM from 'react-dom';
+
 import { CardHeader } from './CardHeader';
+import { CardInfo } from './CardInfo';
+
 import { saveBoard } from '../store/actions/boardAction.js'
 
 class _CardDetails extends Component {
 
   state = {
-    group: null,
-    card: null
+    card: null,
+    isAddOpen: false
   }
 
   componentDidMount() {
@@ -26,6 +29,8 @@ class _CardDetails extends Component {
 
     if (!domNode || !domNode.contains(event.target)) {
       this.sendUpdatedBoard()
+    } else if(this.state.isAddOpen) {
+      console.log('okey okey')
     }
   }
 
@@ -46,12 +51,34 @@ class _CardDetails extends Component {
 
   onHandleInputChange = ({ target }) => {
     const { value } = target
+    const { name } = target
+
     this.setState(prevState => ({
       card: {
         ...prevState.card,
-        title: value
+        [name]: value
       }
     }))
+  }
+
+  onHandleChecklistChange = (checklist) => {
+
+    this.setState(prevState => ({
+      card: {
+        ...prevState.card,
+        checklist: { ...checklist }
+      }
+    }), () => console.log('state whitecheklistchange', this.state))
+
+  }
+
+  openTodoAdd = () => {
+    this.setState(prevState => {
+      return {
+       ...prevState,
+       isAddOpen: !prevState.isAddOpen
+      }
+    })
   }
 
   render() {
@@ -75,94 +102,9 @@ class _CardDetails extends Component {
 
         <div className="card-details-wrapper flex column">
           <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} groupTitle={groupTitle} />
-{/* 
+
           <div className="card-content flex">
-
-            <div className="card-info">
-              <div className="members">
-                <h2>Members</h2>
-                <div className="member">BK</div>
-              </div>
-
-              <div className="labels">
-                <h2>labels</h2>
-                <button className="label-btn">Done</button>
-              </div>
-
-              <div className="due-date-wrapper">
-                <h2>due date</h2>
-                <p className="due-date">Jan 4 at 3:33</p>
-              </div>
-
-              <div className="description">
-                <h2>Description</h2>
-                <textarea
-                  className="desc-textarea my-input"
-                  type="text"
-                  name="description"
-                  value={card.title}
-                  onChange={this.onHandleInputChange}
-                  placeholder={card.title}
-                />
-              </div>
-
-              <div className="checklist flex column">
-                <div className="checklist-header flex">
-                  <span>L </span>
-                  <input
-                    className="my-input"
-                    type="text"
-                    name="checklist"
-                    placeholder="Checklist"
-                    value={card.title}
-                    onChange={this.onHandleInputChange}
-                  />
-                </div>
-                <div className="progress-bar"><div style={{ width: "40%" }}></div></div>
-                <div className="checklist-todo flex">
-                  <input
-                    type="checkbox"
-                  />
-                  <input
-                    className="add-todo-input my-input"
-                    type="text"
-                    name="todo"
-                    placeholder="Add an item"
-                    value={card.title}
-                    onChange={this.onHandleInputChange}
-                  />
-                  <button>✕</button>
-                </div>
-                <button className="add-todo">Add todo</button>
-              </div>
-
-              <div className="activity-container">
-                <div className="activity-header">
-                  <span>L </span>
-                  <span>Activity</span>
-                </div>
-                <div className="flex">
-                  <div className="member">BK</div>
-                  <textarea
-                    className="activity-textarea"
-                    type="text"
-                    name="activity"
-                    value={card.title}
-                    onChange={this.onHandleInputChange}
-                    placeholder={card.title}
-                  />
-                </div>
-                <div className="activity-comment-wrapper flex">
-                  <div className="member">BK</div>
-                  <div className="activity-comment">
-                    <p>comment area this is the</p>
-                    <span>Time </span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
+            <CardInfo card={card} onHandleChecklistChange={this.onHandleChecklistChange} onHandleInputChange={this.onHandleInputChange} openTodoAdd={this.openTodoAdd} />
             <div className="card-side flex column">
               <button className="side-btn"><span>L</span> Members</button>
               <button className="side-btn"><span>L</span> Labels</button>
@@ -172,7 +114,7 @@ class _CardDetails extends Component {
               <button className="side-btn"><span>L</span> Delete</button>
             </div>
 
-          </div> */}
+          </div>
 
 
         </div>
