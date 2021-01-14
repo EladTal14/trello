@@ -58,18 +58,6 @@ export class _BoardApp extends Component {
 
     render() {
         const { board } = this.props
-<<<<<<< HEAD
-        console.log('board', board);
-        const load = <p>Loading...</p>
-        return (!board ? load :
-            <section className="board-container">
-                <BoardHeader title={board.title} members={board.members} />
-                < GroupAdd onAddGroup={this.onAddGroup} />
-                <DragDropContext>
-                    <GroupList groups={board.groups} onAddCard={this.onAddCard} onDragCard={this.onDragCard} />
-                </DragDropContext>
-            </section>
-=======
         if (!board) return <p>Loading...</p>
         return (
             <>
@@ -88,7 +76,6 @@ export class _BoardApp extends Component {
                     </DragDropContext>
                 </section>
             </>
->>>>>>> c35931349dbd81e6c10dde0c7b9cb7dcef3d19d5
         )
     }
 }
