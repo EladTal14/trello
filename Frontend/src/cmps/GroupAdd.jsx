@@ -49,7 +49,7 @@ export class GroupAdd extends Component {
             {isAddOpen &&
                 <form onSubmit={this.onSaveGroup}>
                     <input type="text" name="title" value={group.title} onChange={this.handleInput}
-                        className="my-input" placeholder="Enter group title..." autoFocus />
+                        className="my-input" placeholder="Enter group title..." autoFocus autoComplete="off"/>
                     <button className="submit-group-btn">Add group</button>
                 </form>
             }

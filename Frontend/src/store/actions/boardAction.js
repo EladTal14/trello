@@ -37,15 +37,25 @@ export function saveBoard(board) {
     }
 }
 
-export function removeBoard(boardId) {
+// export function removeBoard(boardId) {
+//     return async (dispatch) => {
+//         await boardService.remove(boardId)
+//         const action = {
+//             type: 'REMOVE_BOARD',
+//             boardId
+//         }
+//         dispatch(action)
+
+//     }
+// }
+
+export function updateGroups(groups) {
     return async (dispatch) => {
-        await boardService.remove(boardId)
         const action = {
-            type: 'REMOVE_BOARD',
-            boardId
+            type: 'UPDATE_GROUPS',
+            groups
         }
         dispatch(action)
 
     }
 }
-

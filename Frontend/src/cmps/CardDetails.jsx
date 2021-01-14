@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import ReactDOM from 'react-dom';
 import { CardHeader } from './CardHeader';
-// import {boardService} from '../services/boardService.js'
+import { saveBoard } from '../store/actions/boardAction.js'
 
-export class CardDetails extends Component {
+class _CardDetails extends Component {
 
   state = {
+    group: null,
     card: null
   }
 
@@ -21,19 +23,25 @@ export class CardDetails extends Component {
 
   handleClickOutside = event => {
     const domNode = ReactDOM.findDOMNode(this);
+
     if (!domNode || !domNode.contains(event.target)) {
-      // console.log('send the card')
+      this.sendUpdatedBoard()
     }
   }
 
-  updateCard = async (card, groupId) => {
-    // const { board } = this.props
-    // const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
-    // console.log('index', groupIdx)
-    // board.groups[groupIdx].cards.push(card)
-    // console.log('saving... new board', board.groups);
-    // await this.props.saveBoard(board)
-    // this.loadBoard()
+  sendUpdatedBoard = () => {
+    const { board } = this.props
+    const { group } = this.props
+    const { card } = this.state
+    const boardCopy = { ...board }
+    const groupCopy = { ...group }
+
+    const cardIdx = groupCopy.cards.findIndex((card) => card.id === this.state.card.id)
+    groupCopy.cards[cardIdx] = card
+
+    const groupIdx = boardCopy.groups.findIndex((currGroup) => currGroup.id === group.id)
+    boardCopy.groups[groupIdx] = groupCopy
+    this.props.saveBoard(boardCopy)
   }
 
   onHandleInputChange = ({ target }) => {
@@ -43,7 +51,7 @@ export class CardDetails extends Component {
         ...prevState.card,
         title: value
       }
-    }), () => console.log(this.state.card))
+    }))
   }
 
   render() {
@@ -67,7 +75,7 @@ export class CardDetails extends Component {
 
         <div className="card-details-wrapper flex column">
           <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} groupTitle={groupTitle} />
-
+{/* 
           <div className="card-content flex">
 
             <div className="card-info">
@@ -164,7 +172,7 @@ export class CardDetails extends Component {
               <button className="side-btn"><span>L</span> Delete</button>
             </div>
 
-          </div>
+          </div> */}
 
 
         </div>
@@ -173,12 +181,17 @@ export class CardDetails extends Component {
   }
 }
 
-// const mapStateToProps = (state) => ({
+const mapStateToProps = state => {
+  return {
+    board: state.boardModule.currBoard,
+  }
+}
 
-// })
+const mapDispatchToProps = {
+  // loadBoard,
+  saveBoard,
+}
 
-// const mapDispatchToProps = {
 
-// }
 
-// export const CardEdit = connect(mapStateToProps, mapDispatchToProps)(CardEdit)
+export const CardDetails = connect(mapStateToProps, mapDispatchToProps)(_CardDetails);

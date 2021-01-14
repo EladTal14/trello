@@ -9,7 +9,8 @@ export const boardService = {
     remove,
     save,
     getBoardById,
-    getGroupIdxById
+    getGroupIdxById,
+    getUpdatedGroups
 
 }
 
@@ -52,6 +53,18 @@ async function getGroupIdxById(boardId, groupId) {
     const groupIdx = board.groups.findIndex(group => group.id === groupId)
     console.log('index', groupIdx)
     return groupIdx
+}
+
+function getUpdatedGroups(oldGroups, newGroups){
+    const updatedGroups = oldGroups.filter(oldGroup => {
+       return newGroups.map(newGroup => {
+            if(newGroup.id === oldGroup.id) return newGroup
+            else return oldGroup
+        })
+    })
+    console.log('updatedGroups', updatedGroups)
+    return updatedGroups
+    
 }
 
 
