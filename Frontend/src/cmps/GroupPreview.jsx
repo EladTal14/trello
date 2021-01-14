@@ -11,8 +11,8 @@ export function GroupPreview({ group, idx, onAddCard }) {
                 <div {...provided.draggableProps} ref={provided.innerRef}>
                     <div className="group-preview" {...provided.dragHandleProps}>
                         <GroupTitle group={group} />
-                        <CardList cards={group.cards} id={idx} group={group} grpTitle={group.title} groupId={group.id} />
-                        <CardAdd groupId={group.id} onAddCard={onAddCard} />
+                        <CardList cards={group.cards} id={idx} group={group} grpTitle={group.title} groupId={group.id} onAddCard={onAddCard} />
+                        {/* <CardAdd groupId={group.id} onAddCard={onAddCard} /> */}
                     </div>
                 </div>
             )}

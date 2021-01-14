@@ -1,7 +1,7 @@
 import { CardPreview } from './CardPreview.jsx'
 import { Droppable } from 'react-beautiful-dnd'
-
-export function CardList({ cards, id, groupTitle, group }) {
+import { CardAdd } from './CardAdd';
+export function CardList({ cards, id, groupTitle, group, onAddCard }) {
     const getListStyle = isDraggingOver => ({
         padding: 5,
         width: 245,
@@ -22,6 +22,7 @@ export function CardList({ cards, id, groupTitle, group }) {
                     </div>
                 )}
             </Droppable>
+            <CardAdd groupId={group.id} onAddCard={onAddCard} />
         </article >
     )
 }

@@ -14,8 +14,11 @@
 @import "cmps/CardPreview.scss";
 @import "cmps/CardDetails.scss";
 @import "pages/BoardApp.scss";
+@import "cmps/BoardHeader.scss";
+@import "cmps/CardList";
+@import "cmps/GroupPreview";
+@import "cmps/CardAdd";
 // @import "components/cat-card.scss";
-
 .App {
   height: 100vh;
 }

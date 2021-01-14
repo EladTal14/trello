@@ -5,17 +5,15 @@
     border-radius: 7px;
 }
 
-.card-preview{
+.card-preview {
     // background-color: $clr1;
     padding: 5px;
     margin: 10px 5px;
     border-radius: 7px;
 }
 
-.label-conyainer{
-    
-
-    .card-label{
+.label-conyainer {
+    .card-label {
         max-width: 42px;
         min-width: 42px;
         height: 8px;
@@ -25,7 +23,7 @@
         transition: text-overflow 0.8s;
         -webkit-font-smoothing: antialiased;
     }
-    .card-label-open{
+    .card-label-open {
         width: 60px;
         font-size: rem(12px);
         color: white;
@@ -36,15 +34,14 @@
         transition: text-overflow 0.8s;
         text-overflow: ellipsis;
         white-space: nowrap;
-        -webkit-font-smoothing: antialiased
+        -webkit-font-smoothing: antialiased;
     }
 }
 
-.card-extras-container{
+.card-extras-container {
     align-items: center;
-    .members-container{
-        
-        .member{
+    .members-container {
+        .member {
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -53,20 +50,18 @@
         }
     }
 
-    .date-container:hover{
+    .date-container:hover {
         // background-color: ;
     }
-    
-    .date{
+
+    .date {
         font-size: 12px;
         margin-left: 10px;
     }
 
-    img{
+    img {
         width: 15px;
         height: 15px;
         opacity: 0.7;
     }
-
 }
-
