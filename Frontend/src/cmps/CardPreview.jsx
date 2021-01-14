@@ -15,7 +15,6 @@ export class CardPreview extends Component {
         const { card, index, groupTitle, group } = this.props
         return (
             <div className="card-preview">
-                {/* <div className="card-preview"> */}
                 {this.state.isDetailsShown &&
                     <React.Fragment>
                         <div className="modalcover" onClick={(ev) => this.toggleDetails(ev, true)}> </div>
