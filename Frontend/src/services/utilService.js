@@ -16,15 +16,13 @@ function getRandomInt(min, max) {
 function makeId(length = 3) {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
   for (var i = 0; i < length; i++) {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   }
-
   return text;
 }
 
-function createTime(){
+function createTime() {
   var timeNow = new Date();
   var hours = timeNow.getHours();
   var minutes = timeNow.getMinutes();
@@ -37,17 +35,16 @@ function createTime(){
 
 function getDueDate(timeStamp) {
   var stampDate = new Date(timeStamp);
-  const allMonths = ["Jan","Feb","Mar","Apr",
-  "May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+  const allMonths = ["Jan", "Feb", "Mar", "Apr",
+    "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
   const month = allMonths[stampDate.getMonth()]
   const day = stampDate.getDate()
   const date = `${month} ${day}`
-  return date 
+  return date
 }
 
-function convertName(fullname){
+function convertName(fullname) {
   const names = fullname.split(' ')
   const letterName = names[0][0].toUpperCase() + names[1][0].toUpperCase()
-  console.log('name', letterName)
   return letterName
 }

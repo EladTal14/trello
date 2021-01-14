@@ -9,7 +9,7 @@ export function CardList({ cards, id, groupTitle, group, onAddCard }) {
     })
     if (!cards) return <div>Loading Cards...</div>
     return (
-        <article className="card-list">
+        <div className="card-list">
             <Droppable droppableId={group.id} type="card">
                 {(provided, snapshot) => (
                     <div ref={provided.innerRef} style={getListStyle(snapshot.isDraggingOver)}
@@ -23,6 +23,6 @@ export function CardList({ cards, id, groupTitle, group, onAddCard }) {
                 )}
             </Droppable>
             <CardAdd groupId={group.id} onAddCard={onAddCard} />
-        </article >
+        </div >
     )
 }

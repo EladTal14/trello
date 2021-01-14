@@ -19,52 +19,74 @@ export const boardService = {
 const baseUrl = 'http://localhost:3030/board';
 
 async function query() {
-    const res = await axios.get(baseUrl);
-    console.log(res.data);
-    return res.data;
-    // return gBoard.board
+    try {
+        const res = await axios.get(baseUrl);
+        return res.data;
+
+    } catch (err) {
+        console.log('err boardService QUERY BOARD', err);
+    }
 }
 
 async function remove(boardId) {
-    return await axios.delete(`${baseUrl}/${boardId}`)
+    try {
+        return await axios.delete(`${baseUrl}/${boardId}`)
+
+    } catch (err) {
+        console.log('err boardService REMOVE BOARD', err);
+    }
 }
 
 
 async function save(board) {
-    if (board._id) {
-        const res = await axios.put(`${baseUrl}/${board._id}`, board)
-        const savedBoard = res.data;
-        return savedBoard;
-    }
-    else {
-        const res = await axios.post(`${baseUrl}`, board);
-        const savedBoard = res.data;
-        return savedBoard;
+    try {
+        if (board._id) {
+            const res = await axios.put(`${baseUrl}/${board._id}`, board)
+            const savedBoard = res.data;
+            return savedBoard;
+        }
+        else {
+            const res = await axios.post(`${baseUrl}`, board);
+            const savedBoard = res.data;
+            return savedBoard;
+        }
+    } catch (err) {
+        console.log('err boardService SAVE BOARD', err);
     }
 }
 
 async function getBoardById(boardId) {
-    const res = await axios.get(`${baseUrl}/${boardId}`);
-    return res.data;
+    try {
+        const res = await axios.get(`${baseUrl}/${boardId}`);
+        return res.data;
+    } catch (err) {
+        console.log('err boardService GET BOARD BY ID', err);
+    }
 }
 
 async function getGroupIdxById(boardId, groupId) {
-    const board = await getBoardById(boardId)
-    const groupIdx = board.groups.findIndex(group => group.id === groupId)
-    console.log('index', groupIdx)
-    return groupIdx
+    try {
+        const board = await getBoardById(boardId)
+        const groupIdx = board.groups.findIndex(group => group.id === groupId)
+        return groupIdx
+
+    } catch (err) {
+        console.log('err boardService GET GROUP IDX BY ID', err);
+    }
 }
 
-function getUpdatedGroups(oldGroups, newGroups){
-    const updatedGroups = oldGroups.filter(oldGroup => {
-       return newGroups.map(newGroup => {
-            if(newGroup.id === oldGroup.id) return newGroup
-            else return oldGroup
+function getUpdatedGroups(oldGroups, newGroups) {
+    try {
+        const updatedGroups = oldGroups.filter(oldGroup => {
+            return newGroups.map(newGroup => {
+                if (newGroup.id === oldGroup.id) return newGroup
+                else return oldGroup
+            })
         })
-    })
-    console.log('updatedGroups', updatedGroups)
-    return updatedGroups
-    
+        return updatedGroups
+    } catch (err) {
+        console.log('err boardService GET UPDATE GROUPS', err);
+    }
 }
 
 

@@ -8,9 +8,11 @@ export const cardService = {
   query
 }
 
-function query() {
-  return axios.get(BASE_URL)
-    .then((res) => {
-      return res.data
-    })
+async function query() {
+  try {
+    const res = await axios.get(BASE_URL);
+    return res.data;
+  } catch (err) {
+    console.log('err cardService QUERY CARD', err);
+  }
 }

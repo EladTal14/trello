@@ -33,7 +33,7 @@ export class CardPreview extends Component {
                     </React.Fragment>}
                 <Draggable key={card.id} draggableId={card.id} index={index}>
                     {(provided, snapshot) => (
-                        <div className="card-preview"
+                        <article className="card-preview"
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
@@ -43,7 +43,7 @@ export class CardPreview extends Component {
                             <CardPreviewLable card={card} />
                             {card.title}
                             <CardPreviewButtom card={card} />
-                        </div>
+                        </article>
                     )}
 
                 </Draggable>
