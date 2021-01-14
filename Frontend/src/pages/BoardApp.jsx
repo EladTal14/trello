@@ -56,7 +56,7 @@ export class _BoardApp extends Component {
         const load = <p>Loading...</p>
         return (!board ? load :
             <section className="board-container">
-                <BoardHeader title={board.title} />
+                <BoardHeader title={board.title} members={board.members} />
                 < GroupAdd onAddGroup={this.onAddGroup} />
                 <DragDropContext>
                     <GroupList groups={board.groups} onAddCard={this.onAddCard} onDragCard={this.onDragCard} />

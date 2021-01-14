@@ -33,6 +33,6 @@ export function CardList({ cards, id, groupTitle, group }) {
 const getListStyle = isDraggingOver => ({
     background: isDraggingOver ? "lightblue" : "lightgrey",
     padding: 5,
-    width: 230,
+    width: 260,
 
 });

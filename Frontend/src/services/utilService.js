@@ -1,7 +1,9 @@
 export const utilService = {
   getRandomInt,
   makeId,
-  createTime
+  createTime,
+  getDueDate,
+  convertName
 }
 
 
@@ -31,4 +33,21 @@ function createTime(){
   timeString += ((minutes < 10) ? ":0" : ":") + minutes;
   timeString += ((seconds < 10) ? ":0" : ":") + seconds;
   return timeString;
+}
+
+function getDueDate(timeStamp) {
+  var stampDate = new Date(timeStamp);
+  const allMonths = ["Jan","Feb","Mar","Apr",
+  "May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+  const month = allMonths[stampDate.getMonth()]
+  const day = stampDate.getDate()
+  const date = `${month} ${day}`
+  return date 
+}
+
+function convertName(fullname){
+  const names = fullname.split(' ')
+  const letterName = names[0][0].toUpperCase() + names[1][0].toUpperCase()
+  console.log('name', letterName)
+  return letterName
 }

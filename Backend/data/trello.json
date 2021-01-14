@@ -15,6 +15,11 @@
           "_id": "u101",
           "fullname": "Tal Tarablus",
           "imgUrl": "https://www.google.com"
+        },
+        {
+          "_id": "u102",
+          "fullname": "Abi Bamia",
+          "imgUrl": "https://www.google.com"
         }
       ],
       "groups": [
@@ -29,21 +34,6 @@
             {
               "id": "c102",
               "title": "Add Samples"
-<<<<<<< HEAD
-=======
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
-            },
-            {
-              "title": "vjfjfj",
-              "id": "eTa"
->>>>>>> fcd2ab08fe9521983a7741174a309e6eee1b6f62
             }
           ],
           "style": {}
@@ -53,15 +43,12 @@
           "title": "In Progress",
           "cards": [
             {
-              "id": "c103",
-              "title": "Do that"
-<<<<<<< HEAD
+              "id": "c1089",
+              "title": "eat cupcake"
             },
             {
               "id": "c1089sdasd",
               "title": "Go to sleep"
-=======
->>>>>>> b7b2f728dbdfc657ef7064bd29b87ad02cff3551
             },
             {
               "id": "c104",
@@ -104,7 +91,12 @@
                 {
                   "id": "101",
                   "title": "done",
-                  "color": "#61BD4F"
+                  "color": "#54e346"
+                },
+                {
+                  "id": "102",
+                  "title": "not done",
+                  "color": "#ff4646"
                 }
               ],
               "createdAt": 1590999730348,
@@ -118,16 +110,6 @@
               "style": {
                 "bgColor": "#26DE81"
               }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-=======
->>>>>>> fcd2ab08fe9521983a7741174a309e6eee1b6f62
->>>>>>> b7b2f728dbdfc657ef7064bd29b87ad02cff3551
             }
           ],
           "style": {}
@@ -137,13 +119,10 @@
           "title": "Done",
           "cards": [
             {
-<<<<<<< HEAD
-              "id": "c1089",
-              "title": "eat cupcake"
+              "id": "c103",
+              "title": "Do that"
             },
             {
-=======
->>>>>>> b7b2f728dbdfc657ef7064bd29b87ad02cff3551
               "id": "c10894",
               "title": "eat soup",
               "description": "3 cups of oil",
@@ -186,56 +165,9 @@
               "style": {
                 "bgColor": "#26DE81"
               }
-            },
-            {
-<<<<<<< HEAD
-              "title": "hhh",
-              "id": "9O6"
             }
           ],
           "style": {}
-        },
-        {
-          "title": "cvxcv",
-          "id": "r8N",
-          "cards": []
-        },
-        {
-          "title": "cxvxcv",
-          "id": "ONV",
-          "cards": []
-=======
-              "id": "c1089",
-              "title": "eat cupcake"
-<<<<<<< HEAD
-            }
-          ],
-          "style": {}
-=======
-            },
-            {
-              "title": "hhh",
-              "id": "9O6"
-            }
-          ],
-          "style": {}
-        },
-        {
-          "title": "pitot",
-          "id": "tm9",
-          "cards": [
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep.. . in next month"
-            }
-          ]
-        },
-        {
-          "title": "mmmmmm",
-          "id": "n0S",
-          "cards": []
->>>>>>> fcd2ab08fe9521983a7741174a309e6eee1b6f62
->>>>>>> b7b2f728dbdfc657ef7064bd29b87ad02cff3551
         }
       ],
       "activities": [

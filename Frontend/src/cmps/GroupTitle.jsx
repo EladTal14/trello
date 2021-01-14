@@ -6,23 +6,19 @@ import { connect } from 'react-redux'
 export class _GroupTitle extends Component {
 
     state = {
+        groupIdx: null,
         group: {
-            title: this.props.group.title
+            title: this.props.group.title,
+
         }
     }
 
-
-    // onSaveGroup = (ev) => {
-    //     ev.preventDefault()
-    //     const group = { title: this.state.group.title, id: utilService.makeId() }
-    //     console.log('saving new group...', group)
-    //     this.props.onAddGroup(group)
-    //     this.setState(
-    //         {
-    //             group: { title: '' },
-    //             isAddOpen: false
-    //         })
-    // }
+    componentDidMount() {
+        const groupId = this.props.group.id
+        const { board } = this.props
+        const groupIdx = board.groups.findIndex(group => group.id === groupId)
+        this.setState({ groupIdx })
+    }
 
     handleInput = ({ target }) => {
         const { name } = target
@@ -35,16 +31,14 @@ export class _GroupTitle extends Component {
                 }
             }
         })
-        this.onSaveTitle()
     }
 
-    onSaveTitle = async () => {
-        const groupId = this.props.group.groupId
-        const title = this.state.group
+    onSaveTitle = async (ev) => {
+        ev.preventDefault()
         const { board } = this.props
-        const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
+        const { title } = this.state.group
         const boardCopy = { ...board }
-        boardCopy.groups[groupIdx].title = title
+        boardCopy.groups[this.state.groupIdx].title = title
         await this.props.saveBoard(boardCopy)
     }
 
@@ -52,8 +46,10 @@ export class _GroupTitle extends Component {
     render() {
         const { group } = this.state
         return <section className="group-title">
-                    <input type="text" name="title" value={group.title} onChange={this.handleInput}
-                        className="my-input" placeholder="Enter group title..." autoComplete="off"/>
+            <form onBlur={this.onSaveTitle}>
+                <input type="text" name="title" value={group.title} onChange={this.handleInput}
+                    className="my-input" placeholder="Enter group title..." autoComplete="off" />
+            </form>
         </section>
     }
 }
