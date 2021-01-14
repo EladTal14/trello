@@ -71,7 +71,6 @@ export class _BoardApp extends Component {
                                 {(provided) => (
                                     <div ref={provided.innerRef} {...provided.droppableProps}>
                                         <GroupList groups={board.groups} onAddCard={this.onAddCard} />
-                                        <div>hello</div>
                                         {provided.placeholder}
                                     </div>
                                 )}
