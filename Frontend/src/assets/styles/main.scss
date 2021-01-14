@@ -20,16 +20,17 @@
   height: 100vh;
 }
 
-.my-input{
+.my-input {
   border: none;
   background-color: unset;
 }
 
-.my-input:focus{
+.my-input:focus {
   background-color: white;
   outline: 2px solid rgb(46, 140, 228);
 }
 
-.board-preview{
-  background-color: lightcoral
+.board-preview {
+  background-color: lightcoral;
 }
+// FOR CHKS
