@@ -6,6 +6,7 @@
   bottom: 1rem;
   width: 80%;
   transform: translateX(-50%);
+  overflow-y:scroll;
 
   & textarea {
     resize: none;
