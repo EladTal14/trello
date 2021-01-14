@@ -5,9 +5,68 @@
     border-radius: 7px;
 }
 
-.card-preview {
+.card-preview{
     // background-color: $clr1;
-    padding: 10px 5px;
+    padding: 5px;
     margin: 10px 5px;
     border-radius: 7px;
 }
+
+.label-conyainer{
+    
+
+    .card-label{
+        max-width: 42px;
+        min-width: 42px;
+        height: 8px;
+        margin: 0 4px 4px 0;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: text-overflow 0.8s;
+        -webkit-font-smoothing: antialiased;
+    }
+    .card-label-open{
+        width: 60px;
+        font-size: rem(12px);
+        color: white;
+        font-weight: bold;
+        margin: 0 4px 4px 0;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: text-overflow 0.8s;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        -webkit-font-smoothing: antialiased
+    }
+}
+
+.card-extras-container{
+    align-items: center;
+    .members-container{
+        
+        .member{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            line-height: 30px;
+            margin-left: 5px;
+        }
+    }
+
+    .date-container:hover{
+        // background-color: ;
+    }
+    
+    .date{
+        font-size: 12px;
+        margin-left: 10px;
+    }
+
+    img{
+        width: 15px;
+        height: 15px;
+        opacity: 0.7;
+    }
+
+}
+

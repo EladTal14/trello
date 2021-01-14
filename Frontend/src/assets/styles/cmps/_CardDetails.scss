@@ -6,6 +6,7 @@
   bottom: 1rem;
   width: 80%;
   transform: translateX(-50%);
+  overflow-y:scroll;
 
   & textarea {
     resize: none;
@@ -71,7 +72,7 @@
   }
 
   .checklist-todo {
-
+    margin-bottom: 4px;
     .add-todo-input {
       flex-grow: 1;
     }
@@ -97,3 +98,10 @@
   left: 0px;
   right: 0px;
 }
+
+// animation: progressBar 3s ease-in-out;
+// animation-fill-mode:both;     
+// @keyframes progressBar {
+// 0% { width: 0; }
+// 100% { width: 100%; }
+// }

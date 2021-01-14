@@ -15,10 +15,16 @@
           "_id": "u101",
           "fullname": "Tal Tarablus",
           "imgUrl": "https://www.google.com"
+        },
+        {
+          "_id": "u102",
+          "fullname": "Abi Bamia",
+          "imgUrl": "https://www.google.com"
         }
       ],
       "groups": [
         {
+<<<<<<< HEAD
           "id": "g103",
           "title": "Done",
           "cards": [
@@ -26,6 +32,46 @@
               "id": "c10894",
               "title": "eat soup",
               "description": "3 cups of oil",
+=======
+          "id": "g101",
+          "title": "Ideas",
+          "cards": [
+            {
+              "id": "c1089",
+              "title": "eat cupcake"
+            },
+            {
+              "id": "c102",
+              "title": "Add Samples"
+            },
+            {
+              "id": "c101",
+              "title": "Replace logo"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "id": "g102",
+          "title": "In Progress",
+          "cards": [
+            {
+              "id": "c104",
+              "title": "Help me",
+              "description": "description",
+              "comments": [
+                {
+                  "id": "ZdPnm",
+                  "txt": "a comment",
+                  "createdAt": 1590999817436,
+                  "byMember": {
+                    "_id": "u101",
+                    "fullname": "Tal Tarablus",
+                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                  }
+                }
+              ],
+>>>>>>> 22da887c97aee616710aabb182c01fcd370474e7
               "checklists": [
                 {
                   "id": "YEhmF",
@@ -51,7 +97,12 @@
                 {
                   "id": "101",
                   "title": "done",
-                  "color": "#61BD4F"
+                  "color": "#54e346"
+                },
+                {
+                  "id": "102",
+                  "title": "not done",
+                  "color": "#ff4646"
                 }
               ],
               "createdAt": 1590999730348,
@@ -65,6 +116,7 @@
               "style": {
                 "bgColor": "#26DE81"
               }
+<<<<<<< HEAD
             },
             {
               "id": "c104",
@@ -82,6 +134,28 @@
                   }
                 }
               ],
+=======
+            }
+          ],
+          "style": {}
+        },
+        {
+          "id": "g103",
+          "title": "In Progress",
+          "cards": [
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
+            },
+            {
+              "id": "c103",
+              "title": "Do that"
+            },
+            {
+              "id": "c10894",
+              "title": "eat soup",
+              "description": "3 cups of oil",
+>>>>>>> 22da887c97aee616710aabb182c01fcd370474e7
               "checklists": [
                 {
                   "id": "YEhmF",
@@ -121,6 +195,7 @@
               "style": {
                 "bgColor": "#26DE81"
               }
+<<<<<<< HEAD
             },
             {
               "title": "hhh",
@@ -194,6 +269,11 @@
             }
           ],
           "style": {}
+=======
+            }
+          ],
+          "style": {}
+>>>>>>> 22da887c97aee616710aabb182c01fcd370474e7
         }
       ],
       "activities": [
