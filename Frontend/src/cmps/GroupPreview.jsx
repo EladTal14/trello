@@ -12,7 +12,7 @@ export function GroupPreview({ group, idx, onAddCard }) {
         <div className="group-preview">
             {/* <h1 >{group.title}</h1> */}
             <GroupTitle group={group} />
-            <CardList cards={group.cards} id={idx} grpTitle={group.title} groupId={group.id} />
+            <CardList cards={group.cards} id={idx} group={group} grpTitle={group.title} groupId={group.id} />
             <CardAdd groupId={group.id} onAddCard={onAddCard} />
         </div>
     )

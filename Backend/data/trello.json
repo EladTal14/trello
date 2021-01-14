@@ -29,6 +29,17 @@
             {
               "id": "c102",
               "title": "Add Samples"
+<<<<<<< HEAD
+=======
+            },
+            {
+              "title": "gggg",
+              "id": "cMP"
+            },
+            {
+              "title": "vjfjfj",
+              "id": "eTa"
+>>>>>>> fcd2ab08fe9521983a7741174a309e6eee1b6f62
             }
           ],
           "style": {}
@@ -96,10 +107,13 @@
               "style": {
                 "bgColor": "#26DE81"
               }
+<<<<<<< HEAD
             },
             {
               "id": "c1089sdasd",
               "title": "Go to sleep"
+=======
+>>>>>>> fcd2ab08fe9521983a7741174a309e6eee1b6f62
             }
           ],
           "style": {}
@@ -155,9 +169,34 @@
             {
               "id": "c1089",
               "title": "eat cupcake"
+<<<<<<< HEAD
             }
           ],
           "style": {}
+=======
+            },
+            {
+              "title": "hhh",
+              "id": "9O6"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "title": "pitot",
+          "id": "tm9",
+          "cards": [
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep.. . in next month"
+            }
+          ]
+        },
+        {
+          "title": "mmmmmm",
+          "id": "n0S",
+          "cards": []
+>>>>>>> fcd2ab08fe9521983a7741174a309e6eee1b6f62
         }
       ],
       "activities": [
