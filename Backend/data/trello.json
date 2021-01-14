@@ -23,8 +23,8 @@
           "title": "Ideas",
           "cards": [
             {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
+              "id": "c101",
+              "title": "Replace logo"
             },
             {
               "id": "c102",
@@ -47,11 +47,7 @@
           "cards": [
             {
               "id": "c103",
-              "title": "Do that and that"
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
+              "title": "Do that"
             },
             {
               "id": "c104",
@@ -117,21 +113,6 @@
           "title": "Done",
           "cards": [
             {
-              "id": "c103",
-              "title": "Do that"
-            },
-            {
-              "title": "hhh",
-              "id": "9O6"
-            }
-          ],
-          "style": {}
-        },
-        {
-          "title": "basya",
-          "id": "HKM",
-          "cards": [
-            {
               "id": "c10894",
               "title": "eat soup",
               "description": "3 cups of oil",
@@ -176,25 +157,30 @@
               }
             },
             {
-              "title": "hhh and digi",
+              "id": "c1089",
+              "title": "eat cupcake"
+            },
+            {
+              "title": "hhh",
               "id": "9O6"
             }
           ],
           "style": {}
         },
         {
-          "title": "aaa",
-          "id": "yNQ",
+          "title": "pitot",
+          "id": "tm9",
           "cards": [
             {
-              "id": "c1089",
-              "title": "eat cupcake"
-            },
-            {
-              "title": "assa",
-              "id": "jEf"
+              "id": "c1089sdasd",
+              "title": "Go to sleep.. . in next month"
             }
           ]
+        },
+        {
+          "title": "mmmmmm",
+          "id": "n0S",
+          "cards": []
         }
       ],
       "activities": [
