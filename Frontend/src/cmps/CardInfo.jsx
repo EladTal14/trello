@@ -1,6 +1,7 @@
+import { utilService } from "../services/utilService"
 import { CardChecklist } from "./CardChecklist"
 
-export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, openTodoAdd }) {
+export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange }) {
 
   return (
     <div className="card-info">
@@ -8,8 +9,8 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
       {card.members && <div className="members">
         <h2>Members</h2>
         {card.members.map((member, idx) => {
-          //TODO: nice time stemp // member.fullname // find first show of space in regex
-          return <div key={idx} className="member">{member.fullname.charAt(1).toUpperCase()}</div>
+          //TODO: nice time stemp // 
+          return <div key={idx} className="member">{utilService.convertName(member.fullname)}</div>
         })}
       </div>}
 
@@ -38,8 +39,8 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
         />
       </div>
 
-      {card.checklist && <CardChecklist card={card} openTodoAdd={openTodoAdd} onHandleChecklistChange={onHandleChecklistChange} />}
-      
+      {card.checklist && <CardChecklist card={card} onHandleChecklistChange={onHandleChecklistChange} />}
+
       <div className="activity-container">
         <div className="activity-header">
           <span>L </span>

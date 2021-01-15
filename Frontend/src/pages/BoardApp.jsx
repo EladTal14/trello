@@ -4,16 +4,27 @@ import ScrollContainer from "react-indiana-drag-scroll"
 import { GroupList } from '../cmps/GroupList'
 import { BoardHeader } from '../cmps/BoardHeader'
 import { loadBoard, saveBoard } from '../store/actions/boardAction'
-import { DragDropContext, Droppable } from "react-beautiful-dnd"
-import { GroupAdd } from '../cmps/GroupAdd'
-import { boardService } from '../services/boardService'
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { GroupAdd } from '../cmps/GroupAdd';
+import { CardDetails } from '../cmps/CardDetails';
+import { boardService } from '../services/boardService';
+import { eventBusService } from '../services/eventBusService.js'
 
 export class _BoardApp extends Component {
 
-    componentDidMount() {
-        this.loadBoard()
+    state = {
+        isDetailsShown: false
     }
 
+    componentDidMount() {
+        this.loadBoard()
+        this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
+    }
+
+    componentWillUnmount() {
+        this.eventBusTerminate()
+    }
+    
     loadBoard = async () => {
         const { boardId } = this.props.match.params
         await this.props.loadBoard(boardId)
@@ -29,7 +40,6 @@ export class _BoardApp extends Component {
         const { board } = this.props
         await this.props.saveBoard(board)
     }
-
 
     onAddCard = async (card, groupId) => {
         const { board } = this.props
@@ -57,11 +67,22 @@ export class _BoardApp extends Component {
         this.onDragCard()
     }
 
+    toggleDetails = (isShown) => {
+        this.setState({ isDetailsShown: isShown })
+    }
+
     render() {
         const { board } = this.props
+        let { isDetailsShown } = this.state
         if (!board) return <p>Loading...</p>
         return (
             <>
+                {this.props.currCard && isDetailsShown &&
+                    <>
+                        <div className="modal-cover" onClick={() => this.toggleDetails(false)}> </div>
+                        <CardDetails card={this.props.currCard} group={this.props.currGroup} />
+                    </>}
+
                 <BoardHeader title={board.title} members={board.members} />
                 <GroupAdd onAddGroup={this.onAddGroup} />
                 <section className="board-container">
@@ -87,6 +108,8 @@ export class _BoardApp extends Component {
 const mapStateToProps = state => {
     return {
         board: state.boardModule.currBoard,
+        currCard: state.cardModule.currCard,
+        currGroup: state.cardModule.currGroup
         // filterBy: state.boardModule.filterBy,
         // loggedInUser: state.userModule.loggedInUser,
     }

@@ -15,11 +15,6 @@
           "_id": "u101",
           "fullname": "Tal Tarablus",
           "imgUrl": "https://www.google.com"
-        },
-        {
-          "_id": "u102",
-          "fullname": "Abi Bamia",
-          "imgUrl": "https://www.google.com"
         }
       ],
       "groups": [
@@ -67,8 +62,8 @@
             },
             {
               "id": "c104",
-              "title": "Help me",
-              "description": "description",
+              "title": "please help me bitch",
+              "description": "lielm1877",
               "comments": [
                 {
                   "id": "ZdPnm",
@@ -425,8 +420,19 @@
               }
             },
             {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
+              "title": "check about the presents",
+              "id": "rAL"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "title": "Done",
+          "id": "r71",
+          "cards": [
+            {
+              "id": "c101",
+              "title": "Replace logo okey"
             },
             {
               "title": "by decorations",
@@ -586,15 +592,15 @@
           "cards": [
             {
               "id": "c10894",
-              "title": "eat soup",
-              "description": "3 cups of oil",
+              "title": "eat soup a lot",
+              "description": "3 cups of oil and no",
               "checklist": {
                 "id": "YEhmF",
-                "title": "Checklist",
+                "title": "Checklist one check",
                 "todos": [
                   {
-                    "title": "To Do 1",
-                    "isDone": false,
+                    "title": "To Do 1scdscdss",
+                    "isDone": true,
                     "id": "212jX"
                   }
                 ]

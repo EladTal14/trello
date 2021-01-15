@@ -1,36 +1,24 @@
 import React, { Component } from 'react'
 import { Draggable } from "react-beautiful-dnd";
-import { CardDetails } from './CardDetails'
+import { connect } from 'react-redux'
+import { eventBusService } from '../services/eventBusService.js'
+import { setCard, setGroup } from '../store/actions/cardAction.js'
 import { CardPreviewLabel } from './CardPreviewLabel';
 import { CardPreviewBottom } from './CardPreviewBottom';
 
 
-export class CardPreview extends Component {
-    state = {
-        isDetailsShown: false,
-        isLableTitleShown: false
+export class _CardPreview extends Component {
+
+    onShowCard = (card, group) => {
+        this.props.setCard(card)
+        this.props.setGroup(group)
+        eventBusService.emit('show-details', true)
     }
-
-    toggleDetails = () => {
-        this.setState({ isDetailsShown: !this.state.isDetailsShown })
-    }
-
-    toggleLableTitle = (ev) => {
-        ev.stopPropagation()
-        this.setState({ isLableTitleShown: !this.state.isLableTitleShown })
-    }
-
-
 
     render() {
-        const { card, index, groupTitle, group } = this.props
+        const { card, index, group } = this.props
         return (
-            <div className="card-preview">
-                {this.state.isDetailsShown &&
-                    <React.Fragment>
-                        <div className="modalcover" onClick={(ev) => this.toggleDetails(ev, true)}> </div>
-                        <CardDetails card={card} group={group} groupTitle={groupTitle} />
-                    </React.Fragment>}
+            <div className="card-preview" onClick={() => this.onShowCard(card, group)}>
                 <Draggable key={card.id} draggableId={card.id} index={index}>
                     {(provided, snapshot) => (
                         <article className="card-preview"
@@ -38,7 +26,7 @@ export class CardPreview extends Component {
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                             style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
-                            onClick={() => this.toggleDetails('ev', false)}
+                        // onClick={() => this.toggleDetails('ev', false)}
                         >
                             <CardPreviewLabel card={card} />
                             {card.title}
@@ -65,3 +53,16 @@ const getItemStyle = (isDragging, draggableStyle) => ({
     // styles we need to apply on draggables
     ...draggableStyle
 });
+
+const mapStateToProps = state => {
+    return {
+        currCard: state.cardModule.currCard
+    }
+}
+
+const mapDispatchToProps = {
+    setCard,
+    setGroup
+}
+
+export const CardPreview = connect(mapStateToProps, mapDispatchToProps)(_CardPreview);
