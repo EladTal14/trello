@@ -276,7 +276,6 @@
       ],
       "groups": [
         {
-<<<<<<< HEAD
           "title": "dont forget a week befeore",
           "id": "r71",
           "cards": [
@@ -285,12 +284,6 @@
               "title": "Replace logo"
             },
             {
-=======
-          "id": "g101",
-          "title": "dont forget a week befeore",
-          "cards": [
-            {
->>>>>>> c16bcc0b9b6a7d3a540ced9b17bf6d9a2e928dee
               "id": "c104",
               "title": "invite friends",
               "description": "description",
@@ -356,7 +349,6 @@
               }
             },
             {
-<<<<<<< HEAD
               "id": "c1089sdasd",
               "title": "Go to sleep"
             },
@@ -372,12 +364,6 @@
           "title": "dont forget a week befeore",
           "cards": [
             {
-=======
-              "id": "c101",
-              "title": "Replace logo"
-            },
-            {
->>>>>>> c16bcc0b9b6a7d3a540ced9b17bf6d9a2e928dee
               "id": "c10894",
               "title": "eat soup",
               "description": "3 cups of oil",
@@ -427,39 +413,14 @@
           "style": {}
         },
         {
-<<<<<<< HEAD
           "id": "g104",
           "title": "Done ya",
           "cards": [
             {
-=======
-          "title": "Done",
-          "id": "r71",
-          "cards": [
-            {
-              "id": "c101",
-              "title": "Replace logo okey"
-            },
-            {
->>>>>>> c16bcc0b9b6a7d3a540ced9b17bf6d9a2e928dee
               "title": "by snacks from rami levi",
               "id": "GcS"
             },
             {
-<<<<<<< HEAD
-=======
-              "title": "by decorations",
-              "id": "9O6",
-              "description": "asasadsas"
-            }
-          ]
-        },
-        {
-          "id": "g104",
-          "title": "Done",
-          "cards": [
-            {
->>>>>>> c16bcc0b9b6a7d3a540ced9b17bf6d9a2e928dee
               "title": "By balloons",
               "id": "kzv"
             },
@@ -620,7 +581,6 @@
           "cards": [
             {
               "id": "c10894",
-<<<<<<< HEAD
               "title": "eat soup",
               "description": "3 cups of oil",
               "checklist": {
@@ -630,17 +590,6 @@
                   {
                     "title": "To Do 1",
                     "isDone": false,
-=======
-              "title": "eat soup a lot",
-              "description": "3 cups of oil and no",
-              "checklist": {
-                "id": "YEhmF",
-                "title": "Checklist one check",
-                "todos": [
-                  {
-                    "title": "To Do 1scdscdss",
-                    "isDone": true,
->>>>>>> c16bcc0b9b6a7d3a540ced9b17bf6d9a2e928dee
                     "id": "212jX"
                   }
                 ]
