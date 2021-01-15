@@ -1,9 +1,10 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { saveBoard } from '../../store/actions/boardAction.js'
-class _BoardColors extends Component {
 
-  colors = () => {
+class _BoardColors extends Component {
+  bgColors = () => {
+
     return [{ imgUrl: 'https://res.cloudinary.com/dxh5keaol/image/upload/v1610731294/blue_icz7cd.jpg' },
     { imgUrl: 'https://res.cloudinary.com/dxh5keaol/image/upload/v1610731552/yellow_acyunw.jpg' },
     { imgUrl: 'https://res.cloudinary.com/dxh5keaol/image/upload/v1610731568/yellow2_gakpte.jpg' },
@@ -15,15 +16,16 @@ class _BoardColors extends Component {
     { imgUrl: 'https://res.cloudinary.com/dxh5keaol/image/upload/v1610731759/gray-2_shnjdu.jpg' },
     { imgUrl: 'https://res.cloudinary.com/dxh5keaol/image/upload/v1610731294/blue_icz7cd.jpg' },]
   }
-  useImgForBgc = async (imgUrl) => {
+  getImgForBgc = async (imgUrl) => {
     const { currBoard } = this.props
     currBoard.style.backgroundImage = imgUrl
     await this.props.saveBoard(currBoard)
+    this.props.toggleMenu()
   }
   render() {
     return (
       <div className="board-colors">
-        {this.colors().map((color, idx) => { return <img key={idx} className="board-colors-grid" onClick={() => this.useImgForBgc(color.imgUrl)} src={color.imgUrl} alt="not good" /> })}
+        {this.bgColors().map((color, idx) => { return <img key={idx} className="board-colors-grid" onClick={() => this.getImgForBgc(color.imgUrl)} src={color.imgUrl} alt="not good" /> })}
       </div>
     )
   }

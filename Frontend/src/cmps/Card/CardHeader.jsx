@@ -1,6 +1,4 @@
-
 export function CardHeader({ card, onHandleInputChange, group }) {
-
   return (
     <div className="card-header">
       <div className="card-title-area flex">

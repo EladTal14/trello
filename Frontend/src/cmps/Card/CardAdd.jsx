@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import { utilService } from '../services/utilService.js'
+import { Component } from 'react'
+import { utilService } from '../../services/utilService.js'
 
 export class CardAdd extends Component {
-
     state = {
         isAddOpen: false,
         card: {
@@ -35,8 +34,7 @@ export class CardAdd extends Component {
 
     handleInput = ({ target }) => {
         const { name } = target
-        const value = target.value
-
+        const { value } = target
         this.setState(prevState => {
             return {
                 card: {
@@ -46,7 +44,6 @@ export class CardAdd extends Component {
             }
         })
     }
-
 
     render() {
         const { isAddOpen, card } = this.state

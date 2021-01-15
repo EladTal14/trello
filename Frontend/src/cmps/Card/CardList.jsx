@@ -5,6 +5,7 @@ export function CardList({ cards, id, groupTitle, group, onAddCard }) {
     const getListStyle = isDraggingOver => ({
         padding: 5,
         width: 245,
+        position: "relative",
         backgroundColor: (isDraggingOver) ? 'green' : 'unset'
     })
     if (!cards) return <div>Loading Cards...</div>

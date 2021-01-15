@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { Draggable } from "react-beautiful-dnd";
 import { connect } from 'react-redux'
-import { eventBusService } from '../services/eventBusService.js'
-import { setCard, setGroup } from '../store/actions/cardAction.js'
+import { eventBusService } from '../../services/eventBusService.js'
+import { setCard, setGroup } from '../../store/actions/cardAction.js'
 import { CardPreviewLabel } from './CardPreviewLabel';
 import { CardPreviewBottom } from './CardPreviewBottom';
 
@@ -42,15 +42,12 @@ export class _CardPreview extends Component {
 }
 
 const getItemStyle = (isDragging, draggableStyle) => ({
-    // some basic styles to make the items look a bit nicer
     userSelect: 'none',
     padding: 8,
     margin: `0 0 ${8}px 0`,
     borderRadius: '3px',
-    // change background colour if dragging
     background: isDragging ? 'red' : 'white',
-    transform: isDragging ? `rotate(20deg)` : null,
-    // styles we need to apply on draggables
+    transform: `rotate('20deg')`,
     ...draggableStyle
 });
 

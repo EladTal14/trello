@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import { cardService } from '../services/cardService'
+import { Component } from 'react'
+import { cardService } from '../../services/cardService'
 // import { on, emit } from '../services/eventBusService.js'
 
 export class CardChecklist extends Component {
-
   state = {
     checklist: null,
     isAddOpen: false,

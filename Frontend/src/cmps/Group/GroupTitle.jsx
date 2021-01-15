@@ -1,8 +1,6 @@
-import React, { Component } from 'react'
-import { loadBoard, saveBoard } from '../store/actions/boardAction'
-import { boardService } from '../services/boardService';
+import { Component } from 'react'
+import { loadBoard, saveBoard } from '../../store/actions/boardAction'
 import { connect } from 'react-redux'
-import ReactDOM from 'react-dom';
 export class _GroupTitle extends Component {
 
     state = {

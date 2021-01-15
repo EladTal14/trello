@@ -1,5 +1,5 @@
 import React from 'react'
-import { utilService } from '../services/utilService'
+import { utilService } from '../../services/utilService'
 
 export function CardPreviewBottom({ card }) {
 

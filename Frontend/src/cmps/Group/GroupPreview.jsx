@@ -1,7 +1,6 @@
 import React from 'react'
-import { CardList } from './CardList'
+import { CardList } from '../Card/CardList.jsx'
 import { Draggable } from "react-beautiful-dnd";
-import { CardAdd } from './CardAdd';
 import { GroupTitle } from './GroupTitle';
 
 export function GroupPreview({ group, idx, onAddCard }) {
@@ -14,7 +13,7 @@ export function GroupPreview({ group, idx, onAddCard }) {
                     <article className="group-preview" >
                         <div  {...provided.dragHandleProps} style={{ width: '110%', height: '1.175em' }}>
                         </div>
-                        <GroupTitle group={group} />
+                        <GroupTitle group={group} {...provided.dragHandleProps} />
                         <CardList cards={group.cards} id={idx} group={group} grpTitle={group.title} groupId={group.id} onAddCard={onAddCard} />
                         {/* <CardAdd groupId={group.id} onAddCard={onAddCard} /> */}
                     </article>

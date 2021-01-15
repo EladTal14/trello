@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 // TODO: moment.from()
 
 export class CardActivityContainer extends Component {
-
   state = {
     comments: null,
     newComment: '',
@@ -17,7 +16,6 @@ export class CardActivityContainer extends Component {
 
   onHandleCommentChange = ({ target }) => {
     const { value } = target
-
     if (value) this.onToggleIsSaveOpen(true)
     else this.onToggleIsSaveOpen(false)
 

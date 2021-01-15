@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ScrollContainer from "react-indiana-drag-scroll"
-import { GroupList } from '../cmps/GroupList'
-import { BoardHeader } from '../cmps/BoardHeader'
+import ScrollContainer from 'react-indiana-drag-scroll'
 import { loadBoard, saveBoard } from '../store/actions/boardAction'
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import { GroupAdd } from '../cmps/GroupAdd';
-import { CardDetails } from '../cmps/CardDetails';
-import { boardService } from '../services/boardService';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import { BoardHeader } from '../cmps/BoardHeader/BoardHeader'
+import { GroupList } from '../cmps/Group/GroupList'
+import { GroupAdd } from '../cmps/Group/GroupAdd'
+import { CardDetails } from '../cmps/Card/CardDetails'
+import { boardService } from '../services/boardService'
 import { eventBusService } from '../services/eventBusService.js'
 
 export class _BoardApp extends Component {
@@ -93,7 +93,6 @@ export class _BoardApp extends Component {
                                 {(provided) => (
                                     <div ref={provided.innerRef} {...provided.droppableProps}>
                                         <GroupList groups={board.groups} onAddCard={this.onAddCard} />
-
                                         {provided.placeholder}
                                     </div>
                                 )}

@@ -1,10 +1,9 @@
-import { utilService } from "../services/utilService"
+import { utilService } from "../../services/utilService"
 import { CardActivityContainer } from "./CardActivityContainer";
 import { CardChecklist } from "./CardChecklist"
 var moment = require('moment');
 
 export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, onHandleActivitiesChange }) {
-
   return (
     <div className="card-info">
 
@@ -42,9 +41,7 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
       </div>
 
       {card.checklist && <CardChecklist card={card} onHandleChecklistChange={onHandleChecklistChange} />}
-
       <CardActivityContainer card={card} onHandleActivitiesChange={onHandleActivitiesChange} />
-
     </div>
   )
 }

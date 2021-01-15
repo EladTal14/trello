@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
-import ReactDOM from 'react-dom';
-import { CardHeader } from './CardHeader';
-import { CardInfo } from './CardInfo';
-import { clearState } from '../store/actions/cardAction.js'
-import { saveBoard } from '../store/actions/boardAction.js'
-import { CardSide } from './CardSide';
+import ReactDOM from 'react-dom'
+import { CardHeader } from './CardHeader'
+import { CardInfo } from './CardInfo'
+import { clearState } from '../../store/actions/cardAction.js'
+import { saveBoard } from '../../store/actions/boardAction.js'
+import { CardSide } from './CardSide'
 // TODO: find a way to merge all handle inputs
 
 class _CardDetails extends Component {
-
   state = {
     card: null
   }
@@ -17,16 +16,15 @@ class _CardDetails extends Component {
   componentDidMount() {
     const { card } = this.props
     this.setState({ card })
-    document.addEventListener('click', this.handleClickOutside, true);
+    document.addEventListener('click', this.handleClickOutside, true)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click', this.handleClickOutside, true);
+    document.removeEventListener('click', this.handleClickOutside, true)
   }
 
   handleClickOutside = event => {
-    const domNode = ReactDOM.findDOMNode(this);
-
+    const domNode = ReactDOM.findDOMNode(this)
     if (!domNode || !domNode.contains(event.target)) {
       this.sendUpdatedBoard()
       this.props.clearState(null)
@@ -36,10 +34,8 @@ class _CardDetails extends Component {
   sendUpdatedBoard = () => {
     const { board, group } = this.props
     const { card } = this.state
-
     const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
     group.cards[cardIdx] = card
-
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
     this.props.saveBoard(board)
@@ -82,10 +78,8 @@ class _CardDetails extends Component {
 
     return (
       <div className="card-details flex justify-center align-center">
-
         <div className="card-details-wrapper flex column">
           <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
-
           <div className="card-content flex">
             <CardInfo
               card={card}
@@ -94,9 +88,7 @@ class _CardDetails extends Component {
               onHandleActivitiesChange={this.onHandleActivitiesChange}
             />
             <CardSide />
-
           </div>
-
         </div>
       </div>
     )
@@ -114,5 +106,4 @@ const mapDispatchToProps = {
   clearState
 }
 
-
-export const CardDetails = connect(mapStateToProps, mapDispatchToProps)(_CardDetails);
+export const CardDetails = connect(mapStateToProps, mapDispatchToProps)(_CardDetails)

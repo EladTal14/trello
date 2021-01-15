@@ -12,10 +12,9 @@ class _BoardPhotos extends Component {
   }
   useImgForBgc = async (imgUrl) => {
     const { currBoard } = this.props
-    // currBoard.style.backgroundImage = `url(${imgUrl})`
     currBoard.style.backgroundImage = imgUrl
     await this.props.saveBoard(currBoard)
-    // document.querySelector('.App').style.backgroundImage = `url(${imgUrl})`
+    this.props.toggleMenu()
   }
   render() {
     return (

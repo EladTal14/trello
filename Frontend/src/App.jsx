@@ -8,14 +8,13 @@ import { saveBoard } from './store/actions/boardAction'
 
 export function _App({ currBoard }) {
   return (
-    <div className="App" style={{ backgroundImage: `url(${(currBoard) ? currBoard.style.backgroundImage : ''})` }}>
+    <div className="App" style={{ backgroundImage: `url(${(currBoard) ? currBoard.style.backgroundImage : '#cccccc'})` }}>
       <AppHeader />
       <Switch>
         <Route component={BoardApp} path="/board/:boardId" />
         <Route component={Boards} path="/boards" />
         <Route component={Home} path="/" />
       </Switch>
-      {/* <AppFooter /> */}
     </div>
   );
 }

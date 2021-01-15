@@ -1,4 +1,3 @@
-
 const initialState = {
   currCard: null,
   currGroup: null
