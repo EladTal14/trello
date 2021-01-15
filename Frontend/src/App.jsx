@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppFooter } from './cmps/AppFooter';
+// import { AppFooter } from './cmps/AppFooter';
 import { AppHeader } from './cmps/AppHeader';
 import { Home } from './pages/Home';
 import { Boards } from './pages/Boards';
@@ -18,7 +18,7 @@ export function App() {
         <Route component={Boards} path="/boards" />
         <Route component={Home} path="/" />
       </Switch>
-      <AppFooter />
+      {/* <AppFooter /> */}
     </div>
   );
 }
