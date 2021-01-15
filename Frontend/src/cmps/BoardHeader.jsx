@@ -1,13 +1,35 @@
 import React, { Component } from 'react'
 import { BoardFilter } from './BoardFilter'
 import { utilService } from '../services/utilService'
-
+import { ChangeBackground } from './BoardHeader/ChangeBackground.jsx'
 export class BoardHeader extends Component {
+  state = {
+    isChanging: false
+  }
+  toggleMenu = () => {
+    const { current } = this.boardMenuVisibility
+    console.log(current.style.opacity);
+    console.log(current.style.visibility);
+    if (current.style.opacity === '0') {
+      current.style.opacity = '1'
+      current.style.visibility = 'visible'
+      current.style.width = '27vw'
 
-
+    }
+    else if (current.style.opacity === '1') {
+      current.style.opacity = '0'
+      current.style.visibility = 'hidden'
+      current.style.width = '1vw'
+    }
+    this.setState({ isChanging: false })
+  }
+  onChangeBackground = () => {
+    this.setState({ isChanging: !this.state.isChanging })
+  }
+  boardMenuVisibility = React.createRef()
   render() {
+    const { isChanging } = this.state
     const { title, members } = this.props
-    console.log('memebers...', members)
     return (
       <header className="board-header flex space-between">
         <div className="header-options flex">
@@ -30,7 +52,17 @@ export class BoardHeader extends Component {
           </div>
         </div>
         {/* <BoardFilter /> */}
-        <button className="menu-btn"><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
+        <div className="board-menu-screen" ref={this.boardMenuVisibility} style={{ opacity: '0', visibility: 'hidden' }}>
+          <div className="board-menu-header flex space-around">
+            <h3 className="board-menu-title">Menu</h3>
+            <h4 className="board-menu-close" onClick={this.toggleMenu}>X</h4>
+          </div>
+          {!isChanging && <button onClick={this.onChangeBackground}>Change Background</button>}
+          {isChanging && <ChangeBackground onChangeBackground={this.onChangeBackground} />}
+
+
+        </div>
+        <button className="menu-btn" onClick={this.toggleMenu}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
 
       </header>
     )
