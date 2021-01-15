@@ -1,0 +1,121 @@
+.board-header {
+    align-items: center;
+    padding: 0 10px;
+
+    .board-header-btn {
+        border-radius: 3px;
+        color: #172b4d;
+        cursor: pointer;
+        border: none;
+        height: 32px;
+        margin: 0 10px 4px;
+        max-width: 220px;
+        padding: 0 10px;
+        align-items: center;
+        background-color: rgba(34, 34, 34, 0.11);
+
+        &:hover {
+            background-color: rgba(34, 34, 34, 0.185);
+        }
+
+        h3 {
+            margin: 0;
+            margin-right: 10px;
+        }
+    }
+
+    .menu-btn {
+        width: 32px;
+        height: 32px;
+        background-color: unset;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        background-color: rgba(34, 34, 34, 0.11);
+
+        &:hover {
+            background-color: rgba(34, 34, 34, 0.185);
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .header-options {
+        align-items: center;
+    }
+    .header-members {
+        align-items: center;
+    }
+
+    .header-member {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        line-height: 30px;
+        margin-left: 5px;
+        border: 1px solid black;
+        text-align: center;
+        background-color: gray;
+    }
+
+    .add-member {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        line-height: 30px;
+        margin-left: 5px;
+        border: 1px solid black;
+        text-align: center;
+        background-color: gray;
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+        opacity: 0.8;
+    }
+
+    .board-title-form{
+
+        // max-width: 200px;
+        
+
+
+        .board-title-input {
+            color: #172b4d;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            font-family: 'montserrat', sans-serif;
+            font-weight: 700;
+            font-size: rem(22px);
+            margin: 8px 0 10px;
+            line-height: 32px;
+            padding: 0 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            height: 32px;
+            background-color: unset;
+            background-color: rgba(34, 34, 34, 0.11);
+
+            &:hover {
+                background-color: rgba(34, 34, 34, 0.185);
+            }
+          
+          }
+          
+          .board-title-input:focus {
+            background-color: white;
+            box-shadow: inset 0 0 0 2px #0079bf;
+            font-weight: 700;
+            font-size: rem(22px);
+            line-height: 32px;
+            padding: 0 12px;
+          }
+    }
+}
