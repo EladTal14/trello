@@ -411,10 +411,6 @@
               "title": "Go to sleep"
             },
             {
-              "title": "by snacks from rami levi",
-              "id": "GcS"
-            },
-            {
               "title": "by decorations",
               "id": "9O6",
               "description": "asasadsas"
@@ -423,8 +419,12 @@
         },
         {
           "id": "g104",
-          "title": "Done",
+          "title": "Done ya",
           "cards": [
+            {
+              "title": "by snacks from rami levi",
+              "id": "GcS"
+            },
             {
               "title": "By balloons",
               "id": "kzv"
