@@ -50,12 +50,13 @@ export function saveBoard(board) {
 //     }
 // }
 
-export function updateGroups(groups) {
-    return async (dispatch) => {
-        try {
-            dispatch({ type: 'UPDATE_GROUPS', groups })
-        } catch (err) {
-            console.log('err boardAction UPDATED GROUPS', err);
-        }
-    }
-}
+// export function updateGroups(groups) {
+//     return async (dispatch) => {
+//         try {
+//             dispatch({ type: 'UPDATE_GROUPS', groups })
+//         } catch (err) {
+//             console.log('err boardAction UPDATED GROUPS', err);
+//         }
+//     }
+// }
+

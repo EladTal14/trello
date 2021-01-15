@@ -19,6 +19,8 @@ export function boardReducer(state = initialState, action) {
       }
     case 'UPDATE_BOARD':
       return { ...state, currBoard: action.board }
+    case 'ADD_BOARD':
+      return { ...state, boards: [...state.boards, action.board], currBoard: action.board}
     case 'SAVE_BOARD':
       return {
         ...state, boards: state.boards.map(board => {

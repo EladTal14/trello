@@ -46,6 +46,11 @@ async function save(board) {
             return savedBoard;
         }
         else {
+            board.createdAt = Date.now()
+            board.groups = []
+            board.members = []
+            board.activities = []
+            board.style = { "backgroundColor": "#f44336" }
             const res = await axios.post(`${baseUrl}`, board);
             const savedBoard = res.data;
             return savedBoard;

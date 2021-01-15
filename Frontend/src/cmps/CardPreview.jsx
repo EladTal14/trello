@@ -29,7 +29,7 @@ export class _CardPreview extends Component {
                         // onClick={() => this.toggleDetails('ev', false)}
                         >
                             <CardPreviewLabel card={card} />
-                            {card.title}
+                            <pre>{card.title}</pre>
                             <CardPreviewBottom card={card} />
                         </article>
                     )}

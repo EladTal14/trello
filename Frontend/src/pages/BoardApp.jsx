@@ -73,6 +73,7 @@ export class _BoardApp extends Component {
 
     render() {
         const { board } = this.props
+        console.log('want to check if a new board is add', board);
         let { isDetailsShown } = this.state
         if (!board) return <p>Loading...</p>
         return (

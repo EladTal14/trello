@@ -9,7 +9,9 @@
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {},
+      "style": {
+        "backgroundColor": "#cd77e2"
+      },
       "members": [
         {
           "_id": "u101",
@@ -34,7 +36,7 @@
         },
         {
           "title": "sdfsdfsdf",
-          "id": "r71",
+          "id": "r74",
           "cards": [
             {
               "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
@@ -119,7 +121,7 @@
                 {
                   "id": "101",
                   "title": "done",
-                  "color": "#61BD4F"
+                  "color": "#rgb(82 160 66)"
                 }
               ],
               "createdAt": 1590999730348,
@@ -140,7 +142,7 @@
             },
             {
               "title": "vdfvdvxc",
-              "id": "fyV"
+              "id": "fyV4"
             },
             {
               "title": "esd;sd",
@@ -212,7 +214,7 @@
                 {
                   "id": "101",
                   "title": "done",
-                  "color": "#61BD4F"
+                  "color": "rgb(82 160 66)"
                 }
               ],
               "createdAt": 1590999730348,
@@ -256,7 +258,9 @@
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {},
+      "style": {
+        "backgroundColor": "#9088d4"
+      },
       "members": [
         {
           "_id": "u101",
@@ -320,7 +324,7 @@
                 {
                   "id": "101",
                   "title": "done",
-                  "color": "#61BD4F"
+                  "color": "rgb(82 160 66)"
                 }
               ],
               "createdAt": 1590999730348,
@@ -348,7 +352,7 @@
         },
         {
           "title": "Done ya",
-          "id": "r71",
+          "id": "r717",
           "cards": [
             {
               "title": "by snacks from rami levi",
@@ -399,12 +403,12 @@
                 {
                   "id": "101",
                   "title": "done",
-                  "color": "#61BD4F"
+                  "color": "rgb(82 160 66)"
                 },
                 {
                   "id": "102",
                   "title": "dont forget",
-                  "color": "#e05297"
+                  "color": "#c13790"
                 }
               ],
               "createdAt": 1590999730348,
@@ -428,7 +432,7 @@
         },
         {
           "title": "Done",
-          "id": "r71",
+          "id": "r71y",
           "cards": [
             {
               "id": "c101",
@@ -468,7 +472,9 @@
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {},
+      "style": {
+        "backgroundColor": "#b7efcd"
+      },
       "members": [
         {
           "_id": "u101",
@@ -539,17 +545,17 @@
                 {
                   "id": "101",
                   "title": "done",
-                  "color": "#61BD4F"
+                  "color": "rgb(82 160 66)"
                 },
                 {
                   "id": "102",
                   "title": "not important",
-                  "color": "#0079bf"
+                  "color": "rgb(4 108 169)"
                 },
                 {
                   "id": "103",
                   "title": "not done",
-                  "color": "#eb5a46"
+                  "color": "rgb(216 74 55)"
                 }
               ],
               "createdAt": 1590999730348,
@@ -600,7 +606,7 @@
                 "todos": [
                   {
                     "title": "To Do 1scdscdss",
-                    "isDone": true,
+                    "isDone": false,
                     "id": "212jX"
                   }
                 ]
@@ -617,7 +623,7 @@
                 {
                   "id": "101",
                   "title": "done",
-                  "color": "#61BD4F"
+                  "color": "rgb(82 160 66)"
                 }
               ],
               "createdAt": 1590999730348,
@@ -678,6 +684,42 @@
           }
         }
       ]
+    },
+    {
+      "title": "New Board",
+      "createdAt": 1610717090477,
+      "groups": [
+        {
+          "title": "check 111",
+          "id": "aOK",
+          "cards": [
+            {
+              "title": "gtk lalala eled",
+              "id": "wkA"
+            },
+            {
+              "title": "fimish ts",
+              "id": "7wI"
+            }
+          ]
+        },
+        {
+          "title": "check 111",
+          "id": "Zwr",
+          "cards": [
+            {
+              "title": "check\npre\nye",
+              "id": "J5q"
+            }
+          ]
+        }
+      ],
+      "members": [],
+      "activities": [],
+      "style": {
+        "backgroundColor": "#f44336"
+      },
+      "_id": "5HnrH0K"
     }
   ],
   "user": [
