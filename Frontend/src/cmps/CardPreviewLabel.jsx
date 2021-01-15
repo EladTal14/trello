@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class CardPreviewLable extends Component {
+export class CardPreviewLabel extends Component {
     state = {
         isLableTitleShown: false
     }
