@@ -18,6 +18,11 @@
         cursor: pointer;
         transition: text-overflow 0.8s;
         -webkit-font-smoothing: antialiased;
+        opacity: 0.8;
+
+        &:hover{
+            opacity: 1;
+        }
     }
     .card-label-open {
         width: 60px;
@@ -50,7 +55,7 @@
         // background-color: ;
     }
 
-    .date {
+    .date, .comment, .checklist{
         font-size: 12px;
         margin-left: 7px;
     }
@@ -61,7 +66,4 @@
         opacity: 0.7;
     }
 
-    .comment-container{
-        
-    }
 }

@@ -3,7 +3,8 @@ export const utilService = {
   makeId,
   createTime,
   getDueDate,
-  convertName
+  convertName,
+  getTodoProgress
 }
 
 
@@ -47,4 +48,15 @@ function convertName(fullname) {
   const names = fullname.split(' ')
   const letterName = names[0][0].toUpperCase() + names[1][0].toUpperCase()
   return letterName
+}
+
+function getTodoProgress(card) {
+  if (card.checklist) {
+    const { todos } = card.checklist
+    let doneTodos = todos.filter(todo => todo.isDone)
+    const progress = { total: todos.length, done: doneTodos.length }
+    return progress
+  }
+  else return
+
 }

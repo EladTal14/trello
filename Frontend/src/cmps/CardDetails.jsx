@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ReactDOM from 'react-dom';
-
 import { CardHeader } from './CardHeader';
 import { CardInfo } from './CardInfo';
-
-// import { eventBusService } from '../services/eventBusService.js'
 import { clearState } from '../store/actions/cardAction.js'
 import { saveBoard } from '../store/actions/boardAction.js'
+import { CardSide } from './CardSide';
+// TODO: find a way to merge all handle inputs
 
 class _CardDetails extends Component {
 
@@ -31,8 +30,6 @@ class _CardDetails extends Component {
     if (!domNode || !domNode.contains(event.target)) {
       this.sendUpdatedBoard()
       this.props.clearState(null)
-    } else {
-      console.log('okey okey')
     }
   }
 
@@ -60,32 +57,28 @@ class _CardDetails extends Component {
   }
 
   onHandleChecklistChange = (checklist) => {
-
     this.setState(prevState => ({
       card: {
         ...prevState.card,
         checklist: { ...checklist }
       }
-    }), () => console.log('state whitecheklistchange', this.state))
+    }))
+  }
 
+  onHandleActivitiesChange = (comments) => {
+    this.setState(prevState => ({
+      card: {
+        ...prevState.card,
+        comments: { ...comments }
+      }
+    }))
   }
 
   render() {
     const { card } = this.state
     const { group } = this.props
-    // const currGroup = this.props.currGroup
     if (!card) return <div>Loading...</div>
-    // let cardWithTxt = (
-    //   <input
-    //     className="title-input my-input"
-    //     type="text"
-    //     name="title"
-    //     value={card.title}
-    //     onChange={this.onHandleInputChange}
-    //     placeholder={card.title}
-    //   />
-    // )
-    // {cardWithTxt}
+    // let cardWithTxt = {}
 
     return (
       <div className="card-details flex justify-center align-center">
@@ -94,18 +87,15 @@ class _CardDetails extends Component {
           <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
 
           <div className="card-content flex">
-            <CardInfo card={card} onHandleChecklistChange={this.onHandleChecklistChange} onHandleInputChange={this.onHandleInputChange} />
-            <div className="card-side flex column">
-              <button className="side-btn"><span>L</span> Members</button>
-              <button className="side-btn"><span>L</span> Labels</button>
-              <button className="side-btn"><span>L</span> Checklist</button>
-              <button className="side-btn"><span>L</span> Due date</button>
-              <button className="side-btn"><span>L</span> Cover</button>
-              <button className="side-btn"><span>L</span> Delete</button>
-            </div>
+            <CardInfo
+              card={card}
+              onHandleChecklistChange={this.onHandleChecklistChange}
+              onHandleInputChange={this.onHandleInputChange}
+              onHandleActivitiesChange={this.onHandleActivitiesChange}
+            />
+            <CardSide />
 
           </div>
-
 
         </div>
       </div>

@@ -20,6 +20,7 @@
 @import "cmps/CardAdd";
 @import "cmps/GroupAdd";
 @import "cmps/ChangeBackground";
+@import "pages/Boards.scss";
 // @import "components/cat-card.scss";
 .App {
   height: 100vh;
@@ -35,8 +36,3 @@
 //   background-color: white;
 //   outline: 2px solid rgb(46, 140, 228);
 // }
-
-.board-preview {
-  background-color: lightcoral;
-}
-// FOR CHKS

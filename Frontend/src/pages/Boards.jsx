@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { BoardPreview } from '../cmps/BoardPreview'
-import { loadBoards } from '../store/actions/boardAction'
+import { loadBoards, saveBoard } from '../store/actions/boardAction'
 
 export class _Boards extends Component {
 
@@ -10,10 +10,11 @@ export class _Boards extends Component {
         this.props.loadBoards()
     }
 
-    // onRemove = (boardId) => {
-    //     this.props.removeBoard(boardId)
-
-    // }
+    addBoard = async () => {
+        const board = {title: 'New Board'}
+        await this.props.saveBoard(board)
+        this.props.history.push(`board/${this.props.board._id}`)
+    }
 
 
     render() {
@@ -21,11 +22,15 @@ export class _Boards extends Component {
         console.log('boards', boards);
         const load = <p>Loading...</p>
         return (!boards ? load :
-            <section className="boards-container">
-                {boards.map(board => {
-                    return <BoardPreview key={board._id} board={board} />
-                })}
-            </section>
+            <div className="boards-page">
+                <h2>Our Boards</h2>
+                <section className="boards-container">
+                    <div className="new-board" onClick={this.addBoard}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/plus_ljzrkm.png" alt=""/></div>
+                    {boards.map(board => {
+                        return <BoardPreview key={board._id} board={board} />
+                    })}
+                </section>
+            </div>
         )
     }
 }
@@ -33,12 +38,14 @@ export class _Boards extends Component {
 const mapStateToProps = state => {
     return {
         boards: state.boardModule.boards,
+        board: state.boardModule.currBoard,
         // loggedInUser: state.userModule.loggedInUser,
     }
 }
 
 const mapDispatchToProps = {
     loadBoards,
+    saveBoard,
     // removeBoard,
 }
 
