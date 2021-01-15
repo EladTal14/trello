@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
+import { cardService } from '../services/cardService'
 // import { on, emit } from '../services/eventBusService.js'
 
 export class CardChecklist extends Component {
 
   state = {
     checklist: null,
-    isAddOpen: false
+    isAddOpen: false,
+    newTodoTitle: ''
   }
 
   componentDidMount() {
     const { checklist } = this.props.card
     this.setState({ checklist })
-    console.log(checklist.todos)
   }
 
-  onHandleInputChange = ({ target }) => {
-    const { value } = target
-    const { name } = target
+  onHandleTitleChange = ({ target }) => {
+    const { value, name } = target
 
     this.setState(prevState => ({
       checklist: {
@@ -27,7 +27,7 @@ export class CardChecklist extends Component {
   }
 
   onHandleTodosChange = (ev, todo) => {
-    let { todos } = this.state.checklist
+    const { todos } = this.state.checklist
 
     let updatedTodos = todos.map((currTodo) => {
       if (currTodo.id === todo.id) {
@@ -46,20 +46,44 @@ export class CardChecklist extends Component {
     this.saveTodos(todosCopy)
   }
 
-  saveTodos = (todos) => {
+  saveNewTodo = () => {
+    const { todos } = this.state.checklist
+    const { newTodoTitle } = this.state
+    let todosCopy = [...todos]
+
+    const todoToSave = cardService.createTodo(newTodoTitle)
+    todosCopy.push(todoToSave)
+
+    this.saveTodos(todosCopy)
+  }
+
+  saveTodos = (updatedTodos) => {
     this.setState(prevState => ({
       checklist: {
         ...prevState.checklist,
-        todos: [...todos]
-      }
+        todos: [...updatedTodos]
+      },
+      newTodoTitle: ''
     }), () => this.props.onHandleChecklistChange(this.state.checklist))
   }
 
-  openTodo = () => {
-    this.setState({
-      isAddOpen: !this.state.isAddOpen
+  onHandleNewTodoChange = ({ target }) => {
+    const { value } = target
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        newTodoTitle: value
+      }
     })
-    // },() => emit('add-open', { isAddOpen: this.state.isAddOpen }))
+  }
+
+  toggleIsAddOpen = () => {
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        isAddOpen: !this.state.isAddOpen
+      }
+    })
   }
 
   progressBarPrecentage = () => {
@@ -74,10 +98,8 @@ export class CardChecklist extends Component {
   }
 
   render() {
-    const { checklist } = this.state
-    const { isAddOpen } = this.state
+    const { checklist, isAddOpen, newTodoTitle } = this.state
     if (!checklist) return <div>Loading...</div>
-    console.log(checklist.todos)
     return (
       <div className="checklist flex column" >
         <div className="checklist-header flex">
@@ -88,7 +110,7 @@ export class CardChecklist extends Component {
             name="title"
             placeholder="Checklist"
             value={checklist.title}
-            onChange={this.onHandleInputChange}
+            onChange={this.onHandleTitleChange}
           />
         </div>
         <div className="progress-bar"><div style={{ width: `${this.progressBarPrecentage()}%` }}></div></div>
@@ -115,15 +137,17 @@ export class CardChecklist extends Component {
         {isAddOpen && <div>
           <input
             type="text"
-            name=""
-            id=""
+            autoFocus
             placeholder="Add an item"
             className="my-input"
+            value={newTodoTitle}
+            onChange={this.onHandleNewTodoChange}
+            onBlur={this.toggleIsAddOpen}
           />
-          <button>save</button>
+          <button onMouseDown={this.saveNewTodo} >Save</button>
         </div>}
 
-        {!isAddOpen && <button className="add-todo" onClick={this.openTodo}>Add todo</button>}
+        {!isAddOpen && <button className="add-todo" onClick={this.toggleIsAddOpen}>Add todo</button>}
       </div >
     )
   }

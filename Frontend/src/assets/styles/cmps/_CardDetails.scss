@@ -6,14 +6,15 @@
   bottom: 1rem;
   width: 80%;
   transform: translateX(-50%);
-  overflow-y:scroll;
+  overflow-y: scroll;
   z-index: 1000;
 
   & textarea {
     resize: none;
   }
 
-  & input:not([type=checkbox]), textarea {
+  & input:not([type="checkbox"]),
+  textarea {
     background-color: rgba(165, 165, 165, 0.726);
   }
 
@@ -31,6 +32,17 @@
 .card-info {
   flex-grow: 1;
 
+  & > * {
+    margin-bottom: 28px;
+  }
+
+  .members {
+    flex-wrap: wrap;
+    .members-header {
+      display: block;
+    }
+  }
+
   .label-btn {
     background-color: lightblue;
   }
@@ -39,8 +51,15 @@
     width: 90%;
     height: 6rem;
   }
-  .activity-textarea {
-    width: 100%;
+
+  .activity-container {
+    .activity-textarea {
+      width: 100%;
+    }
+
+    button {
+      width: 15%;
+    }
   }
 
   .due-date {
@@ -50,21 +69,19 @@
 }
 
 .checklist {
-
   .checklist-header {
     & input {
       flex-grow: 1;
     }
   }
 
-  
   .progress-bar {
     background-color: black;
     border-radius: 13px;
     /* (height of inner div) / 2 + padding */
     padding: 1px;
   }
-  
+
   .progress-bar > div {
     background-color: orange;
     width: 40%;
@@ -77,9 +94,8 @@
     .add-todo-input {
       flex-grow: 1;
     }
-
   }
-  
+
   .add-todo {
     width: 15%;
   }
@@ -102,7 +118,7 @@
 }
 
 // animation: progressBar 3s ease-in-out;
-// animation-fill-mode:both;     
+// animation-fill-mode:both;
 // @keyframes progressBar {
 // 0% { width: 0; }
 // 100% { width: 100%; }
