@@ -52,17 +52,19 @@ export class CardAdd extends Component {
         const { isAddOpen, card } = this.state
         return <section className="add-card-container">
             {isAddOpen &&
-                <form onSubmit={this.onSaveCard}>
-                    {/* <input type="text" name="title" value={card.title} onChange={this.handleInput}
-                        className="my-input" placeholder="Enter a title card title..." autoFocus /> */}
+                <form onSubmit={this.onSaveCard} className="new-card-form">
                     <textarea type="text" name="title" value={card.title} onChange={this.handleInput}
                         className="my-input" placeholder="Enter a title card title..." autoFocus
-                        cols="26" rows="5"></textarea>
-                    <button className="submit-card-btn">Add card</button>
-                    <button onClick={this.closeInput} >X</button>
+                        cols="35" rows="4"></textarea>
+                    <div>
+                        <button className="submit-card-btn">Add card</button>
+                        <button onClick={this.closeInput} className="close-input-btn" ><img src="https://res.cloudinary.com/basimgs/image/upload/v1610646476/close_voj9v3.png" alt="" /></button>
+                    </div>
                 </form>
             }
-            {!isAddOpen && <button className="add-card-btn" onClick={this.openInput}>+ Add another card</button>}
+            {!isAddOpen && <button className="add-card-btn" onClick={this.openInput}>
+                <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/plus_ljzrkm.png" alt="" />
+                <span>Add another card</span></button>}
         </section>
     }
 }

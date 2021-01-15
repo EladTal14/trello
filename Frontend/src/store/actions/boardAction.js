@@ -3,32 +3,38 @@ import { boardService } from '../../services/boardService.js'
 
 export function loadBoards() { // Action Creator
     return async (dispatch) => {
-        const boards = await boardService.query()
-        const action = {
-            type: 'SET_BOARDS',
-            boards,
+        try {
+            const boards = await boardService.query()
+            dispatch({ type: 'SET_BOARDS', boards })
+        } catch (err) {
+            console.log('err boardAction LOAD BOARDS', err);
         }
-        dispatch(action)
-
     }
+
+
+
 }
 
 export function loadBoard(boardId) {
     return async (dispatch) => {
-        const board = await boardService.getBoardById(boardId)
-        dispatch({ type: 'SET_BOARD', board })
+        try {
+            const board = await boardService.getBoardById(boardId)
+            dispatch({ type: 'SET_BOARD', board })
+
+        } catch (err) {
+            console.log('err boardAction LOAD BOARD', err);
+        }
     }
 }
 
 export function saveBoard(board) {
     return async (dispatch) => {
-        const saveBoard = await boardService.save(board)
-        const action = {
-            type: (board._id) ? 'UPDATE_BOARD' : 'ADD_BOARD',
-            board: saveBoard
+        try {
+            const savedBoard = await boardService.save(board)
+            dispatch({ type: (board._id) ? 'UPDATE_BOARD' : 'ADD_BOARD', board: savedBoard })
+        } catch (err) {
+            console.log('err boardAction SAVE BOARD', err);
         }
-        dispatch(action)
-
     }
 }
 
@@ -46,11 +52,10 @@ export function saveBoard(board) {
 
 export function updateGroups(groups) {
     return async (dispatch) => {
-        const action = {
-            type: 'UPDATE_GROUPS',
-            groups
+        try {
+            dispatch({ type: 'UPDATE_GROUPS', groups })
+        } catch (err) {
+            console.log('err boardAction UPDATED GROUPS', err);
         }
-        dispatch(action)
-
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { GroupList } from '../cmps/GroupList';
+import ScrollContainer from "react-indiana-drag-scroll"
+import { GroupList } from '../cmps/GroupList'
 import { BoardHeader } from '../cmps/BoardHeader'
 import { loadBoard, saveBoard } from '../store/actions/boardAction'
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
@@ -85,16 +86,19 @@ export class _BoardApp extends Component {
                 <BoardHeader title={board.title} members={board.members} />
                 <GroupAdd onAddGroup={this.onAddGroup} />
                 <section className="board-container">
-                    <DragDropContext onDragEnd={this.onDragEnd}>
-                        <Droppable droppableId="app" type="group" direction="horizontal">
-                            {(provided) => (
-                                <div ref={provided.innerRef} {...provided.droppableProps}>
-                                    <GroupList groups={board.groups} onAddCard={this.onAddCard} />
-                                    {provided.placeholder}
-                                </div>
-                            )}
-                        </Droppable>
-                    </DragDropContext>
+                    <ScrollContainer ignoreElements="article" >
+                        <DragDropContext onDragEnd={this.onDragEnd}>
+                            <Droppable droppableId="app" type="group" direction="horizontal">
+                                {(provided) => (
+                                    <div ref={provided.innerRef} {...provided.droppableProps}>
+                                        <GroupList groups={board.groups} onAddCard={this.onAddCard} />
+
+                                        {provided.placeholder}
+                                    </div>
+                                )}
+                            </Droppable>
+                        </DragDropContext>
+                    </ScrollContainer>
                 </section>
             </>
         )
