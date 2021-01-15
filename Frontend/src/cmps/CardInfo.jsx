@@ -1,17 +1,20 @@
 import { utilService } from "../services/utilService"
+import { CardActivityContainer } from "./CardActivityContainer";
 import { CardChecklist } from "./CardChecklist"
+var moment = require('moment');
 
-export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange }) {
+export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, onHandleActivitiesChange }) {
 
   return (
     <div className="card-info">
 
-      {card.members && <div className="members">
-        <h2>Members</h2>
-        {card.members.map((member, idx) => {
-          //TODO: nice time stemp // 
-          return <div key={idx} className="member">{utilService.convertName(member.fullname)}</div>
-        })}
+      {card.members && <div className="members flex column">
+        <h2 className="members-header">Members</h2>
+        <div className="members-list flex">
+          {card.members.map((member, idx) => {
+            return <span key={idx} className="member">{utilService.convertName(member.fullname)}</span>
+          })}
+        </div>
       </div>}
 
       {card.labels && <div className="labels">
@@ -23,8 +26,7 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange })
 
       {card.dueDate && <div className="due-date-wrapper">
         <h2>due date</h2>
-        {/* TODO: nice time stemp */}
-        <p className="due-date">{card.dueDate}</p>
+        <p className="due-date">{moment(card.dueDate).format('LLL')}</p>
       </div>}
 
       <div className="description">
@@ -41,31 +43,18 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange })
 
       {card.checklist && <CardChecklist card={card} onHandleChecklistChange={onHandleChecklistChange} />}
 
-      <div className="activity-container">
-        <div className="activity-header">
-          <span>L </span>
-          <span>Activity</span>
-        </div>
-        <div className="flex">
-          <div className="member">BK</div>
-          <textarea
-            className="activity-textarea"
-            type="text"
-            name="activity"
-            value={card.title}
-            onChange={onHandleInputChange}
-            placeholder={card.title}
-          />
-        </div>
-        <div className="activity-comment-wrapper flex">
-          <div className="member">BK</div>
-          <div className="activity-comment">
-            <p>comment area this is the</p>
-            <span>Time </span>
-          </div>
-        </div>
-      </div>
+      <CardActivityContainer card={card} onHandleActivitiesChange={onHandleActivitiesChange} />
 
     </div>
   )
 }
+
+// USE IT LATER FOR CALENDER
+// {/* <div>
+// <Calendar
+//   onChange={onChange}
+//   defaultActiveStartDate={new Date(2017, 0, 1)}
+
+//   // value={new Date(1610705369396)}
+// />
+// </div> */}

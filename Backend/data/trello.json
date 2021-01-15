@@ -493,6 +493,48 @@
           "title": "dont forget a week befeore",
           "cards": [
             {
+              "id": "c10894",
+              "title": "eat soup a lot",
+              "description": "3 cups of oil and no",
+              "checklist": {
+                "id": "YEhmF",
+                "title": "Checklist one check",
+                "todos": [
+                  {
+                    "title": "To Do 1scdscdss",
+                    "isDone": true,
+                    "id": "212jX"
+                  }
+                ]
+              },
+              "members": [
+                {
+                  "_id": "u101",
+                  "username": "Tal",
+                  "fullname": "Tal Tarablus",
+                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                }
+              ],
+              "labels": [
+                {
+                  "id": "101",
+                  "title": "done",
+                  "color": "#61BD4F"
+                }
+              ],
+              "createdAt": 1590999730348,
+              "dueDate": 16156215211,
+              "byMember": {
+                "_id": "u101",
+                "username": "Tal",
+                "fullname": "Tal Tarablus",
+                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+              },
+              "style": {
+                "bgColor": "#26DE81"
+              }
+            },
+            {
               "id": "c103",
               "title": "Do that"
             },
@@ -502,8 +544,8 @@
             },
             {
               "id": "c104",
-              "title": "check the crud",
-              "description": "description",
+              "title": "check the crud and tosdt",
+              "description": "this is not description",
               "comments": [
                 {
                   "id": "ZdPnm",
@@ -518,12 +560,27 @@
               ],
               "checklist": {
                 "id": "YEhmF",
-                "title": "Checklist",
+                "title": "not a checklist",
                 "todos": [
                   {
-                    "title": "To Do 1",
+                    "title": "To Do 1 and 2",
                     "isDone": false,
                     "id": "212jX"
+                  },
+                  {
+                    "id": "9S9",
+                    "title": "add one check",
+                    "isDone": true
+                  },
+                  {
+                    "id": "GHm",
+                    "title": "this is a check",
+                    "isDone": true
+                  },
+                  {
+                    "id": "MVC",
+                    "title": "mamamamamam",
+                    "isDone": false
                   }
                 ]
               },
@@ -532,6 +589,12 @@
                   "_id": "u101",
                   "username": "Tal",
                   "fullname": "Tal Tarablus",
+                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                },
+                {
+                  "_id": "uowi213",
+                  "username": "alfonso",
+                  "fullname": "alfonso liberty",
                   "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
                 },
                 {
@@ -638,6 +701,21 @@
                 "bgColor": "#26DE81"
               }
             },
+            {
+              "id": "c102",
+              "title": "Add Samples"
+            },
+            {
+              "title": "do the signup",
+              "id": "9O6",
+              "description": "asasadsas"
+            }
+          ]
+        },
+        {
+          "id": "g102",
+          "title": "In Progress",
+          "cards": [
             {
               "id": "c101",
               "title": "Replace logo"
