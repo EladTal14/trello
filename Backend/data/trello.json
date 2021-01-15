@@ -10,7 +10,8 @@
         "imgUrl": "http://some-img"
       },
       "style": {
-        "backgroundColor": "#cd77e2"
+        "backgroundColor": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271954/samples/landscapes/nature-mountains.jpg",
+        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271951/samples/landscapes/beach-boat.jpg"
       },
       "members": [
         {
@@ -26,6 +27,28 @@
       ],
       "groups": [
         {
+          "id": "g105",
+          "title": "haimasdassds",
+          "cards": [
+            {
+              "title": "fghfghfgh",
+              "id": "TPf"
+            },
+            {
+              "title": "llalalal\nlalla\nhlhlhl",
+              "id": "rAL"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fyV4"
+            },
+            {
+              "title": "esd;sd",
+              "id": "tlo"
+            }
+          ]
+        },
+        {
           "id": "g103",
           "title": "haimasdassds",
           "cards": [
@@ -40,26 +63,80 @@
           ]
         },
         {
-          "title": "sdfsdfsdf",
-          "id": "r74",
+          "title": "haimasdassds",
+          "id": "BY4",
           "cards": [
             {
-              "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
-              "id": "GcS"
+              "id": "c101",
+              "title": "Replace logo"
+            }
+          ]
+        },
+        {
+          "id": "g102",
+          "title": "In Progress",
+          "cards": [
+            {
+              "id": "c103",
+              "title": "Do that"
             },
             {
-              "title": "hhh",
-              "id": "9O6",
-              "description": "asasadsas"
+              "id": "c102",
+              "title": "Add Samples"
+            },
+            {
+              "id": "c1089",
+              "title": "eat cupcake"
             }
           ],
           "style": {}
         },
         {
-          "id": "g105",
-          "title": "haimasdassds",
           "id": "r71",
+          "title": "In Progress",
           "cards": [
+            {
+              "id": "c10894",
+              "title": "eat soup",
+              "description": "3 cups of oil",
+              "checklist": {
+                "id": "YEhmF",
+                "title": "Checklist",
+                "todos": [
+                  {
+                    "title": "To Do 1",
+                    "isDone": false,
+                    "id": "212jX"
+                  }
+                ]
+              },
+              "members": [
+                {
+                  "_id": "u101",
+                  "username": "Tal",
+                  "fullname": "Tal Tarablus",
+                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                }
+              ],
+              "labels": [
+                {
+                  "id": "101",
+                  "title": "done",
+                  "color": "rgb(82 160 66)"
+                }
+              ],
+              "createdAt": 1590999730348,
+              "dueDate": 16156215211,
+              "byMember": {
+                "_id": "u101",
+                "username": "Tal",
+                "fullname": "Tal Tarablus",
+                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+              },
+              "style": {
+                "bgColor": "#26DE81"
+              }
+            },
             {
               "id": "c104",
               "title": "Help me",
@@ -135,8 +212,24 @@
               }
             },
             {
+              "title": "hhh",
+              "id": "9O6",
+              "description": "asasadsas"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "title": "sdfsdfsdf",
+          "id": "r74",
+          "cards": [
+            {
               "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
               "id": "GcS"
+            },
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
             },
             {
               "title": "hhh",
@@ -147,107 +240,9 @@
           "style": {}
         },
         {
-          "id": "g105",
-          "title": "haimasdassds",
-          "cards": [
-            {
-              "title": "fghfghfgh",
-              "id": "TPf"
-            },
-            {
-              "title": "llalalal\nlalla\nhlhlhl",
-              "id": "rAL"
-            },
-            {
-              "title": "vdfvdvxc",
-              "id": "fyV4"
-            },
-            {
-              "title": "esd;sd",
-              "id": "tlo"
-            }
-          ]
-        },
-        {
-          "title": "sdfsdfsdf",
-          "id": "BY4",
-          "cards": [
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
-              "id": "c101",
-              "title": "Replace logo"
-            }
-          ]
-        },
-        {
-          "id": "g102",
-          "title": "In Progress",
-          "cards": [
-            {
-              "id": "c103",
-              "title": "Do that"
-            },
-            {
-              "id": "c102",
-              "title": "Add Samples"
-            },
-            {
-              "id": "c1089",
-              "title": "eat cupcake"
-            }
-          ],
-          "style": {}
-        },
-        {
           "title": "xvcvcccv",
           "id": "3up",
-          "cards": [
-            {
-              "id": "c10894",
-              "title": "eat soup",
-              "description": "3 cups of oil",
-              "checklist": {
-                "id": "YEhmF",
-                "title": "Checklist",
-                "todos": [
-                  {
-                    "title": "To Do 1",
-                    "isDone": false,
-                    "id": "212jX"
-                  }
-                ]
-              },
-              "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
-              ],
-              "labels": [
-                {
-                  "id": "101",
-                  "title": "done",
-                  "color": "rgb(82 160 66)"
-                }
-              ],
-              "createdAt": 1590999730348,
-              "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
-              "style": {
-                "bgColor": "#26DE81"
-              }
-            }
-          ]
+          "cards": []
         }
       ],
       "activities": [
@@ -277,7 +272,8 @@
         "imgUrl": "http://some-img"
       },
       "style": {
-        "backgroundColor": "#9088d4"
+        "backgroundColor": "#9088d4",
+        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271951/samples/landscapes/beach-boat.jpg"
       },
       "members": [
         {
@@ -312,9 +308,8 @@
           ]
         },
         {
-          "id": "g101",
-          "title": "dont forget a week befeore",
           "id": "r71",
+          "title": "dont forget a week befeore",
           "cards": [
             {
               "id": "c10894",
@@ -848,6 +843,33 @@
         "backgroundColor": "#f44336"
       },
       "_id": "5HnrH0K"
+    },
+    {
+      "title": "New Board",
+      "createdAt": 1610719882484,
+      "groups": [
+        {
+          "title": "xvx",
+          "id": "aWa3bOb",
+          "cards": [
+            {
+              "title": "asdasd",
+              "id": "RLo90E9"
+            }
+          ]
+        },
+        {
+          "title": "asdasd",
+          "id": "hDV77kO",
+          "cards": []
+        }
+      ],
+      "members": [],
+      "activities": [],
+      "style": {
+        "backgroundColor": "#f44336"
+      },
+      "_id": "whDsp-H"
     }
   ],
   "user": [
