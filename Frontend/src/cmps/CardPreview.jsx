@@ -56,7 +56,7 @@ export class CardPreview extends Component {
 const getItemStyle = (isDragging, draggableStyle) => ({
     // some basic styles to make the items look a bit nicer
     userSelect: "none",
-    padding: 14,
+    padding: 8,
     // padding: 8 * 2,
     margin: `0 0 ${8}px 0`,
     borderRadius: '8px',
