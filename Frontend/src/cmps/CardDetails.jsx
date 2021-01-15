@@ -5,13 +5,14 @@ import ReactDOM from 'react-dom';
 import { CardHeader } from './CardHeader';
 import { CardInfo } from './CardInfo';
 
+// import { eventBusService } from '../services/eventBusService.js'
+import { clearState } from '../store/actions/cardAction.js'
 import { saveBoard } from '../store/actions/boardAction.js'
 
 class _CardDetails extends Component {
 
   state = {
-    card: null,
-    isAddOpen: false
+    card: null
   }
 
   componentDidMount() {
@@ -29,29 +30,26 @@ class _CardDetails extends Component {
 
     if (!domNode || !domNode.contains(event.target)) {
       this.sendUpdatedBoard()
-    } else if(this.state.isAddOpen) {
+      this.props.clearState(null)
+    } else {
       console.log('okey okey')
     }
   }
 
   sendUpdatedBoard = () => {
-    const { board } = this.props
-    const { group } = this.props
+    const { board, group } = this.props
     const { card } = this.state
-    const boardCopy = { ...board }
-    const groupCopy = { ...group }
 
-    const cardIdx = groupCopy.cards.findIndex((card) => card.id === this.state.card.id)
-    groupCopy.cards[cardIdx] = card
+    const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
+    group.cards[cardIdx] = card
 
-    const groupIdx = boardCopy.groups.findIndex((currGroup) => currGroup.id === group.id)
-    boardCopy.groups[groupIdx] = groupCopy
-    this.props.saveBoard(boardCopy)
+    const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
+    board.groups[groupIdx] = group
+    this.props.saveBoard(board)
   }
 
   onHandleInputChange = ({ target }) => {
-    const { value } = target
-    const { name } = target
+    const { value, name } = target
 
     this.setState(prevState => ({
       card: {
@@ -72,18 +70,10 @@ class _CardDetails extends Component {
 
   }
 
-  openTodoAdd = () => {
-    this.setState(prevState => {
-      return {
-       ...prevState,
-       isAddOpen: !prevState.isAddOpen
-      }
-    })
-  }
-
   render() {
     const { card } = this.state
-    const { groupTitle } = this.props
+    const { group } = this.props
+    // const currGroup = this.props.currGroup
     if (!card) return <div>Loading...</div>
     // let cardWithTxt = (
     //   <input
@@ -101,10 +91,10 @@ class _CardDetails extends Component {
       <div className="card-details flex justify-center align-center">
 
         <div className="card-details-wrapper flex column">
-          <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} groupTitle={groupTitle} />
+          <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
 
           <div className="card-content flex">
-            <CardInfo card={card} onHandleChecklistChange={this.onHandleChecklistChange} onHandleInputChange={this.onHandleInputChange} openTodoAdd={this.openTodoAdd} />
+            <CardInfo card={card} onHandleChecklistChange={this.onHandleChecklistChange} onHandleInputChange={this.onHandleInputChange} />
             <div className="card-side flex column">
               <button className="side-btn"><span>L</span> Members</button>
               <button className="side-btn"><span>L</span> Labels</button>
@@ -130,10 +120,9 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  // loadBoard,
   saveBoard,
+  clearState
 }
-
 
 
 export const CardDetails = connect(mapStateToProps, mapDispatchToProps)(_CardDetails);

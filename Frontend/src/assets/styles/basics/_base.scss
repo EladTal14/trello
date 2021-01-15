@@ -35,6 +35,22 @@ p {
     margin: 0;
 }
 
+pre{
+    margin: 0;
+    font-family: 'montserrat', sans-serif;
+}
+.member {
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    margin-left: 5px;
+    color: white;
+    font-weight: 700;
+    background-color: rgb(4, 78, 236);
+    text-align: center;
+}
 // p {
 //     margin: 0 0 0.8em;
 // }

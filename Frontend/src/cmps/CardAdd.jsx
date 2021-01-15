@@ -55,7 +55,7 @@ export class CardAdd extends Component {
                 <form onSubmit={this.onSaveCard} className="new-card-form">
                     <textarea type="text" name="title" value={card.title} onChange={this.handleInput}
                         className="my-input" placeholder="Enter a title card title..." autoFocus
-                        cols="25" rows="4"></textarea>
+                        cols="35" rows="4"></textarea>
                     <div>
                         <button className="submit-card-btn">Add card</button>
                         <button onClick={this.closeInput} className="close-input-btn" ><img src="https://res.cloudinary.com/basimgs/image/upload/v1610646476/close_voj9v3.png" alt="" /></button>

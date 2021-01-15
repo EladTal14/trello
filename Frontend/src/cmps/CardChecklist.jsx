@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import { on, emit } from '../services/eventBusService.js'
 
 export class CardChecklist extends Component {
 
@@ -10,6 +11,7 @@ export class CardChecklist extends Component {
   componentDidMount() {
     const { checklist } = this.props.card
     this.setState({ checklist })
+    console.log(checklist.todos)
   }
 
   onHandleInputChange = ({ target }) => {
@@ -54,10 +56,10 @@ export class CardChecklist extends Component {
   }
 
   openTodo = () => {
-    this.props.openTodoAdd()
     this.setState({
       isAddOpen: !this.state.isAddOpen
     })
+    // },() => emit('add-open', { isAddOpen: this.state.isAddOpen }))
   }
 
   progressBarPrecentage = () => {
@@ -65,7 +67,7 @@ export class CardChecklist extends Component {
     let acc = 0;
     checklist.todos.forEach((todo) => { if (todo.isDone) acc += 1 })
 
-    const todosPrecent = 100 / checklist.todos.length 
+    const todosPrecent = 100 / checklist.todos.length
 
     if (acc === 0) return 0
     return todosPrecent * acc
@@ -75,6 +77,7 @@ export class CardChecklist extends Component {
     const { checklist } = this.state
     const { isAddOpen } = this.state
     if (!checklist) return <div>Loading...</div>
+    console.log(checklist.todos)
     return (
       <div className="checklist flex column" >
         <div className="checklist-header flex">
