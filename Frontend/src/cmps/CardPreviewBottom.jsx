@@ -1,7 +1,7 @@
 import React from 'react'
 import { utilService } from '../services/utilService'
 
-export function CardPreviewButtom({ card }) {
+export function CardPreviewBottom({ card }) {
     return (
         <div className="card-extras-container flex space-between">
             {card.dueDate && <div className="date-container flex">

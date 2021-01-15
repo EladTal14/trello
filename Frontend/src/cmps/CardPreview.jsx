@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Draggable } from "react-beautiful-dnd";
 import { CardDetails } from './CardDetails'
-import { CardPreviewLable } from './CardPreviewLable';
-import { CardPreviewButtom } from './CardPreviewButtom';
+import { CardPreviewLabel } from './CardPreviewLabel';
+import { CardPreviewBottom } from './CardPreviewBottom';
 
 
 export class CardPreview extends Component {
@@ -40,9 +40,9 @@ export class CardPreview extends Component {
                             style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
                             onClick={() => this.toggleDetails('ev', false)}
                         >
-                            <CardPreviewLable card={card} />
-                            <pre>{card.title}</pre>
-                            <CardPreviewButtom card={card} />
+                            <CardPreviewLabel card={card} />
+                            {card.title}
+                            <CardPreviewBottom card={card} />
                         </article>
                     )}
 
@@ -55,14 +55,13 @@ export class CardPreview extends Component {
 
 const getItemStyle = (isDragging, draggableStyle) => ({
     // some basic styles to make the items look a bit nicer
-    userSelect: "none",
+    userSelect: 'none',
     padding: 8,
-    // padding: 8 * 2,
     margin: `0 0 ${8}px 0`,
-    borderRadius: '8px',
+    borderRadius: '3px',
     // change background colour if dragging
-    background: isDragging ? "red" : "white",
-
+    background: isDragging ? 'red' : 'white',
+    transform: isDragging ? `rotate(20deg)` : null,
     // styles we need to apply on draggables
     ...draggableStyle
 });
