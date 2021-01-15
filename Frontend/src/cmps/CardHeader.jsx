@@ -1,5 +1,5 @@
 
-export function CardHeader({ card, onHandleInputChange, groupTitle }) {
+export function CardHeader({ card, onHandleInputChange, group }) {
 
   return (
     <div className="card-header">
@@ -14,7 +14,7 @@ export function CardHeader({ card, onHandleInputChange, groupTitle }) {
           placeholder={card.title}
         />
       </div>
-      <p>In List in {groupTitle}</p>
+      <p>In List in {group.title}</p>
     </div>
   )
 }

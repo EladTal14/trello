@@ -15,41 +15,25 @@
           "_id": "u101",
           "fullname": "Tal Tarablus",
           "imgUrl": "https://www.google.com"
-        },
-        {
-          "_id": "u102",
-          "fullname": "Abi Bamia",
-          "imgUrl": "https://www.google.com"
         }
       ],
       "groups": [
-        {
-          "id": "g101",
-          "title": "Ideas",
-          "cards": [
-            {
-              "id": "c1089",
-              "title": "eat cupcake"
-            },
-            {
-              "id": "c102",
-              "title": "Add Samples"
-            },
-            {
-              "id": "c101",
-              "title": "Replace logo"
-            }
-          ],
-          "style": {}
-        },
         {
           "id": "g102",
           "title": "In Progress",
           "cards": [
             {
+              "id": "c103",
+              "title": "Do that"
+            },
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
+            },
+            {
               "id": "c104",
-              "title": "Help me",
-              "description": "description",
+              "title": "please help me bitch",
+              "description": "lielm1877",
               "comments": [
                 {
                   "id": "ZdPnm",
@@ -62,83 +46,17 @@
                   }
                 }
               ],
-              "checklists": [
-                {
-                  "id": "YEhmF",
-                  "title": "Checklist",
-                  "todos": [
-                    {
-                      "title": "To Do 1",
-                      "isDone": false,
-                      "id": "212jX"
-                    }
-                  ]
-                }
-              ],
-              "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
-              ],
-              "labels": [
-                {
-                  "id": "101",
-                  "title": "done",
-                  "color": "#54e346"
-                },
-                {
-                  "id": "102",
-                  "title": "not done",
-                  "color": "#ff4646"
-                }
-              ],
-              "createdAt": 1590999730348,
-              "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+              "checklist": {
+                "id": "YEhmF",
+                "title": "Checklistasddssssadas",
+                "todos": [
+                  {
+                    "title": "To Do 1sadddddddd",
+                    "isDone": true,
+                    "id": "212jX"
+                  }
+                ]
               },
-              "style": {
-                "bgColor": "#26DE81"
-              }
-            }
-          ],
-          "style": {}
-        },
-        {
-          "id": "g103",
-          "title": "In Progress",
-          "cards": [
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
-              "id": "c103",
-              "title": "Do that"
-            },
-            {
-              "id": "c10894",
-              "title": "eat soup",
-              "description": "3 cups of oil",
-              "checklists": [
-                {
-                  "id": "YEhmF",
-                  "title": "Checklist",
-                  "todos": [
-                    {
-                      "title": "To Do 1",
-                      "isDone": false,
-                      "id": "212jX"
-                    }
-                  ]
-                }
-              ],
               "members": [
                 {
                   "_id": "u101",
@@ -165,6 +83,88 @@
               "style": {
                 "bgColor": "#26DE81"
               }
+            }
+          ],
+          "style": {}
+        },
+        {
+          "id": "g101",
+          "title": "Ideas",
+          "cards": [
+            {
+              "id": "c101",
+              "title": "Replace logo okey"
+            },
+            {
+              "id": "c102",
+              "title": "fAdd Samples i wish"
+            },
+            {
+              "title": "gggg",
+              "id": "cMP"
+            },
+            {
+              "title": "vjfjfj",
+              "id": "eTa",
+              "description": "fdsfds"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "id": "g103",
+          "title": "Done",
+          "cards": [
+            {
+              "id": "c1089",
+              "title": "eat cupcakevvvd"
+            },
+            {
+              "id": "c10894",
+              "title": "eat soup today mandddddbbbbbv vvv vvvvv",
+              "description": "3 cups of oil and",
+              "checklist": {
+                "id": "YEhmF",
+                "title": "Checklist",
+                "todos": [
+                  {
+                    "title": "To Do 1",
+                    "isDone": false,
+                    "id": "212jX"
+                  }
+                ]
+              },
+              "members": [
+                {
+                  "_id": "u101",
+                  "username": "Tal",
+                  "fullname": "Tal Tarablus",
+                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                }
+              ],
+              "labels": [
+                {
+                  "id": "101",
+                  "title": "done",
+                  "color": "#61BD4F"
+                }
+              ],
+              "createdAt": 1590999730348,
+              "dueDate": 16156215211,
+              "byMember": {
+                "_id": "u101",
+                "username": "Tal",
+                "fullname": "Tal Tarablus",
+                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+              },
+              "style": {
+                "bgColor": "#26DE81"
+              }
+            },
+            {
+              "title": "hhh",
+              "id": "9O6",
+              "description": "asasadsas"
             }
           ],
           "style": {}
