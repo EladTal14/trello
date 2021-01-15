@@ -7,7 +7,7 @@ export class BoardHeader extends Component {
 
   render() {
     const { title, members } = this.props
-    console.log('memebers...', members)
+    // console.log('memebers...', members)
     return (
       <header className="board-header flex space-between">
         <div className="header-options flex">
