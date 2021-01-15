@@ -12,8 +12,9 @@ export class _GroupTitle extends Component {
 
         }
     }
+    // textInput = React.createRef()
     // handleClickOutside = event => {
-    //     const domNode = ReactDOM.findDOMNode(this);
+    //     const domNode = ReactDOM.findDOMNode(this.textInput);
     //     if (!domNode || !domNode.contains(event.target)) {
     //         console.log('outside');
     //         this.onSaveTitle(event)
@@ -65,6 +66,7 @@ export class _GroupTitle extends Component {
         const { group } = this.state
         return <section className="group-title">
             <form onSubmit={this.onSaveTitle} onBlur={this.onSaveTitle} className="title-form flex space-between">
+                {/* <input type="text" ref={this.textInput} name="title" value={group.title} onChange={this.handleInput} */}
                 <input type="text" name="title" value={group.title} onChange={this.handleInput}
                     className="title-input" placeholder="Enter group title..." autoComplete="off" />
                 <button className="more-options-btn" ><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/more_e8mezf.png" alt="" /></button>

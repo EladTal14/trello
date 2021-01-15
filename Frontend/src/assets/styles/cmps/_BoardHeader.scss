@@ -119,3 +119,39 @@
           }
     }
 }
+.board-menu-screen {
+  transition: opacity 0.7s, width 0.7s, visibility 0.7s ease-in-out;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  height: 100px;
+  right: 1px;
+  background-color: wheat;
+  width: 27vw;
+  height: 96vh;
+  .board-menu-header {
+    padding: 10px;
+    .board-menu-close {
+      cursor: pointer;
+    }
+  }
+}
+.board-menu-title {
+  flex-grow: 1;
+  text-align: center;
+}
+.menu-btn {
+  cursor: pointer;
+}
+.board-menu-wrapper {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(3, 3, 3, 0.376);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -10,7 +10,8 @@
         "imgUrl": "http://some-img"
       },
       "style": {
-        "backgroundColor": "#cd77e2"
+        "backgroundColor": "#cd77e2",
+        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271951/samples/landscapes/beach-boat.jpg"
       },
       "members": [
         {

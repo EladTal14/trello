@@ -3,22 +3,38 @@ import React, { Component } from 'react'
 import { utilService } from '../services/utilService'
 import { saveBoard } from '../store/actions/boardAction'
 import { connect } from 'react-redux'
+import { ChangeBackground } from './BoardHeader/ChangeBackground.jsx'
 
 export class _BoardHeader extends Component {
 
   state = {
     board: {
         title: this.props.board.title,
-
-    }
+    },
+    isChanging: false,
+    isWrapper: false
 }
 
-// componentDidMount() {
-//     const boardId = this.props.board.id
-//     const boardIdx = board.boards.findIndex(board => board.id === boardId)
-//     this.setState({ boardIdx })
-//     // document.addEventListener('click', this.handleClickOutside, true);
-// }
+toggleMenu = () => {
+  const { current } = this.boardMenuVisibility
+  if (current.style.opacity === '0') {
+    current.style.opacity = '1'
+    current.style.visibility = 'visible'
+    current.style.width = '27vw'
+
+  }
+  else if (current.style.opacity === '1') {
+    current.style.opacity = '0'
+    current.style.visibility = 'hidden'
+    current.style.width = '1vw'
+  }
+  this.setState({ isChanging: false, isWrapper: !this.state.isWrapper })
+}
+onChangeBackground = () => {
+  this.setState({ isChanging: !this.state.isChanging })
+}
+
+boardMenuVisibility = React.createRef()
 
 handleInput = ({ target }) => {
     const { name } = target
@@ -40,12 +56,9 @@ onSaveTitle = async (ev) => {
   board.title = title
   await this.props.saveBoard(board)
 }
-
-
   render() {
     const { members } = this.props
-    const { board } = this.state
-    // console.log('memebers...', members)
+    const { board, isChanging, isWrapper} = this.state
     return (
       <header className="board-header flex space-between">
         <div className="header-options flex">
@@ -72,8 +85,19 @@ onSaveTitle = async (ev) => {
           </div>
         </div>
         {/* <BoardFilter /> */}
-        <button className="menu-btn"><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
+        <div className="board-menu-screen" onClick={ev => ev.stopPropagation()} ref={this.boardMenuVisibility} style={{ opacity: '0', visibility: 'hidden' }}>
+          <div className="board-menu-header flex space-around">
+            <h3 className="board-menu-title">Menu</h3>
+            <h4 className="board-menu-close" onClick={this.toggleMenu}>X</h4>
+          </div>
+          {!isChanging && <button onClick={this.onChangeBackground}>Change Background</button>}
+          {isChanging && <ChangeBackground onChangeBackground={this.onChangeBackground} />}
 
+
+        </div>
+        {isWrapper && <div className="board-menu-wrapper" onClick={(isWrapper) ? this.toggleMenu : () => { return }}>
+        </div>}
+        <button className="menu-btn" onClick={this.toggleMenu}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
       </header>
     )
   }

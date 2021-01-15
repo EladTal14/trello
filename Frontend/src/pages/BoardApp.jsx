@@ -24,7 +24,7 @@ export class _BoardApp extends Component {
     componentWillUnmount() {
         this.eventBusTerminate()
     }
-    
+
     loadBoard = async () => {
         const { boardId } = this.props.match.params
         await this.props.loadBoard(boardId)
