@@ -4,12 +4,11 @@ import { utilService } from '../services/utilService'
 import { ChangeBackground } from './BoardHeader/ChangeBackground.jsx'
 export class BoardHeader extends Component {
   state = {
-    isChanging: false
+    isChanging: false,
+    isWrapper: false
   }
   toggleMenu = () => {
     const { current } = this.boardMenuVisibility
-    console.log(current.style.opacity);
-    console.log(current.style.visibility);
     if (current.style.opacity === '0') {
       current.style.opacity = '1'
       current.style.visibility = 'visible'
@@ -21,15 +20,16 @@ export class BoardHeader extends Component {
       current.style.visibility = 'hidden'
       current.style.width = '1vw'
     }
-    this.setState({ isChanging: false })
+    this.setState({ isChanging: false, isWrapper: !this.state.isWrapper })
   }
   onChangeBackground = () => {
     this.setState({ isChanging: !this.state.isChanging })
   }
   boardMenuVisibility = React.createRef()
   render() {
-    const { isChanging } = this.state
+    const { isChanging, isWrapper } = this.state
     const { title, members } = this.props
+    console.log(isWrapper);
     return (
       <header className="board-header flex space-between">
         <div className="header-options flex">
@@ -52,7 +52,7 @@ export class BoardHeader extends Component {
           </div>
         </div>
         {/* <BoardFilter /> */}
-        <div className="board-menu-screen" ref={this.boardMenuVisibility} style={{ opacity: '0', visibility: 'hidden' }}>
+        <div className="board-menu-screen" onClick={ev => ev.stopPropagation()} ref={this.boardMenuVisibility} style={{ opacity: '0', visibility: 'hidden' }}>
           <div className="board-menu-header flex space-around">
             <h3 className="board-menu-title">Menu</h3>
             <h4 className="board-menu-close" onClick={this.toggleMenu}>X</h4>
@@ -62,8 +62,9 @@ export class BoardHeader extends Component {
 
 
         </div>
+        {isWrapper && <div className="board-menu-wrapper" onClick={(isWrapper) ? this.toggleMenu : () => { return }}>
+        </div>}
         <button className="menu-btn" onClick={this.toggleMenu}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
-
       </header>
     )
   }

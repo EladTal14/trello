@@ -10,21 +10,26 @@
 // @import "basics/buttons.scss";
 
 // Components
+@import "pages/BoardApp.scss";
 @import "cmps/AppHeader.scss";
 @import "cmps/CardPreview.scss";
 @import "cmps/CardDetails.scss";
-@import "pages/BoardApp.scss";
 @import "cmps/BoardHeader.scss";
 @import "cmps/CardList";
 @import "cmps/GroupPreview";
 @import "cmps/CardAdd";
 @import "cmps/GroupAdd";
 @import "cmps/ChangeBackground";
+@import "cmps/BoardPhotos.scss";
+@import "cmps/BoardColors.scss";
 @import "pages/Boards.scss";
 // @import "components/cat-card.scss";
 .App {
   height: 100vh;
+  background-size: cover;
 }
+
+//transfer to grouplist
 
 // .my-input {
 //   border: none;
