@@ -10,10 +10,10 @@ export function GroupPreview({ group, idx, onAddCard }) {
                 <div {...provided.draggableProps}
                     style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
                     ref={provided.innerRef}>
-                    <article className="group-preview" >
+                    <article className="group-preview">
                         <div  {...provided.dragHandleProps} style={{ width: '110%', height: '1.175em' }}>
                         </div>
-                        <GroupTitle group={group} {...provided.dragHandleProps} />
+                        <GroupTitle group={group} />
                         <CardList cards={group.cards} id={idx} group={group} grpTitle={group.title} groupId={group.id} onAddCard={onAddCard} />
                         {/* <CardAdd groupId={group.id} onAddCard={onAddCard} /> */}
                     </article>
@@ -30,6 +30,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
     // borderRadius: '3px',
     // // change background colour if dragging
     // background: isDragging ? 'red' : 'white',
+
     transform: isDragging ? `rotate(20deg)` : null,
     // styles we need to apply on draggables
     ...draggableStyle

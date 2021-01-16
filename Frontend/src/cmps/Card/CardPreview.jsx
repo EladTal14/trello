@@ -46,8 +46,8 @@ const getItemStyle = (isDragging, draggableStyle) => ({
     padding: 8,
     margin: `0 0 ${8}px 0`,
     borderRadius: '3px',
-    background: isDragging ? 'red' : 'white',
-    transform: `rotate('20deg')`,
+    background: isDragging ? '##e4e0e0' : 'white',
+    transform: [{ rotate: '180deg' }],
     ...draggableStyle
 });
 
