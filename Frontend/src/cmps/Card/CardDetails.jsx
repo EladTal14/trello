@@ -81,6 +81,17 @@ class _CardDetails extends Component {
     this.props.toggleDetails(false)
   }
 
+  onSavedueDate = (date) => {
+    const { board, group } = this.props
+    const { card } = this.state
+    card.dueDate = Date.parse(date)
+    const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
+    group.cards[cardIdx] = card
+    const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
+    board.groups[groupIdx] = group
+    this.props.saveBoard(board)
+  }
+
   render() {
     const { card } = this.state
     const { group } = this.props
@@ -98,7 +109,7 @@ class _CardDetails extends Component {
               onHandleInputChange={this.onHandleInputChange}
               onHandleActivitiesChange={this.onHandleActivitiesChange}
             />
-            <CardSide onRemoveCard={this.onRemoveCard} />
+            <CardSide onRemoveCard={this.onRemoveCard} onSavedueDate={this.onSavedueDate}/>
           </div>
         </div>
       </div>
