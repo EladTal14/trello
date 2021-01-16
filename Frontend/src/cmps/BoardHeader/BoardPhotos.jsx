@@ -14,7 +14,7 @@ class _BoardPhotos extends Component {
     { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712052/pexels-pixabay-461940_znnsxj.jpg' },
     { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712043/pexels-vishnu-r-nair-1105666_nkvc5j.jpg' },
     { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712044/pexels-sourav-mishra-3136673_tvifhm.jpg' }
-  ]
+    ]
   }
   useImgForBgc = async (imgUrl) => {
     const { currBoard } = this.props
@@ -25,7 +25,7 @@ class _BoardPhotos extends Component {
   render() {
     return (
       <div className="board-photos">
-        {this.photos().map((photo, idx) => { return <div className="menu-img-box"><img onClick={() => this.useImgForBgc(photo.imgUrl)} className="board-photos-grid" key={idx} src={photo.imgUrl} alt="not good" /></div>})}
+        {this.photos().map((photo, idx) => { return <div key={idx} className="menu-img-box"><img onClick={() => this.useImgForBgc(photo.imgUrl)} className="board-photos-grid" key={idx} src={photo.imgUrl} alt="not good" /></div> })}
       </div>
     )
   }
