@@ -1,19 +1,43 @@
 {
   "board": [
     {
+<<<<<<< HEAD
       "title": "Sprint 4 projad",
+=======
+      "_id": "b101",
+      "title": "Sprint 4 proj",
+>>>>>>> ac8550a8d94bee04f868cf21af258a0c4b7a4f21
       "createdAt": 1589983468418,
       "createdBy": {},
       "style": {
+<<<<<<< HEAD
+=======
+        "backgroundColor": "#cd77e2",
+>>>>>>> ac8550a8d94bee04f868cf21af258a0c4b7a4f21
         "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271951/samples/landscapes/beach-boat.jpg"
       },
       "members": [],
       "groups": [
         {
+<<<<<<< HEAD
           "id": "g103",
           "title": "Things to do",
           "cards": [
             {
+=======
+          "id": "g105",
+          "title": "something normal ",
+          "cards": [
+            {
+              "title": "fghfghfgh",
+              "id": "TPf"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fyV"
+            },
+            {
+>>>>>>> ac8550a8d94bee04f868cf21af258a0c4b7a4f21
               "id": "c104",
               "title": "please help me bitch ya\nhutzpan",
               "description": "lielm1877",
@@ -37,7 +61,7 @@
                 "todos": [
                   {
                     "title": "To Do 1",
-                    "isDone": true,
+                    "isDone": false,
                     "id": "212jt"
                   },
                   {
@@ -146,8 +170,75 @@
           ]
         },
         {
+<<<<<<< HEAD
           "id": "g102",
           "title": "something normal ",
+          "cards": [
+            {
+              "id": "c103",
+              "title": "Do that"
+            },
+            {
+              "id": "c102",
+              "title": "Add Samples"
+            },
+            {
+              "id": "c1089",
+              "title": "eat cupcake"
+=======
+          "id": "g103",
+          "title": "haimasdassds",
+          "cards": [
+            {
+              "title": "hello hey there\n",
+              "id": "kzv"
+            },
+            {
+              "title": "gggg",
+              "id": "cMP"
+            }
+          ]
+        },
+        {
+          "title": "sdfsdfsdf",
+          "id": "r74",
+          "cards": [
+            {
+              "title": "vtvtgt \nvtewhtty",
+              "id": "GcS"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fyV4"
+            },
+            {
+              "title": "esd;sd",
+              "id": "tlo"
+>>>>>>> ac8550a8d94bee04f868cf21af258a0c4b7a4f21
+            }
+          ],
+          "style": {}
+        },
+        {
+<<<<<<< HEAD
+=======
+          "title": "sdfsdfsdf",
+          "id": "BY4",
+          "cards": [
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
+            },
+            {
+              "id": "c101",
+              "title": "Replace logo"
+            }
+          ]
+        },
+        {
+          "id": "g102",
+>>>>>>> ac8550a8d94bee04f868cf21af258a0c4b7a4f21
+          "title": "In Progress",
           "cards": [
             {
               "id": "c103",
@@ -165,7 +256,7 @@
           "style": {}
         },
         {
-          "title": "In Progress",
+          "title": "xvcvcccv",
           "id": "3up",
           "cards": [
             {
@@ -199,16 +290,6 @@
               "style": {
                 "bgColor": "#26DE81"
               }
-            }
-          ]
-        },
-        {
-          "title": "sdfsdfsdf",
-          "id": "BY4",
-          "cards": [
-            {
-              "id": "c101",
-              "title": "Replace logo"
             }
           ]
         }

@@ -16,20 +16,23 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
         </div>
       </div>}
 
-      {card.labels && <div className="labels">
-        <h2>labels</h2>
+      {card.labels && <div className="card-labels">
+        <h2 className="card-label-h2">labels</h2>
         {card.labels.map((label, idx) => {
           return <button key={idx} className="label-btn" >{label.title}</button>
         })}
       </div>}
 
       {card.dueDate && <div className="due-date-wrapper">
-        <h2>due date</h2>
+        <h2 className="due-date-h2">due date</h2>
         <p className="due-date">{moment(card.dueDate).format('LLL')}</p>
       </div>}
 
-      <div className="description">
-        <h2>Description</h2>
+      <div className="card-description">
+        <div className="flex">
+          <span><img className="desc-img" src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/left-align_qaakok.png" alt=""/></span>
+        <h3>Description</h3>
+          </div>
         <textarea
           className="desc-textarea my-input"
           type="text"

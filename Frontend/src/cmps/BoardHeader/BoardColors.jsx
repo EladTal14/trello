@@ -25,7 +25,7 @@ class _BoardColors extends Component {
   render() {
     return (
       <div className="board-colors">
-        {this.bgColors().map((color, idx) => { return <img key={idx} className="board-colors-grid" onClick={() => this.getImgForBgc(color.imgUrl)} src={color.imgUrl} alt="not good" /> })}
+        {this.bgColors().map((color, idx) => { return <div className="menu-img-box" key={idx} ><img  className="board-colors-grid" onClick={() => this.getImgForBgc(color.imgUrl)} src={color.imgUrl} alt="not good" /></div> })}
       </div>
     )
   }
