@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import { cardService } from '../services/cardService'
+import { Component } from 'react'
+import { cardService } from '../../services/cardService'
 // import { on, emit } from '../services/eventBusService.js'
 
 export class CardChecklist extends Component {
-
   state = {
     checklist: null,
     isAddOpen: false,
@@ -103,7 +102,7 @@ export class CardChecklist extends Component {
     return (
       <div className="checklist flex column" >
         <div className="checklist-header flex">
-          <span>L </span>
+          <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/check-box_pzd2ul.png" alt=""/>
           <input
             className="my-input"
             type="text"
@@ -130,21 +129,21 @@ export class CardChecklist extends Component {
               value={todo.title}
               onChange={(ev) => this.onHandleTodosChange(ev, todo)}
             />
-            <button onClick={() => this.onRemoveTodo(idx)}>✕</button>
+            <button className="delete-todo" onClick={() => this.onRemoveTodo(idx)}>✕</button>
           </div>
         })}
 
-        {isAddOpen && <div>
+        {isAddOpen && <div className="flex">
           <input
             type="text"
             autoFocus
             placeholder="Add an item"
-            className="my-input"
+            className="new-todo-input"
             value={newTodoTitle}
             onChange={this.onHandleNewTodoChange}
             onBlur={this.toggleIsAddOpen}
           />
-          <button onMouseDown={this.saveNewTodo} >Save</button>
+          <button className="save-todo" onMouseDown={this.saveNewTodo} >Save</button>
         </div>}
 
         {!isAddOpen && <button className="add-todo" onClick={this.toggleIsAddOpen}>Add todo</button>}

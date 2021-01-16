@@ -1,8 +1,6 @@
-import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 export function BoardPreview({ board }) {
-
     return (
         <Link to={`/board/${board._id}`}>
             <div style={{ backgroundColor: board.style.backgroundColor }} className="board-preview">

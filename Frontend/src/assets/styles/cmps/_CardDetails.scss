@@ -1,7 +1,8 @@
 .card-details {
-  background-color: gray;
+  background-color: #f4f5f7;
+  border-radius: 2px;
   position: fixed;
-  top: 7rem;
+  top: 3rem;
   left: 50%;
   bottom: 1rem;
   width: 80%;
@@ -9,52 +10,175 @@
   overflow-y: scroll;
   z-index: 1000;
 
+
   & textarea {
     resize: none;
   }
 
-  & input:not([type="checkbox"]),
-  textarea {
-    background-color: rgba(165, 165, 165, 0.726);
-  }
+  // & input:not([type="checkbox"]),
+  // textarea {
+  //   background-color: rgba(165, 165, 165, 0.726);
+  // }
 
   .card-details-wrapper {
     height: 90%;
     width: 90%;
 
     .title-textarea {
+      color: #172b4d;
+      outline: none;
+      border: none;
+      background-color: unset;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: rem(22px);
       width: 100%;
-      height: 3rem;
+      height: 4rem;
+      display: block;
+      margin: 0;
+      padding: 0 8px 4px;
+      font-family: 'montserrat', sans-serif;
+      overflow: hidden;
+      overflow-wrap: break-word;
+    }
+    
+    .title-textarea:focus {
+      background-color: white;
+      box-shadow: inset 0 0 0 2px #0079bf;
+      font-weight: 400;
+      font-size: 14px;
     }
   }
+
+  .card-title-area{
+    .card-title-img{
+      width: 20px;
+      height: 20px;
+      opacity: 0.8;
+
+    }
+  }
+
+  .card-title-p{
+    margin: 0 0 15px 28px;
+  }
+
 }
 
 .card-info {
   flex-grow: 1;
 
   & > * {
-    margin-bottom: 28px;
+    margin-bottom: 18px;
   }
 
   .members {
     flex-wrap: wrap;
+    margin-left: 28px;
     .members-header {
       display: block;
+      color: #5e6c84;
+      font-size: rem(14px);
+      font-weight: 700;
+      letter-spacing: .04em;
+      line-height: 16px;
+      margin-top: 16px;
+      text-transform: uppercase;
+      line-height: 20px;
+      margin: 0 8px 4px 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 
+  .card-labels{
+    margin-left: 28px
+  }
+
+  .card-label-h2 {
+    display: block;
+    color: #5e6c84;
+    font-size: rem(14px);
+    font-weight: 700;
+    letter-spacing: .04em;
+    line-height: 16px;
+    margin-top: 16px;
+    text-transform: uppercase;
+    line-height: 20px;
+    margin: 0 8px 4px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
   .label-btn {
-    background-color: lightblue;
+    background-color: rgb(245, 231, 35);
+    border-radius: 3px;
+    font-weight: 600;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px 4px 0;
+    min-width: 40px;
+    padding: 0 12px;
+    width: auto;    
+    color: #fff;
+    border: none;
+  }
+
+  .card-description{
+
+    .desc-img{
+      width: 20px;
+      height: 20px;
+      opacity: 0.8;
+      margin-right: 9px;
+    }
   }
 
   .desc-textarea {
+    background-color: rgba(9,30,66,.04);
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
     width: 90%;
-    height: 6rem;
+    min-height: 100px;
+    margin-left: 28px;
+    
+    &:hover{
+      background-color: rgba(9,30,66,.08);
+    }
+
+    &:focus{
+      box-shadow: inset 0 0 0 2px #0079bf;
+      background-color: #fff;
+      outline: none;
+      padding: 8px 8px 8px 4px;
+      min-height: 100px;
+    }
+
   }
 
   .activity-container {
     .activity-textarea {
       width: 100%;
+      font-family: 'montserrat', sans-serif;
+
+    }
+
+    .activity-header{
+
+      margin-bottom: 10px;
+      
+      img{
+        width: 20px;
+        height: 20px;
+        opacity: 0.8;
+        margin-right: 9px;
+      }
     }
 
     button {
@@ -62,43 +186,179 @@
     }
   }
 
+  .due-date-wrapper{
+    margin-left: 28px
+
+    
+  }
+  
+  .due-date-h2{
+    display: block;
+    color: #5e6c84;
+    font-size: rem(14px);
+    font-weight: 700;
+    letter-spacing: .04em;
+    line-height: 16px;
+    margin-top: 16px;
+    text-transform: uppercase;
+    line-height: 20px;
+    margin: 0 8px 4px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
   .due-date {
-    border: 1px solid black;
-    width: 10rem;
+    background-color: rgba(9,30,66,.04);
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 32px;
+    margin-top: 8px;
+    max-width: 200px;
+    overflow: hidden;
+    padding: 6px 12px;
   }
 }
 
 .checklist {
   .checklist-header {
-    & input {
-      flex-grow: 1;
+    
+    img{
+      width: 20px;
+      height: 20px;
+      opacity: 0.8;
+    }
+    
+    input {
+      color: #172b4d;
+      outline: none;
+      border: none;
+      background-color: unset;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: rem(17px);
+      width: 100%;
+      height: 2rem;
+      display: block;
+      margin: 0;
+      padding: 0 8px 4px;
+      font-family: 'montserrat', sans-serif;
+      overflow: hidden;
+      overflow-wrap: break-word;
+
+      &:focus {
+        background-color: white;
+        box-shadow: inset 0 0 0 2px #0079bf;
+        font-weight: 400;
+        font-size: 14px;
+      }
     }
   }
 
   .progress-bar {
-    background-color: black;
-    border-radius: 13px;
-    /* (height of inner div) / 2 + padding */
-    padding: 1px;
+    background: rgba(9,30,66,.08);
+    border-radius: 4px;
+    clear: both;
+    height: 8px;
+    margin: 0 0 20px 25px;
+    overflow: hidden;
+    position: relative;
   }
 
   .progress-bar > div {
-    background-color: orange;
+    background-color: #5ba4cf;
     width: 40%;
     height: 20px;
-    border-radius: 10px;
+    border-radius: 0 0 4px 0;
   }
 
   .checklist-todo {
     margin-bottom: 4px;
     .add-todo-input {
       flex-grow: 1;
+      color: #172b4d;
+      outline: none;
+      border: none;
+      background-color: unset;
+      border-radius: 3px;
+      font-weight: 700;
+      width: 100%;
+      margin: 0;
+      padding: 0 8px 4px;
+      font-family: 'montserrat', sans-serif;
+
+      &:hover{
+        background-color: rgba(9,30,66,.08);
+      }
+    
     }
+
+    .delete-todo{
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      &:hover{
+        background-color: rgba(9,30,66,.08);
+      }
+    }
+    
   }
 
   .add-todo {
-    width: 15%;
+    color: #172b4d;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 6px 12px;
+    box-shadow: none;
+    border: none;
+    font-family: 'montserrat', sans-serif;
+    width: 130px;
+
+    &:hover{
+      background-color: rgba(9,30,66,.08);
+    }
   }
+
+  .new-todo-input{
+    outline: none;
+    border: none;
+    background-color: #fff;
+    box-shadow: inset 0 0 0 2px #0079bf;
+    display: block;
+    border-radius: 3px;
+    margin: 0;
+    width: 40%;
+    padding: 8px 12px;
+    font-family: 'montserrat', sans-serif;
+  }
+}
+
+.save-todo{
+  border-radius: 3px;
+        background-color: #5aac44;
+        box-shadow: none;
+        border: none;
+        color: #fff;
+        height: 32px;
+        margin-left: 2px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-family: 'montserrat', sans-serif;
+        cursor: pointer;
+
+        &:hover{
+            background-color: #49852e
+        }
+
+        &:active{
+            background-color: #49852e
+        }
 }
 
 .side-btn {

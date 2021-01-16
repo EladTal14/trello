@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { utilService } from '../services/utilService.js'
+import { utilService } from '../../services/utilService.js'
 
 export class GroupAdd extends Component {
 
@@ -25,7 +25,6 @@ export class GroupAdd extends Component {
     onSaveGroup = (ev) => {
         ev.preventDefault()
         const group = { title: this.state.group.title, id: utilService.makeId(), cards: [] }
-        // console.log('saving new group...', group)
         this.props.onAddGroup(group)
         this.setState(
             {
@@ -36,8 +35,7 @@ export class GroupAdd extends Component {
 
     handleInput = ({ target }) => {
         const { name } = target
-        const value = target.value
-
+        const { value } = target
         this.setState(prevState => {
             return {
                 group: {
@@ -48,7 +46,6 @@ export class GroupAdd extends Component {
         })
     }
 
-
     render() {
         const { isAddOpen, group } = this.state
         return <section className="add-group-container">
@@ -58,8 +55,7 @@ export class GroupAdd extends Component {
                         className="my-input" placeholder="Enter group title..." autoFocus autoComplete="off" />
                     <div>
                         <button className="submit-group-btn">Add group</button>
-                        <button onClick={this.closeInput} className="close-input-btn" ><img src="https://res.cloudinary.com/basimgs/image/upload/v1610646476/close_voj9v3.png" alt=""/></button>
-
+                        <button onClick={this.closeInput} className="close-input-btn" ><img src="https://res.cloudinary.com/basimgs/image/upload/v1610646476/close_voj9v3.png" alt="" /></button>
                     </div>
                 </form>
             }

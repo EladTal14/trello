@@ -1,7 +1,6 @@
 import React from 'react'
-import { CardList } from './CardList'
+import { CardList } from '../Card/CardList.jsx'
 import { Draggable } from "react-beautiful-dnd";
-import { CardAdd } from './CardAdd';
 import { GroupTitle } from './GroupTitle';
 
 export function GroupPreview({ group, idx, onAddCard }) {
@@ -11,7 +10,7 @@ export function GroupPreview({ group, idx, onAddCard }) {
                 <div {...provided.draggableProps}
                     style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
                     ref={provided.innerRef}>
-                    <article className="group-preview" >
+                    <article className="group-preview">
                         <div  {...provided.dragHandleProps} style={{ width: '110%', height: '1.175em' }}>
                         </div>
                         <GroupTitle group={group} />
@@ -31,6 +30,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
     // borderRadius: '3px',
     // // change background colour if dragging
     // background: isDragging ? 'red' : 'white',
+
     transform: isDragging ? `rotate(20deg)` : null,
     // styles we need to apply on draggables
     ...draggableStyle

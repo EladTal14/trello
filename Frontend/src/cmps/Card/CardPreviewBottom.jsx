@@ -1,10 +1,9 @@
 import React from 'react'
-import { utilService } from '../services/utilService'
+import { utilService } from '../../services/utilService'
 
 export function CardPreviewBottom({ card }) {
 
     const progress = utilService.getTodoProgress(card)
-
     return (
         <div className="card-extras-container flex space-between">
             {card.dueDate && <div className="date-container flex">

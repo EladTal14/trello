@@ -1,19 +1,17 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 export class BoardFilter extends Component {
-
     state = {
         filterBy: {
             title: '',
         }
     }
 
-
     handleChange = ({ target }) => {
         const field = target.name
         const value = target.value
         this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),
-        //  () => { this.props.onSetFilter(this.state.filterBy)}
+            //  () => { this.props.onSetFilter(this.state.filterBy)}
         )
     }
 

@@ -3,7 +3,7 @@
 }
 
 html {
-    font-family: 'montserrat', sans-serif;
+    font-family: "montserrat", sans-serif;
     line-height: 1.6;
     color: $clr4;
     scroll-behavior: smooth;
@@ -13,6 +13,8 @@ html {
 body {
     margin: 0;
     background-color: $clr5;
+
+    overflow-y: hidden;
 }
 
 a {
@@ -26,7 +28,12 @@ ul {
     margin: 5px 0;
 }
 
-h1, h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0 0 0.4em;
     line-height: 0.9;
 }
@@ -35,42 +42,18 @@ p {
     margin: 0;
 }
 
-pre{
+pre {
     margin: 0;
-    font-family: 'montserrat', sans-serif;
+    font-family: "montserrat", sans-serif;
 }
 .member {
-    border: 1px solid black;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     line-height: 30px;
-    margin-left: 5px;
+    margin: 0 10px 0 5px;
     color: white;
     font-weight: 700;
     background-color: rgb(4, 78, 236);
     text-align: center;
 }
-// p {
-//     margin: 0 0 0.8em;
-// }
-
-// button{
-//     background-color: unset;
-//     border: none;
-//     border-radius: 7px;
-//     outline: none;
-//     height: 35px;
-//     font-family: 'montserrat', sans-serif;
-//     font-size: rem(16px);
-//     color: $clr4;
-//     cursor: pointer;
-//     transition: all 0.7s;
-
-//     &:hover{
-//         background-color: $clr6;
-//         transition: all 0.7s;
-//     }
-// }
-
-

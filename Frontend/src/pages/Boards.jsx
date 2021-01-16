@@ -4,28 +4,25 @@ import { BoardPreview } from '../cmps/BoardPreview'
 import { loadBoards, saveBoard } from '../store/actions/boardAction'
 
 export class _Boards extends Component {
-
-
     componentDidMount() {
         this.props.loadBoards()
     }
 
     addBoard = async () => {
-        const board = {title: 'New Board'}
+        const board = { title: 'New Board' }
         await this.props.saveBoard(board)
         this.props.history.push(`board/${this.props.board._id}`)
     }
 
-
     render() {
         const { boards } = this.props
-        console.log('boards', boards);
         const load = <p>Loading...</p>
-        return (!boards ? load :
+        if (!boards) return load
+        return (
             <div className="boards-page">
                 <h2>Our Boards</h2>
                 <section className="boards-container">
-                    <div className="new-board" onClick={this.addBoard}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/plus_ljzrkm.png" alt=""/></div>
+                    <div className="new-board" onClick={this.addBoard}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/plus_ljzrkm.png" alt="" /></div>
                     {boards.map(board => {
                         return <BoardPreview key={board._id} board={board} />
                     })}

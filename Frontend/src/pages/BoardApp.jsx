@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ScrollContainer from "react-indiana-drag-scroll"
-import { GroupList } from '../cmps/GroupList'
-import { BoardHeader } from '../cmps/BoardHeader'
+import ScrollContainer from 'react-indiana-drag-scroll'
 import { loadBoard, saveBoard } from '../store/actions/boardAction'
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import { GroupAdd } from '../cmps/GroupAdd';
-import { CardDetails } from '../cmps/CardDetails';
-import { boardService } from '../services/boardService';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import { BoardHeader } from '../cmps/BoardHeader/BoardHeader'
+import { GroupList } from '../cmps/Group/GroupList'
+import { GroupAdd } from '../cmps/Group/GroupAdd'
+import { CardDetails } from '../cmps/Card/CardDetails'
+import { boardService } from '../services/boardService'
 import { eventBusService } from '../services/eventBusService.js'
 
 export class _BoardApp extends Component {
@@ -19,12 +19,13 @@ export class _BoardApp extends Component {
     componentDidMount() {
         this.loadBoard()
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
-    }
 
+    }
+    check = (ev) => { console.log(ev); }
     componentWillUnmount() {
         this.eventBusTerminate()
     }
-    
+
     loadBoard = async () => {
         const { boardId } = this.props.match.params
         await this.props.loadBoard(boardId)
@@ -81,25 +82,24 @@ export class _BoardApp extends Component {
                 {this.props.currCard && isDetailsShown &&
                     <>
                         <div className="modal-cover" onClick={() => this.toggleDetails(false)}> </div>
-                        <CardDetails card={this.props.currCard} group={this.props.currGroup} />
+                        <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
 
                 <BoardHeader title={board.title} members={board.members} />
                 <GroupAdd onAddGroup={this.onAddGroup} />
-                <section className="board-container">
-                    <ScrollContainer ignoreElements="article" >
-                        <DragDropContext onDragEnd={this.onDragEnd}>
-                            <Droppable droppableId="app" type="group" direction="horizontal">
-                                {(provided) => (
-                                    <div ref={provided.innerRef} {...provided.droppableProps}>
-                                        <GroupList groups={board.groups} onAddCard={this.onAddCard} />
-
-                                        {provided.placeholder}
-                                    </div>
-                                )}
-                            </Droppable>
-                        </DragDropContext>
-                    </ScrollContainer>
+                <section className="board-container" >
+                    {/* <ScrollContainer ignoreElements="article" > */}
+                    <DragDropContext onDragEnd={this.onDragEnd}>
+                        <Droppable droppableId="app" type="group" direction="horizontal">
+                            {(provided) => (
+                                <div ref={provided.innerRef} {...provided.droppableProps}>
+                                    <GroupList groups={board.groups} onAddCard={this.onAddCard} />
+                                    {provided.placeholder}
+                                </div>
+                            )}
+                        </Droppable>
+                    </DragDropContext>
+                    {/* </ScrollContainer> */}
                 </section>
             </>
         )

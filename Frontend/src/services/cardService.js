@@ -5,9 +5,13 @@ export const cardService = {
 }
 
 function createTodo(title) {
-  return {
-    id: utilService.makeId(),
-    title,
-    isDone: false
+  try {
+    return {
+      id: utilService.makeId(),
+      title,
+      isDone: false
+    }
+  } catch (err) {
+    console.log('err cardService CREATE TODO', err)
   }
 }

@@ -10,9 +10,6 @@ export function loadBoards() { // Action Creator
             console.log('err boardAction LOAD BOARDS', err);
         }
     }
-
-
-
 }
 
 export function loadBoard(boardId) {
@@ -20,7 +17,6 @@ export function loadBoard(boardId) {
         try {
             const board = await boardService.getBoardById(boardId)
             dispatch({ type: 'SET_BOARD', board })
-
         } catch (err) {
             console.log('err boardAction LOAD BOARD', err);
         }

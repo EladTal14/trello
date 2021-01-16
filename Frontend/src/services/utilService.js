@@ -45,6 +45,7 @@ function getDueDate(timeStamp) {
 }
 
 function convertName(fullname) {
+  if (!fullname) return
   const names = fullname.split(' ')
   const letterName = names[0][0].toUpperCase() + names[1][0].toUpperCase()
   return letterName
