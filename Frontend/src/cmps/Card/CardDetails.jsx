@@ -70,6 +70,17 @@ class _CardDetails extends Component {
     }))
   }
 
+  onRemoveCard = () => {
+    const { board, group } = this.props
+    const { card } = this.state
+    const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
+    group.cards.splice(cardIdx, 1)
+    const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
+    board.groups[groupIdx] = group
+    this.props.saveBoard(board)
+    this.props.toggleDetails(false)
+  }
+
   render() {
     const { card } = this.state
     const { group } = this.props
@@ -87,7 +98,7 @@ class _CardDetails extends Component {
               onHandleInputChange={this.onHandleInputChange}
               onHandleActivitiesChange={this.onHandleActivitiesChange}
             />
-            <CardSide />
+            <CardSide onRemoveCard={this.onRemoveCard} />
           </div>
         </div>
       </div>

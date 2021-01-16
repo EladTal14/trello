@@ -1,0 +1,47 @@
+.card-side{
+    height: 280px;
+    justify-content: space-around;
+
+    .side-btn{
+        background-color: rgba(9,30,66,.04);
+        width: 170px;
+        font-family: 'montserrat', sans-serif;
+        box-shadow: none;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        box-sizing: border-box;
+        cursor: pointer;
+        height: 32px;
+        margin-top: 8px;
+        max-width: 300px;
+        overflow: hidden;
+        padding: 6px 12px;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: flex;
+
+        &:hover{
+            background-color: rgba(9,30,66,.08);
+        }
+
+        &:active{
+            background-color: rgba(9,30,66,.08);
+        }
+
+        img{
+            width: 15px;
+            height: 15px;
+            opacity: 0.8;
+            margin-right: 10px;
+        }
+    }
+
+    .date-time-picker{
+        opacity: 0;
+        // z-index: -1;
+        cursor: pointer;
+        visibility: hidden;
+    }
+}

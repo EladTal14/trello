@@ -15,11 +15,11 @@ export class _BoardApp extends Component {
     state = {
         isDetailsShown: false
     }
-    appRef = React.createRef()
+
     componentDidMount() {
         this.loadBoard()
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
-        this.appRef.current.addEventListener('drag', this.check)
+
     }
     check = (ev) => { console.log(ev); }
     componentWillUnmount() {
@@ -82,12 +82,12 @@ export class _BoardApp extends Component {
                 {this.props.currCard && isDetailsShown &&
                     <>
                         <div className="modal-cover" onClick={() => this.toggleDetails(false)}> </div>
-                        <CardDetails card={this.props.currCard} group={this.props.currGroup} />
+                        <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
 
                 <BoardHeader title={board.title} members={board.members} />
                 <GroupAdd onAddGroup={this.onAddGroup} />
-                <section className="board-container" ref={this.appRef}>
+                <section className="board-container" >
                     {/* <ScrollContainer ignoreElements="article" > */}
                     <DragDropContext onDragEnd={this.onDragEnd}>
                         <Droppable droppableId="app" type="group" direction="horizontal">

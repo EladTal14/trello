@@ -10,6 +10,7 @@ export function CardHeader({ card, onHandleInputChange, group }) {
           value={card.title}
           onChange={onHandleInputChange}
           placeholder={card.title}
+          spellCheck="false"
         />
       </div>
       <p className="card-title-p">In List in {group.title}</p>
