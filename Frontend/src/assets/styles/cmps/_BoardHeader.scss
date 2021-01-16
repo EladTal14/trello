@@ -72,10 +72,13 @@
         background-color: gray;
     }
 
-    img {
-        width: 25px;
-        height: 25px;
-        opacity: 0.8;
+    .add-member, .board-header-btn{
+      img {
+          width: 25px;
+          height: 25px;
+          opacity: 0.8;
+      }
+
     }
 
     .board-title-form{
