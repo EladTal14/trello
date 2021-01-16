@@ -1,42 +1,91 @@
 {
   "board": [
     {
-      "_id": "b101",
       "title": "Sprint 4 projad",
       "createdAt": 1589983468418,
-      "createdBy": {
-        "_id": "u101",
-        "fullname": "Abi Abambi",
-        "imgUrl": "http://some-img"
-      },
+      "createdBy": {},
       "style": {
-        "backgroundColor": "#cd77e2",
-        "backgroundImage": "https://res.cloudinary.com/basimgs/image/upload/v1610712048/pexels-riccardo-bertolo-4245826_eoizb4.jpg"
+        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271951/samples/landscapes/beach-boat.jpg"
       },
-      "members": [
-        {
-          "_id": "u101",
-          "fullname": "Tal Tarablus",
-          "imgUrl": "https://www.google.com"
-        }
-      ],
+      "members": [],
       "groups": [
         {
           "id": "g103",
-          "title": "haimasdassds",
-          "cards": []
+          "title": "Things to do",
+          "cards": [
+            {
+              "id": "c104",
+              "title": "please help me bitch ya\nhutzpan",
+              "description": "lielm1877",
+              "comments": [
+                {
+                  "id": "ZdPnm",
+                  "txt": "a comment",
+                  "createdAt": 1590999817436,
+                  "byMember": {}
+                },
+                {
+                  "id": "ZdPno",
+                  "txt": "dont like it",
+                  "createdAt": 1590999817456,
+                  "byMember": {}
+                }
+              ],
+              "checklist": {
+                "id": "YEhmF",
+                "title": "Checklist",
+                "todos": [
+                  {
+                    "title": "To Do 1",
+                    "isDone": true,
+                    "id": "212jt"
+                  },
+                  {
+                    "title": "To Do 2",
+                    "isDone": true,
+                    "id": "212j3"
+                  },
+                  {
+                    "title": "To Do 3",
+                    "isDone": false,
+                    "id": "212jkk"
+                  }
+                ]
+              },
+              "members": [
+                {}
+              ],
+              "labels": [
+                {
+                  "id": "101",
+                  "title": "done",
+                  "color": "#rgb(82 160 66)"
+                }
+              ],
+              "createdAt": 1590999730348,
+              "dueDate": 16156215211,
+              "byMember": {},
+              "style": {
+                "bgColor": "#26DE81"
+              }
+            },
+            {
+              "title": "hello",
+              "id": "vyg0f4y"
+            }
+          ]
         },
         {
           "title": "haimasdassds",
           "id": "r74",
           "cards": [
             {
-              "title": "asdasd",
-              "id": "goU8K6g"
-            },
-            {
               "title": "aasd",
               "id": "KYFCLUO"
+            },
+            {
+              "title": "asdasd",
+              "id": "goU8K6g"
             },
             {
               "title": "lffff\ngthte\nbgrwrynrnhr\nha",
@@ -74,8 +123,31 @@
           "style": {}
         },
         {
-          "id": "g102",
+          "id": "g105",
           "title": "In Progress",
+          "cards": [
+            {
+              "title": "vdfvdvxc",
+              "id": "fyV"
+            },
+            {
+              "title": "fghfghfghasdasd",
+              "id": "TPf"
+            },
+            {
+              "title": "llalalal\nlalla\nhlhlhl",
+              "id": "rAL"
+            },
+            {
+              "title": "hhh",
+              "id": "9O6",
+              "description": "asasadsas"
+            }
+          ]
+        },
+        {
+          "id": "g102",
+          "title": "something normal ",
           "cards": [
             {
               "id": "c103",
@@ -91,103 +163,6 @@
             }
           ],
           "style": {}
-        },
-        {
-          "id": "g105",
-          "title": "something normal ",
-          "cards": [
-            {
-              "title": "fghfghfghasdasd",
-              "id": "TPf"
-            },
-            {
-              "title": "vdfvdvxc",
-              "id": "fyV"
-            },
-            {
-              "id": "c104",
-              "title": "please help me bitch ya\nhutzpan",
-              "description": "lielm1877",
-              "comments": [
-                {
-                  "id": "ZdPnm",
-                  "txt": "a comment",
-                  "createdAt": 1590999817436,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
-                },
-                {
-                  "id": "ZdPno",
-                  "txt": "dont like it",
-                  "createdAt": 1590999817456,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
-                }
-              ],
-              "checklist": {
-                "id": "YEhmF",
-                "title": "Checklist",
-                "todos": [
-                  {
-                    "title": "To Do 1",
-                    "isDone": true,
-                    "id": "212jt"
-                  },
-                  {
-                    "title": "To Do 2",
-                    "isDone": true,
-                    "id": "212j3"
-                  },
-                  {
-                    "title": "To Do 3",
-                    "isDone": false,
-                    "id": "212jkk"
-                  }
-                ]
-              },
-              "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
-              ],
-              "labels": [
-                {
-                  "id": "101",
-                  "title": "done",
-                  "color": "#rgb(82 160 66)"
-                }
-              ],
-              "createdAt": 1590999730348,
-              "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
-              "style": {
-                "bgColor": "#26DE81"
-              }
-            },
-            {
-              "title": "llalalal\nlalla\nhlhlhl",
-              "id": "rAL"
-            },
-            {
-              "title": "hhh",
-              "id": "9O6",
-              "description": "asasadsas"
-            }
-          ]
         },
         {
           "title": "In Progress",
@@ -209,12 +184,7 @@
                 ]
               },
               "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
+                {}
               ],
               "labels": [
                 {
@@ -225,12 +195,7 @@
               ],
               "createdAt": 1590999730348,
               "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
+              "byMember": {},
               "style": {
                 "bgColor": "#26DE81"
               }
@@ -253,11 +218,7 @@
           "id": "a101",
           "txt": "Changed Color",
           "createdAt": 154514,
-          "byMember": {
-            "_id": "u108",
-            "fullname": "Abi Abambi",
-            "imgUrl": "http://some-img"
-          },
+          "byMember": {},
           "card": {
             "id": "c101",
             "title": "Replace Logo"
@@ -266,34 +227,13 @@
       ]
     },
     {
-      "_id": "b102",
       "title": "Planing BirthDay",
       "createdAt": 1589983468418,
-      "createdBy": {
-        "_id": "u101",
-        "fullname": "Abi Abambi",
-        "imgUrl": "http://some-img"
-      },
+      "createdBy": {},
       "style": {
         "backgroundColor": "#9088d4"
       },
-      "members": [
-        {
-          "_id": "u101",
-          "fullname": "Tal Tarablus",
-          "imgUrl": "https://www.google.com"
-        },
-        {
-          "_id": "u102",
-          "fullname": "Abi Bamia",
-          "imgUrl": "https://www.google.com"
-        },
-        {
-          "_id": "u103",
-          "fullname": "Muki Kapika",
-          "imgUrl": "https://www.google.com"
-        }
-      ],
+      "members": [],
       "groups": [
         {
           "id": "g104",
@@ -329,12 +269,7 @@
                 ]
               },
               "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
+                {}
               ],
               "labels": [
                 {
@@ -345,12 +280,7 @@
               ],
               "createdAt": 1590999730348,
               "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
+              "byMember": {},
               "style": {
                 "bgColor": "#26DE81"
               }
@@ -383,11 +313,7 @@
                   "id": "ZdPnm",
                   "txt": "a comment",
                   "createdAt": 1590999817436,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
+                  "byMember": {}
                 }
               ],
               "checklist": {
@@ -401,20 +327,7 @@
                   }
                 ]
               },
-              "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                },
-                {
-                  "_id": "u104",
-                  "username": "muki",
-                  "fullname": "muki kapika",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
-              ],
+              "members": [],
               "labels": [
                 {
                   "id": "101",
@@ -429,12 +342,7 @@
               ],
               "createdAt": 1590999730348,
               "dueDate": 16156215344,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
+              "byMember": {},
               "style": {
                 "bgColor": "#26DE81"
               }
@@ -467,11 +375,7 @@
           "id": "a101",
           "txt": "Changed Color",
           "createdAt": 154514,
-          "byMember": {
-            "_id": "u101",
-            "fullname": "Abi Abambi",
-            "imgUrl": "http://some-img"
-          },
+          "byMember": {},
           "card": {
             "id": "c101",
             "title": "Replace Logo"
@@ -483,27 +387,12 @@
       "_id": "b103",
       "title": "The StartUp!",
       "createdAt": 1589983468418,
-      "createdBy": {
-        "_id": "u101",
-        "fullname": "Abi Abambi",
-        "imgUrl": "http://some-img"
-      },
+      "createdBy": {},
       "style": {
         "backgroundColor": "#b7efcd",
         "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271951/samples/landscapes/beach-boat.jpg"
       },
-      "members": [
-        {
-          "_id": "u101",
-          "fullname": "Tal Tarablus",
-          "imgUrl": "https://www.google.com"
-        },
-        {
-          "_id": "u102",
-          "fullname": "Abi Bamia",
-          "imgUrl": "https://www.google.com"
-        }
-      ],
+      "members": [],
       "groups": [
         {
           "id": "g101",
@@ -524,14 +413,7 @@
                   }
                 ]
               },
-              "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
-              ],
+              "members": [],
               "labels": [
                 {
                   "id": "101",
@@ -541,12 +423,7 @@
               ],
               "createdAt": 1590999730348,
               "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
+              "byMember": {},
               "style": {
                 "bgColor": "#26DE81"
               }
@@ -560,11 +437,7 @@
                   "id": "ZdPnm",
                   "txt": "a comment",
                   "createdAt": 1590999817436,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
+                  "byMember": {}
                 }
               ],
               "checklist": {
@@ -593,26 +466,7 @@
                   }
                 ]
               },
-              "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                },
-                {
-                  "_id": "uowi213",
-                  "username": "alfonso",
-                  "fullname": "alfonso liberty",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                },
-                {
-                  "_id": "u109",
-                  "username": "Tal",
-                  "fullname": "Bubi Mubi",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
-              ],
+              "members": [],
               "labels": [
                 {
                   "id": "101",
@@ -632,12 +486,7 @@
               ],
               "createdAt": 1590999730348,
               "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
+              "byMember": {},
               "style": {
                 "bgColor": "#26DE81"
               }
@@ -692,12 +541,7 @@
                 ]
               },
               "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
+                {}
               ],
               "labels": [
                 {
@@ -708,12 +552,7 @@
               ],
               "createdAt": 1590999730348,
               "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
+              "byMember": {},
               "style": {
                 "bgColor": "#26DE81"
               }
@@ -745,11 +584,7 @@
           "id": "a101",
           "txt": "Changed Color",
           "createdAt": 154514,
-          "byMember": {
-            "_id": "u101",
-            "fullname": "Abi Abambi",
-            "imgUrl": "http://some-img"
-          },
+          "byMember": {},
           "card": {
             "id": "c101",
             "title": "Replace Logo"
@@ -820,32 +655,59 @@
         "backgroundColor": "#f44336"
       },
       "_id": "_CpbVxl"
+    },
+    {
+      "title": "New Board",
+      "createdAt": 1610783389022,
+      "groups": [],
+      "members": [],
+      "activities": [],
+      "style": {
+        "backgroundColor": "#f44336"
+      },
+      "_id": "vLhBqkq"
+    },
+    {
+      "title": "New Board",
+      "createdAt": 1610783396485,
+      "groups": [],
+      "members": [],
+      "activities": [],
+      "style": {
+        "backgroundColor": "#f44336"
+      },
+      "_id": "g2GgLZr"
+    },
+    {
+      "title": "New Board",
+      "createdAt": 1610783622559,
+      "groups": [],
+      "members": [],
+      "activities": [],
+      "style": {},
+      "_id": "wkEkWPt"
     }
   ],
   "user": [
     {
-      "_id": "u101",
       "fullname": "Adir Hagag",
       "username": "abasdasdi@ababmi.com",
       "password": "123",
       "imgUrl": "http://some-img.jpg"
     },
     {
-      "_id": "u102",
       "fullname": "Elad Tal",
       "username": "abasdi@ababmi.com",
       "password": "123",
       "imgUrl": "http://some-img.jpg"
     },
     {
-      "_id": "u103",
       "fullname": "Basya Kritchker",
       "username": "abasdasdi@ababmi.com",
       "password": "123",
       "imgUrl": "http://some-img.jpg"
     },
     {
-      "_id": "u104",
       "fullname": "muki kapika",
       "username": "abasdi@ababmi.com",
       "password": "111",
