@@ -1,6 +1,7 @@
 {
   "board": [
     {
+      "_id": "g103",
       "title": "Sprint 4 projad",
       "createdAt": 1589983468418,
       "createdBy": {},
@@ -16,7 +17,7 @@
             {
               "id": "c104",
               "title": "please help me bitch ya\nhutzpan",
-              "description": "lielm1877",
+              "description": "lieli",
               "comments": [
                 {
                   "id": "ZdPnm",
@@ -46,7 +47,7 @@
                     "id": "212j3"
                   },
                   {
-                    "title": "To Do 3",
+                    "title": "finish css",
                     "isDone": false,
                     "id": "212jkk"
                   }
@@ -80,20 +81,8 @@
           "id": "r74",
           "cards": [
             {
-              "title": "aasd",
-              "id": "KYFCLUO"
-            },
-            {
-              "title": "asdasd",
-              "id": "goU8K6g"
-            },
-            {
               "title": "lffff\ngthte\nbgrwrynrnhr\nha",
               "id": "kzv"
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
             },
             {
               "id": "c1089sdasd",
@@ -102,22 +91,6 @@
             {
               "title": "vtvtgt \nvtewhtty",
               "id": "GcS"
-            },
-            {
-              "title": "esd;sd",
-              "id": "tlo"
-            },
-            {
-              "title": "vdfvdvxc",
-              "id": "fyV4"
-            },
-            {
-              "title": "dasdasd",
-              "id": "lLD4Yb3"
-            },
-            {
-              "title": "asd",
-              "id": "93LULFN"
             }
           ],
           "style": {}
@@ -127,21 +100,8 @@
           "title": "In Progress",
           "cards": [
             {
-              "title": "vdfvdvxc",
-              "id": "fyV"
-            },
-            {
-              "title": "fghfghfghasdasd",
-              "id": "TPf"
-            },
-            {
-              "title": "llalalal\nlalla\nhlhlhl",
+              "title": "llalala jklll;'''\n'",
               "id": "rAL"
-            },
-            {
-              "title": "hhh",
-              "id": "9O6",
-              "description": "asasadsas"
             }
           ]
         },
@@ -180,6 +140,11 @@
                     "title": "To Do 1",
                     "isDone": false,
                     "id": "212jX"
+                  },
+                  {
+                    "id": "hkzp2Za",
+                    "title": "llll",
+                    "isDone": false
                   }
                 ]
               },

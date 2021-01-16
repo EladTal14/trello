@@ -47,35 +47,13 @@ pre {
     font-family: "montserrat", sans-serif;
 }
 .member {
-    border: 1px solid black;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     line-height: 30px;
-    margin-left: 5px;
+    margin: 0 10px 0 5px;
     color: white;
     font-weight: 700;
     background-color: rgb(4, 78, 236);
     text-align: center;
 }
-// p {
-//     margin: 0 0 0.8em;
-// }
-
-// button{
-//     background-color: unset;
-//     border: none;
-//     border-radius: 7px;
-//     outline: none;
-//     height: 35px;
-//     font-family: 'montserrat', sans-serif;
-//     font-size: rem(16px);
-//     color: $clr4;
-//     cursor: pointer;
-//     transition: all 0.7s;
-
-//     &:hover{
-//         background-color: $clr6;
-//         transition: all 0.7s;
-//     }
-// }

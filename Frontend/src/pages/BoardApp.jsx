@@ -81,7 +81,7 @@ export class _BoardApp extends Component {
                 {this.props.currCard && isDetailsShown &&
                     <>
                         <div className="modal-cover" onClick={() => this.toggleDetails(false)}> </div>
-                        <CardDetails card={this.props.currCard} group={this.props.currGroup} />
+                        <CardDetails card={this.props.currCard} group={this.props.currGroup}  toggleDetails={this.toggleDetails}/>
                     </>}
 
                 <BoardHeader title={board.title} members={board.members} />

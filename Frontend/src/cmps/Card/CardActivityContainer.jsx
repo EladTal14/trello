@@ -40,9 +40,9 @@ export class CardActivityContainer extends Component {
     const { newComment, isSaveOpen, comments } = this.state
     return (
       <div className="activity-container">
-        <div className="activity-header">
-          <span>L </span>
-          <span>Activity</span>
+        <div className="activity-header flex">
+          <img src="https://res.cloudinary.com/basimgs/image/upload/v1610792909/menu_1_o2l8cs.png" alt=""/>
+          <h3>Activity</h3>
         </div>
         <div className="flex column">
           <div className="flex">
