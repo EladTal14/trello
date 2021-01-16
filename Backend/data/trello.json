@@ -6,141 +6,18 @@
       "createdAt": 1589983468418,
       "createdBy": {},
       "style": {
-        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271951/samples/landscapes/beach-boat.jpg"
+        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271954/samples/landscapes/nature-mountains.jpg"
       },
       "members": [],
       "groups": [
         {
-          "id": "g102",
-          "title": "something normal e",
-          "cards": [
-            {
-              "id": "c104",
-              "title": "please help me bitch ya\nhutzpan",
-              "description": "lieli",
-              "comments": [
-                {
-                  "id": "ZdPnm",
-                  "txt": "a comment",
-                  "createdAt": 1590999817436,
-                  "byMember": {}
-                },
-                {
-                  "id": "ZdPno",
-                  "txt": "dont like it",
-                  "createdAt": 1590999817456,
-                  "byMember": {}
-                }
-              ],
-              "checklist": {
-                "id": "YEhmF",
-                "title": "Checklist",
-                "todos": [
-                  {
-                    "title": "To Do 1",
-                    "isDone": true,
-                    "id": "212jt"
-                  },
-                  {
-                    "title": "To Do 2",
-                    "isDone": true,
-                    "id": "212j3"
-                  },
-                  {
-                    "title": "finish css",
-                    "isDone": false,
-                    "id": "212jkk"
-                  }
-                ]
-              },
-              "members": [],
-              "labels": [
-                {
-                  "id": "101",
-                  "title": "done",
-                  "color": "#rgb(82 160 66)"
-                }
-              ],
-              "createdAt": 1590999730348,
-              "dueDate": 16156215211,
-              "byMember": {},
-              "style": {
-                "bgColor": "#26DE81"
-              }
-            },
-            {
-              "title": "vdfvdvxc",
-              "id": "fyV"
-            },
-            {
-              "id": "c102",
-              "title": "Add Samples"
-            },
-            {
-              "title": "dd\nd\nd\naa",
-              "id": "WNjSOGs"
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
-              "title": "dasdasd",
-              "id": "hlhU3hh"
-            },
-            {
-              "title": "d\nd\nd\n",
-              "id": "xZfEZNR"
-            }
-          ],
-          "style": {}
-        },
-        {
-          "title": "In Progress",
-          "id": "5NkeaUl",
-          "cards": []
-        },
-        {
-          "title": "something normal e",
-          "id": "BY4",
-          "cards": [
-            {
-              "title": "watch TV",
-              "id": "xy9Z7ct"
-            }
-          ]
-        },
-        {
-          "id": "g103",
-          "title": "something normal ",
-          "cards": [
-            {
-              "title": "hhh",
-              "id": "9O6",
-              "description": "asasadsas"
-            },
-            {
-              "title": "lffff\ngthte\nbgrwrynrnhr\nha",
-              "id": "kzv"
-            },
-            {
-              "id": "c103",
-              "title": "Do that"
-            },
-            {
-              "title": "hello",
-              "id": "vyg0f4y"
-            },
-            {
-              "id": "c101",
-              "title": "Replace logo"
-            }
-          ]
-        },
-        {
           "id": "g105",
           "title": "In Progress",
           "cards": [
+            {
+              "title": "vtvtgt \nvtewhtty",
+              "id": "GcS"
+            },
             {
               "title": "llalalal\nlalla\nhlhlhl",
               "id": "rAL"
@@ -183,55 +60,133 @@
           ]
         },
         {
-          "title": "liel",
+          "title": "In Progressasdad",
           "id": "r74",
           "cards": [
             {
-              "title": "asdasd",
-              "id": "goU8K6g"
+              "title": "vdfvdvxc",
+              "id": "fyV4"
             },
             {
-              "title": "fghfghfghasdasd",
-              "id": "TPf"
-            },
-            {
-              "title": "aasd",
-              "id": "KYFCLUO"
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
-            },
-            {
-              "title": "vtvtgt \nvtewhtty",
-              "id": "GcS"
+              "title": "bvbcvb",
+              "id": "0xGJLf2"
             },
             {
               "title": "esd;sd",
               "id": "tlo"
             },
             {
-              "title": "vdfvdvxc",
-              "id": "fyV4"
+              "title": "fghfghfghasdasd",
+              "id": "TPf"
+            },
+            {
+              "title": "asdasd",
+              "id": "goU8K6g"
+            },
+            {
+              "title": "gggg",
+              "id": "cMP"
             },
             {
               "title": "dasdasd",
               "id": "lLD4Yb3"
             },
             {
-              "title": "asd",
-              "id": "93LULFN"
-            },
-            {
               "title": "fghghgh\n",
               "id": "JJjhn0m"
             },
             {
-              "title": "bvbcvb",
-              "id": "0xGJLf2"
+              "title": "asd",
+              "id": "93LULFN"
             }
           ],
           "style": {}
+        },
+        {
+          "title": "In Progress",
+          "id": "BY4",
+          "cards": [
+            {
+              "title": "watch TV",
+              "id": "xy9Z7ct"
+            }
+          ]
+        },
+        {
+          "id": "dfgdddgdfgh",
+          "title": "In Progressasdad",
+          "cards": [
+            {
+              "title": "vtvtgt \nvtewhtty",
+              "id": "GcS"
+            },
+            {
+              "title": "llalalal\nlalla\nhlhlhl",
+              "id": "rAL"
+            },
+            {
+              "id": "c10894",
+              "title": "eat soup",
+              "description": "3 cups of oil",
+              "checklist": {
+                "id": "YEhmF",
+                "title": "Checklist",
+                "todos": [
+                  {
+                    "title": "To Do 1",
+                    "isDone": false,
+                    "id": "212jX"
+                  },
+                  {
+                    "id": "hkzp2Za",
+                    "title": "llll",
+                    "isDone": false
+                  }
+                ]
+              },
+              "members": [],
+              "labels": [
+                {
+                  "id": "101",
+                  "title": "done",
+                  "color": "rgb(82 160 66)"
+                }
+              ],
+              "createdAt": 1590999730348,
+              "dueDate": 16156215211,
+              "byMember": {},
+              "style": {
+                "bgColor": "#26DE81"
+              }
+            }
+          ]
+        },
+        {
+          "id": "g103",
+          "title": "In Progressasdad",
+          "cards": [
+            {
+              "title": "lffff\ngthte\nbgrwrynrnhr\nha",
+              "id": "kzv"
+            },
+            {
+              "title": "hhh",
+              "id": "9O6",
+              "description": "asasadsas"
+            },
+            {
+              "id": "c103",
+              "title": "Do that"
+            },
+            {
+              "title": "hello",
+              "id": "vyg0f4y"
+            },
+            {
+              "id": "c101",
+              "title": "Replace logo"
+            }
+          ]
         },
         {
           "title": "In Progress",
@@ -242,6 +197,11 @@
               "title": "eat cupcake"
             }
           ]
+        },
+        {
+          "title": "In Progressasdad",
+          "id": "5NkeaUl",
+          "cards": []
         }
       ],
       "activities": [
