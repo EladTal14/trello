@@ -1,7 +1,8 @@
-import zIndex from 'material-ui-core/styles/zIndex';
+
 import React, { Component } from 'react'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { DatePicker } from './DatePicker'
 
 export class CardSide extends Component {
 
@@ -14,14 +15,12 @@ export class CardSide extends Component {
     this.props.onRemoveCard()
   }
 
-  toggleDate = () => {
-    this.setState({ isDateShown: !this.state.isDateShown })
-  }
+  // toggleDate = () => {
+  //   this.setState({ isDateShown: !this.state.isDateShown })
+  // }
 
-  onChange = (value, ev) => {
-    console.log('value and ev', value, ev)
-    this.setState( { dueDate: ev.timeStamp })
-    this.props.onSavedueDate(this.state.dueDate)
+  onChange = (value) => {
+    this.setState( { value }, () => this.props.onSavedueDate((this.state.value + '').substring(4, 32))) 
     this.toggleDate()
     
   }
@@ -36,12 +35,13 @@ export class CardSide extends Component {
         <button className="side-btn"><span><img src="https://res.cloudinary.com/basimgs/image/upload/v1610794290/check-box_srgv0c.png" alt="" /></span> Checklist</button>
         <button className="side-btn" onClick={this.toggleDate}><span><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/clock_zwp9d9.png" alt="" /></span> Due date
         </button>
-        {isDateShown && <div>
-          <Calendar style={{zIndex: 2000}}
+        {/* {isDateShown && <div>
+          <Calendar style={{zIndex: 2000, position:'relative'}}
             onChange={this.onChange}
             value={value}
           />
-        </div>}
+        </div>} */}
+        <DatePicker />
         <button className="side-btn"><span><img src="https://res.cloudinary.com/basimgs/image/upload/v1610793767/picture_omnffh.png" alt="" /></span> Cover</button>
         <button className="side-btn" onClick={this.onRemoveCard}><span><img src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" alt="" /></span> Delete</button>
 
