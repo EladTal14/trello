@@ -2,7 +2,7 @@
   "board": [
     {
       "_id": "b101",
-      "title": "Sprint 4 projad",
+      "title": "Sprint 4 proj",
       "createdAt": 1589983468418,
       "createdBy": {
         "_id": "u101",
@@ -11,7 +11,7 @@
       },
       "style": {
         "backgroundColor": "#cd77e2",
-        "backgroundImage": "https://res.cloudinary.com/basimgs/image/upload/v1610712048/pexels-riccardo-bertolo-4245826_eoizb4.jpg"
+        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271951/samples/landscapes/beach-boat.jpg"
       },
       "members": [
         {
@@ -22,82 +22,11 @@
       ],
       "groups": [
         {
-          "id": "g103",
-          "title": "haimasdassds",
-          "cards": []
-        },
-        {
-          "title": "haimasdassds",
-          "id": "r74",
-          "cards": [
-            {
-              "title": "asdasd",
-              "id": "goU8K6g"
-            },
-            {
-              "title": "aasd",
-              "id": "KYFCLUO"
-            },
-            {
-              "title": "lffff\ngthte\nbgrwrynrnhr\nha",
-              "id": "kzv"
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
-              "title": "vtvtgt \nvtewhtty",
-              "id": "GcS"
-            },
-            {
-              "title": "esd;sd",
-              "id": "tlo"
-            },
-            {
-              "title": "vdfvdvxc",
-              "id": "fyV4"
-            },
-            {
-              "title": "dasdasd",
-              "id": "lLD4Yb3"
-            },
-            {
-              "title": "asd",
-              "id": "93LULFN"
-            }
-          ],
-          "style": {}
-        },
-        {
-          "id": "g102",
-          "title": "In Progress",
-          "cards": [
-            {
-              "id": "c103",
-              "title": "Do that"
-            },
-            {
-              "id": "c102",
-              "title": "Add Samples"
-            },
-            {
-              "id": "c1089",
-              "title": "eat cupcake"
-            }
-          ],
-          "style": {}
-        },
-        {
           "id": "g105",
           "title": "something normal ",
           "cards": [
             {
-              "title": "fghfghfghasdasd",
+              "title": "fghfghfgh",
               "id": "TPf"
             },
             {
@@ -136,7 +65,7 @@
                 "todos": [
                   {
                     "title": "To Do 1",
-                    "isDone": true,
+                    "isDone": false,
                     "id": "212jt"
                   },
                   {
@@ -190,7 +119,73 @@
           ]
         },
         {
+          "id": "g103",
+          "title": "haimasdassds",
+          "cards": [
+            {
+              "title": "hello hey there\n",
+              "id": "kzv"
+            },
+            {
+              "title": "gggg",
+              "id": "cMP"
+            }
+          ]
+        },
+        {
+          "title": "sdfsdfsdf",
+          "id": "r74",
+          "cards": [
+            {
+              "title": "vtvtgt \nvtewhtty",
+              "id": "GcS"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fyV4"
+            },
+            {
+              "title": "esd;sd",
+              "id": "tlo"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "title": "sdfsdfsdf",
+          "id": "BY4",
+          "cards": [
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
+            },
+            {
+              "id": "c101",
+              "title": "Replace logo"
+            }
+          ]
+        },
+        {
+          "id": "g102",
           "title": "In Progress",
+          "cards": [
+            {
+              "id": "c103",
+              "title": "Do that"
+            },
+            {
+              "id": "c102",
+              "title": "Add Samples"
+            },
+            {
+              "id": "c1089",
+              "title": "eat cupcake"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "title": "xvcvcccv",
           "id": "3up",
           "cards": [
             {
@@ -234,16 +229,6 @@
               "style": {
                 "bgColor": "#26DE81"
               }
-            }
-          ]
-        },
-        {
-          "title": "sdfsdfsdf",
-          "id": "BY4",
-          "cards": [
-            {
-              "id": "c101",
-              "title": "Replace logo"
             }
           ]
         }
