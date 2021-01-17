@@ -65,7 +65,7 @@
                 "todos": [
                   {
                     "title": "To Do 1",
-                    "isDone": false,
+                    "isDone": true,
                     "id": "212jt"
                   },
                   {
@@ -122,8 +122,16 @@
               "id": "fsdfsdfyV"
             },
             {
+              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
+              "id": "kzv"
+            },
+            {
               "title": "fghfghfgh",
               "id": "TPf"
+            },
+            {
+              "title": "dasdasdasd\ndfg",
+              "id": "Dz7rq01"
             },
             {
               "id": "c1089sdasd",
@@ -148,17 +156,8 @@
           "id": "r71",
           "cards": [
             {
-              "title": "hhh",
-              "id": "9O6",
-              "description": "asasadsas"
-            },
-            {
               "title": "asdsd\n",
               "id": "srfCU7O"
-            },
-            {
-              "title": "dasdasdasd\ndfg",
-              "id": "Dz7rq01"
             },
             {
               "title": "aa\nasd\ns\nd\nasd",
@@ -170,16 +169,7 @@
         {
           "title": "sdfsdfsdf",
           "id": "BY4",
-          "cards": [
-            {
-              "id": "c101",
-              "title": "Replace logo"
-            },
-            {
-              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv"
-            }
-          ]
+          "cards": []
         },
         {
           "id": "g102",
