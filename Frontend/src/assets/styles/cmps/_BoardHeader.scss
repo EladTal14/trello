@@ -136,6 +136,25 @@
       cursor: pointer;
     }
   }
+  button {
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    // color: #5e6c84;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    margin: 2px 0 8px 8px;
+    padding: 2px 10px;
+    user-select: none;
+    background-color: rgba(34, 34, 34, 0.11);
+    font-family: "montserrat", sans-serif;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(34, 34, 34, 0.185);
+    }
+  }
 }
 .board-menu-title {
   flex-grow: 1;
