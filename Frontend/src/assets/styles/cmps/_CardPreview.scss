@@ -1,20 +1,16 @@
-
 .card-preview {
-    // background-color: $clr1;
-    color: #172b4d;
     border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(9,30,66,.25);
     max-width: 290px;
     min-height: 20px;
 
-    .card-img-cover{
+    .card-img-cover {
         min-height: 100px;
         background-size: cover;
         border-radius: 3px;
         width: 100%;
     }
 
-    .card-color-cover{
+    .card-color-cover {
         width: 219px;
         height: 20px;
         border-radius: 3px;
@@ -32,8 +28,7 @@
         transition: text-overflow 0.8s;
         -webkit-font-smoothing: antialiased;
         opacity: 0.8;
-
-        &:hover{
+        &:hover {
             opacity: 1;
         }
     }
@@ -68,7 +63,9 @@
         // background-color: ;
     }
 
-    .date, .comment, .checklist{
+    .date,
+    .comment,
+    .checklist {
         font-size: 12px;
         margin-left: 7px;
     }
@@ -78,5 +75,4 @@
         height: 15px;
         opacity: 0.7;
     }
-
 }

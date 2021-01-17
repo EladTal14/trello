@@ -11,7 +11,7 @@ export function GroupPreview({ group, idx, onAddCard }) {
                     style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
                     ref={provided.innerRef}>
                     <article className="group-preview">
-                        <div  {...provided.dragHandleProps} style={{ width: '110%', height: '1.175em' }}>
+                        <div  {...provided.dragHandleProps} style={{ width: '100%', height: '1.175em' }}>
                         </div>
                         <GroupTitle group={group} />
                         <CardList cards={group.cards} id={idx} group={group} grpTitle={group.title} groupId={group.id} onAddCard={onAddCard} />

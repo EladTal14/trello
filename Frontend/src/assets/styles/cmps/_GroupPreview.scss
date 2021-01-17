@@ -1,6 +1,6 @@
 .group-preview {
   width: 272px;
-  background-color: $clr7;
+  background-color: #ebecf0;
   padding: 5px;
   margin: 5px 0;
   border-radius: 5px;
@@ -17,11 +17,10 @@
   border: none;
   background-color: unset;
   border-radius: 3px;
-  font-family: 'montserrat', sans-serif;
+  font-family: "montserrat", sans-serif;
   font-weight: 700;
   font-size: 16px;
   margin-left: 8px;
-
 }
 
 .title-input:focus {
@@ -31,7 +30,7 @@
   font-size: 14px;
 }
 
-.more-options-btn{
+.more-options-btn {
   height: 30px;
   line-height: 30px;
   width: 30px;
@@ -41,12 +40,12 @@
   margin-top: 5px;
   cursor: pointer;
 
-    img{
-        width: 15px;
-        opacity: 0.7;
+  img {
+    width: 15px;
+    opacity: 0.7;
 
-        &:hover{
-            opacity: 1;
-        }
+    &:hover {
+      opacity: 1;
     }
+  }
 }

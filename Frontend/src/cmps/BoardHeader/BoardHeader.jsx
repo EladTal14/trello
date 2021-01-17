@@ -3,6 +3,7 @@ import { utilService } from '../../services/utilService'
 import { saveBoard } from '../../store/actions/boardAction'
 import { connect } from 'react-redux'
 import { ChangeBackground } from './ChangeBackground.jsx'
+import { GroupAdd } from '../Group/GroupAdd'
 
 export class _BoardHeader extends Component {
 
@@ -89,6 +90,7 @@ export class _BoardHeader extends Component {
             <h3 className="board-menu-title">Menu</h3>
             <h4 className="board-menu-close" onClick={this.toggleMenu}>X</h4>
           </div>
+          <hr />
           {!isChanging && <button onClick={this.onChangeBackground}>Change Background</button>}
           {isChanging && <ChangeBackground toggleMenu={this.toggleMenu} onChangeBackground={this.onChangeBackground} />}
 
@@ -96,6 +98,7 @@ export class _BoardHeader extends Component {
         </div>
         {isWrapper && <div className="board-menu-wrapper" onClick={(isWrapper) ? this.toggleMenu : () => { return }}>
         </div>}
+        <GroupAdd onAddGroup={this.props.onAddGroup} onScroll={this.props.onScroll} />
         <button className="menu-btn" onClick={this.toggleMenu}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
       </header>
     )

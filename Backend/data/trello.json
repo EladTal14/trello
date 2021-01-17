@@ -2,14 +2,16 @@
   "board": [
     {
       "_id": "b101",
-      "title": "Sprint 4 proj",
+      "title": "Sprint 4 project",
       "createdAt": 1589983468418,
       "createdBy": {
         "_id": "u101",
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {},
+      "style": {
+        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271947/samples/landscapes/girl-urban-view.jpg"
+      },
       "members": [
         {
           "_id": "u101",
@@ -24,16 +26,24 @@
       ],
       "groups": [
         {
-          "id": "g103",
-          "title": "haimasdassds",
+          "id": "g105",
+          "title": "hello",
           "cards": [
             {
-              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv",
-              "style": {
-                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610881801/20201215_095032_yghcl8.jpg",
-                "color": ""
-              }
+              "title": "sadasdsdas",
+              "id": "uGDgk51"
+            },
+            {
+              "title": "llalalal\nlalla\nhlhlhl",
+              "id": "rAL"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fsdfsdfyV"
+            },
+            {
+              "title": "fghfghfgh",
+              "id": "TPf"
             },
             {
               "title": "gggg",
@@ -50,43 +60,43 @@
           "id": "r71",
           "cards": [
             {
-              "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
-              "id": "GcS",
-              "checklist": null
+              "title": "Eat Food",
+              "id": "yS3N5PJ"
             },
             {
-              "title": "hhh",
-              "id": "9O6",
-              "description": "asasadsas",
-              "style": {
-                "imgUrl": "",
-                "color": "#a56cc1"
-              }
+              "title": "sddaas",
+              "id": "dPxGk6O"
             },
             {
-              "title": "check 123\n",
-              "id": "4PA65o1",
-              "style": {
-                "imgUrl": "",
-                "color": "#f38181"
-              },
-              "dueDate": 1611099600000
+              "title": "esd;sd",
+              "id": "tlo"
+            },
+            {
+              "title": "sdfdfsf",
+              "id": "mR2Kea5"
+            },
+            {
+              "title": "sdfsdfsdf",
+              "id": "puvFI8H"
+            },
+            {
+              "title": "aaaa",
+              "id": "865o0OP"
+            },
+            {
+              "title": "aa\nasd\ns\nd\nasd",
+              "id": "382zkr7"
+            },
+            {
+              "title": "asd",
+              "id": "PMtZHel"
             }
-          ],
-          "style": {}
+          ]
         },
         {
-          "id": "g1827",
-          "title": "haimasdassds",
+          "title": "sdfsdfsdf",
+          "id": "r71",
           "cards": [
-            {
-              "title": "fghfghfgh",
-              "id": "TPf"
-            },
-            {
-              "title": "vdfvdvxc",
-              "id": "fyVasd"
-            },
             {
               "id": "c104",
               "title": "Help me",
@@ -198,28 +208,35 @@
               "id": "TPf"
             },
             {
-              "title": "dasdasdasd\ndfg",
-              "id": "Dz7rq01"
+              "title": "teold",
+              "id": "VAd9rqY"
             },
             {
               "id": "c1089sdasd",
               "title": "Go to sleep"
             },
             {
-              "title": "llalalal\nlalla\nhlhlhl",
-              "id": "rAL"
+              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
+              "id": "kzv"
             },
             {
-              "title": "vdfvdvxc",
-              "id": "fyV"
+              "title": "vtvtgt \nvtewhttyyyyy\n\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
+              "id": "GcS"
             },
             {
-              "title": "esd;sd",
-              "id": "tlo"
-            },
+              "title": "dsffsdfdf",
+              "id": "iQxREcy"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "id": "g103",
+          "title": "haimasdassds",
+          "cards": [
             {
-              "title": "aaaaaaa",
-              "id": "xJ34IKo"
+              "title": "dasdasdasd\ndfg",
+              "id": "Dz7rq01"
             }
           ]
         },
@@ -229,8 +246,8 @@
           "cards": []
         },
         {
-          "title": "xvcvcccv",
-          "id": "3up",
+          "id": "g102",
+          "title": "sdfsdf",
           "cards": [
             {
               "id": "c10894",
@@ -273,8 +290,43 @@
               "style": {
                 "bgColor": "#26DE81"
               }
+            },
+            {
+              "id": "c102",
+              "title": "Add Samples"
             }
-          ]
+          ],
+          "style": {}
+        },
+        {
+          "title": "invite Friends",
+          "id": "Lf5YIkw",
+          "cards": []
+        },
+        {
+          "title": "Find Friends",
+          "id": "sKad11i",
+          "cards": []
+        },
+        {
+          "title": "Make Dinner",
+          "id": "J4ITLQb",
+          "cards": []
+        },
+        {
+          "title": "In Progress",
+          "id": "sAa3PF9",
+          "cards": []
+        },
+        {
+          "title": "Done",
+          "id": "AUNYQHB",
+          "cards": []
+        },
+        {
+          "title": "Scroll",
+          "id": "34F86x9",
+          "cards": []
         }
       ],
       "activities": [
@@ -291,18 +343,6 @@
             "id": "c101",
             "title": "Replace Logo"
           }
-        }
-      ],
-      "labels": [
-        {
-          "id": "fakeIdssss",
-          "title": "red label",
-          "color": "#61BD4F"
-        },
-        {
-          "id": "n1n1n",
-          "title": "blue label",
-          "color": "#DE3163"
         }
       ]
     },
