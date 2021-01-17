@@ -9,9 +9,7 @@
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {
-        "backgroundImage": "https://res.cloudinary.com/basimgs/image/upload/v1610712048/pexels-riccardo-bertolo-4245826_eoizb4.jpg"
-      },
+      "style": {},
       "members": [
         {
           "_id": "u101",
@@ -31,8 +29,7 @@
           "cards": [
             {
               "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv",
-              "checklist": null
+              "id": "kzv"
             },
             {
               "title": "gggg",
@@ -46,14 +43,12 @@
           "cards": [
             {
               "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
-              "id": "GcS",
-              "checklist": null
+              "id": "GcS"
             },
             {
               "title": "hhh",
               "id": "9O6",
-              "description": "asasadsas",
-              "checklist": null
+              "description": "asasadsas"
             }
           ],
           "style": {}
@@ -65,6 +60,10 @@
             {
               "title": "fghfghfgh",
               "id": "TPf"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fyV"
             },
             {
               "id": "c104",
@@ -103,7 +102,7 @@
                   },
                   {
                     "title": "To Do 2",
-                    "isDone": false,
+                    "isDone": true,
                     "id": "212j3"
                   },
                   {
@@ -142,18 +141,15 @@
             },
             {
               "title": "llalalal\nlalla\nhlhlhl",
-              "id": "rAL",
-              "checklist": null
+              "id": "rAL"
             },
             {
               "title": "vdfvdvxc",
-              "id": "fyV",
-              "checklist": null
+              "id": "fyV"
             },
             {
               "title": "esd;sd",
-              "id": "tlo",
-              "checklist": null
+              "id": "tlo"
             }
           ]
         },
@@ -163,13 +159,11 @@
           "cards": [
             {
               "id": "c1089sdasd",
-              "title": "Go to sleep",
-              "checklist": null
+              "title": "Go to sleep"
             },
             {
               "id": "c101",
-              "title": "Replace logo",
-              "checklist": null
+              "title": "Replace logo"
             }
           ]
         },
@@ -203,7 +197,13 @@
               "checklist": {
                 "id": "YEhmF",
                 "title": "Checklist",
-                "todos": []
+                "todos": [
+                  {
+                    "title": "To Do 1",
+                    "isDone": false,
+                    "id": "212jX"
+                  }
+                ]
               },
               "members": [
                 {
@@ -250,7 +250,8 @@
             "title": "Replace Logo"
           }
         }
-      ]
+      ],
+      "labels": []
     },
     {
       "_id": "b102",
@@ -451,7 +452,8 @@
             "title": "Replace Logo"
           }
         }
-      ]
+      ],
+      "labels": []
     },
     {
       "_id": "b103",
@@ -671,7 +673,8 @@
             "title": "Replace Logo"
           }
         }
-      ]
+      ],
+      "labels": []
     }
   ],
   "user": [

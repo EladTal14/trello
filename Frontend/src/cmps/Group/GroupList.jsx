@@ -1,6 +1,6 @@
 import { GroupPreview } from './GroupPreview.jsx'
 
-export function GroupList({ groups, onAddCard, onAddGroup }) {
+export function GroupList({ groups, onAddCard }) {
     return (
         <div className="group-list">
             {groups.map((group, idx) =>

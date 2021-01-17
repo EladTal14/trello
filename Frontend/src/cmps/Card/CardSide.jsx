@@ -16,14 +16,12 @@ export class CardSide extends Component {
     this.props.onRemoveCard()
   }
 
-  toggleDate = () => {
-    this.setState({ isDateShown: !this.state.isDateShown })
-  }
+  // toggleDate = () => {
+  //   this.setState({ isDateShown: !this.state.isDateShown })
+  // }
 
-  onChange = (value, ev) => {
-    console.log('value and ev', value, ev)
-    this.setState({ dueDate: ev.timeStamp })
-    this.props.onSavedueDate(this.state.dueDate)
+  onChange = (value) => {
+    this.setState( { value }, () => this.props.onSavedueDate((this.state.value + '').substring(4, 32))) 
     this.toggleDate()
   }
 
@@ -65,12 +63,13 @@ export class CardSide extends Component {
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/clock_zwp9d9.png" alt="" />
             </span> Due date</button>
 
-          {isDateShown && <div>
-            <Calendar style={{ zIndex: 2000 }}
-              onChange={this.onChange}
-              value={value}
-            />
-          </div>}
+          {/* {isDateShown && <div>
+          <Calendar style={{zIndex: 2000, position:'relative'}}
+            onChange={this.onChange}
+            value={value}
+          />
+        </div>} */}
+        {/* <DatePicker /> */}
           <button className="side-btn">
             <span>
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610793767/picture_omnffh.png" alt="" />

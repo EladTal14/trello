@@ -1,11 +1,11 @@
-.new-group-form{
+.new-group-form {
     display: flex;
     flex-direction: column;
     max-width: 220px;
     margin: auto;
     text-align: start;
 
-    input{
+    input {
         outline: none;
         border: none;
         background-color: #fff;
@@ -15,10 +15,10 @@
         margin: 0;
         width: 100%;
         padding: 8px 12px;
-        font-family: 'montserrat', sans-serif;
+        font-family: "montserrat", sans-serif;
     }
 
-    .submit-group-btn{
+    .submit-group-btn {
         border-radius: 3px;
         background-color: #5aac44;
         box-shadow: none;
@@ -28,20 +28,19 @@
         margin-top: 2px;
         padding-top: 4px;
         padding-bottom: 4px;
-        font-family: 'montserrat', sans-serif;
+        font-family: "montserrat", sans-serif;
         cursor: pointer;
 
-        &:hover{
-            background-color: #49852e
+        &:hover {
+            background-color: #49852e;
         }
 
-        &:active{
-            background-color: #49852e
+        &:active {
+            background-color: #49852e;
         }
-
     }
 
-    .close-input-btn{
+    .close-input-btn {
         height: 30px;
         line-height: 30px;
         width: 30px;
@@ -50,23 +49,19 @@
         outline: none;
         margin-top: 5px;
         cursor: pointer;
-        
-    
-        img{
+
+        img {
             width: 15px;
             opacity: 0.7;
 
-            &:hover{
+            &:hover {
                 opacity: 1;
             }
         }
     }
-
-
 }
 
-
-.add-group-btn{
+.add-group-btn {
     border-radius: 3px;
     border: none;
     outline: none;
@@ -78,19 +73,19 @@
     padding: 2px 10px;
     user-select: none;
     background-color: rgba(34, 34, 34, 0.11);
-    font-family: 'montserrat', sans-serif;
+    font-family: "montserrat", sans-serif;
     align-items: center;
     cursor: pointer;
 
-    &:hover{
-        background-color: rgba(34, 34, 34, 0.185); 
+    &:hover {
+        background-color: rgba(34, 34, 34, 0.185);
     }
 
-    span{
+    span {
         margin-right: 20px;
     }
 
-    img{
+    img {
         width: 12px;
         height: 12px;
         opacity: 0.7;
@@ -98,8 +93,9 @@
     }
 }
 
-.add-group-container{
+.add-group-container {
     margin: 7px auto;
     padding: 10px 0;
     text-align: center;
+    width: 270px;
 }
