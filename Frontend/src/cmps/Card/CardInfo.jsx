@@ -3,7 +3,7 @@ import { CardActivityContainer } from "./CardActivityContainer";
 import { CardChecklist } from "./CardChecklist"
 var moment = require('moment');
 
-export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, onHandleActivitiesChange }) {
+export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, onHandleActivitiesChange, addOrCancelChecklist }) {
   return (
     <div className="card-info">
 
@@ -16,7 +16,7 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
         </div>
       </div>}
 
-      {card.labels && <div className="card-labels">
+      {card.labels && <div className="card-labels-section">
         <h2 className="card-label-h2">labels</h2>
         {card.labels.map((label, idx) => {
           return <button key={idx} className="label-btn" >{label.title}</button>
@@ -30,9 +30,9 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
 
       <div className="card-description">
         <div className="flex">
-          <span><img className="desc-img" src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/left-align_qaakok.png" alt=""/></span>
-        <h3>Description</h3>
-          </div>
+          <span><img className="desc-img" src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/left-align_qaakok.png" alt="" /></span>
+          <h3>Description</h3>
+        </div>
         <textarea
           className="desc-textarea my-input"
           type="text"
@@ -43,7 +43,8 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
         />
       </div>
 
-      {card.checklist && <CardChecklist card={card} onHandleChecklistChange={onHandleChecklistChange} />}
+      {card.checklist && card.checklist.todos.length >= 1 &&
+        <CardChecklist card={card} onHandleChecklistChange={onHandleChecklistChange} addOrCancelChecklist={addOrCancelChecklist} />}
       <CardActivityContainer card={card} onHandleActivitiesChange={onHandleActivitiesChange} />
     </div>
   )

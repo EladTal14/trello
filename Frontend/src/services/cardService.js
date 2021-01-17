@@ -1,17 +1,24 @@
 import { utilService } from "./utilService"
 
 export const cardService = {
-  createTodo
+  createTodo,
+  createChecklist
 }
 
 function createTodo(title) {
-  try {
     return {
       id: utilService.makeId(),
       title,
       isDone: false
     }
-  } catch (err) {
-    console.log('err cardService CREATE TODO', err)
-  }
 }
+
+function createChecklist() {
+    return {
+      id: utilService.makeId(),
+      title: '',
+      todos: [createTodo('')]
+    }
+}
+
+

@@ -26,6 +26,7 @@ class _CardDetails extends Component {
   handleClickOutside = event => {
     const domNode = ReactDOM.findDOMNode(this)
     if (!domNode || !domNode.contains(event.target)) {
+      this.checklistValidation()
       this.sendUpdatedBoard()
       this.props.clearState(null)
     }
@@ -73,7 +74,7 @@ class _CardDetails extends Component {
   onRemoveCard = () => {
     const { board, group } = this.props
     const { card } = this.state
-    const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
+    const cardIdx = group.cards.findIndex((currCard) => currCard.id === card.id)
     group.cards.splice(cardIdx, 1)
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
@@ -94,6 +95,23 @@ class _CardDetails extends Component {
     
   }
 
+  addOrCancelChecklist = (checklist) => {
+    this.setState(prevState => ({
+      card: {
+        ...prevState.card,
+        checklist
+      }
+    }))
+  }
+
+  checklistValidation = () => {
+    if (this.state.card.checklist) {
+      if (this.state.card.checklist.todos.length === 1 && !this.state.card.checklist.todos[0].title ) {
+        this.addOrCancelChecklist(null)
+      }
+    }
+  }
+
   render() {
     const { card } = this.state
     const { group } = this.props
@@ -110,8 +128,14 @@ class _CardDetails extends Component {
               onHandleChecklistChange={this.onHandleChecklistChange}
               onHandleInputChange={this.onHandleInputChange}
               onHandleActivitiesChange={this.onHandleActivitiesChange}
+              addOrCancelChecklist={this.addOrCancelChecklist}
             />
-            <CardSide onRemoveCard={this.onRemoveCard} onSavedueDate={this.onSavedueDate}/>
+            <CardSide
+              card={card}
+              onRemoveCard={this.onRemoveCard}
+              onSavedueDate={this.onSavedueDate}
+              addOrCancelChecklist={this.addOrCancelChecklist}
+            />
           </div>
         </div>
       </div>

@@ -9,9 +9,7 @@
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {
-        "backgroundImage": "https://res.cloudinary.com/basimgs/image/upload/v1610712048/pexels-riccardo-bertolo-4245826_eoizb4.jpg"
-      },
+      "style": {},
       "members": [
         {
           "_id": "u101",
@@ -30,8 +28,42 @@
           "title": "haimasdassds",
           "cards": [
             {
+              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
+              "id": "kzv"
+            },
+            {
+              "title": "gggg",
+              "id": "cMP"
+            }
+          ]
+        },
+        {
+          "title": "sdfsdfsdf",
+          "id": "r71",
+          "cards": [
+            {
               "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
               "id": "GcS"
+            },
+            {
+              "title": "hhh",
+              "id": "9O6",
+              "description": "asasadsas"
+            }
+          ],
+          "style": {}
+        },
+        {
+          "id": "g105",
+          "title": "haimasdassds",
+          "cards": [
+            {
+              "title": "fghfghfgh",
+              "id": "TPf"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fyV"
             },
             {
               "id": "c104",
@@ -108,34 +140,12 @@
               }
             },
             {
-              "title": "gggg",
-              "id": "cMP"
-            }
-          ]
-        },
-        {
-          "id": "g105",
-          "title": "haimasdassds",
-          "cards": [
-            {
-              "title": "vdfvdvxc",
-              "id": "fsdfsdfyV"
-            },
-            {
-              "title": "fghfghfgh",
-              "id": "TPf"
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
               "title": "llalalal\nlalla\nhlhlhl",
               "id": "rAL"
             },
             {
               "title": "vdfvdvxc",
-              "id": "fasdasdyV"
+              "id": "fyV"
             },
             {
               "title": "esd;sd",
@@ -145,45 +155,40 @@
         },
         {
           "title": "sdfsdfsdf",
-          "id": "r71",
-          "cards": [
-            {
-              "title": "hhh",
-              "id": "9O6",
-              "description": "asasadsas"
-            },
-            {
-              "title": "asdsd\n",
-              "id": "srfCU7O"
-            },
-            {
-              "title": "dasdasdasd\ndfg",
-              "id": "Dz7rq01"
-            },
-            {
-              "title": "aa\nasd\ns\nd\nasd",
-              "id": "382zkr7"
-            }
-          ],
-          "style": {}
-        },
-        {
-          "title": "sdfsdfsdf",
           "id": "BY4",
           "cards": [
             {
-              "id": "c101",
-              "title": "Replace logo"
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
             },
             {
-              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv"
+              "id": "c101",
+              "title": "Replace logo"
             }
           ]
         },
         {
           "id": "g102",
+          "title": "In Progress",
+          "cards": [
+            {
+              "id": "c103",
+              "title": "Do that"
+            },
+            {
+              "id": "c102",
+              "title": "Add Samples"
+            },
+            {
+              "id": "c1089",
+              "title": "eat cupcake"
+            }
+          ],
+          "style": {}
+        },
+        {
           "title": "xvcvcccv",
+          "id": "3up",
           "cards": [
             {
               "id": "c10894",
@@ -226,31 +231,8 @@
               "style": {
                 "bgColor": "#26DE81"
               }
-            },
-            {
-              "id": "c102",
-              "title": "Add Samples"
-            },
-            {
-              "id": "c1089",
-              "title": "eat cupcake"
-            },
-            {
-              "id": "c103",
-              "title": "Do that"
             }
-          ],
-          "style": {}
-        },
-        {
-          "title": "xvcvcccv",
-          "id": "3up",
-          "cards": []
-        },
-        {
-          "title": "sdfsdf",
-          "id": "7F5bQiQ",
-          "cards": []
+          ]
         }
       ],
       "activities": [
@@ -268,7 +250,8 @@
             "title": "Replace Logo"
           }
         }
-      ]
+      ],
+      "labels": []
     },
     {
       "_id": "b102",
@@ -279,9 +262,7 @@
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {
-        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271954/samples/landscapes/nature-mountains.jpg"
-      },
+      "style": {},
       "members": [
         {
           "_id": "u101",
@@ -471,7 +452,8 @@
             "title": "Replace Logo"
           }
         }
-      ]
+      ],
+      "labels": []
     },
     {
       "_id": "b103",
@@ -691,7 +673,8 @@
             "title": "Replace Logo"
           }
         }
-      ]
+      ],
+      "labels": []
     }
   ],
   "user": [

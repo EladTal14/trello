@@ -58,8 +58,8 @@ export class CardActivityContainer extends Component {
           </div>
           {isSaveOpen && <button onMouseDown={this.saveNewTodo} >Save</button>}
         </div>
-        {comments && comments.map((comment) => {
-          return <div className="activity-comment-wrapper flex">
+        {comments && comments.map((comment, idx) => {
+          return <div key={idx} className="activity-comment-wrapper flex">
             <div className="member">UM</div>
             <div className="activity-comment">
               <p>{comment.txt}</p>

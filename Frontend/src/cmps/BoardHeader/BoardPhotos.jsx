@@ -25,7 +25,7 @@ class _BoardPhotos extends Component {
   render() {
     return (
       <div className="board-photos">
-        {this.photos().map((photo, idx) => { return <div key={idx} className="menu-img-box"><img onClick={() => this.useImgForBgc(photo.imgUrl)} className="board-photos-grid" key={idx} src={photo.imgUrl} alt="not good" /></div> })}
+        {this.photos().map((photo, idx) => { return <div key={idx} className="menu-img-box"><img onClick={() => this.useImgForBgc(photo.imgUrl)} className="board-photos-grid" src={photo.imgUrl} alt="not good" /></div>})}
       </div>
     )
   }
