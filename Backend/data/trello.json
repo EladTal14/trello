@@ -14,17 +14,159 @@
       },
       "members": [
         {
-          "_id": "u101",
-          "fullname": "Tal Tarablus",
-          "imgUrl": "https://www.google.com"
+          "_id": "u103",
+          "fullname": "Basya Kritchker",
+          "username": "abasdasdi@ababmi.com",
+          "password": "123",
+          "imgUrl": "http://some-img.jpg"
         },
         {
           "_id": "u102",
-          "fullname": "Abi Bamia",
-          "imgUrl": "https://www.google.com"
+          "fullname": "Elad Tal",
+          "username": "abasdi@ababmi.com",
+          "password": "123",
+          "imgUrl": "http://some-img.jpg"
+        },
+        {
+          "_id": "u101",
+          "fullname": "Adir Hagag",
+          "username": "abasdasdi@ababmi.com",
+          "password": "123",
+          "imgUrl": "http://some-img.jpg"
         }
       ],
       "groups": [
+        {
+          "title": "sdfsdfsdf",
+          "id": "r7h1",
+          "cards": [
+            {
+              "title": "Eat Food",
+              "id": "yS3N5PJ",
+              "style": {
+                "imgUrl": "",
+                "color": "#f9ed69"
+              }
+            },
+            {
+              "title": "check members...",
+              "id": "CqDoLRt",
+              "members": [
+                {
+                  "_id": "u103",
+                  "fullname": "Basya Kritchker",
+                  "username": "abasdasdi@ababmi.com",
+                  "password": "123",
+                  "imgUrl": "http://some-img.jpg"
+                },
+                {
+                  "_id": "u102",
+                  "fullname": "Elad Tal",
+                  "username": "abasdi@ababmi.com",
+                  "password": "123",
+                  "imgUrl": "http://some-img.jpg"
+                },
+                {
+                  "_id": "u101",
+                  "fullname": "Adir Hagag",
+                  "username": "abasdasdi@ababmi.com",
+                  "password": "123",
+                  "imgUrl": "http://some-img.jpg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "g1051",
+          "title": "sdfsdfsdf",
+          "cards": [
+            {
+              "title": "check membes",
+              "id": "lWJDRwT",
+              "members": [],
+              "style": {
+                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610916447/pexels-frans-van-heerden-624015_eymc8t.jpg",
+                "color": ""
+              },
+              "dueDate": 1609803600000
+            },
+            {
+              "title": "check more members",
+              "id": "ks3ebOW",
+              "members": []
+            },
+            {
+              "title": "check some\nmore\nmembers",
+              "id": "h7iTSQm",
+              "members": [
+                {
+                  "_id": "u103",
+                  "fullname": "Basya Kritchker",
+                  "username": "abasdasdi@ababmi.com",
+                  "password": "123",
+                  "imgUrl": "http://some-img.jpg"
+                },
+                {
+                  "_id": "u101",
+                  "fullname": "Adir Hagag",
+                  "username": "abasdasdi@ababmi.com",
+                  "password": "123",
+                  "imgUrl": "http://some-img.jpg"
+                }
+              ]
+            }
+          ],
+          "style": {}
+        },
+        {
+          "title": "check",
+          "id": "rk71",
+          "cards": [
+            {
+              "title": "Eat Food",
+              "id": "yS3N5PJ"
+            },
+            {
+              "title": "sddaas",
+              "id": "dPxGk6O"
+            },
+            {
+              "title": "esd;sd",
+              "id": "tlo"
+            },
+            {
+              "title": "sdfdfsf",
+              "id": "mR2Kea5"
+            },
+            {
+              "title": "sdfsdfsdf",
+              "id": "puvFI8H"
+            },
+            {
+              "title": "aaaa",
+              "id": "865o0OP"
+            },
+            {
+              "title": "asd",
+              "id": "PMtZHel"
+            }
+          ]
+        },
+        {
+          "title": "sdfsdfsdf",
+          "id": "bahsu",
+          "cards": [
+            {
+              "title": "asdsd\n",
+              "id": "srfCU7O"
+            },
+            {
+              "title": "aa\nasd\ns\nd\nasd",
+              "id": "382zkr7"
+            }
+          ]
+        },
         {
           "id": "g105",
           "title": "hello",
@@ -54,181 +196,6 @@
               "id": "orUelNz"
             }
           ]
-        },
-        {
-          "title": "sdfsdfsdf",
-          "id": "r71",
-          "cards": [
-            {
-              "title": "Eat Food",
-              "id": "yS3N5PJ"
-            },
-            {
-              "title": "sddaas",
-              "id": "dPxGk6O"
-            },
-            {
-              "title": "esd;sd",
-              "id": "tlo"
-            },
-            {
-              "title": "sdfdfsf",
-              "id": "mR2Kea5"
-            },
-            {
-              "title": "sdfsdfsdf",
-              "id": "puvFI8H"
-            },
-            {
-              "title": "aaaa",
-              "id": "865o0OP"
-            },
-            {
-              "title": "aa\nasd\ns\nd\nasd",
-              "id": "382zkr7"
-            },
-            {
-              "title": "asd",
-              "id": "PMtZHel"
-            }
-          ]
-        },
-        {
-          "title": "sdfsdfsdf",
-          "id": "r71",
-          "cards": [
-            {
-              "id": "c104",
-              "title": "Help me",
-              "description": "description",
-              "comments": [
-                {
-                  "id": "ZdPnm",
-                  "txt": "a comment",
-                  "createdAt": 1590999817436,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
-                },
-                {
-                  "id": "ZdPno",
-                  "txt": "dont like it",
-                  "createdAt": 1590999817456,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
-                }
-              ],
-              "checklist": {
-                "id": "YEhmF",
-                "title": "Checklist",
-                "todos": [
-                  {
-                    "title": "To Do 1",
-                    "isDone": true,
-                    "id": "212jt"
-                  },
-                  {
-                    "title": "To Do 2",
-                    "isDone": true,
-                    "id": "212j3"
-                  },
-                  {
-                    "title": "To Do 3",
-                    "isDone": false,
-                    "id": "212jkk"
-                  }
-                ]
-              },
-              "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
-              ],
-              "labels": [
-                {
-                  "id": "101",
-                  "title": "done",
-                  "color": "#61BD4F"
-                }
-              ],
-              "createdAt": 1590999730348,
-              "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
-              "style": {
-                "bgColor": "#26DE81"
-              }
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
-            }
-          ]
-        },
-        {
-          "title": "sdfsdfsdf",
-          "id": "bahsu",
-          "cards": [
-            {
-              "title": "asdsd\n",
-              "id": "srfCU7O"
-            },
-            {
-              "title": "aa\nasd\ns\nd\nasd",
-              "id": "382zkr7"
-            }
-          ]
-        },
-        {
-          "id": "g1051",
-          "title": "sdfsdfsdf",
-          "cards": [
-            {
-              "title": "vdfvdvxc",
-              "id": "fsdfsdfyV"
-            },
-            {
-              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv"
-            },
-            {
-              "title": "fghfghfgh",
-              "id": "TPf"
-            },
-            {
-              "title": "teold",
-              "id": "VAd9rqY"
-            },
-            {
-              "id": "c1089sdasd",
-              "title": "Go to sleep"
-            },
-            {
-              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv"
-            },
-            {
-              "title": "vtvtgt \nvtewhttyyyyy\n\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
-              "id": "GcS"
-            },
-            {
-              "title": "dsffsdfdf",
-              "id": "iQxREcy"
-            }
-          ],
-          "style": {}
         },
         {
           "id": "g103",
@@ -327,6 +294,11 @@
           "title": "Scroll",
           "id": "34F86x9",
           "cards": []
+        },
+        {
+          "title": "lll",
+          "id": "gu8zH1l",
+          "cards": []
         }
       ],
       "activities": [
@@ -355,7 +327,9 @@
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {},
+      "style": {
+        "backgroundImage": "https://res.cloudinary.com/basimgs/image/upload/v1610712048/pexels-eberhard-grossgasteiger-1287145_iyiwh5.jpg"
+      },
       "members": [
         {
           "_id": "u101",
@@ -374,20 +348,6 @@
         }
       ],
       "groups": [
-        {
-          "id": "g104",
-          "title": "Done ya",
-          "cards": [
-            {
-              "title": "By balloons",
-              "id": "kzv"
-            },
-            {
-              "title": "order cake",
-              "id": "cMP"
-            }
-          ]
-        },
         {
           "id": "g101",
           "title": "dont forget a week befeore",
@@ -423,7 +383,7 @@
                 }
               ],
               "createdAt": 1590999730348,
-              "dueDate": 16156215211,
+              "dueDate": 1609803600000,
               "byMember": {
                 "_id": "u101",
                 "username": "Tal",
@@ -431,12 +391,34 @@
                 "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
               },
               "style": {
-                "bgColor": "#26DE81"
+                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610894376/pexels-kelsey-johnson-2331569_yort4z.jpg",
+                "color": ""
               }
             },
             {
               "id": "c101",
-              "title": "Replace logo"
+              "title": "Replace logo",
+              "checklist": {
+                "id": "4BUhAgQ",
+                "title": "cannot save the edit",
+                "todos": [
+                  {
+                    "id": "dXnt0L9",
+                    "title": "אםגם 1",
+                    "isDone": true
+                  },
+                  {
+                    "id": "9P4uybn",
+                    "title": "todo2",
+                    "isDone": true
+                  },
+                  {
+                    "id": "Mzulkbk",
+                    "title": "4444",
+                    "isDone": false
+                  }
+                ]
+              }
             },
             {
               "title": "check about the presents",
@@ -446,8 +428,8 @@
           "style": {}
         },
         {
-          "title": "Done ya",
-          "id": "r71",
+          "title": "dont forget a week befeore",
+          "id": "r71hh",
           "cards": [
             {
               "title": "by snacks from rami levi",
@@ -469,17 +451,7 @@
                   }
                 }
               ],
-              "checklist": {
-                "id": "YEhmF",
-                "title": "Checklist",
-                "todos": [
-                  {
-                    "title": "To Do 1",
-                    "isDone": false,
-                    "id": "212jX"
-                  }
-                ]
-              },
+              "checklist": null,
               "members": [
                 {
                   "_id": "u101",
@@ -507,15 +479,12 @@
                 }
               ],
               "createdAt": 1590999730348,
-              "dueDate": 16156215344,
+              "dueDate": 1611877200000,
               "byMember": {
                 "_id": "u101",
                 "username": "Tal",
                 "fullname": "Tal Tarablus",
                 "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
-              "style": {
-                "bgColor": "#26DE81"
               }
             },
             {
@@ -526,6 +495,20 @@
               "title": "by decorations",
               "id": "9O6",
               "description": "asasadsas"
+            }
+          ]
+        },
+        {
+          "id": "g104",
+          "title": "dont forget a week befeore",
+          "cards": [
+            {
+              "title": "By balloons",
+              "id": "kzv"
+            },
+            {
+              "title": "order cake",
+              "id": "cMP"
             }
           ]
         }
@@ -757,7 +740,7 @@
           "cards": [
             {
               "title": "showing first plan",
-              "id": "kzv"
+              "id": "kzvjj"
             }
           ]
         }
@@ -815,8 +798,22 @@
       "imgUrl": "http://some-img.jpg"
     },
     {
-      "_id": "u103",
+      "_id": "u105",
       "fullname": "muki kapika",
+      "username": "abasdi@ababmi.com",
+      "password": "111",
+      "imgUrl": "http://some-img.jpg"
+    },
+    {
+      "_id": "u104",
+      "fullname": "hoho mouo",
+      "username": "abasdi@ababmi.com",
+      "password": "111",
+      "imgUrl": "http://some-img.jpg"
+    },
+    {
+      "_id": "u106",
+      "fullname": "kika pakika",
       "username": "abasdi@ababmi.com",
       "password": "111",
       "imgUrl": "http://some-img.jpg"
