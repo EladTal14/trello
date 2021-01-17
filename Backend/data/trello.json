@@ -29,7 +29,11 @@
           "cards": [
             {
               "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv"
+              "id": "kzv",
+              "style": {
+                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610874505/pexels-kelsey-johnson-2331569_h36kwh.jpg",
+                "color": ""
+              }
             },
             {
               "title": "gggg",
@@ -42,13 +46,22 @@
           "id": "r71",
           "cards": [
             {
-              "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
-              "id": "GcS"
-            },
-            {
               "title": "hhh",
               "id": "9O6",
-              "description": "asasadsas"
+              "description": "asasadsas",
+              "style": {
+                "imgUrl": "",
+                "color": "#a56cc1"
+              }
+            },
+            {
+              "title": "check 123\n",
+              "id": "4PA65o1",
+              "style": {
+                "imgUrl": "",
+                "color": "#f38181"
+              },
+              "dueDate": 1611099600000
             }
           ],
           "style": {}
@@ -63,7 +76,11 @@
             },
             {
               "title": "vdfvdvxc",
-              "id": "fyV"
+              "id": "fyV",
+              "style": {
+                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610876334/pexels-aphiwat-chuangchoem-358904_zs9bal.jpg",
+                "color": ""
+              }
             },
             {
               "id": "c104",
@@ -146,7 +163,7 @@
           ]
         },
         {
-          "id": "g105",
+          "id": "g1051",
           "title": "haimasdassds",
           "cards": [
             {
@@ -199,7 +216,7 @@
         },
         {
           "title": "sdfsdfsdf",
-          "id": "BY4",
+          "id": "hhh56ytfv",
           "cards": []
         },
         {
