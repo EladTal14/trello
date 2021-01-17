@@ -43,7 +43,8 @@
           "cards": [
             {
               "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
-              "id": "GcS"
+              "id": "GcS",
+              "checklist": null
             },
             {
               "title": "hhh",
@@ -54,7 +55,7 @@
           "style": {}
         },
         {
-          "id": "g105",
+          "id": "g1827",
           "title": "haimasdassds",
           "cards": [
             {
@@ -189,7 +190,7 @@
         },
         {
           "title": "sdfsdfsdf",
-          "id": "BY4",
+          "id": "bahsu",
           "cards": [
             {
               "title": "asdsd\n",
@@ -271,7 +272,18 @@
           }
         }
       ],
-      "labels": []
+      "labels": [
+        {
+          "id": "fakeIdssss",
+          "title": "red label",
+          "color": "#61BD4F"
+        },
+        {
+          "id": "n1n1n",
+          "title": "blue label",
+          "color": "#DE3163"
+        }
+      ]
     },
     {
       "_id": "b102",
@@ -473,7 +485,18 @@
           }
         }
       ],
-      "labels": []
+      "labels": [
+        {
+          "id": "fakeIdcd",
+          "title": "red label",
+          "color": "#61BD4F"
+        },
+        {
+          "id": "ncncnascx",
+          "title": "blue label",
+          "color": "#DE3163"
+        }
+      ]
     },
     {
       "_id": "b103",
@@ -694,7 +717,18 @@
           }
         }
       ],
-      "labels": []
+      "labels": [
+        {
+          "id": "nvnvnud",
+          "title": "red label",
+          "color": "#61BD4F"
+        },
+        {
+          "id": "g1t3y2",
+          "title": "blue label",
+          "color": "#DE3163"
+        }
+      ]
     }
   ],
   "user": [

@@ -8,7 +8,7 @@
   border-radius: 5px;
   right: 10px;
   background-color: white;
-  flex-basis: 100%;
+  // flex-basis: 100%;
 
   & header {
     border-bottom: 1px solid black;
@@ -19,6 +19,72 @@
     padding-top: 0.5rem;
     text-align: center;
     flex-grow: 1;
+  }
+
+  .label-choose-container {
+    flex-grow: 1;
+
+    .label {
+      // padding-inline-start: 0px;
+      .label-title {
+        display: inline-block;
+        margin: 0 3px 0 4px;
+        width: 244px;
+        height: 32px;
+        padding: 6px 12px;
+        min-height: 20px;
+        border-radius: 3px;
+      }
+
+      .label-edit-btn {
+        margin: 0 0 4px;
+        width: 32px;
+        height: 32px;
+        background-color: transparent;
+        padding: 6px;
+        border-radius: 3px;
+        cursor: pointer;
+        border: none;
+
+        & img {
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+        }
+
+        &:hover {
+          background-color: rgba(9, 30, 66, 0.08);
+        }
+      }
+    }
+
+  }
+
+  .create-label-container {
+    padding: 0 12px 12px;
+    flex-grow: 1;
+
+    &:first-child {
+      margin: 4px 0;
+    }
+
+    & input {
+      margin: 4px 0 12px;
+      padding: 8px 12px;
+      line-height: 20px;
+    }
+
+    & ul {
+      flex-wrap: wrap;
+    }
+
+    .label-color-picker {
+      margin: 0 8px 8px 0;
+      width: 48px;
+      height: 32px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
   }
 
   .close-btn,
