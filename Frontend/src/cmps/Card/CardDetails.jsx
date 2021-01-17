@@ -32,7 +32,8 @@ class _CardDetails extends Component {
   }
 
   saveChanges = () => {
-    // this.checklistValidation()
+    console.log('from save changes', this.state.card)
+    this.checklistValidation()
     this.sendUpdatedBoard()
     // this.props.clearState(null)
   }

@@ -20,8 +20,8 @@ class _CardLabels extends Component {
   }
 
   componentDidMount() {
-    const { labels } = this.props.currCard
-    console.log('CMPDM', labels)
+    // const { labels } = this.props.currCard //fucked me up
+    const { labels } = this.props.card
     if (labels) {
       this.setState(prevState => {
         return {
@@ -81,7 +81,7 @@ class _CardLabels extends Component {
       const idx = labelsCopy.findIndex((label) => label.id === newLabel.id)
       labelsCopy.splice(idx, 1, newLabel)
     }
-    console.log('labelsCopy BEFORE SEND' ,labelsCopy)
+
     this.setState(prevState => {
       return {
         ...prevState,
@@ -89,10 +89,23 @@ class _CardLabels extends Component {
       }
     }, () => {
       this.props.onHandleLabelsChange(this.state.labels)
-        eventBusService.emit('label-added', newLabel)
-        this.props.saveChanges()
-      // this.props.onToggleLabels()
-      // this.clearNewLabel()
+      eventBusService.emit('label-added', newLabel)
+      this.onToggleLabel()
+      // this.props.saveChanges()
+      this.clearNewLabel()
+    })
+  }
+
+  clearNewLabel = () => {
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        newLabel: {
+          id: '',
+          title: '',
+          color: ''
+        }
+      }
     })
   }
 
