@@ -9,7 +9,9 @@
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {},
+      "style": {
+        "backgroundImage": "https://res.cloudinary.com/basimgs/image/upload/v1610712048/pexels-riccardo-bertolo-4245826_eoizb4.jpg"
+      },
       "members": [
         {
           "_id": "u101",
@@ -28,42 +30,8 @@
           "title": "haimasdassds",
           "cards": [
             {
-              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv"
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
-            }
-          ]
-        },
-        {
-          "title": "sdfsdfsdf",
-          "id": "r71",
-          "cards": [
-            {
-              "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
-              "id": "GcS"
-            },
-            {
-              "title": "hhh",
-              "id": "9O6",
-              "description": "asasadsas"
-            }
-          ],
-          "style": {}
-        },
-        {
-          "id": "g105",
-          "title": "haimasdassds",
-          "cards": [
-            {
-              "title": "fghfghfgh",
-              "id": "TPf"
-            },
-            {
-              "title": "vdfvdvxc",
-              "id": "fyV"
+              "title": "aa\nasd\ns\nd\nasd",
+              "id": "382zkr7"
             },
             {
               "id": "c104",
@@ -150,16 +118,16 @@
           "title": "haimasdassds",
           "cards": [
             {
+              "title": "asdsd\n",
+              "id": "srfCU7O"
+            },
+            {
               "title": "vdfvdvxc",
               "id": "fsdfsdfyV"
             },
             {
-              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv"
-            },
-            {
-              "title": "fghfghfgh",
-              "id": "TPf"
+              "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
+              "id": "GcS"
             },
             {
               "title": "dasdasdasd\ndfg",
@@ -170,32 +138,33 @@
               "title": "Go to sleep"
             },
             {
-              "title": "llalalal\nlalla\nhlhlhl",
-              "id": "rAL"
+              "title": "vdfvdvxc",
+              "id": "fasdasdyV"
             },
             {
-              "title": "vdfvdvxc",
-              "id": "fyV"
+              "title": "fghfghfgh",
+              "id": "TPf"
             },
             {
               "title": "esd;sd",
               "id": "tlo"
+            },
+            {
+              "title": "llalalal\nlalla\nhlhlhl",
+              "id": "rAL"
             }
           ]
         },
         {
           "title": "sdfsdfsdf",
-          "id": "BY4",
+          "id": "r71",
           "cards": [
             {
-              "title": "asdsd\n",
-              "id": "srfCU7O"
-            },
-            {
-              "title": "aa\nasd\ns\nd\nasd",
-              "id": "382zkr7"
+              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
+              "id": "kzv"
             }
-          ]
+          ],
+          "style": {}
         },
         {
           "title": "sdfsdfsdf",
@@ -203,8 +172,8 @@
           "cards": []
         },
         {
+          "id": "g102",
           "title": "xvcvcccv",
-          "id": "3up",
           "cards": [
             {
               "id": "c10894",
@@ -247,8 +216,31 @@
               "style": {
                 "bgColor": "#26DE81"
               }
+            },
+            {
+              "id": "c102",
+              "title": "Add Samples"
+            },
+            {
+              "id": "c1089",
+              "title": "eat cupcake"
+            },
+            {
+              "id": "c103",
+              "title": "Do that"
             }
-          ]
+          ],
+          "style": {}
+        },
+        {
+          "title": "xvcvcccv",
+          "id": "3up",
+          "cards": []
+        },
+        {
+          "title": "sdfsdf",
+          "id": "7F5bQiQ",
+          "cards": []
         }
       ],
       "activities": [
@@ -266,8 +258,7 @@
             "title": "Replace Logo"
           }
         }
-      ],
-      "labels": []
+      ]
     },
     {
       "_id": "b102",
