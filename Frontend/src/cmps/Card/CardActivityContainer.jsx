@@ -41,7 +41,7 @@ export class CardActivityContainer extends Component {
     return (
       <div className="activity-container">
         <div className="activity-header flex">
-          <img src="https://res.cloudinary.com/basimgs/image/upload/v1610792909/menu_1_o2l8cs.png" alt=""/>
+          <img src="https://res.cloudinary.com/basimgs/image/upload/v1610792909/menu_1_o2l8cs.png" alt="" />
           <h3>Activity</h3>
         </div>
         <div className="flex column">
@@ -58,8 +58,8 @@ export class CardActivityContainer extends Component {
           </div>
           {isSaveOpen && <button onMouseDown={this.saveNewTodo} >Save</button>}
         </div>
-        {comments && comments.map((comment, idx) => {
-          return <div key={idx} className="activity-comment-wrapper flex">
+        {comments && comments.map((comment, index) => {
+          return <div key={index} className="activity-comment-wrapper flex">
             <div className="member">UM</div>
             <div className="activity-comment">
               <p>{comment.txt}</p>

@@ -21,7 +21,7 @@ export class CardSide extends Component {
   // }
 
   onChange = (value) => {
-    this.setState( { value }, () => this.props.onSavedueDate((this.state.value + '').substring(4, 32))) 
+    this.setState({ value }, () => this.props.onSavedueDate((this.state.value + '').substring(4, 32)))
     this.toggleDate()
   }
 
@@ -69,7 +69,7 @@ export class CardSide extends Component {
             value={value}
           />
         </div>} */}
-        {/* <DatePicker /> */}
+          {/* <DatePicker /> */}
           <button className="side-btn">
             <span>
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610793767/picture_omnffh.png" alt="" />
