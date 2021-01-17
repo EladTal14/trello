@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { utilService } from '../../services/utilService'
 import { saveBoard } from '../../store/actions/boardAction'
+import { loadUsers } from '../../store/actions/userAction'
 import { connect } from 'react-redux'
 import { ChangeBackground } from './ChangeBackground.jsx'
 import { GroupAdd } from '../Group/GroupAdd'
+import { AddMember } from '../AddMember'
 
 export class _BoardHeader extends Component {
 
@@ -12,7 +14,12 @@ export class _BoardHeader extends Component {
       title: this.props.board.title,
     },
     isChanging: false,
-    isWrapper: false
+    isWrapper: false,
+    isMoreMembersShown: false
+  }
+
+  componentDidMount() {
+    this.props.loadUsers()
   }
 
   toggleMenu = () => {
@@ -56,10 +63,29 @@ export class _BoardHeader extends Component {
     board.title = title
     await this.props.saveBoard(board)
   }
+
+  toggleMembers = () => {
+    this.setState({ isMoreMembersShown: !this.state.isMoreMembersShown })
+  }
+
+  onUpdateMembers = async (member) => {
+    const { board } = this.props
+    const memberIdx = board.members.findIndex(currMember => currMember._id === member._id)
+    if(memberIdx > -1) {
+      board.members.splice(memberIdx, 1)
+    } else{
+      board.members.push(member)
+    }
+    await this.props.saveBoard(board)
+  }
+
+
   render() {
-    const { members } = this.props
-    const { board, isChanging, isWrapper } = this.state
+    const { members, users } = this.props
+    const { board, isChanging, isWrapper, isMoreMembersShown } = this.state
     return (
+      <>
+      {isMoreMembersShown && <AddMember toggleMembers={this.toggleMembers} onUpdateMembers={this.onUpdateMembers} members={members} users={users}/> }
       <header className="board-header flex space-between">
         <div className="header-options flex">
           {/* <h2>{title}</h2> */}
@@ -79,9 +105,9 @@ export class _BoardHeader extends Component {
                 </li>
               })}
             </ul>
-            <div className="add-member">
+            <button className="add-member" onClick={this.toggleMembers}>
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625640/add-user_qxgidw.png" alt="" />
-            </div>
+            </button>
           </div>
         </div>
         {/* <BoardFilter /> */}
@@ -101,6 +127,7 @@ export class _BoardHeader extends Component {
         <GroupAdd onAddGroup={this.props.onAddGroup} onScroll={this.props.onScroll} />
         <button className="menu-btn" onClick={this.toggleMenu}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
       </header>
+      </>
     )
   }
 }
@@ -108,6 +135,7 @@ export class _BoardHeader extends Component {
 const mapStateToProps = state => {
   return {
     board: state.boardModule.currBoard,
+    users: state.userModule.users
     // filterBy: state.boardModule.filterBy,
     // loggedInUser: state.userModule.loggedInUser,
   }
@@ -115,6 +143,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   saveBoard,
+  loadUsers,
 }
 
 

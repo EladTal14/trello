@@ -4,6 +4,7 @@ import 'react-calendar/dist/Calendar.css';
 import { cardService } from '../../services/cardService';
 import { CardCover } from './CardCover';
 import { CardLabels } from './CardLabels';
+import { AddMember } from '../AddMember';
 
 export class CardSide extends Component {
 
@@ -11,11 +12,16 @@ export class CardSide extends Component {
     value: new Date(),
     isDateShown: false,
     isLabelsShown: false,
-    isCoverMenuShown: false
+    isCoverMenuShown: false,
+    isMoreMembersShown: false
   }
 
   onRemoveCard = () => {
     this.props.onRemoveCard()
+  }
+
+  toggleMembers = () => {
+    this.setState({ isMoreMembersShown: !this.state.isMoreMembersShown })
   }
 
   toggleDate = () => {
@@ -42,8 +48,8 @@ export class CardSide extends Component {
 
 
   render() {
-    const { value, isDateShown, isLabelsShown, isCoverMenuShown } = this.state
-    const { card, onHandleLabelsChange, saveChanges } = this.props
+    const { value, isDateShown, isLabelsShown, isCoverMenuShown, isMoreMembersShown } = this.state
+    const { card, onHandleLabelsChange, saveChanges, users } = this.props
     return (
       <>
         {isLabelsShown && <CardLabels saveChanges={saveChanges} card={card} onToggleLabels={this.onToggleLabels} onHandleLabelsChange={onHandleLabelsChange} />}
@@ -55,9 +61,10 @@ export class CardSide extends Component {
             value={value}
           />
         </div>} 
+        {isMoreMembersShown && <AddMember toggleMembers={this.toggleMembers} onUpdateMembers={this.props.onUpdateMembers} members={card.members} users={users}/> }
         {/* <DatePicker /> */}
         <div className="card-side flex column">
-          <button className="side-btn">
+          <button className="side-btn" onClick={this.toggleMembers}>
             <span>
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/user_g2y481.png" alt="" />
             </span> Members</button>
