@@ -12,7 +12,8 @@ export class CardAdd extends Component {
     openInput = () => {
         this.setState({
             isAddOpen: true
-        })
+        }, () => this.props.onScroll(null, 100))
+
     }
 
     closeInput = () => {
@@ -49,7 +50,7 @@ export class CardAdd extends Component {
         const { isAddOpen, card } = this.state
         return <section className="add-card-container">
             {isAddOpen &&
-                <form onSubmit={this.onSaveCard} className="new-card-form">
+                <form onSubmit={this.onSaveCard} onBlur={this.closeInput} className="new-card-form">
                     <textarea type="text" name="title" value={card.title} onChange={this.handleInput}
                         className="my-input" placeholder="Enter a title card title..." autoFocus
                         cols="35" rows="4"></textarea>

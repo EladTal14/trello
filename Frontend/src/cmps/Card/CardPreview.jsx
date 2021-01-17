@@ -6,9 +6,7 @@ import { setCard, setGroup } from '../../store/actions/cardAction.js'
 import { CardPreviewLabel } from './CardPreviewLabel';
 import { CardPreviewBottom } from './CardPreviewBottom';
 
-
 export class _CardPreview extends Component {
-
     onShowCard = (card, group) => {
         this.props.setCard(card)
         this.props.setGroup(group)
@@ -26,14 +24,12 @@ export class _CardPreview extends Component {
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                             style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
-                        // onClick={() => this.toggleDetails('ev', false)}
                         >
                             <CardPreviewLabel card={card} />
                             <pre>{card.title}</pre>
                             <CardPreviewBottom card={card} />
                         </article>
                     )}
-
                 </Draggable>
 
             </div>
@@ -47,7 +43,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
     margin: `0 0 ${8}px 0`,
     borderRadius: '3px',
     background: isDragging ? '##e4e0e0' : 'white',
-    transform: [{ rotate: '180deg' }],
+    boxShadow: `0 1px 0 rgba(9, 30, 66, 0.25)`,
     ...draggableStyle
 });
 

@@ -13,9 +13,10 @@ import { eventBusService } from '../services/eventBusService.js'
 export class _BoardApp extends Component {
 
     state = {
-        isDetailsShown: false
+        isDetailsShown: false,
+        scrollLeft: 0
     }
-
+    refBoard = React.createRef()
     componentDidMount() {
         this.loadBoard()
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
@@ -71,7 +72,17 @@ export class _BoardApp extends Component {
     toggleDetails = (isShown) => {
         this.setState({ isDetailsShown: isShown })
     }
+    onScroll = (ev, scrolltoleft = 0) => {
 
+        if (!scrolltoleft) return
+        const scrollLeft = this.refBoard.current.scrollLeft
+        this.setState({
+            scrollLeft: scrollLeft
+        }, () => {
+            if (scrolltoleft)
+                this.refBoard.current.scrollLeft = 10000 + scrolltoleft
+        })
+    }
     render() {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
@@ -85,10 +96,11 @@ export class _BoardApp extends Component {
                         <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
 
-                <BoardHeader title={board.title} members={board.members} />
-                <section className="board-container" >
+                <BoardHeader title={board.title} members={board.members} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
+                <section className="board-container" ref={this.refBoard} onScroll={this.onScroll}>
+                    {/* <GroupAdd onAddGroup={this.onAddGroup} onScroll={this.onScroll} /> */}
+
                     {/* <ScrollContainer ignoreElements="article" > */}
-                    <GroupAdd onAddGroup={this.onAddGroup} />
                     <DragDropContext onDragEnd={this.onDragEnd}>
                         <Droppable droppableId="app" type="group" direction="horizontal">
                             {(provided) => (
