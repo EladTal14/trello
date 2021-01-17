@@ -20,11 +20,16 @@ export class _BoardApp extends Component {
     componentDidMount() {
         this.loadBoard()
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
-
+        this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
+        this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
     }
+
     check = (ev) => { console.log(ev); }
+
     componentWillUnmount() {
         this.eventBusTerminate()
+        this.eventBusLabelTerminate()
+        this.eventBusRemoveTerminate()
     }
 
     loadBoard = async () => {
@@ -35,6 +40,32 @@ export class _BoardApp extends Component {
     onAddGroup = async (group) => {
         const { board } = this.props
         board.groups.push(group)
+        await this.props.saveBoard(board)
+    }
+
+    onRemoveLabel = async (label) => {
+        const { board } = this.props
+        const labels = [...board.labels]
+        const idx = board.labels.findIndex((currLabel) => currLabel.id === label.id)
+        labels.splice(idx, 1)
+
+        board.labels = [...labels]
+        await this.props.saveBoard(board)
+    }
+
+    onAddLabel = async (label) => {
+        const { board } = this.props
+        let updatedLabels;
+
+        const isUpdate = board.labels.find((currLabel) => currLabel.id === label.id)
+
+        if (isUpdate) {
+            updatedLabels = board.labels.map((currLabel) => currLabel.id === label.id ? label : currLabel)
+        } else {
+            updatedLabels = [...board.labels, label]
+        }
+
+        board.labels = [...updatedLabels]
         await this.props.saveBoard(board)
     }
 

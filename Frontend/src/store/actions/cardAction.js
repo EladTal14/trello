@@ -28,3 +28,14 @@ export function clearState(clear) {
     }
   }
 }
+
+// export function addLabel(label) {
+//   return (dispatch) => {
+//     try {
+//       dispatch({ type: 'ADD_LABEL', label })
+//     } catch (err) {
+//       console.log('err cardAction CLEAR STATE', err);
+//     }
+//   }
+// }
+

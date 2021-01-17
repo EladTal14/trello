@@ -27,10 +27,14 @@ class _CardDetails extends Component {
   handleClickOutside = event => {
     const domNode = ReactDOM.findDOMNode(this)
     if (!domNode || !domNode.contains(event.target)) {
-      this.checklistValidation()
-      this.sendUpdatedBoard()
-      this.props.clearState(null)
+      this.saveChanges()
     }
+  }
+
+  saveChanges = () => {
+    // this.checklistValidation()
+    this.sendUpdatedBoard()
+    // this.props.clearState(null)
   }
 
   sendUpdatedBoard = () => {
@@ -72,6 +76,16 @@ class _CardDetails extends Component {
     }))
   }
 
+  onHandleLabelsChange = (labels) => {
+    console.log('label from details', labels)
+    this.setState(prevState => ({
+      card: {
+        ...prevState.card,
+        labels: [...labels]
+      }
+    }), () => this.saveChanges())
+  }
+
   onRemoveCard = () => {
     const { board, group } = this.props
     const { card } = this.state
@@ -92,33 +106,33 @@ class _CardDetails extends Component {
     group.cards[cardIdx] = newCard
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    this.setState({ card: newCard }, () => {this.props.saveBoard(board)})
+    this.setState({ card: newCard }, () => { this.props.saveBoard(board) })
   }
 
   onUploadCardCoverImg = (url) => {
     const { board, group } = this.props
     const { card } = this.state
-    const newCard = {...card}
-    const style = {imgUrl: url, color: ''}
+    const newCard = { ...card }
+    const style = { imgUrl: url, color: '' }
     newCard.style = style
     const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
     group.cards[cardIdx] = newCard
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    this.setState({ card: newCard }, () => {this.props.saveBoard(board)})  
+    this.setState({ card: newCard }, () => { this.props.saveBoard(board) })
   }
 
   onUpdateCoverColor = (color) => {
     const { board, group } = this.props
     const { card } = this.state
-    const newCard = {...card}
-    const style = {imgUrl: '', color: color}
+    const newCard = { ...card }
+    const style = { imgUrl: '', color: color }
     newCard.style = style
     const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
     group.cards[cardIdx] = newCard
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    this.setState({ card: newCard }, () => {this.props.saveBoard(board)}) 
+    this.setState({ card: newCard }, () => { this.props.saveBoard(board) })
   }
 
   addOrCancelChecklist = (checklist) => {
@@ -160,8 +174,10 @@ class _CardDetails extends Component {
               onRemoveCard={this.onRemoveCard}
               onSavedueDate={this.onSavedueDate}
               addOrCancelChecklist={this.addOrCancelChecklist}
-              onUploadCardCoverImg = {this.onUploadCardCoverImg}
-              onUpdateCoverColor = {this.onUpdateCoverColor}
+              onUploadCardCoverImg={this.onUploadCardCoverImg}
+              onHandleLabelsChange={this.onHandleLabelsChange}
+              onUpdateCoverColor={this.onUpdateCoverColor}
+              saveChanges={this.saveChanges}
             />
           </div>
         </div>

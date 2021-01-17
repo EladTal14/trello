@@ -6,19 +6,19 @@ export const cardService = {
 }
 
 function createTodo(title) {
-    return {
-      id: utilService.makeId(),
-      title,
-      isDone: false
-    }
+  return {
+    id: utilService.makeId(),
+    title,
+    isDone: false
+  }
 }
 
 function createChecklist() {
-    return {
-      id: utilService.makeId(),
-      title: '',
-      todos: [createTodo('')]
-    }
+  return {
+    id: utilService.makeId(),
+    title: '',
+    todos: [createTodo('')]
+  }
 }
 
 
