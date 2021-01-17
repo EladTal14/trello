@@ -18,7 +18,10 @@ export class CardAdd extends Component {
 
     closeInput = () => {
         this.setState({
-            isAddOpen: false
+            isAddOpen: false,
+            card: {
+                title: ''
+            }
         })
     }
 
@@ -29,8 +32,8 @@ export class CardAdd extends Component {
         this.setState(
             {
                 card: { title: '' },
-                isAddOpen: false
-            })
+
+            }, () => this.closeInput())
     }
 
     handleInput = ({ target }) => {
@@ -48,14 +51,14 @@ export class CardAdd extends Component {
 
     render() {
         const { isAddOpen, card } = this.state
-        return <section className="add-card-container">
+        return <section className="add-card-container" onBlur={this.closeInput} >
             {isAddOpen &&
-                <form onSubmit={this.onSaveCard} onBlur={this.closeInput} className="new-card-form">
+                <form onSubmit={() => { return }} className="new-card-form">
                     <textarea type="text" name="title" value={card.title} onChange={this.handleInput}
                         className="my-input" placeholder="Enter a title card title..." autoFocus
                         cols="35" rows="4"></textarea>
                     <div>
-                        <button className="submit-card-btn">Add card</button>
+                        <button onMouseDown={this.onSaveCard} className="submit-card-btn">Add card</button>
                         <button onClick={this.closeInput} className="close-input-btn" ><img src="https://res.cloudinary.com/basimgs/image/upload/v1610646476/close_voj9v3.png" alt="" /></button>
                     </div>
                 </form>
