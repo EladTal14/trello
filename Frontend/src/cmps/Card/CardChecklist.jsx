@@ -40,6 +40,8 @@ export class CardChecklist extends Component {
   }
 
   onRemoveTodo = (idx) => {
+    if (this.state.checklist.todos.length === 1) this.props.addOrCancelChecklist(null)
+
     const todosCopy = [...this.state.checklist.todos]
     todosCopy.splice(idx, 1)
     this.saveTodos(todosCopy)
@@ -102,7 +104,7 @@ export class CardChecklist extends Component {
     return (
       <div className="checklist flex column" >
         <div className="checklist-header flex">
-          <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/check-box_pzd2ul.png" alt=""/>
+          <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/check-box_pzd2ul.png" alt="" />
           <input
             className="my-input"
             type="text"
