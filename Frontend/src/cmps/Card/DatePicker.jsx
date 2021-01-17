@@ -1,33 +1,58 @@
+
+// /* eslint-disable no-underscore-dangle */
 // import React, { Component } from 'react'
-// import { format } from 'date-fns'
-// import { enGB } from 'date-fns/locale'
-// import { DatePickerCalendar } from 'react-nice-dates'
-// import 'react-nice-dates/build/style.css'
+// import TextField from "@material-ui/core/TextField";
+// import { MobileDatePicker, DesktopDatePicker, DatePicker } from "@material-ui/pickers";
 
+// export class DatePickersVariants extends Component {
+//     // (demoProps: any)
 
-// export class DatePicker extends Component{
-
-//     state ={
-//         date: '',
+//     state = {
+//         value: new Date()
 //     }
 
-//     setDate = (newDate) => {
-//         this.setState({ date: newDate }, () => console.log('DATE', this.state.date))
-        
-//         console.log('engb', enGB);
+//     setValue = (ev) => {
+//         console.log('event...', ev);
+//         this.setState({ value:ev })
 //     }
+// //   const [value, setValue] = React.useState<Date | null>(new Date());
 
-//   render() {
-//       const { date } = this.state
-//       return (
-//         <div>
-//           <p>
-//             Selected date: {date ? format(date, 'dd MMM yyyy', { locale: enGB }) : 'none'}.
-//           </p>
-//           <DatePickerCalendar date={date} onDateChange={this.setDate} locale={enGB} />
-//         </div>
-//       )
-//   }
+// render() {
+//     const { value } = this.state
+//     return (
+//       <React.Fragment>
+//         {/* <MobileDatePicker
+//           clearable
+//           label="For mobile"
+//           inputFormat={demoProps.__willBeReplacedGetFormatString({
+//             moment: "MM/DD/YYYY",
+//             dateFns: "MM/dd/yyyy",
+//           })}
+//           toolbarPlaceholder="Enter Date"
+//           value={value}
+//           onChange={(newValue) => this.setValue(newValue)}
+//           renderInput={(props) => <TextField {...props} />}
+//         /> */}
+//         {/* <DesktopDatePicker
+//           label="For desktop"
+//           value={value}
+//           minDate={new Date("2017-01-01")}
+//           onChange={(newValue) => this.setValue(newValue)}
+//           renderInput={(props) => <TextField {...props} />}
+//         /> */}
+//         <DatePicker
+//           disableFuture
+//           label="Responsive"
+//           openTo="year"
+//           views={["year", "month", "date"]}
+//           value={value}
+//           onChange={(newValue) => this.setValue(newValue)}
+//           renderInput={(props) => <TextField {...props} />}
+//         />
+//       </React.Fragment>
+//     );
+
+// }
 // }
 
 

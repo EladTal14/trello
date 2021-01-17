@@ -2,7 +2,8 @@
 import React, { Component } from 'react'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { DatePicker } from './DatePicker'
+// import { DatePicker } from './DatePicker'
+// import { DatePickersVariants } from './DatePickersVariants'
 
 export class CardSide extends Component {
 
@@ -41,7 +42,8 @@ export class CardSide extends Component {
             value={value}
           />
         </div>} */}
-        <DatePicker />
+        {/* <DatePicker /> */}
+        {/* <DatePickersVariants /> */}
         <button className="side-btn"><span><img src="https://res.cloudinary.com/basimgs/image/upload/v1610793767/picture_omnffh.png" alt="" /></span> Cover</button>
         <button className="side-btn" onClick={this.onRemoveCard}><span><img src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" alt="" /></span> Delete</button>
 
