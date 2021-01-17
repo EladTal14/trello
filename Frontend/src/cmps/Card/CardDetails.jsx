@@ -7,6 +7,7 @@ import { clearState } from '../../store/actions/cardAction.js'
 import { saveBoard } from '../../store/actions/boardAction.js'
 import { CardSide } from './CardSide'
 // TODO: find a way to merge all handle inputs
+// TODO: go back to handle click outside async lielm1995
 
 class _CardDetails extends Component {
   state = {
@@ -85,7 +86,7 @@ class _CardDetails extends Component {
   onSavedueDate = (date) => {
     const { board, group } = this.props
     const { card } = this.state
-    const newCard = {...card}
+    const newCard = { ...card }
     newCard.dueDate = Date.parse(date)
     const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
     group.cards[cardIdx] = newCard
@@ -130,10 +131,9 @@ class _CardDetails extends Component {
   }
 
   checklistValidation = () => {
-    if (this.state.card.checklist) {
-      if (this.state.card.checklist.todos.length === 1 && !this.state.card.checklist.todos[0].title ) {
-        this.addOrCancelChecklist(null)
-      }
+    const { checklist } = this.state.card
+    if (checklist && checklist.todos.length === 1 && !checklist.todos[0].title) {
+      this.addOrCancelChecklist(null)
     }
   }
 

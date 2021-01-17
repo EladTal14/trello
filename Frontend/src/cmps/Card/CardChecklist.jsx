@@ -145,7 +145,7 @@ export class CardChecklist extends Component {
             onChange={this.onHandleNewTodoChange}
             onBlur={this.toggleIsAddOpen}
           />
-          <button className="save-todo" onMouseDown={this.saveNewTodo} >Save</button>
+          <button className="save-btn" onMouseDown={this.saveNewTodo} >Save</button>
         </div>}
 
         {!isAddOpen && <button className="add-todo" onClick={this.toggleIsAddOpen}>Add todo</button>}

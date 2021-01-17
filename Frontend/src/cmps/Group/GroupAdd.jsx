@@ -30,7 +30,7 @@ export class GroupAdd extends Component {
             {
                 group: { title: '' },
                 isAddOpen: false
-            })
+            }, () => this.props.onScroll(null, 280))
     }
 
     handleInput = ({ target }) => {

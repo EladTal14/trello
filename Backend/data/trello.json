@@ -2,14 +2,16 @@
   "board": [
     {
       "_id": "b101",
-      "title": "Sprint 4 proj",
+      "title": "Sprint 4 project",
       "createdAt": 1589983468418,
       "createdBy": {
         "_id": "u101",
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {},
+      "style": {
+        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271947/samples/landscapes/girl-urban-view.jpg"
+      },
       "members": [
         {
           "_id": "u101",
@@ -24,39 +26,77 @@
       ],
       "groups": [
         {
-          "id": "g103",
-          "title": "haimasdassds",
+          "id": "g105",
+          "title": "hello",
           "cards": [
             {
-              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv",
-              "style": {
-                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610874505/pexels-kelsey-johnson-2331569_h36kwh.jpg",
-                "color": ""
-              }
+              "title": "sadasdsdas",
+              "id": "uGDgk51"
             },
             {
-              "title": "gggg",
-              "id": "cMP"
-            }
-          ]
-        },
-        {
-          "id": "g105",
-          "title": "haimasdassds",
-          "cards": [
+              "title": "llalalal\nlalla\nhlhlhl",
+              "id": "rAL"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fsdfsdfyV"
+            },
             {
               "title": "fghfghfgh",
               "id": "TPf"
             },
             {
-              "title": "vdfvdvxc",
-              "id": "fyV",
-              "style": {
-                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610876334/pexels-aphiwat-chuangchoem-358904_zs9bal.jpg",
-                "color": ""
-              }
+              "title": "gggg",
+              "id": "cMP"
             },
+            {
+              "title": "cardi b",
+              "id": "orUelNz"
+            }
+          ]
+        },
+        {
+          "title": "sdfsdfsdf",
+          "id": "r71",
+          "cards": [
+            {
+              "title": "Eat Food",
+              "id": "yS3N5PJ"
+            },
+            {
+              "title": "sddaas",
+              "id": "dPxGk6O"
+            },
+            {
+              "title": "esd;sd",
+              "id": "tlo"
+            },
+            {
+              "title": "sdfdfsf",
+              "id": "mR2Kea5"
+            },
+            {
+              "title": "sdfsdfsdf",
+              "id": "puvFI8H"
+            },
+            {
+              "title": "aaaa",
+              "id": "865o0OP"
+            },
+            {
+              "title": "aa\nasd\ns\nd\nasd",
+              "id": "382zkr7"
+            },
+            {
+              "title": "asd",
+              "id": "PMtZHel"
+            }
+          ]
+        },
+        {
+          "title": "sdfsdfsdf",
+          "id": "r71",
+          "cards": [
             {
               "id": "c104",
               "title": "Help me",
@@ -139,36 +179,21 @@
         },
         {
           "title": "sdfsdfsdf",
-          "id": "r71",
+          "id": "bahsu",
           "cards": [
             {
-              "title": "hhh",
-              "id": "9O6",
-              "description": "asasadsas",
-              "style": {
-                "imgUrl": "",
-                "color": "#a56cc1"
-              }
+              "title": "asdsd\n",
+              "id": "srfCU7O"
             },
             {
-              "title": "check 123\n",
-              "id": "4PA65o1",
-              "style": {
-                "imgUrl": "",
-                "color": "#f38181"
-              },
-              "dueDate": 1610149200000
-            },
-            {
-              "title": "נעגיקשנ",
-              "id": "7eAuNru"
+              "title": "aa\nasd\ns\nd\nasd",
+              "id": "382zkr7"
             }
-          ],
-          "style": {}
+          ]
         },
         {
           "id": "g1051",
-          "title": "haimasdassds",
+          "title": "sdfsdfsdf",
           "cards": [
             {
               "title": "vdfvdvxc",
@@ -183,26 +208,35 @@
               "id": "TPf"
             },
             {
-              "title": "dasdasdasd\ndfg",
-              "id": "Dz7rq01"
+              "title": "teold",
+              "id": "VAd9rqY"
+            },
+            {
+              "id": "c1089sdasd",
+              "title": "Go to sleep"
+            },
+            {
+              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
+              "id": "kzv"
+            },
+            {
+              "title": "vtvtgt \nvtewhttyyyyy\n\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
+              "id": "GcS"
+            },
+            {
+              "title": "dsffsdfdf",
+              "id": "iQxREcy"
             }
-          ]
+          ],
+          "style": {}
         },
         {
-          "title": "sdfsdfsdf",
-          "id": "BY4",
+          "id": "g103",
+          "title": "haimasdassds",
           "cards": [
             {
-              "title": "asdsd\n",
-              "id": "srfCU7O"
-            },
-            {
-              "title": "aa\nasd\ns\nd\nasd",
-              "id": "382zkr7"
-            },
-            {
-              "title": "check 123",
-              "id": "3RNIxXS"
+              "title": "dasdasdasd\ndfg",
+              "id": "Dz7rq01"
             }
           ]
         },
@@ -212,8 +246,8 @@
           "cards": []
         },
         {
-          "title": "xvcvcccv",
-          "id": "3up",
+          "id": "g102",
+          "title": "sdfsdf",
           "cards": [
             {
               "id": "c10894",
@@ -256,8 +290,43 @@
               "style": {
                 "bgColor": "#26DE81"
               }
+            },
+            {
+              "id": "c102",
+              "title": "Add Samples"
             }
-          ]
+          ],
+          "style": {}
+        },
+        {
+          "title": "invite Friends",
+          "id": "Lf5YIkw",
+          "cards": []
+        },
+        {
+          "title": "Find Friends",
+          "id": "sKad11i",
+          "cards": []
+        },
+        {
+          "title": "Make Dinner",
+          "id": "J4ITLQb",
+          "cards": []
+        },
+        {
+          "title": "In Progress",
+          "id": "sAa3PF9",
+          "cards": []
+        },
+        {
+          "title": "Done",
+          "id": "AUNYQHB",
+          "cards": []
+        },
+        {
+          "title": "Scroll",
+          "id": "34F86x9",
+          "cards": []
         }
       ],
       "activities": [
@@ -275,8 +344,7 @@
             "title": "Replace Logo"
           }
         }
-      ],
-      "labels": []
+      ]
     },
     {
       "_id": "b102",
@@ -478,7 +546,18 @@
           }
         }
       ],
-      "labels": []
+      "labels": [
+        {
+          "id": "fakeIdcd",
+          "title": "red label",
+          "color": "#61BD4F"
+        },
+        {
+          "id": "ncncnascx",
+          "title": "blue label",
+          "color": "#DE3163"
+        }
+      ]
     },
     {
       "_id": "b103",
@@ -699,7 +778,18 @@
           }
         }
       ],
-      "labels": []
+      "labels": [
+        {
+          "id": "nvnvnud",
+          "title": "red label",
+          "color": "#61BD4F"
+        },
+        {
+          "id": "g1t3y2",
+          "title": "blue label",
+          "color": "#DE3163"
+        }
+      ]
     }
   ],
   "user": [

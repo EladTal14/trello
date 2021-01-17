@@ -51,7 +51,7 @@ export class CardSide extends Component {
         {isCoverMenuShown && <CardCover onFinishUpload={this.props.onUploadCardCoverImg}
           onUpdateCoverColor={this.props.onUpdateCoverColor} toggleCoverMenu={this.toggleCoverMenu} />}
         {isDateShown && <div>
-          <Calendar style={{zIndex: 2000, position:'abdolut'}}
+          <Calendar style={{zIndex: 2000, position:'absolute'}}
             onChange={this.onChange}
             value={value}
           />
