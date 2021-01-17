@@ -102,9 +102,9 @@ export class _BoardApp extends Component {
 
                     {/* <ScrollContainer ignoreElements="article" > */}
                     <DragDropContext onDragEnd={this.onDragEnd}>
-                        <Droppable droppableId="app" type="group" direction="horizontal">
+                        <Droppable droppableId="app" type="group" direction="horizontal" >
                             {(provided) => (
-                                <div ref={provided.innerRef} {...provided.droppableProps}>
+                                <div style={{ width: board.groups.length * 287 }} ref={provided.innerRef} {...provided.droppableProps}>
                                     <GroupList groups={board.groups} onAddCard={this.onAddCard} onAddGroup={this.onAddGroup} />
                                     {provided.placeholder}
                                 </div>
