@@ -25,6 +25,8 @@ export class _CardPreview extends Component {
                             {...provided.dragHandleProps}
                             style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
                         >
+                            {card.style && (card.style.imgUrl ? <div className="card-img-cover" style={{ backgroundImage: `url(${card.style.imgUrl}`}} ></div> :
+                            <div className="card-color-cover" style={{ backgroundColor: card.style.color}}></div> ) }
                             <CardPreviewLabel card={card} />
                             <pre>{card.title}</pre>
                             <CardPreviewBottom card={card} />

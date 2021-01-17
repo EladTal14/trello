@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { cardService } from '../../services/cardService';
+import { CardCover } from './CardCover';
 import { CardLabels } from './CardLabels';
 
 export class CardSide extends Component {
@@ -9,16 +10,21 @@ export class CardSide extends Component {
   state = {
     value: new Date(),
     isDateShown: false,
-    isLabelsShown: false
+    isLabelsShown: false,
+    isCoverMenuShown: false
   }
 
   onRemoveCard = () => {
     this.props.onRemoveCard()
   }
 
-  // toggleDate = () => {
-  //   this.setState({ isDateShown: !this.state.isDateShown })
-  // }
+  toggleDate = () => {
+    this.setState({ isDateShown: !this.state.isDateShown })
+  }
+
+  toggleCoverMenu = () => {
+    this.setState({ isCoverMenuShown: !this.state.isCoverMenuShown })
+  }
 
   onChange = (value) => {
     this.setState({ value }, () => this.props.onSavedueDate((this.state.value + '').substring(4, 32)))
@@ -37,11 +43,20 @@ export class CardSide extends Component {
 
 
   render() {
-    const { value, isDateShown, isLabelsShown } = this.state
+    const { value, isDateShown, isLabelsShown, isCoverMenuShown } = this.state
     const { card } = this.props
     return (
       <>
         {isLabelsShown && <CardLabels card={card} onToggleLabels={this.onToggleLabels} />}
+        {isCoverMenuShown && <CardCover onFinishUpload={this.props.onUploadCardCoverImg}
+          onUpdateCoverColor={this.props.onUpdateCoverColor} toggleCoverMenu={this.toggleCoverMenu} />}
+        {isDateShown && <div>
+          <Calendar style={{zIndex: 2000, position:'absolute'}}
+            onChange={this.onChange}
+            value={value}
+          />
+        </div>} 
+        {/* <DatePicker /> */}
         <div className="card-side flex column">
           <button className="side-btn">
             <span>
@@ -63,14 +78,7 @@ export class CardSide extends Component {
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/clock_zwp9d9.png" alt="" />
             </span> Due date</button>
 
-          {/* {isDateShown && <div>
-          <Calendar style={{zIndex: 2000, position:'relative'}}
-            onChange={this.onChange}
-            value={value}
-          />
-        </div>} */}
-          {/* <DatePicker /> */}
-          <button className="side-btn">
+          <button className="side-btn" onClick={this.toggleCoverMenu}>
             <span>
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610793767/picture_omnffh.png" alt="" />
             </span> Cover</button>

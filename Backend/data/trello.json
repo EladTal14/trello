@@ -532,7 +532,18 @@
           }
         }
       ],
-      "labels": []
+      "labels": [
+        {
+          "id": "fakeIdcd",
+          "title": "red label",
+          "color": "#61BD4F"
+        },
+        {
+          "id": "ncncnascx",
+          "title": "blue label",
+          "color": "#DE3163"
+        }
+      ]
     },
     {
       "_id": "b103",
@@ -753,7 +764,18 @@
           }
         }
       ],
-      "labels": []
+      "labels": [
+        {
+          "id": "nvnvnud",
+          "title": "red label",
+          "color": "#61BD4F"
+        },
+        {
+          "id": "g1t3y2",
+          "title": "blue label",
+          "color": "#DE3163"
+        }
+      ]
     }
   ],
   "user": [

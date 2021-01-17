@@ -1,6 +1,20 @@
 .card-preview {
     border-radius: 3px;
     max-width: 290px;
+    min-height: 20px;
+
+    .card-img-cover {
+        min-height: 100px;
+        background-size: cover;
+        border-radius: 3px;
+        width: 100%;
+    }
+
+    .card-color-cover {
+        width: 219px;
+        height: 20px;
+        border-radius: 3px;
+    }
 }
 
 .label-container {
