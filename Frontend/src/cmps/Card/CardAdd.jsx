@@ -5,7 +5,7 @@ export class CardAdd extends Component {
     state = {
         isAddOpen: false,
         card: {
-            title: ''
+            title: '',
         }
     }
 
@@ -27,7 +27,7 @@ export class CardAdd extends Component {
 
     onSaveCard = (ev) => {
         ev.preventDefault()
-        const card = { title: this.state.card.title, id: utilService.makeId() }
+        const card = { title: this.state.card.title, id: utilService.makeId(), members:[] }
         this.props.onAddCard(card, this.props.groupId)
         this.setState(
             {

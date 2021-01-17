@@ -50,14 +50,14 @@
 
 .card-extras-container {
     align-items: center;
-    .members-container {
-        // .member {
-        //     width: 30px;
-        //     height: 30px;
-        //     border-radius: 50%;
-        //     line-height: 30px;
-        //     margin-left: 5px;
-        // }
+    .preview-members-container {
+        .member {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            line-height: 28px;
+            background-color: rgb(63, 138, 252);
+        }
     }
 
     .date-container:hover {

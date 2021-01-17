@@ -122,7 +122,6 @@
   }
 
   .label-btn {
-    background-color: rgb(245, 231, 35);
     border-radius: 3px;
     font-weight: 600;
     height: 32px;
@@ -130,7 +129,8 @@
     margin: 0 4px 4px 0;
     min-width: 40px;
     padding: 0 12px;
-    width: auto;
+    // width: auto;
+    width: fit-content;
     color: #fff;
     border: none;
   }
