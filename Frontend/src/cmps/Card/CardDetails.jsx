@@ -92,8 +92,33 @@ class _CardDetails extends Component {
     group.cards[cardIdx] = newCard
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    this.setState({ card: newCard }, () => { this.props.saveBoard(board) })
+    this.setState({ card: newCard }, () => {this.props.saveBoard(board)})
+  }
 
+  onUploadCardCoverImg = (url) => {
+    const { board, group } = this.props
+    const { card } = this.state
+    const newCard = {...card}
+    const style = {imgUrl: url, color: ''}
+    newCard.style = style
+    const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
+    group.cards[cardIdx] = newCard
+    const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
+    board.groups[groupIdx] = group
+    this.setState({ card: newCard }, () => {this.props.saveBoard(board)})  
+  }
+
+  onUpdateCoverColor = (color) => {
+    const { board, group } = this.props
+    const { card } = this.state
+    const newCard = {...card}
+    const style = {imgUrl: '', color: color}
+    newCard.style = style
+    const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
+    group.cards[cardIdx] = newCard
+    const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
+    board.groups[groupIdx] = group
+    this.setState({ card: newCard }, () => {this.props.saveBoard(board)}) 
   }
 
   addOrCancelChecklist = (checklist) => {
@@ -135,6 +160,8 @@ class _CardDetails extends Component {
               onRemoveCard={this.onRemoveCard}
               onSavedueDate={this.onSavedueDate}
               addOrCancelChecklist={this.addOrCancelChecklist}
+              onUploadCardCoverImg = {this.onUploadCardCoverImg}
+              onUpdateCoverColor = {this.onUpdateCoverColor}
             />
           </div>
         </div>

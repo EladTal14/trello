@@ -29,7 +29,11 @@
           "cards": [
             {
               "title": "lffff\ngthte\nbgrwrynrnhr\nh",
-              "id": "kzv"
+              "id": "kzv",
+              "style": {
+                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610881801/20201215_095032_yghcl8.jpg",
+                "color": ""
+              }
             },
             {
               "title": "gggg",
@@ -49,7 +53,20 @@
             {
               "title": "hhh",
               "id": "9O6",
-              "description": "asasadsas"
+              "description": "asasadsas",
+              "style": {
+                "imgUrl": "",
+                "color": "#a56cc1"
+              }
+            },
+            {
+              "title": "check 123\n",
+              "id": "4PA65o1",
+              "style": {
+                "imgUrl": "",
+                "color": "#f38181"
+              },
+              "dueDate": 1611099600000
             }
           ],
           "style": {}
@@ -147,7 +164,7 @@
           ]
         },
         {
-          "id": "g105",
+          "id": "g1051",
           "title": "haimasdassds",
           "cards": [
             {
@@ -204,7 +221,7 @@
         },
         {
           "title": "sdfsdfsdf",
-          "id": "BY4",
+          "id": "hhh56ytfv",
           "cards": []
         },
         {
