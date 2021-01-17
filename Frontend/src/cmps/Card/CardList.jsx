@@ -9,7 +9,7 @@ export class CardList extends Component {
     state = {
         scrollTop: 0
     }
-    refCard = React.createRef()
+    // refCard = React.createRef()
     getListStyle = isDraggingOver => ({
         padding: 5,
         width: 245,
@@ -24,15 +24,16 @@ export class CardList extends Component {
             scrollTop: scrollTop
         }, () => {
             if (scrolltobottom)
-                this.refCard.current.scrollTop = this.refCard.current.scrollTop + scrolltobottom
+                this.props.ref.current.scrollTop = this.props.ref.current.scrollTop + scrolltobottom
         })
     }
     render() {
-        const { cards, id, groupTitle, group, onAddCard } = this.props
+        const { cards, id, groupTitle, group } = this.props
         if (!cards) return <div>Loading Cards...</div>
 
         return (
-            <div className="card-list" ref={this.refCard} onScroll={this.onScroll}>
+            // <div className="card-list" ref={this.refCard} onScroll={this.props.onScroll}>
+            <div className="card-list" ref={this.props.refs} onScroll={this.props.onScroll}>
                 <Droppable droppableId={group.id} type="card">
                     {(provided, snapshot) => (
                         <div ref={provided.innerRef} style={this.getListStyle(snapshot.isDraggingOver)}
@@ -45,7 +46,6 @@ export class CardList extends Component {
                         </div>
                     )}
                 </Droppable>
-                <CardAdd groupId={group.id} onAddCard={onAddCard} onScroll={this.onScroll} />
             </div >
         )
     }

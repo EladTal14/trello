@@ -1,6 +1,6 @@
 import React from 'react'
 import { utilService } from '../../services/utilService'
-
+const _ = require('lodash');
 export function CardPreviewBottom({ card }) {
 
     const progress = utilService.getTodoProgress(card)
@@ -15,9 +15,10 @@ export function CardPreviewBottom({ card }) {
             {card.checklist && <div className="checklist-container flex">
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/check-box_pzd2ul.png" alt="" />
                 <p className="checklist">{progress.done}/{progress.total}</p></div>}
-            {card.members && <div className="members-container flex">
+            {(!_.isEmpty(card.members)) && <div className="members-container flex">
                 {card.members.map(member => {
-                    return <div key={member._id} className="member">
+                    // return <div key={member._id} className="member">
+                    return <div key={member.fullname} className="member">
                         {utilService.convertName(member.fullname)}
                     </div>
                 })}
