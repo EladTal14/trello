@@ -119,6 +119,10 @@ export class _BoardApp extends Component {
         console.log('want to check if a new board is add', board);
         let { isDetailsShown } = this.state
         if (!board) return <p>Loading...</p>
+        if (this.refBoard && this.refBoard.current) {
+            console.log(this.refBoard.current.clientHeight);
+            console.log(this.refBoard.current.scrollHeight);
+        }
         return (
             <>
                 {this.props.currCard && isDetailsShown &&
@@ -126,17 +130,15 @@ export class _BoardApp extends Component {
                         <div className="modal-cover" onClick={() => this.toggleDetails(false)}> </div>
                         <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
-
                 <BoardHeader title={board.title} members={board.members} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
                 <section className="board-container" ref={this.refBoard} onScroll={this.onScroll}>
-                    {/* <GroupAdd onAddGroup={this.onAddGroup} onScroll={this.onScroll} /> */}
-
                     {/* <ScrollContainer ignoreElements="article" > */}
-                    <DragDropContext onDragEnd={this.onDragEnd}>
+                    <DragDropContext onDragEnd={this.onDragEnd} >
                         <Droppable droppableId="app" type="group" direction="horizontal" >
                             {(provided) => (
-                                <div style={{ width: board.groups.length * 287 }} ref={provided.innerRef} {...provided.droppableProps}>
-                                    <GroupList groups={board.groups} onAddCard={this.onAddCard} onAddGroup={this.onAddGroup} />
+
+                                <div style={{ width: (board.groups.length) * 287 }} ref={provided.innerRef} {...provided.droppableProps}>
+                                    <GroupList groups={board.groups} onAddCard={this.onAddCard} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
                                     {provided.placeholder}
                                 </div>
                             )}

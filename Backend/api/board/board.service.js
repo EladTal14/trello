@@ -7,7 +7,6 @@ const ObjectId = require('mongodb').ObjectId
 module.exports = {
     query,
     getById,
-    getByUsername,
     remove,
     update,
     add
@@ -17,12 +16,12 @@ async function query() {
     try {
         const collection = await dbService.getCollection('board')
         var boards = await collection.find().toArray()
-        boards = boards.map(board => {
-            user.createdAt = ObjectId(user._id).getTimestamp()
-            // Returning fake fresh data
-            // user.createdAt = Date.now() - (1000 * 60 * 60 * 24 * 3) // 3 days ago
-            return board
-        })
+        // boards = boards.map(board => {
+        //     user.createdBy = ObjectId(user._id).getTimestamp()
+        //     // Returning fake fresh data
+        //     // user.createdAt = Date.now() - (1000 * 60 * 60 * 24 * 3) // 3 days ago
+        //     return board
+        // })
         return boards
     } catch (err) {
         logger.error('cannot find boards', err)
@@ -33,75 +32,77 @@ async function query() {
 async function getById(boardId) {
     try {
         const collection = await dbService.getCollection('board')
-        const user = await collection.findOne({ '_id': ObjectId(boardId) })
-        user.givenBoards = await boardService.query({ byUserId: ObjectId(user._id) })
-        user.givenBoards = user.givenBoards.map(board => {
-            delete board.byUser
-            return board
-        })
-
-        return user
+        const board = await collection.findOne({ '_id': ObjectId(boardId) })
+        // user.givenBoards = await boardService.query({ byUserId: ObjectId(user._id) })
+        // user.givenBoards = user.givenBoards.map(board => {
+        //     delete board.byUser
+        //     return board
+        // })
+        return board
     } catch (err) {
-        logger.error(`while finding user ${boardId}`, err)
+        logger.error(`while finding board ${boardId}`, err)
         throw err
     }
 }
-async function getByUsername(username) {
+
+
+async function remove(boardId) {
     try {
-        const collection = await dbService.getCollection('user')
-        const user = await collection.findOne({ username })
-        return user
+        const collection = await dbService.getCollection('board')
+        await collection.deleteOne({ '_id': ObjectId(boardId) })
     } catch (err) {
-        logger.error(`while finding user ${username}`, err)
+        logger.error(`cannot remove board ${boardId}`, err)
         throw err
     }
 }
 
-async function remove(userId) {
-    try {
-        const collection = await dbService.getCollection('user')
-        await collection.deleteOne({ '_id': ObjectId(userId) })
-    } catch (err) {
-        logger.error(`cannot remove user ${userId}`, err)
-        throw err
-    }
-}
-
-async function update(user) {
+async function update(board) {
     try {
         // peek only updatable fields!
-        const userToSave = {
-            _id: ObjectId(user._id),
-            username: user.username,
-            fullname: user.fullname,
-            score: user.score
+        const boardToSave = {
+            _id: ObjectId(board._id),
+            title: board.title,
+            createdAt: board.createdAt,
+            //createdBy:TODO user
+            groups: board.groups,
+            members: board.members,
+            activities: board.activities,
+            style: board.style,
+            labels: board.labels
+
         }
-        const collection = await dbService.getCollection('user')
-        await collection.updateOne({ '_id': userToSave._id }, { $set: userToSave })
-        return userToSave;
+        const collection = await dbService.getCollection('board')
+        await collection.updateOne({ '_id': boardToSave._id }, { $set: boardToSave })
+        return boardToSave;
     } catch (err) {
-        logger.error(`cannot update user ${user._id}`, err)
+        logger.error(`cannot update board ${board._id}`, err)
         throw err
     }
 }
 
-async function add(user) {
+async function add(board) {
     try {
         // peek only updatable fields!
-        const userToAdd = {
-            username: user.username,
-            password: user.password,
-            fullname: user.fullname,
-            score: user.score || 0
+        const boardToAdd = {
+            _id: ObjectId(board._id),
+            title: board.title,
+            createdAt: Date.now(),
+            //createdBy:TODO user
+            groups: [],
+            members: [],
+            activities: [],
+            style: {},
+            labels: []
         }
-        const collection = await dbService.getCollection('user')
-        await collection.insertOne(userToAdd)
-        return userToAdd
+        const collection = await dbService.getCollection('board')
+        await collection.insertOne(boardToAdd)
+        return boardToAdd
     } catch (err) {
-        logger.error('cannot insert user', err)
+        logger.error('cannot insert board', err)
         throw err
     }
 }
+
 
 function _buildCriteria(filterBy) {
     const criteria = {}
