@@ -2,7 +2,7 @@
   "board": [
     {
       "_id": "b101",
-      "title": "Sprint 4 proj",
+      "title": "Sprint 4 project",
       "createdAt": 1589983468418,
       "createdBy": {
         "_id": "u101",
@@ -10,7 +10,7 @@
         "imgUrl": "http://some-img"
       },
       "style": {
-        "backgroundImage": "https://res.cloudinary.com/basimgs/image/upload/v1610712048/pexels-riccardo-bertolo-4245826_eoizb4.jpg"
+        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271947/samples/landscapes/girl-urban-view.jpg"
       },
       "members": [
         {
@@ -26,13 +26,67 @@
       ],
       "groups": [
         {
-          "id": "g103",
-          "title": "haimasdassds",
+          "id": "g105",
+          "title": "hello",
           "cards": [
+            {
+              "title": "sadasdsdas",
+              "id": "uGDgk51"
+            },
+            {
+              "title": "llalalal\nlalla\nhlhlhl",
+              "id": "rAL"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fsdfsdfyV"
+            },
+            {
+              "title": "fghfghfgh",
+              "id": "TPf"
+            },
+            {
+              "title": "gggg",
+              "id": "cMP"
+            },
+            {
+              "title": "Eat Food",
+              "id": "yS3N5PJ"
+            },
+            {
+              "title": "sddaas",
+              "id": "dPxGk6O"
+            },
+            {
+              "title": "esd;sd",
+              "id": "tlo"
+            },
+            {
+              "title": "sdfdfsf",
+              "id": "mR2Kea5"
+            },
+            {
+              "title": "sdfsdfsdf",
+              "id": "puvFI8H"
+            },
+            {
+              "title": "aaaa",
+              "id": "865o0OP"
+            },
             {
               "title": "aa\nasd\ns\nd\nasd",
               "id": "382zkr7"
             },
+            {
+              "title": "asd",
+              "id": "PMtZHel"
+            }
+          ]
+        },
+        {
+          "title": "sdfsdfsdf",
+          "id": "r71",
+          "cards": [
             {
               "id": "c104",
               "title": "Help me",
@@ -108,72 +162,78 @@
               }
             },
             {
-              "title": "gggg",
-              "id": "cMP"
-            }
-          ]
-        },
-        {
-          "id": "g105",
-          "title": "haimasdassds",
-          "cards": [
-            {
-              "title": "asdsd\n",
-              "id": "srfCU7O"
+              "title": "sadsaddasd",
+              "id": "OR5oRxn"
             },
             {
-              "title": "vdfvdvxc",
-              "id": "fsdfsdfyV"
-            },
-            {
-              "title": "vtvtgt \nvtewhttyyyyy\nbtewht\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
-              "id": "GcS"
-            },
-            {
-              "title": "dasdasdasd\ndfg",
-              "id": "Dz7rq01"
+              "title": "teold",
+              "id": "VAd9rqY"
             },
             {
               "id": "c1089sdasd",
               "title": "Go to sleep"
             },
             {
-              "title": "vdfvdvxc",
-              "id": "fasdasdyV"
-            },
-            {
-              "title": "fghfghfgh",
-              "id": "TPf"
-            },
-            {
-              "title": "esd;sd",
-              "id": "tlo"
-            },
-            {
-              "title": "llalalal\nlalla\nhlhlhl",
-              "id": "rAL"
-            }
-          ]
-        },
-        {
-          "title": "sdfsdfsdf",
-          "id": "r71",
-          "cards": [
-            {
               "title": "lffff\ngthte\nbgrwrynrnhr\nh",
               "id": "kzv"
+            },
+            {
+              "title": "vtvtgt \nvtewhttyyyyy\n\nnhyrej5yeju5j5\nunyej\n5jy\ny5jy",
+              "id": "GcS"
+            },
+            {
+              "title": "dsffsdfdf",
+              "id": "iQxREcy"
             }
           ],
           "style": {}
         },
         {
+          "id": "g103",
+          "title": "haimasdassds",
+          "cards": [
+            {
+              "title": "dasdasdasd\ndfg",
+              "id": "Dz7rq01"
+            }
+          ]
+        },
+        {
+          "title": "xvcvcccv",
+          "id": "3up",
+          "cards": [
+            {
+              "title": "asdsd\n",
+              "id": "srfCU7O"
+            }
+          ]
+        },
+        {
           "title": "sdfsdfsdf",
           "id": "BY4",
+          "cards": [
+            {
+              "id": "c1089",
+              "title": "eat cupcake"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fasdasdyV"
+            },
+            {
+              "id": "c103",
+              "title": "Do that"
+            }
+          ]
+        },
+        {
+          "title": "sdfsdf",
+          "id": "7F5bQiQ",
           "cards": []
         },
         {
           "id": "g102",
-          "title": "xvcvcccv",
+          "title": "sdfsdf",
           "cards": [
             {
               "id": "c10894",
@@ -220,26 +280,38 @@
             {
               "id": "c102",
               "title": "Add Samples"
-            },
-            {
-              "id": "c1089",
-              "title": "eat cupcake"
-            },
-            {
-              "id": "c103",
-              "title": "Do that"
             }
           ],
           "style": {}
         },
         {
-          "title": "xvcvcccv",
-          "id": "3up",
+          "title": "invite Friends",
+          "id": "Lf5YIkw",
           "cards": []
         },
         {
-          "title": "sdfsdf",
-          "id": "7F5bQiQ",
+          "title": "Find Friends",
+          "id": "sKad11i",
+          "cards": []
+        },
+        {
+          "title": "Make Dinner",
+          "id": "J4ITLQb",
+          "cards": []
+        },
+        {
+          "title": "In Progress",
+          "id": "sAa3PF9",
+          "cards": []
+        },
+        {
+          "title": "Done",
+          "id": "AUNYQHB",
+          "cards": []
+        },
+        {
+          "title": "Scroll",
+          "id": "34F86x9",
           "cards": []
         }
       ],
