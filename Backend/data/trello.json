@@ -12,8 +12,8 @@
       "style": {},
       "members": [
         {
-          "_id": "u103",
-          "fullname": "Basya Kritchker",
+          "_id": "u101",
+          "fullname": "Adir Hagag",
           "username": "abasdasdi@ababmi.com",
           "password": "123",
           "imgUrl": "http://some-img.jpg"
@@ -24,18 +24,10 @@
           "username": "abasdi@ababmi.com",
           "password": "123",
           "imgUrl": "http://some-img.jpg"
-        },
-        {
-          "_id": "u101",
-          "fullname": "Adir Hagag",
-          "username": "abasdasdi@ababmi.com",
-          "password": "123",
-          "imgUrl": "http://some-img.jpg"
         }
       ],
       "groups": [
         {
-<<<<<<< HEAD
           "id": "g103",
           "title": "haimasdassds",
           "cards": [
@@ -50,98 +42,13 @@
             {
               "title": "gggg",
               "id": "cMP"
-=======
-          "title": "sdfsdfsdf",
-          "id": "r7h1",
-          "cards": [
-            {
-              "title": "Eat Food",
-              "id": "yS3N5PJ",
-              "style": {
-                "imgUrl": "",
-                "color": "#f9ed69"
-              }
-            },
-            {
-              "title": "check members...",
-              "id": "CqDoLRt",
-              "members": [
-                {
-                  "_id": "u103",
-                  "fullname": "Basya Kritchker",
-                  "username": "abasdasdi@ababmi.com",
-                  "password": "123",
-                  "imgUrl": "http://some-img.jpg"
-                },
-                {
-                  "_id": "u102",
-                  "fullname": "Elad Tal",
-                  "username": "abasdi@ababmi.com",
-                  "password": "123",
-                  "imgUrl": "http://some-img.jpg"
-                },
-                {
-                  "_id": "u101",
-                  "fullname": "Adir Hagag",
-                  "username": "abasdasdi@ababmi.com",
-                  "password": "123",
-                  "imgUrl": "http://some-img.jpg"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "g1051",
-          "title": "sdfsdfsdf",
-          "cards": [
-            {
-              "title": "check membes",
-              "id": "lWJDRwT",
-              "members": [],
-              "style": {
-                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610916447/pexels-frans-van-heerden-624015_eymc8t.jpg",
-                "color": ""
-              },
-              "dueDate": 1609803600000
-            },
-            {
-              "title": "check more members",
-              "id": "ks3ebOW",
-              "members": []
-            },
-            {
-              "title": "check some\nmore\nmembers",
-              "id": "h7iTSQm",
-              "members": [
-                {
-                  "_id": "u103",
-                  "fullname": "Basya Kritchker",
-                  "username": "abasdasdi@ababmi.com",
-                  "password": "123",
-                  "imgUrl": "http://some-img.jpg"
-                },
-                {
-                  "_id": "u101",
-                  "fullname": "Adir Hagag",
-                  "username": "abasdasdi@ababmi.com",
-                  "password": "123",
-                  "imgUrl": "http://some-img.jpg"
-                }
-              ]
->>>>>>> 6ce206e26550354c311719dd731e871648709372
             }
           ],
           "style": {}
         },
         {
-<<<<<<< HEAD
           "title": "sdfsdfsdf",
           "id": "R232s",
-=======
-          "title": "check",
-          "id": "rk71",
->>>>>>> 6ce206e26550354c311719dd731e871648709372
           "cards": [
             {
               "title": "hhh",
@@ -153,7 +60,6 @@
               }
             },
             {
-<<<<<<< HEAD
               "title": "check 123\n",
               "id": "4PA65o1",
               "style": {
@@ -171,177 +77,69 @@
             },
             {
               "title": "נעגיקשנ",
-              "id": "7eAuNru"
-=======
-              "title": "asd",
-              "id": "PMtZHel"
->>>>>>> 6ce206e26550354c311719dd731e871648709372
+              "id": "7eAuNru",
+              "labels": [
+                {
+                  "id": "pI6Z0du",
+                  "title": "pitot",
+                  "color": "#f2d601"
+                },
+                {
+                  "id": "IW9UvNB",
+                  "title": "ddddd",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "omriGmK",
+                  "title": "vvvvvvv",
+                  "color": "#344563"
+                }
+              ]
             }
           ],
           "style": {}
         },
         {
-<<<<<<< HEAD
           "id": "g105",
           "title": "haimasdassds",
           "cards": [
             {
-              "title": "fghfghfgh",
-              "id": "TPf",
-              "labels": [
-                {
-                  "id": "llSfgL5",
-                  "title": "pita hama",
-                  "color": "#ff9f19"
-                },
-                {
-                  "id": "YcF3WNl",
-                  "title": "lahi lhamni",
-                  "color": "#61bd50"
-                },
-                {
-                  "id": "ErptLIz",
-                  "title": "pitot",
-                  "color": "#ff9f19"
-                },
-                {
-                  "id": "ZOZ0YTk",
-                  "title": "Pitot",
-                  "color": "#c377e0"
-                }
-              ]
+              "title": "Eat Food",
+              "id": "yS3N5PJ"
             },
             {
-              "title": "vdfvdvxc",
-              "id": "fyV",
-              "style": {
-                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610876334/pexels-aphiwat-chuangchoem-358904_zs9bal.jpg",
-                "color": ""
-              },
-              "labels": [
-                {
-                  "id": "1nsss2",
-                  "title": "Hey",
-                  "color": "#04c2e0",
-                  "isChoosen": false
-                },
-                {
-                  "id": "1ns652",
-                  "title": "",
-                  "color": "#f2d601",
-                  "isChoosen": false
-                }
-              ]
+              "title": "lest add members",
+              "id": "C3MY6Pj",
+              "members": []
             },
             {
-              "id": "c104",
-              "title": "Help me",
-              "description": "description",
-              "comments": [
-                {
-                  "id": "ZdPnm",
-                  "txt": "a comment",
-                  "createdAt": 1590999817436,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
-                },
-                {
-                  "id": "ZdPno",
-                  "txt": "dont like it",
-                  "createdAt": 1590999817456,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
-                }
-              ],
-              "checklist": {
-                "id": "YEhmF",
-                "title": "Checklist",
-                "todos": [
-                  {
-                    "title": "To Do 1",
-                    "isDone": true,
-                    "id": "212jt"
-                  },
-                  {
-                    "title": "To Do 3",
-                    "isDone": false,
-                    "id": "212jkk"
-                  }
-                ]
-              },
-              "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
-              ],
-              "labels": [
-                {
-                  "id": "101",
-                  "title": "done",
-                  "color": "#61BD4F"
-                },
-                {
-                  "id": "ocjeRXT",
-                  "title": "pitot",
-                  "color": "#c377e0"
-                },
-                {
-                  "id": "rqr5QQW",
-                  "title": "i wish",
-                  "color": "#f2d601"
-                }
-              ],
-              "createdAt": 1590999730348,
-              "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
-              "style": {
-                "bgColor": "#26DE81"
-              }
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
-=======
-          "title": "sdfsdfsdf",
-          "id": "bahsu",
-          "cards": [
-            {
-              "title": "asdsd\n",
-              "id": "srfCU7O"
-            },
-            {
-              "title": "aa\nasd\ns\nd\nasd",
-              "id": "382zkr7"
->>>>>>> 6ce206e26550354c311719dd731e871648709372
+              "title": "and some\nmore members... ya",
+              "id": "OXKstIt",
+              "members": []
             }
           ]
         },
         {
-<<<<<<< HEAD
           "id": "g1051",
           "title": "haimasdassds",
           "cards": [
             {
               "title": "vdfvdvxc",
-              "id": "fsdfsdfyV",
+              "id": "asdassss",
               "labels": [
                 {
                   "id": "lS8tQY5",
                   "title": "lahi lhamni",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "1rvfJVs",
+                  "title": "iii",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "x6vMbi9",
+                  "title": "asd",
                   "color": "#c377e0"
                 }
               ]
@@ -360,35 +158,44 @@
                   "id": "ewXlX5c",
                   "title": "Tatata",
                   "color": "#c377e0"
+                },
+                {
+                  "id": "WbGcaQn",
+                  "title": "Checklist",
+                  "color": "#eb5a46"
                 }
               ]
             },
             {
               "title": "fghfghfgh",
-              "id": "TPf"
+              "id": "TPf",
+              "labels": [
+                {
+                  "id": "rAnW9Kc",
+                  "title": "sss",
+                  "color": "#f2d601"
+                },
+                {
+                  "id": "umxoy55",
+                  "title": "pitot",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "j3fjkk4",
+                  "title": "יש",
+                  "color": "#50e898"
+                }
+              ]
             },
             {
               "title": "dasdasdasd\ndfg",
               "id": "Dz7rq01"
-=======
-          "id": "g105",
-          "title": "hello",
-          "cards": [
-            {
-              "title": "sadasdsdas",
-              "id": "uGDgk51"
-            },
-            {
-              "title": "llalalal\nlalla\nhlhlhl",
-              "id": "rAL"
->>>>>>> 6ce206e26550354c311719dd731e871648709372
             },
             {
               "title": "vdfvdvxc",
               "id": "fsdfsdfyV"
             },
             {
-<<<<<<< HEAD
               "title": "llalalal\nlalla\nhlhlhl",
               "id": "rAL"
             },
@@ -399,18 +206,6 @@
             {
               "title": "esd;sd",
               "id": "tlo"
-=======
-              "title": "fghfghfgh",
-              "id": "TPf"
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
-            },
-            {
-              "title": "cardi b",
-              "id": "orUelNz"
->>>>>>> 6ce206e26550354c311719dd731e871648709372
             }
           ]
         },
@@ -483,47 +278,7 @@
                 "bgColor": "#26DE81"
               }
             }
-<<<<<<< HEAD
           ]
-=======
-          ],
-          "style": {}
-        },
-        {
-          "title": "invite Friends",
-          "id": "Lf5YIkw",
-          "cards": []
-        },
-        {
-          "title": "Find Friends",
-          "id": "sKad11i",
-          "cards": []
-        },
-        {
-          "title": "Make Dinner",
-          "id": "J4ITLQb",
-          "cards": []
-        },
-        {
-          "title": "In Progress",
-          "id": "sAa3PF9",
-          "cards": []
-        },
-        {
-          "title": "Done",
-          "id": "AUNYQHB",
-          "cards": []
-        },
-        {
-          "title": "Scroll",
-          "id": "34F86x9",
-          "cards": []
-        },
-        {
-          "title": "lll",
-          "id": "gu8zH1l",
-          "cards": []
->>>>>>> 6ce206e26550354c311719dd731e871648709372
         }
       ],
       "activities": [
@@ -561,9 +316,44 @@
           "color": "#f2d601"
         },
         {
-          "id": "lS8tQY5",
-          "title": "lahi lhamni",
+          "id": "rAnW9Kc",
+          "title": "sss",
+          "color": "#f2d601"
+        },
+        {
+          "id": "umxoy55",
+          "title": "pitot",
           "color": "#c377e0"
+        },
+        {
+          "id": "j3fjkk4",
+          "title": "יש",
+          "color": "#50e898"
+        },
+        {
+          "id": "pI6Z0du",
+          "title": "pitot",
+          "color": "#f2d601"
+        },
+        {
+          "id": "vwrodPQ",
+          "title": "worked?",
+          "color": "#50e898"
+        },
+        {
+          "id": "x6vMbi9",
+          "title": "asd",
+          "color": "#c377e0"
+        },
+        {
+          "id": "IW9UvNB",
+          "title": "ddddd",
+          "color": "#c377e0"
+        },
+        {
+          "id": "omriGmK",
+          "title": "vvvvvvv",
+          "color": "#344563"
         }
       ]
     },
