@@ -12,8 +12,8 @@
       "style": {},
       "members": [
         {
-          "_id": "u103",
-          "fullname": "Basya Kritchker",
+          "_id": "u101",
+          "fullname": "Adir Hagag",
           "username": "abasdasdi@ababmi.com",
           "password": "123",
           "imgUrl": "http://some-img.jpg"
@@ -22,13 +22,6 @@
           "_id": "u102",
           "fullname": "Elad Tal",
           "username": "abasdi@ababmi.com",
-          "password": "123",
-          "imgUrl": "http://some-img.jpg"
-        },
-        {
-          "_id": "u101",
-          "fullname": "Adir Hagag",
-          "username": "abasdasdi@ababmi.com",
           "password": "123",
           "imgUrl": "http://some-img.jpg"
         }
@@ -161,30 +154,8 @@
           "title": "haimasdassds",
           "cards": [
             {
-              "title": "fghfghfgh",
-              "id": "TPf",
-              "labels": [
-                {
-                  "id": "llSfgL5",
-                  "title": "pita hama",
-                  "color": "#ff9f19"
-                },
-                {
-                  "id": "YcF3WNl",
-                  "title": "lahi lhamni",
-                  "color": "#61bd50"
-                },
-                {
-                  "id": "ErptLIz",
-                  "title": "pitot",
-                  "color": "#ff9f19"
-                },
-                {
-                  "id": "ZOZ0YTk",
-                  "title": "Pitot",
-                  "color": "#c377e0"
-                }
-              ]
+              "title": "Eat Food",
+              "id": "yS3N5PJ"
             },
             {
               "title": "vdfvdvxc",
@@ -217,92 +188,9 @@
               ]
             },
             {
-              "id": "c104",
-              "title": "Help me",
-              "description": "description",
-              "comments": [
-                {
-                  "id": "ZdPnm",
-                  "txt": "a comment",
-                  "createdAt": 1590999817436,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
-                },
-                {
-                  "id": "ZdPno",
-                  "txt": "dont like it",
-                  "createdAt": 1590999817456,
-                  "byMember": {
-                    "_id": "u101",
-                    "fullname": "Tal Tarablus",
-                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                  }
-                }
-              ],
-              "checklist": {
-                "id": "YEhmF",
-                "title": "Checklist",
-                "todos": [
-                  {
-                    "title": "To Do 1",
-                    "isDone": true,
-                    "id": "212jt"
-                  },
-                  {
-                    "title": "To Do 3",
-                    "isDone": false,
-                    "id": "212jkk"
-                  }
-                ]
-              },
-              "members": [
-                {
-                  "_id": "u101",
-                  "username": "Tal",
-                  "fullname": "Tal Tarablus",
-                  "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-                }
-              ],
-              "labels": [
-                {
-                  "id": "101",
-                  "title": "done",
-                  "color": "#61BD4F"
-                },
-                {
-                  "id": "ocjeRXT",
-                  "title": "pitot",
-                  "color": "#c377e0"
-                },
-                {
-                  "id": "rqr5QQW",
-                  "title": "i wish",
-                  "color": "#f2d601"
-                },
-                {
-                  "id": "vwrodPQ",
-                  "title": "worked?",
-                  "color": "#50e898"
-                }
-              ],
-              "createdAt": 1590999730348,
-              "dueDate": 16156215211,
-              "byMember": {
-                "_id": "u101",
-                "username": "Tal",
-                "fullname": "Tal Tarablus",
-                "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
-              },
-              "style": {
-                "bgColor": "#26DE81"
-              }
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
+              "title": "and some\nmore members... ya",
+              "id": "OXKstIt",
+              "members": []
             }
           ]
         },
