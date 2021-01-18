@@ -11,7 +11,10 @@ import { CardSide } from './CardSide'
 
 class _CardDetails extends Component {
   state = {
-    card: null
+    card: null,
+    filterBy:{
+      fullname: ''
+    }
   }
 
   componentDidMount() {
@@ -164,9 +167,24 @@ class _CardDetails extends Component {
     }
   }
 
+  onSetUserFilter = (filterBy) => {
+    this.setState({ filterBy })
+  }
+
+  get usersForDisplay() {
+    const { board } = this.props
+    const { filterBy } = this.state;
+    const filterRegex = new RegExp(filterBy.fullname, 'i');
+    const users = board.members.filter(member => filterRegex.test(member.fullname))
+    return users
+}
+
+  
+
   render() {
     const { card } = this.state
     const { group, board } = this.props
+    const usersForDisplay = this.usersForDisplay
     if (!card) return <div>Loading...</div>
     // let cardWithTxt = {}
 
@@ -191,8 +209,9 @@ class _CardDetails extends Component {
               onHandleLabelsChange={this.onHandleLabelsChange}
               onUpdateCoverColor={this.onUpdateCoverColor}
               saveChanges={this.saveChanges}
-              users={board.members}
+              users={usersForDisplay}
               onUpdateMembers={this.onUpdateMembers}
+              onSetUserFilter={this.onSetUserFilter}
             />
           </div>
         </div>

@@ -1,8 +1,24 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { utilService } from '../services/utilService'
+import Input from '@material-ui/core/Input';
 
 export class _AddMember extends Component {
+
+    state = {
+        filterBy: {
+            fullname: '',
+        }
+    }
+
+    handleChange = ({ target }) => {
+        const field = target.name
+        const value = target.value
+
+        this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }), () => {
+            this.props.onSetUserFilter(this.state.filterBy)
+        })
+    }
 
     onToggleUser = (user) => {
         this.props.onUpdateMembers(user)
@@ -11,16 +27,15 @@ export class _AddMember extends Component {
 
     render() {
         const { users, members } = this.props
+        const { filterBy } = this.state
         console.log('current members', members);
-        // const {usersToAdd } = this.state
-        // console.log('usersToAdd', usersToAdd);
         return ( 
             <div className="members-container">
                 <div className="add-member-header flex spase-between">
                     <h3>Members</h3>
                     <button onClick={this.props.toggleMembers}>X</button>
                 </div>
-                <h3>filter</h3>
+                <Input type="text" name="fullname" value={filterBy.fullname} onChange={this.handleChange} placeholder="Search members..." />
                 <div className="new-member-list flex column">
                     {users.map(user => <div key={user._id} className="member-items flex space-between" onClick={() => this.onToggleUser(user)}>
                         <div className="flex space-between"><div  className="member-item"><span>{utilService.convertName(user.fullname)}</span>

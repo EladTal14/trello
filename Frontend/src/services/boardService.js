@@ -15,8 +15,8 @@ export const boardService = {
 }
 
 
-// const baseUrl = 'http://localhost:3030/api/board'
-const baseUrl = 'http://localhost:3030/board'
+const baseUrl = 'http://localhost:3030/api/board'
+// const baseUrl = 'http://localhost:3030/board'
 
 async function query() {
     return httpService.get(`board`)

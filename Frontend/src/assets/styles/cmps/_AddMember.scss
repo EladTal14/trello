@@ -1,3 +1,17 @@
+.board-header-member-box{
+    width: 274px;
+    margin: 0px 503px;
+    align-items: center;
+    position: absolute;
+}
+
+.card-details-member-container{
+    width: 300px;
+    margin: -31px 172px;
+    align-items: center;
+    position: absolute
+}
+
 .members-container{
 
     color: #233655;
@@ -11,9 +25,10 @@
     overflow-y: auto;
     z-index: 500;
     display: block;
-    position: absolute;
-    right: 38vw;
-    top: 15vh;
+    // position: absolute;
+    right: 13%;
+    top: 8vh;
+    position: relative;
 
     .add-member-header{
 
