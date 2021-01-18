@@ -5,9 +5,35 @@ import { logout, loadUser } from '../store/actions/userAction.js'
 import { utilService } from '../services/utilService.js'
 class _AppHeader extends Component {
 
+  state = {
+    loggedInUser: null,
+    isAddBoardShow: false,
+  }
+
+  toggleAddBoard = () => {
+    this.setState({ isAddBoardShow: !this.state.isAddBoardShow })
+  }
+
+  async componentDidMount() {
+    console.log(this.props);
+    const user = await this.props.loadUser()
+    if (user) this.setState({ loggedInUser: user })
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('prevProps', prevProps);
+    console.log('prevState', prevState);
+    console.log('state', this.state);
+    if (prevProps.loggedInUser !== this.state.loggedInUser)
+      this.setState({ loggedInUser: prevProps.loggedInUser })
+  }
   render() {
-    const { loggedInUser } = this.props
+    window.loggedInUser = this.state
+    const { loggedInUser } = this.state
+    // if (!loggedInUser) return <div>Loading...</div>
+    console.log('LOGGED IN USER', loggedInUser);
     return (
+      <>
+      {/* {isAddBoardShow && <div className="mini-add-"></div> } */}
       <header className="app-header flex space-between">
         <nav>
           <ul className="header-list flex justify-center">
@@ -22,6 +48,7 @@ class _AppHeader extends Component {
           {!loggedInUser && <>  <div className="header-user-logged-in">{'G '} </div> <button className="header-log-board-btn"><Link to="/login">Login</Link></button></>}
         </div>
       </header>
+      </>
     )
   }
 }

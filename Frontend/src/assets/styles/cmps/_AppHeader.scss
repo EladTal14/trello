@@ -71,7 +71,8 @@
     font-weight: 700;
     height: 32px;
     line-height: 32px;
-    // margin: 0 4px 0 0;
+    margin: 0 4px 0 0;
+    outline: none;
 
     &:hover {
       background-color: hsla(0, 0%, 100%, 0.2);
