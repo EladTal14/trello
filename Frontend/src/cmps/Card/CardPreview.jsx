@@ -5,7 +5,7 @@ import { eventBusService } from '../../services/eventBusService.js'
 import { setCard, setGroup } from '../../store/actions/cardAction.js'
 import { CardPreviewLabel } from './CardPreviewLabel';
 import { CardPreviewBottom } from './CardPreviewBottom';
-
+import NaturalDragAnimation from 'natural-drag-animation-rbdnd'
 export class _CardPreview extends Component {
     onShowCard = (card, group) => {
         this.props.setCard(card)
@@ -19,18 +19,25 @@ export class _CardPreview extends Component {
             <div className="card-preview" onClick={() => this.onShowCard(card, group)}>
                 <Draggable key={card.id} draggableId={card.id} index={index}>
                     {(provided, snapshot) => (
-                        <article className="card-preview"
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                            style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
+                        <NaturalDragAnimation
+                            style={provided.draggableProps.style}
+                            snapshot={snapshot}
                         >
-                            {card.style && (card.style.imgUrl ? <div className="card-img-cover" style={{ backgroundImage: `url(${card.style.imgUrl}` }} ></div> :
-                                <div className="card-color-cover" style={{ backgroundColor: card.style.color }}></div>)}
-                            <CardPreviewLabel card={card} />
-                            <pre>{card.title}</pre>
-                            <CardPreviewBottom card={card} />
-                        </article>
+                            {style => (
+                                <article className="card-preview"
+                                    ref={provided.innerRef}
+                                    {...provided.draggableProps}
+                                    {...provided.dragHandleProps}
+                                    style={getItemStyle(snapshot.isDragging, provided.draggableProps.style, style)}
+                                >
+                                    {card.style && (card.style.imgUrl ? <div className="card-img-cover" style={{ backgroundImage: `url(${card.style.imgUrl}` }} ></div> :
+                                        <div className="card-color-cover" style={{ backgroundColor: card.style.color }}></div>)}
+                                    <CardPreviewLabel card={card} />
+                                    <pre>{card.title}</pre>
+                                    <CardPreviewBottom card={card} />
+                                </article>
+                            )}
+                        </NaturalDragAnimation>
                     )}
                 </Draggable>
 
@@ -39,14 +46,15 @@ export class _CardPreview extends Component {
     }
 }
 
-const getItemStyle = (isDragging, draggableStyle) => ({
+const getItemStyle = (isDragging, draggableStyle, style) => ({
     userSelect: 'none',
     padding: 8,
     margin: `0 0 ${8}px 0`,
     borderRadius: '3px',
     background: isDragging ? '##e4e0e0' : 'white',
     boxShadow: `0 1px 0 rgba(9, 30, 66, 0.25)`,
-    ...draggableStyle
+    ...draggableStyle,
+    ...style
 });
 
 const mapStateToProps = state => {

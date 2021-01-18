@@ -12,7 +12,7 @@ export class CardAdd extends Component {
     openInput = () => {
         this.setState({
             isAddOpen: true
-        }, () => this.props.onScroll(null, 100))
+        }, () => this.props.onScroll(null, 1000))
 
     }
 
@@ -22,12 +22,14 @@ export class CardAdd extends Component {
             card: {
                 title: ''
             }
-        })
+        }, () => setTimeout(() => {
+            this.props.onScroll(null, 1000)
+        }, 150))
     }
 
     onSaveCard = (ev) => {
         ev.preventDefault()
-        const card = { title: this.state.card.title, id: utilService.makeId(), members:[] }
+        const card = { title: this.state.card.title, id: utilService.makeId(), members: [] }
         this.props.onAddCard(card, this.props.groupId)
         this.setState(
             {
