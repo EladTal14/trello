@@ -177,13 +177,10 @@ class _CardLabels extends Component {
           <ul>
             {board.labels.map((label, idx) => (
               <li key={idx} className="label flex">
-                <p
-                  className="label-title"
-                  style={{ backgroundColor: label.color }}
-                  onClick={() => this.onChooseLabel(label)}>
-                  {label.title}
-                </p>
+                <div className="label-title flex space-between" onClick={() => this.onChooseLabel(label)} style={{ backgroundColor: label.color }}>
+                  <p>{label.title} </p>
                   <span className="checkmark">{this.checkForMark(label) ? '✓' : ''}</span>
+                </div>
                 <button className="label-edit-btn" onClick={() => this.onEditClick(label)}>
                   <img src="https://res.cloudinary.com/basimgs/image/upload/v1610872377/pen_so2afr.png" alt="" />
                 </button>

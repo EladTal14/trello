@@ -9,7 +9,9 @@
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {},
+      "style": {
+        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271954/samples/landscapes/nature-mountains.jpg"
+      },
       "members": [
         {
           "_id": "u101",
@@ -38,12 +40,60 @@
                 "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610957224/20201215_095032_twc8yh.jpg",
                 "color": ""
               },
-              "checklist": null
+              "checklist": null,
+              "comments": [
+                {
+                  "id": "FicCPoU",
+                  "txt": "ssssss",
+                  "createdAt": 1610979714033,
+                  "byMember": null
+                },
+                {
+                  "id": "GkEoMNm",
+                  "txt": "aaaaa",
+                  "createdAt": 1610979711130,
+                  "byMember": null
+                },
+                {
+                  "id": "etmFVTk",
+                  "txt": "comment",
+                  "createdAt": 1610978810683,
+                  "byMember": null
+                },
+                {
+                  "id": "RzUm5zH",
+                  "txt": "ccccc",
+                  "createdAt": 1610978361536,
+                  "byMember": null
+                },
+                {
+                  "id": "ryvelD8",
+                  "txt": "cccccccc",
+                  "createdAt": 1610978359797,
+                  "byMember": null
+                },
+                {
+                  "id": "Zdsssm",
+                  "txt": "a comment one",
+                  "createdAt": 1590999817436,
+                  "byMember": {
+                    "_id": "u101",
+                    "fullname": "Tal Tarablus",
+                    "imgUrl": "http://res.cloudinary.com/shaishar9/image/upload/v1590850482/j1glw3c9jsoz2py0miol.jpg"
+                  }
+                }
+              ]
             },
             {
               "title": "gggg",
               "id": "cMP",
-              "labels": []
+              "labels": [
+                {
+                  "id": "rAnW9Kc",
+                  "title": "sss",
+                  "color": "#f2d601"
+                }
+              ]
             },
             {
               "title": "cardi b",
@@ -76,54 +126,26 @@
               "dueDate": 1611099600000,
               "labels": [
                 {
-                  "id": "1ns652",
-                  "title": "",
-                  "color": "#f2d601",
-                  "isChoosen": false
-                },
-                {
-                  "id": "1nsss2",
-                  "title": "Hey",
-                  "color": "#04c2e0",
-                  "isChoosen": false
-                },
-                {
-                  "id": "pI6Z0du",
-                  "title": "pitot",
-                  "color": "#f2d601"
-                },
-                {
-                  "id": "vwrodPQ",
-                  "title": "worked?",
-                  "color": "#50e898"
-                },
-                {
-                  "id": "x6vMbi9",
-                  "title": "asd",
-                  "color": "#c377e0"
-                },
-                {
-                  "id": "IW9UvNB",
-                  "title": "ddddd",
-                  "color": "#c377e0"
-                },
-                {
-                  "id": "rMONFdr",
-                  "title": "Checklist",
-                  "color": "#ff9f19"
-                },
-                {
-                  "id": "0BZFkTT",
-                  "title": "Tatata",
-                  "color": "#c377e0"
-                },
-                {
                   "id": "WizTcIU",
                   "title": "pitot",
                   "color": "#f2d601"
                 }
               ],
-              "checklist": null
+              "checklist": null,
+              "comments": [
+                {
+                  "id": "BCSW6On",
+                  "txt": "kkkkkkkk",
+                  "createdAt": 1610971329385,
+                  "byMember": null
+                },
+                {
+                  "id": "RvXK0Ea",
+                  "txt": "nnnnnn",
+                  "createdAt": 1610970261352,
+                  "byMember": null
+                }
+              ]
             },
             {
               "title": "נעגיקשנ",
@@ -155,7 +177,61 @@
           "cards": [
             {
               "title": "Eat Food",
-              "id": "yS3N5PJ"
+              "id": "yS3N5PJ",
+              "labels": [
+                {
+                  "id": "1ns652",
+                  "title": "",
+                  "color": "#f2d601",
+                  "isChoosen": false
+                },
+                {
+                  "id": "1nsss2",
+                  "title": "Hey",
+                  "color": "#04c2e0",
+                  "isChoosen": false
+                },
+                {
+                  "id": "WizTcIU",
+                  "title": "pitot",
+                  "color": "#f2d601"
+                },
+                {
+                  "id": "rAnW9Kc",
+                  "title": "sss",
+                  "color": "#f2d601"
+                },
+                {
+                  "id": "umxoy55",
+                  "title": "pitot",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "j3fjkk4",
+                  "title": "יש",
+                  "color": "#50e898"
+                },
+                {
+                  "id": "pI6Z0du",
+                  "title": "pitot",
+                  "color": "#f2d601"
+                },
+                {
+                  "id": "vwrodPQ",
+                  "title": "worked?",
+                  "color": "#50e898"
+                },
+                {
+                  "id": "x6vMbi9",
+                  "title": "asd",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "IW9UvNB",
+                  "title": "ddddd",
+                  "color": "#c377e0"
+                }
+              ]
             },
             {
               "title": "vdfvdvxc",
@@ -185,12 +261,117 @@
                   "title": "ddddd",
                   "color": "#c377e0"
                 }
-              ]
+              ],
+              "comments": [
+                {
+                  "id": "lrM1TV4",
+                  "txt": "sadsadsadas",
+                  "createdAt": 1610971476469,
+                  "byMember": null
+                },
+                {
+                  "id": "ds1s5jt",
+                  "txt": "jjjjjjjjjj",
+                  "createdAt": 1610971061756,
+                  "byMember": null
+                },
+                {
+                  "id": "dVmSDNH",
+                  "txt": "nnnnnnn",
+                  "createdAt": 1610971042397,
+                  "byMember": null
+                },
+                {
+                  "id": "9gdNByw",
+                  "txt": "nnnnnn",
+                  "createdAt": 1610971039152,
+                  "byMember": null
+                },
+                {
+                  "id": "8CRwfFU",
+                  "txt": "kkkkkkk",
+                  "createdAt": 1610970942836,
+                  "byMember": null
+                },
+                {
+                  "id": "jUdNKGH",
+                  "txt": "mmmmmmm",
+                  "createdAt": 1610970939239,
+                  "byMember": null
+                },
+                {
+                  "id": "bBHGQPw",
+                  "txt": "kkkkkkkkkkk",
+                  "createdAt": 1610970935926,
+                  "byMember": null
+                },
+                {
+                  "id": "qB0h9UO",
+                  "txt": "mjmkkkkkk",
+                  "createdAt": 1610970930993,
+                  "byMember": null
+                },
+                {
+                  "id": "dSdhkuk",
+                  "txt": "njjjj",
+                  "createdAt": 1610969462019,
+                  "byMember": null
+                },
+                {
+                  "id": "GlnxJDA",
+                  "txt": "aaaa",
+                  "createdAt": 1610969385681,
+                  "byMember": null
+                }
+              ],
+              "checklist": null
             },
             {
               "title": "and some\nmore members... ya",
               "id": "OXKstIt",
-              "members": []
+              "members": [],
+              "style": {
+                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610978032/20201215_095032_b6ynrt.jpg",
+                "color": ""
+              },
+              "comments": [
+                {
+                  "id": "kZ2MA2c",
+                  "txt": "jjjjj",
+                  "createdAt": 1610978547462,
+                  "byMember": null
+                },
+                {
+                  "id": "ZaFlgCo",
+                  "txt": "bbbbbbb",
+                  "createdAt": 1610978541007,
+                  "byMember": null
+                },
+                {
+                  "id": "koRRUtC",
+                  "txt": "h",
+                  "createdAt": 1610978171171,
+                  "byMember": null
+                },
+                {
+                  "id": "DlXeQBu",
+                  "txt": "xxxsxsxsxs",
+                  "createdAt": 1610978118440,
+                  "byMember": null
+                },
+                {
+                  "id": "6Vcn2qd",
+                  "txt": "xxxxxxxx",
+                  "createdAt": 1610978116151,
+                  "byMember": null
+                },
+                {
+                  "id": "ubYMmtg",
+                  "txt": "bxbxbxbxbxb",
+                  "createdAt": 1610978113570,
+                  "byMember": null
+                }
+              ]
             }
           ]
         },
@@ -239,7 +420,11 @@
                   "title": "Checklist",
                   "color": "#eb5a46"
                 }
-              ]
+              ],
+              "style": {
+                "imgUrl": "",
+                "color": "#a56cc1"
+              }
             },
             {
               "title": "fghfghfgh",
@@ -260,7 +445,11 @@
                   "title": "יש",
                   "color": "#50e898"
                 }
-              ]
+              ],
+              "style": {
+                "imgUrl": "",
+                "color": "#f38181"
+              }
             },
             {
               "title": "dasdasdasd\ndfg",
@@ -360,7 +549,7 @@
         {
           "id": "a101",
           "txt": "Changed Color",
-          "createdAt": 154514,
+          "createdAt": 1610983642916,
           "byMember": {
             "_id": "u108",
             "fullname": "Abi Abambi",

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Component } from 'react'
 import { logout, loadUser } from '../store/actions/userAction.js'
 class _AppHeader extends Component {
+
   state = {
     loggedInUser: null,
     isAddBoardShow: false,
@@ -31,6 +32,7 @@ class _AppHeader extends Component {
     console.log('LOGGED IN USER', loggedInUser);
     return (
       <>
+      {/* {isAddBoardShow && <div className="mini-add-"></div> } */}
       <header className="app-header flex space-between">
         <nav>
           <ul className="header-list flex justify-center">

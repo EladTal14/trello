@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-// var moment = require('moment');
-// TODO: moment.from()
+import { connect } from 'react-redux'
+import { utilService } from '../../services/utilService'
+import TimeAgo from 'react-timeago'
 
-export class CardActivityContainer extends Component {
+class _CardActivityContainer extends Component {
+
   state = {
     comments: null,
-    newComment: '',
-    isSaveOpen: false
+    isSaveOpen: false,
+    newComment: ''
   }
 
   componentDidMount() {
@@ -36,8 +38,53 @@ export class CardActivityContainer extends Component {
     })
   }
 
+  createComment = () => {
+    const { newComment } = this.state
+    const loggedInUser = this.props.loggedInUser
+    let byMember = null;
+
+    if (loggedInUser) {
+      byMember = {
+        _id: loggedInUser._id,
+        fullname: loggedInUser.fullname,
+        imgUrl: loggedInUser.imgUrl
+      }
+    }
+
+    return {
+      id: utilService.makeId(),
+      txt: newComment,
+      createdAt: Date.now(),
+      byMember
+    }
+  }
+
+  onSaveNewComment = () => {
+    const comment = this.createComment()
+    let commentsCopy = this.state.comments
+    if (commentsCopy) commentsCopy.unshift(comment)
+    else commentsCopy = new Array(comment)
+
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        comments: commentsCopy
+      }
+    }, () => {
+      this.props.onHandleActivitiesChange(this.state.comments)
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          newComment: '',
+          isSaveOpen: false
+        }
+      })
+    })
+  }
+
   render() {
     const { newComment, isSaveOpen, comments } = this.state
+    const loggedInUser = this.props.loggedInUser
     return (
       <div className="activity-container">
         <div className="activity-header flex">
@@ -46,7 +93,9 @@ export class CardActivityContainer extends Component {
         </div>
         <div className="flex column">
           <div className="flex">
-            <div className="member">BK</div>
+            <div className="member">
+              {loggedInUser ? utilService.convertName(loggedInUser.fullname) : 'G'}
+            </div>
             <textarea
               className="activity-textarea"
               type="text"
@@ -56,14 +105,16 @@ export class CardActivityContainer extends Component {
               placeholder="Write a comment..."
             />
           </div>
-          {isSaveOpen && <button onMouseDown={this.saveNewTodo} >Save</button>}
+          {isSaveOpen && <button className="save-btn" onMouseDown={this.onSaveNewComment} >Save</button>}
         </div>
         {comments && comments.map((comment, index) => {
           return <div key={index} className="activity-comment-wrapper flex">
-            <div className="member">UM</div>
+            <div className="member">
+              {comment.byMember ? utilService.convertName(comment.byMember.fullname) : 'G'}
+            </div>
             <div className="activity-comment">
-              <p>{comment.txt}</p>
-              <span>Time </span>
+              <p>{loggedInUser ? loggedInUser.fullname : 'Guest'}: {comment.txt}</p>
+              <TimeAgo className="activity-time" date={comment.createdAt} />
             </div>
           </div>
         })}
@@ -71,3 +122,16 @@ export class CardActivityContainer extends Component {
     )
   }
 }
+
+// TODO: loggedInUser
+const mapStateToProps = state => {
+  return {
+    board: state.boardModule.currBoard,
+    loggedInUser: state.userModule.loggedInUser
+  }
+}
+
+const mapDispatchToProps = {
+}
+
+export const CardActivityContainer = connect(mapStateToProps, mapDispatchToProps)(_CardActivityContainer)
