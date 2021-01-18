@@ -50,9 +50,7 @@
 }
 
 .header-right{
-  .header-add-board-btn, .login-btn{
-
-  }
+  
   .header-user-logged-in {
     width: 32px;
     height: 32px;
@@ -77,6 +75,7 @@
     line-height: 32px;
     margin: 0 4px 0 0;
     outline: none;
+    cursor: pointer;
     
     a{
       color: white;

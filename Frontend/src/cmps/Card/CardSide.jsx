@@ -5,11 +5,13 @@ import { cardService } from '../../services/cardService';
 import { CardCover } from './CardCover';
 import { CardLabels } from './CardLabels';
 import { AddMember } from '../AddMember';
+import { DatePicker } from './DatePicker';
+// import { DatePicker } from '@material-ui/pickers';
 
 export class CardSide extends Component {
 
   state = {
-    value: new Date(),
+    // value: new Date(),
     isDateShown: false,
     isLabelsShown: false,
     isCoverMenuShown: false,
@@ -32,10 +34,12 @@ export class CardSide extends Component {
     this.setState({ isCoverMenuShown: !this.state.isCoverMenuShown })
   }
 
-  onChange = (value) => {
-    this.setState({ value }, () => this.props.onSavedueDate((this.state.value + '').substring(4, 32)))
-    this.toggleDate()
-  }
+  // onChange = (value) => {
+  //   this.setState({ value }, () => this.props.onSavedueDate((this.state.value + '').substring(4, 32)))
+  //   this.toggleDate()
+  // }
+
+
 
   onAddChecklist = () => {
     const checklist = cardService.createChecklist()
@@ -57,13 +61,15 @@ export class CardSide extends Component {
         {isLabelsShown && <CardLabels saveChanges={saveChanges} card={card} onToggleLabels={this.onToggleLabels} onHandleLabelsChange={onHandleLabelsChange} />}
         {isCoverMenuShown && <CardCover onFinishUpload={this.props.onUploadCardCoverImg}
           onUpdateCoverColor={this.props.onUpdateCoverColor} toggleCoverMenu={this.toggleCoverMenu} />}
-        {isDateShown && <div className="date-picker">
-          <button onClick={this.toggleDate} className="close-date-btn">✕</button>
-          <Calendar style={{zIndex: 2000, position:'absolute'}}
-            onChange={this.onChange}
-            value={value}
-          />
-        </div>} 
+        {isDateShown &&  <DatePicker onSavedueDate={this.props.onSavedueDate} toggleDate={this.toggleDate}/>
+        // <div className="date-picker">
+        //   <button onClick={this.toggleDate} className="close-date-btn">✕</button>
+        //   <Calendar style={{zIndex: 2000, position:'absolute'}}
+        //     onChange={this.onChange}
+        //     value={value}
+        //   />
+        // </div>
+        } 
         {isMoreMembersShown && <div className="card-details-member-container"><AddMember toggleMembers={this.toggleMembers} 
         onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users}/></div> }
         {/* <DatePicker /> */}
