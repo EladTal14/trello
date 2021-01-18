@@ -44,7 +44,7 @@ class _AppHeader extends Component {
         <div className="header-right flex">
           <button className="header-add-board-btn"><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/plus_ljzrkm.png" alt="" /></button>
           {loggedInUser && <> <div>{loggedInUser.username}</div> <button onClick={this.props.logout}> Logout</button></>}
-          <button><Link to="/login">Login</Link></button>
+          <button className="login-btn"><Link to="/login" >Login</Link></button>
         </div>
       </header>
       </>

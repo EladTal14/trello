@@ -18,6 +18,7 @@
       height: 32px;
       line-height: 32px;
       margin: 0 4px 0 0;
+      font-family: "montserrat", sans-serif;
 
       
       &:hover{
@@ -51,7 +52,7 @@
 }
 
 .header-right{
-  .header-add-board-btn{
+  .header-add-board-btn, .login-btn{
     border-radius: 3px;
     border: 0;
     align-items: center;
@@ -63,6 +64,11 @@
     line-height: 32px;
     margin: 0 4px 0 0;
     outline: none;
+    
+    a{
+      color: white;
+      font-family: "montserrat", sans-serif;
+    }
 
     
     &:hover{
