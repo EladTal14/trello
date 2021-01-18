@@ -57,7 +57,8 @@ export class CardSide extends Component {
         {isLabelsShown && <CardLabels saveChanges={saveChanges} card={card} onToggleLabels={this.onToggleLabels} onHandleLabelsChange={onHandleLabelsChange} />}
         {isCoverMenuShown && <CardCover onFinishUpload={this.props.onUploadCardCoverImg}
           onUpdateCoverColor={this.props.onUpdateCoverColor} toggleCoverMenu={this.toggleCoverMenu} />}
-        {isDateShown && <div>
+        {isDateShown && <div className="date-picker">
+          <button onClick={this.toggleDate} className="close-date-btn">✕</button>
           <Calendar style={{zIndex: 2000, position:'absolute'}}
             onChange={this.onChange}
             value={value}

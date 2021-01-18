@@ -33,12 +33,12 @@ export class _AddMember extends Component {
             <div className="members-container">
                 <div className="add-member-header flex spase-between">
                     <h3>Members</h3>
-                    <button onClick={this.props.toggleMembers}>X</button>
+                    <button onClick={this.props.toggleMembers} className="member-close-btn">✕</button>
                 </div>
                 <Input type="text" name="fullname" value={filterBy.fullname} onChange={this.handleChange} placeholder="Search members..." />
                 <div className="new-member-list flex column">
                     {users.map(user => <div key={user._id} className="member-items flex space-between" onClick={() => this.onToggleUser(user)}>
-                        <div className="flex space-between"><div  className="member-item"><span>{utilService.convertName(user.fullname)}</span>
+                        <div className="flex space-between"><div  className="member-item"><span>{users.fullname && utilService.convertName(user.fullname)}</span>
                         </div>
                         <p>{user.fullname}</p></div>
                         <button className={(members.findIndex(currUser => currUser._id === user._id) > -1)?

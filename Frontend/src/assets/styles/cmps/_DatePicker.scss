@@ -1,0 +1,51 @@
+.date-picker{
+    width: 340px;
+    height: 288px;
+    z-index: 3000;
+    box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+    color: #233655;
+    font-family: 'montserrat', sans-serif;
+    background-color: white;
+    position: absolute;
+    right: 3%;
+
+    .close-date-btn{
+        border: none;
+        outline: none;
+        background-color: unset;
+        font-weight: 700;
+        font-family: 'montserrat', sans-serif;
+        cursor: pointer;
+        border-radius: 3px;
+
+        &:hover{
+            background-color: rgba(34, 34, 34, 0.185);
+        }
+    }
+
+    .react-calendar{
+        width: 340px;
+        position: absolute;
+        z-index: 4000;
+        border: 0;
+        
+        .react-calendar__tile{
+            font-family: 'montserrat', sans-serif;
+        }
+
+        .abbr[title]{
+            text-decoration: none;
+        }
+
+        .react-calendar__month-view__weekdays{
+            font-family: 'montserrat', sans-serif;
+            color: $clr6;
+            text-decoration: none;
+        }
+
+        .react-calendar__navigation button{
+            font-family: 'montserrat', sans-serif;
+            color: $clr6;
+        }
+    }
+}
