@@ -1,9 +1,23 @@
+.board-header-member-box{
+    width: 274px;
+    margin: 0px 503px;
+    align-items: center;
+    position: absolute;
+}
+
+.card-details-member-container{
+    width: 300px;
+    margin: -31px 172px;
+    align-items: center;
+    position: absolute
+}
+
 .members-container{
 
-    color: #233655;
+    color: $clr6;
     background: #fff;
     border-radius: 3px;
-    box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
+    box-shadow: $modal-shadow;
     border: none;
     padding: 8px;
     width: 268px;
@@ -11,9 +25,10 @@
     overflow-y: auto;
     z-index: 500;
     display: block;
-    position: absolute;
-    right: 38vw;
-    top: 15vh;
+    // position: absolute;
+    right: 13%;
+    top: 8vh;
+    position: relative;
 
     .add-member-header{
 
@@ -33,7 +48,7 @@
     }
 
     .new-member-list{
-        color: #233655;
+        color: $clr6;
         font-size: 14px;
         margin-bottom: 4px;
         padding: 4px;

@@ -46,6 +46,8 @@ export class CardSide extends Component {
     this.setState({ isLabelsShown: !this.state.isLabelsShown })
   }
 
+  
+
 
   render() {
     const { value, isDateShown, isLabelsShown, isCoverMenuShown, isMoreMembersShown } = this.state
@@ -61,7 +63,8 @@ export class CardSide extends Component {
             value={value}
           />
         </div>} 
-        {isMoreMembersShown && <AddMember toggleMembers={this.toggleMembers} onUpdateMembers={this.props.onUpdateMembers} members={card.members} users={users}/> }
+        {isMoreMembersShown && <div className="card-details-member-container"><AddMember toggleMembers={this.toggleMembers} 
+        onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users}/></div> }
         {/* <DatePicker /> */}
         <div className="card-side flex column">
           <button className="side-btn" onClick={this.toggleMembers}>

@@ -1,17 +1,17 @@
 .card-labels {
+  box-shadow: $modal-shadow;
   width: 300px;
   height: 450px;
   z-index: 1;
   position: absolute;
   top: 40px;
-  border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 3px;
   right: 10px;
   background-color: white;
   // flex-basis: 100%;
 
   & header {
-    border-bottom: 1px solid black;
+    border-bottom: 0.2px solid rgba(94, 108, 132, 0.25);
   }
 
   & header :first-child {
@@ -23,10 +23,12 @@
 
   .label-choose-container {
     flex-grow: 1;
+    overflow-y: auto;
 
     .label {
       // padding-inline-start: 0px;
       .label-title {
+        color: rgb(255, 246, 246);
         display: inline-block;
         margin: 0 3px 0 4px;
         width: 244px;
@@ -89,6 +91,7 @@
 
   .close-btn,
   .add-label-btn {
+    color: $clr6;
     background-color: transparent;
     border: none;
     padding: 10px;
@@ -100,7 +103,6 @@
     width: 100%;
   }
 }
-
 
 .delete-btn {
   border-radius: 3px;
@@ -122,4 +124,10 @@
   &:active {
     background-color: red;
   }
+}
+
+.checkmark {
+  position: relative;
+  right: 30px;
+  top: 6px;
 }

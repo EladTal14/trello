@@ -734,7 +734,20 @@
 1/17/2021, 11:56:08 PM - INFO - Server is running on port: 3030 
 1/17/2021, 11:57:04 PM - INFO - Server is running on port: 3030 
 1/17/2021, 11:58:27 PM - INFO - Server is running on port: 3030 
+<<<<<<< HEAD
 1/18/2021, 12:17:50 AM - INFO - Server is running on port: 3030 
 1/18/2021, 12:23:42 AM - INFO - Server is running on port: 3030 
 1/18/2021, 8:19:34 AM - INFO - Server is running on port: 3030 
 1/18/2021, 8:31:24 AM - INFO - Server is running on port: 3030 
+=======
+<<<<<<< HEAD
+1/18/2021, 8:29:12 AM - INFO - Server is running on port: 3030 
+1/18/2021, 8:29:21 AM - INFO - Server is running on port: 3030 
+1/18/2021, 8:36:20 AM - INFO - Server is running on port: 3030 
+1/18/2021, 8:37:20 AM - ERROR - Failed to get board | {} (sid: Kj6dFI8s7pRyQfYKsYzQMk8HGADlPZMX)
+=======
+1/18/2021, 12:03:22 AM - INFO - Server is running on port: 3030 
+>>>>>>> 6ee3e3b8fe3e885c8dca12cd14e67ac6d6c41676
+1/18/2021, 10:40:48 AM - INFO - Server is running on port: 3030 
+>>>>>>> 5239288975d789b666edd633248b897ea0ac18b0
+1/18/2021, 10:55:28 AM - INFO - Server is running on port: 3030 

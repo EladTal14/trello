@@ -71,12 +71,19 @@ export class _BoardHeader extends Component {
   onUpdateMembers = async (member) => {
     const { board } = this.props
     const memberIdx = board.members.findIndex(currMember => currMember._id === member._id)
-    if(memberIdx > -1) {
+    if (memberIdx > -1) {
       board.members.splice(memberIdx, 1)
-    } else{
+    } else {
       board.members.push(member)
     }
     await this.props.saveBoard(board)
+  }
+
+  onSetUserFilter = (filterBy) => {
+    console.log('filtermember by', filterBy)
+    // this.props.setUserFilter(filterBy)
+    // this.props.loadUsers(filterBy)
+
   }
 
 
@@ -85,48 +92,49 @@ export class _BoardHeader extends Component {
     const { board, isChanging, isWrapper, isMoreMembersShown } = this.state
     return (
       <>
-      {isMoreMembersShown && <AddMember toggleMembers={this.toggleMembers} onUpdateMembers={this.onUpdateMembers} members={members} users={users}/> }
-      <header className="board-header flex space-between">
-        <div className="header-options flex">
-          {/* <h2>{title}</h2> */}
-          <form onSubmit={this.onSaveTitle} onBlur={this.onSaveTitle} className="board-title-form flex space-between">
-            <input type="text" name="title" value={board.title} onChange={this.handleInput}
-              className="board-title-input" placeholder="Enter board title..." autoComplete="off" />
-          </form>
-          <button className="board-header-btn flex space-around">
-            <h3>Statistics</h3>
-            <img src="https://res.cloudinary.com/basimgs/image/upload/v1610626728/pie-chart_fnvwct.png" alt="" />
-          </button>
-          <div className="header-members flex">
-            <ul className="member-list flex">
-              {members.map(member => {
-                // return <li key={member._id} className="header-member">
-                return <li key={member.fullname} className="header-member">
-                  {utilService.convertName(member.fullname)}
-                </li>
-              })}
-            </ul>
-            <button className="add-member" onClick={this.toggleMembers}>
-              <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625640/add-user_qxgidw.png" alt="" />
+        {isMoreMembersShown && <div className="board-header-member-box"><AddMember toggleMembers={this.toggleMembers} onUpdateMembers={this.onUpdateMembers}
+          onSetUserFilter={this.onSetUserFilter} members={members} users={users} /></div>}
+        <header className="board-header flex space-between">
+          <div className="header-options flex">
+            {/* <h2>{title}</h2> */}
+            <form onSubmit={this.onSaveTitle} onBlur={this.onSaveTitle} className="board-title-form flex space-between">
+              <input type="text" name="title" value={board.title} onChange={this.handleInput}
+                className="board-title-input" placeholder="Enter board title..." autoComplete="off" />
+            </form>
+            <button className="board-header-btn flex space-around">
+              <h3>Statistics</h3>
+              <img src="https://res.cloudinary.com/basimgs/image/upload/v1610626728/pie-chart_fnvwct.png" alt="" />
             </button>
+            <div className="header-members flex">
+              <ul className="member-list flex">
+                {members.map(member => {
+                  // return <li key={member._id} className="header-member">
+                  return <li key={member.fullname} className="header-member">
+                    {utilService.convertName(member.fullname)}
+                  </li>
+                })}
+              </ul>
+              <button className="add-member" onClick={this.toggleMembers}>
+                <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625640/add-user_qxgidw.png" alt="" />
+              </button>
+            </div>
           </div>
-        </div>
-        {/* <BoardFilter /> */}
-        <div className="board-menu-screen" onClick={ev => ev.stopPropagation()} ref={this.boardMenuVisibility} style={{ opacity: '0', visibility: 'hidden' }}>
-          <div className="board-menu-header flex space-around">
-            <h3 className="board-menu-title">Menu</h3>
-            <h4 className="board-menu-close" onClick={this.toggleMenu}>X</h4>
-          </div>
-          <hr />
-          {!isChanging && <button onClick={this.onChangeBackground}>Change Background</button>}
-          {isChanging && <ChangeBackground toggleMenu={this.toggleMenu} onChangeBackground={this.onChangeBackground} />}
+          {/* <BoardFilter /> */}
+          <div className="board-menu-screen" onClick={ev => ev.stopPropagation()} ref={this.boardMenuVisibility} style={{ opacity: '0', visibility: 'hidden' }}>
+            <div className="board-menu-header flex space-around">
+              <h3 className="board-menu-title">Menu</h3>
+              <h4 className="board-menu-close" onClick={this.toggleMenu}>X</h4>
+            </div>
+            <hr />
+            {!isChanging && <button onClick={this.onChangeBackground}>Change Background</button>}
+            {isChanging && <ChangeBackground toggleMenu={this.toggleMenu} onChangeBackground={this.onChangeBackground} />}
 
 
-        </div>
-        {isWrapper && <div className="board-menu-wrapper" onClick={(isWrapper) ? this.toggleMenu : () => { return }}>
-        </div>}
-        <button className="menu-btn" onClick={this.toggleMenu}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
-      </header>
+          </div>
+          {isWrapper && <div className="board-menu-wrapper" onClick={(isWrapper) ? this.toggleMenu : () => { return }}>
+          </div>}
+          <button className="menu-btn" onClick={this.toggleMenu}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
+        </header>
       </>
     )
   }

@@ -11,3 +11,7 @@ export function loadUsers() { // Action Creator
         }
     }
 }
+
+export function setUserFilter(filterBy) {
+    return (dispatch) => { dispatch({ type: 'FILTER', filterBy }) }
+}

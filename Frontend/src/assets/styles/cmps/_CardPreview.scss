@@ -19,6 +19,7 @@
 }
 
 .label-container {
+    flex-wrap: wrap;
     .card-label {
         max-width: 44px;
         min-width: 44px;
@@ -56,6 +57,7 @@
             height: 28px;
             border-radius: 50%;
             line-height: 28px;
+            margin: 0 1px;
             background-color: rgb(63, 138, 252);
         }
     }

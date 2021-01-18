@@ -11,7 +11,10 @@ import { CardSide } from './CardSide'
 
 class _CardDetails extends Component {
   state = {
-    card: null
+    card: null,
+    filterBy:{
+      fullname: ''
+    }
   }
 
   componentDidMount() {
@@ -28,14 +31,13 @@ class _CardDetails extends Component {
     const domNode = ReactDOM.findDOMNode(this)
     if (!domNode || !domNode.contains(event.target)) {
       this.saveChanges()
+      // this.props.clearState(null)
     }
   }
 
   saveChanges = () => {
-    console.log('from save changes', this.state.card)
     this.checklistValidation()
     this.sendUpdatedBoard()
-    // this.props.clearState(null)
   }
 
   sendUpdatedBoard = () => {
@@ -78,13 +80,22 @@ class _CardDetails extends Component {
   }
 
   onHandleLabelsChange = (labels) => {
-    console.log('label from details', labels)
     this.setState(prevState => ({
       card: {
         ...prevState.card,
         labels: [...labels]
       }
     }), () => this.saveChanges())
+  }
+
+
+  addOrCancelChecklist = (checklist) => {
+    this.setState(prevState => ({
+      card: {
+        ...prevState.card,
+        checklist
+      }
+    }))
   }
 
   onRemoveCard = () => {
@@ -119,7 +130,7 @@ class _CardDetails extends Component {
     group.cards[cardIdx] = updatedCard
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    this.setState({ card: updatedCard }, () => {this.props.saveBoard(board)}) 
+    this.setState({ card: updatedCard }, () => { this.props.saveBoard(board) })
   }
 
   onUpdateCoverColor = (color) => {
@@ -130,31 +141,22 @@ class _CardDetails extends Component {
     this.onUpdateCard(newCard)
   }
 
-  addOrCancelChecklist = (checklist) => {
-    this.setState(prevState => ({
-      card: {
-        ...prevState.card,
-        checklist
-      }
-    }))
-  }
-
   onUpdateMembers = async (member) => {
     console.log('new members', member);
     const { board, group } = this.props
     const { card } = this.state
-    const newCard = {...card}
+    const newCard = { ...card }
     const memberIdx = card.members.findIndex(currMember => currMember._id === member._id)
-    if(memberIdx > -1) {
+    if (memberIdx > -1) {
       newCard.members.splice(memberIdx, 1)
-    } else{
+    } else {
       newCard.members.push(member)
     }
     const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
     group.cards[cardIdx] = newCard
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    this.setState({ card: newCard }, () => {this.props.saveBoard(board)}) 
+    this.setState({ card: newCard }, () => { this.props.saveBoard(board) })
   }
 
   checklistValidation = () => {
@@ -164,39 +166,61 @@ class _CardDetails extends Component {
     }
   }
 
+  onSetUserFilter = (filterBy) => {
+    this.setState({ filterBy })
+  }
+
+  get usersForDisplay() {
+    const { board } = this.props
+    const { filterBy } = this.state;
+    const filterRegex = new RegExp(filterBy.fullname, 'i');
+    const users = board.members.filter(member => filterRegex.test(member.fullname))
+    return users
+}
+
+  
+
   render() {
     const { card } = this.state
     const { group, board } = this.props
+    const usersForDisplay = this.usersForDisplay
     if (!card) return <div>Loading...</div>
     // let cardWithTxt = {}
 
     return (
-      <div className="card-details flex justify-center align-center">
-        <div className="card-details-wrapper flex column">
-          <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
-          <div className="card-content flex">
-            <CardInfo
-              card={card}
-              onHandleChecklistChange={this.onHandleChecklistChange}
-              onHandleInputChange={this.onHandleInputChange}
-              onHandleActivitiesChange={this.onHandleActivitiesChange}
-              addOrCancelChecklist={this.addOrCancelChecklist}
-            />
-            <CardSide
-              card={card}
-              onRemoveCard={this.onRemoveCard}
-              onSavedueDate={this.onSavedueDate}
-              addOrCancelChecklist={this.addOrCancelChecklist}
-              onUploadCardCoverImg={this.onUploadCardCoverImg}
-              onHandleLabelsChange={this.onHandleLabelsChange}
-              onUpdateCoverColor={this.onUpdateCoverColor}
-              saveChanges={this.saveChanges}
-              users={board.members}
-              onUpdateMembers={this.onUpdateMembers}
-            />
+      <>
+        <div className="card-details flex justify-center align-center column">
+        {card.style && card.style.imgUrl &&
+              <div className="details-img-wrapper">
+            <img src={card.style.imgUrl} alt="" />
+          </div>}
+          <div className="card-details-wrapper flex column">
+            <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
+            <div className="card-content flex">
+              <CardInfo
+                card={card}
+                onHandleChecklistChange={this.onHandleChecklistChange}
+                onHandleInputChange={this.onHandleInputChange}
+                onHandleActivitiesChange={this.onHandleActivitiesChange}
+                addOrCancelChecklist={this.addOrCancelChecklist}
+              />
+              <CardSide
+                card={card}
+                onRemoveCard={this.onRemoveCard}
+                onSavedueDate={this.onSavedueDate}
+                addOrCancelChecklist={this.addOrCancelChecklist}
+                onUploadCardCoverImg={this.onUploadCardCoverImg}
+                onHandleLabelsChange={this.onHandleLabelsChange}
+                onUpdateCoverColor={this.onUpdateCoverColor}
+                saveChanges={this.saveChanges}
+                users={usersForDisplay}
+                onUpdateMembers={this.onUpdateMembers}
+                onSetUserFilter={this.onSetUserFilter}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </>
     )
   }
 }
