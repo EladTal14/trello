@@ -3,15 +3,15 @@
   padding: 0 5px 0;
   height: 40px;
   align-items: center;
-  background-color: rgba(0,0,0,.32);
+  background-color: rgba(0, 0, 0, 0.32);
 
-  .header-list{
-
-    .home-btn, .boards-btn{
+  .header-list {
+    .home-btn,
+    .boards-btn {
       border-radius: 3px;
       border: 0;
       align-items: center;
-      background-color: hsla(0,0%,100%,.3);
+      background-color: hsla(0, 0%, 100%, 0.3);
       color: #fff;
       display: flex;
       font-weight: 700;
@@ -20,18 +20,17 @@
       margin: 0 4px 0 0;
       font-family: "montserrat", sans-serif;
 
-      
-      &:hover{
-        background-color: hsla(0,0%,100%,.2);
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.2);
       }
-      
-      img{
+
+      img {
         width: 30px;
         object-fit: cover;
         filter: invert(1);
       }
     }
-    .boards-btn{
+    .boards-btn {
       padding: 0 7px;
       width: 70px;
       font-size: rem(16px);
@@ -39,24 +38,38 @@
   }
 }
 
-  .header-title{
-    color: white;
-    margin: 0;
-    font-size: rem(26px);
-    font-family: pacifico;
-    
-    &:hover{
-      color: rgb(231, 231, 231);
-    }
+.header-title {
+  color: white;
+  margin: 0;
+  font-size: rem(26px);
+  font-family: pacifico;
 
+  &:hover {
+    color: rgb(231, 231, 231);
+  }
 }
 
 .header-right{
   .header-add-board-btn, .login-btn{
+
+  }
+  .header-user-logged-in {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    line-height: 32px;
+    // margin-right: ;
+    border: 1px solid black;
+    margin: 0 8px 0 8px;
+    text-align: center;
+    background-color: gray;
+  }
+  .header-add-board-btn,
+  .header-log-board-btn {
     border-radius: 3px;
     border: 0;
     align-items: center;
-    background-color: hsla(0,0%,100%,.3);
+    background-color: hsla(0, 0%, 100%, 0.3);
     color: #fff;
     display: flex;
     font-weight: 700;
@@ -70,12 +83,11 @@
       font-family: "montserrat", sans-serif;
     }
 
-    
-    &:hover{
-      background-color: hsla(0,0%,100%,.2);
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 0.2);
     }
-    
-    img{
+
+    img {
       width: 26px;
       object-fit: cover;
       filter: invert(1);

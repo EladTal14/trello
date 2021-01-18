@@ -127,15 +127,7 @@ export class _BoardHeader extends Component {
             onChangeBackground={this.onChangeBackground}
             isChanging={isChanging}
           />
-          {/* <div className="board-menu-screen" onClick={ev => ev.stopPropagation()} ref={this.boardMenuVisibility} style={{ opacity: '0', visibility: 'hidden' }}>
-            <div className="board-menu-header flex space-around">
-              <h3 className="board-menu-title">Menu</h3>
-              <h4 className="board-menu-close" onClick={this.toggleMenu}>X</h4>
-            </div>
-            <hr />
-            {!isChanging && <button onClick={this.onChangeBackground}>Change Background</button>}
-            {isChanging && <ChangeBackground toggleMenu={this.toggleMenu} onChangeBackground={this.onChangeBackground} />}
-          </div> */}
+
 
           {isWrapper && <div className="board-menu-wrapper" onClick={(isWrapper) ? this.toggleMenu : () => { return }}>
           </div>}

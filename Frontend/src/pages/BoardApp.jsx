@@ -12,7 +12,8 @@ export class _BoardApp extends Component {
 
     state = {
         isDetailsShown: false,
-        scrollLeft: 0
+        scrollLeft: 0,
+        isPreviewDetailsShown: false
     }
     refBoard = React.createRef()
     componentDidMount() {
@@ -128,6 +129,7 @@ export class _BoardApp extends Component {
                         <div className="modal-cover" onClick={() => this.toggleDetails(false)}> </div>
                         <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
+                {}
                 <BoardHeader title={board.title} members={board.members} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
                 <section className="board-container" ref={this.refBoard} onScroll={this.onScroll}>
                     <DragDropContext onDragEnd={this.onDragEnd} >

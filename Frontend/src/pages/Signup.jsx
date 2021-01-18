@@ -37,7 +37,6 @@ class _Signup extends Component {
     try {
       await this.props.signup(this.state.user)
       this.props.history.push('/boards')
-
     } catch (err) {
       this.setState({ err })
     }
