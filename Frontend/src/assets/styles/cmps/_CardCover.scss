@@ -1,7 +1,7 @@
 .card-cover-modal{
 
     width: 304px;
-    height: 350px;
+    height: 400px;
     padding: 12px;
     color: #172b4d;
     font-size: rem(16px);
@@ -11,8 +11,8 @@
     border-radius: 3px;
     box-shadow: $modal-shadow;
     position: absolute;
-    right: 120px;
-    top: 30px;
+    right: 10px;
+    top: 90px;
     z-index: 3000;
 
     h3{
@@ -53,7 +53,7 @@
     
         .cover-colors-menu{
             width: 70px;
-            height: 50px;
+            height: 45px;
             border-radius: 7px;
             cursor: pointer;
             opacity: 0.8;

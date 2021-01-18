@@ -9,7 +9,7 @@ export class CardCover extends Component {
 
     coverColors = () => {
         return ['#f9ed69', '#a56cc1', '#f38181', '#95e1d3', '#878ecd', '#3fc1c9',
-            '#a1dd70', '#ffcc29', '#19456b', '#d32626', '#16c79a', '#fcbad3']
+            '#a1dd70', '#ffcc29', '#19456b', '#d32626', '#16c79a', '#fcbad3', '#ffaa64', '#de95ba', '#17b978', ]
     }
 
     onUploadImg = async ev => {
