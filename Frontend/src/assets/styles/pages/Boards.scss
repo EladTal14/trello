@@ -1,25 +1,27 @@
-.boards-page{
-
+.boards-page {
     padding: 20px;
 
-    .boards-container{
+    .boards-container {
         max-width: 960px;
         margin: 0 auto;
         padding: 30px;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 10px;
-    
+
         .board-preview {
             padding: 60px 10px;
             width: 280px;
             height: 150px;
             border-radius: 10px;
             text-align: center;
-
+            background-color: "#6DB3F2";
+            background-repeat: "no-repeat";
+            background-size: "cover";
+            background-position: "center";
         }
-        
-        .new-board{
+
+        .new-board {
             padding: 50px 10px;
             width: 280px;
             height: 150px;
@@ -27,25 +29,23 @@
             text-align: center;
             background-color: rgb(90, 89, 89);
             transition: background-color 0.7s;
-            
-            img{
+
+            img {
                 width: 50px;
                 opacity: 0.7;
                 filter: invert(1);
                 transition: opacity 0.7s;
-    
-                &:hover{
-                    opacity: 1; 
+
+                &:hover {
+                    opacity: 1;
                     transition: opacity 0.7s;
                 }
             }
-            
-            &:hover{
+
+            &:hover {
                 background-color: rgb(56, 56, 56);
                 transition: background-color 0.7s;
             }
-            
         }
     }
-
 }

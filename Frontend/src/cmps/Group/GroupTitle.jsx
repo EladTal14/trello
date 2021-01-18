@@ -48,8 +48,8 @@ export class _GroupTitle extends Component {
 
     render() {
         const { group } = this.state
-        return <section className="group-title" >
-            <form onSubmit={this.onSaveTitle} ref={this.textInput} onBlur={this.onSaveTitle} className="title-form flex space-between">
+        return <section className="group-title" {...this.props.dragHandle}>
+            <form onSubmit={this.onSaveTitle} ref={this.textInput} {...this.props.dragHandle} onBlur={this.onSaveTitle} className="title-form flex space-between">
                 {/* <input type="text" ref={this.textInput} name="title" value={group.title} onChange={this.handleInput} */}
                 {/* <TextField id="standard-basic" label="Standard" /> */}
                 <input type="text" name="title" value={group.title} onChange={this.handleInput}
