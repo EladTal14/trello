@@ -43,17 +43,16 @@ export class CardSide extends Component {
   }
 
   onToggleLabels = () => {
-    console.log('Adding a label ')
     this.setState({ isLabelsShown: !this.state.isLabelsShown })
   }
 
 
   render() {
     const { value, isDateShown, isLabelsShown, isCoverMenuShown, isMoreMembersShown } = this.state
-    const { card, users } = this.props
+    const { card, onHandleLabelsChange, saveChanges, users } = this.props
     return (
       <>
-        {isLabelsShown && <CardLabels card={card} onToggleLabels={this.onToggleLabels} />}
+        {isLabelsShown && <CardLabels saveChanges={saveChanges} card={card} onToggleLabels={this.onToggleLabels} onHandleLabelsChange={onHandleLabelsChange} />}
         {isCoverMenuShown && <CardCover onFinishUpload={this.props.onUploadCardCoverImg}
           onUpdateCoverColor={this.props.onUpdateCoverColor} toggleCoverMenu={this.toggleCoverMenu} />}
         {isDateShown && <div>

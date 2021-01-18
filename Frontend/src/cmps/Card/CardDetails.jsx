@@ -27,10 +27,15 @@ class _CardDetails extends Component {
   handleClickOutside = event => {
     const domNode = ReactDOM.findDOMNode(this)
     if (!domNode || !domNode.contains(event.target)) {
-      this.checklistValidation()
-      this.sendUpdatedBoard()
-      this.props.clearState(null)
+      this.saveChanges()
     }
+  }
+
+  saveChanges = () => {
+    console.log('from save changes', this.state.card)
+    this.checklistValidation()
+    this.sendUpdatedBoard()
+    // this.props.clearState(null)
   }
 
   sendUpdatedBoard = () => {
@@ -72,6 +77,16 @@ class _CardDetails extends Component {
     }))
   }
 
+  onHandleLabelsChange = (labels) => {
+    console.log('label from details', labels)
+    this.setState(prevState => ({
+      card: {
+        ...prevState.card,
+        labels: [...labels]
+      }
+    }), () => this.saveChanges())
+  }
+
   onRemoveCard = () => {
     const { board, group } = this.props
     const { card } = this.state
@@ -92,8 +107,8 @@ class _CardDetails extends Component {
 
   onUploadCardCoverImg = (url) => {
     const { card } = this.state
-    const newCard = {...card}
-    const style = {imgUrl: url, color: ''}
+    const newCard = { ...card }
+    const style = { imgUrl: url, color: '' }
     newCard.style = style
     this.onUpdateCard(newCard)
   }
@@ -109,8 +124,8 @@ class _CardDetails extends Component {
 
   onUpdateCoverColor = (color) => {
     const { card } = this.state
-    const newCard = {...card}
-    const style = {imgUrl: '', color: color}
+    const newCard = { ...card }
+    const style = { imgUrl: '', color: color }
     newCard.style = style
     this.onUpdateCard(newCard)
   }
@@ -172,8 +187,10 @@ class _CardDetails extends Component {
               onRemoveCard={this.onRemoveCard}
               onSavedueDate={this.onSavedueDate}
               addOrCancelChecklist={this.addOrCancelChecklist}
-              onUploadCardCoverImg = {this.onUploadCardCoverImg}
-              onUpdateCoverColor = {this.onUpdateCoverColor}
+              onUploadCardCoverImg={this.onUploadCardCoverImg}
+              onHandleLabelsChange={this.onHandleLabelsChange}
+              onUpdateCoverColor={this.onUpdateCoverColor}
+              saveChanges={this.saveChanges}
               users={board.members}
               onUpdateMembers={this.onUpdateMembers}
             />

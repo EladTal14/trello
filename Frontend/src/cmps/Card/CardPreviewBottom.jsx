@@ -1,6 +1,6 @@
 import React from 'react'
 import { utilService } from '../../services/utilService'
-
+const _ = require('lodash');
 export function CardPreviewBottom({ card }) {
 
     const progress = utilService.getTodoProgress(card)
@@ -17,7 +17,8 @@ export function CardPreviewBottom({ card }) {
                 <p className="checklist">{progress.done}/{progress.total}</p></div>}
             {card.members && <div className="preview-members-container flex">
                 {card.members.map(member => {
-                    return <div key={member._id} className="member">
+                    // return <div key={member._id} className="member">
+                    return <div key={member.fullname} className="member">
                         {utilService.convertName(member.fullname)}
                     </div>
                 })}

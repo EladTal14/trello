@@ -2,16 +2,14 @@
   "board": [
     {
       "_id": "b101",
-      "title": "Sprint 4 project",
+      "title": "Sprint 4 proj",
       "createdAt": 1589983468418,
       "createdBy": {
         "_id": "u101",
         "fullname": "Abi Abambi",
         "imgUrl": "http://some-img"
       },
-      "style": {
-        "backgroundImage": "https://res.cloudinary.com/dxh5keaol/image/upload/v1610271947/samples/landscapes/girl-urban-view.jpg"
-      },
+      "style": {},
       "members": [
         {
           "_id": "u101",
@@ -30,82 +28,71 @@
       ],
       "groups": [
         {
-          "title": "sdfsdfsdf",
-          "id": "r7h1",
+          "id": "g103",
+          "title": "haimasdassds",
           "cards": [
             {
-              "title": "Eat Food",
-              "id": "yS3N5PJ",
+              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
+              "id": "kzv",
               "style": {
-                "imgUrl": "",
-                "color": "#f9ed69"
+                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610874505/pexels-kelsey-johnson-2331569_h36kwh.jpg",
+                "color": ""
               }
             },
             {
-              "title": "check members...",
-              "id": "CqDoLRt",
-              "members": [
-                {
-                  "_id": "u103",
-                  "fullname": "Basya Kritchker",
-                  "username": "abasdasdi@ababmi.com",
-                  "password": "123",
-                  "imgUrl": "http://some-img.jpg"
-                },
-                {
-                  "_id": "u102",
-                  "fullname": "Elad Tal",
-                  "username": "abasdi@ababmi.com",
-                  "password": "123",
-                  "imgUrl": "http://some-img.jpg"
-                },
-                {
-                  "_id": "u101",
-                  "fullname": "Adir Hagag",
-                  "username": "abasdasdi@ababmi.com",
-                  "password": "123",
-                  "imgUrl": "http://some-img.jpg"
-                }
-              ]
+              "title": "gggg",
+              "id": "cMP"
             }
-          ]
+          ],
+          "style": {}
         },
         {
-          "id": "g1051",
           "title": "sdfsdfsdf",
+          "id": "R232s",
           "cards": [
             {
-              "title": "check membes",
-              "id": "lWJDRwT",
-              "members": [],
+              "title": "hhh",
+              "id": "9O6",
+              "description": "asasadsas",
               "style": {
-                "imgUrl": "https://res.cloudinary.com/basimgs/image/upload/v1610916447/pexels-frans-van-heerden-624015_eymc8t.jpg",
-                "color": ""
+                "imgUrl": "",
+                "color": "#a56cc1"
+              }
+            },
+            {
+              "title": "check 123\n",
+              "id": "4PA65o1",
+              "style": {
+                "imgUrl": "",
+                "color": "#f38181"
               },
-              "dueDate": 1609803600000
-            },
-            {
-              "title": "check more members",
-              "id": "ks3ebOW",
-              "members": []
-            },
-            {
-              "title": "check some\nmore\nmembers",
-              "id": "h7iTSQm",
-              "members": [
+              "dueDate": 1611099600000,
+              "labels": [
                 {
-                  "_id": "u103",
-                  "fullname": "Basya Kritchker",
-                  "username": "abasdasdi@ababmi.com",
-                  "password": "123",
-                  "imgUrl": "http://some-img.jpg"
+                  "id": "juhLZSe",
+                  "title": "Checklist",
+                  "color": "#eb5a46"
+                }
+              ]
+            },
+            {
+              "title": "נעגיקשנ",
+              "id": "7eAuNru",
+              "labels": [
+                {
+                  "id": "pI6Z0du",
+                  "title": "pitot",
+                  "color": "#f2d601"
                 },
                 {
-                  "_id": "u101",
-                  "fullname": "Adir Hagag",
-                  "username": "abasdasdi@ababmi.com",
-                  "password": "123",
-                  "imgUrl": "http://some-img.jpg"
+                  "id": "IW9UvNB",
+                  "title": "ddddd",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "omriGmK",
+                  "title": "vvvvvvv",
+                  "color": "#344563"
                 }
               ]
             }
@@ -113,8 +100,8 @@
           "style": {}
         },
         {
-          "title": "check",
-          "id": "rk71",
+          "id": "g105",
+          "title": "haimasdassds",
           "cards": [
             {
               "title": "Eat Food",
@@ -133,8 +120,98 @@
           ]
         },
         {
+          "id": "g1051",
+          "title": "haimasdassds",
+          "cards": [
+            {
+              "title": "vdfvdvxc",
+              "id": "asdassss",
+              "labels": [
+                {
+                  "id": "lS8tQY5",
+                  "title": "lahi lhamni",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "1rvfJVs",
+                  "title": "iii",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "x6vMbi9",
+                  "title": "asd",
+                  "color": "#c377e0"
+                }
+              ]
+            },
+            {
+              "title": "lffff\ngthte\nbgrwrynrnhr\nh",
+              "id": "kzv",
+              "labels": [
+                {
+                  "id": "1nsss2",
+                  "title": "Hey",
+                  "color": "#04c2e0",
+                  "isChoosen": false
+                },
+                {
+                  "id": "ewXlX5c",
+                  "title": "Tatata",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "WbGcaQn",
+                  "title": "Checklist",
+                  "color": "#eb5a46"
+                }
+              ]
+            },
+            {
+              "title": "fghfghfgh",
+              "id": "TPf",
+              "labels": [
+                {
+                  "id": "rAnW9Kc",
+                  "title": "sss",
+                  "color": "#f2d601"
+                },
+                {
+                  "id": "umxoy55",
+                  "title": "pitot",
+                  "color": "#c377e0"
+                },
+                {
+                  "id": "j3fjkk4",
+                  "title": "יש",
+                  "color": "#50e898"
+                }
+              ]
+            },
+            {
+              "title": "dasdasdasd\ndfg",
+              "id": "Dz7rq01"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fsdfsdfyV"
+            },
+            {
+              "title": "llalalal\nlalla\nhlhlhl",
+              "id": "rAL"
+            },
+            {
+              "title": "vdfvdvxc",
+              "id": "fyV"
+            },
+            {
+              "title": "esd;sd",
+              "id": "tlo"
+            }
+          ]
+        },
+        {
           "title": "sdfsdfsdf",
-          "id": "bahsu",
+          "id": "BY4",
           "cards": [
             {
               "title": "asdsd\n",
@@ -143,46 +220,10 @@
             {
               "title": "aa\nasd\ns\nd\nasd",
               "id": "382zkr7"
-            }
-          ]
-        },
-        {
-          "id": "g105",
-          "title": "hello",
-          "cards": [
-            {
-              "title": "sadasdsdas",
-              "id": "uGDgk51"
             },
             {
-              "title": "llalalal\nlalla\nhlhlhl",
-              "id": "rAL"
-            },
-            {
-              "title": "vdfvdvxc",
-              "id": "fsdfsdfyV"
-            },
-            {
-              "title": "fghfghfgh",
-              "id": "TPf"
-            },
-            {
-              "title": "gggg",
-              "id": "cMP"
-            },
-            {
-              "title": "cardi b",
-              "id": "orUelNz"
-            }
-          ]
-        },
-        {
-          "id": "g103",
-          "title": "haimasdassds",
-          "cards": [
-            {
-              "title": "dasdasdasd\ndfg",
-              "id": "Dz7rq01"
+              "title": "check 123",
+              "id": "3RNIxXS"
             }
           ]
         },
@@ -192,8 +233,8 @@
           "cards": []
         },
         {
-          "id": "g102",
-          "title": "sdfsdf",
+          "title": "xvcvcccv",
+          "id": "3up",
           "cards": [
             {
               "id": "c10894",
@@ -236,48 +277,8 @@
               "style": {
                 "bgColor": "#26DE81"
               }
-            },
-            {
-              "id": "c102",
-              "title": "Add Samples"
             }
-          ],
-          "style": {}
-        },
-        {
-          "title": "invite Friends",
-          "id": "Lf5YIkw",
-          "cards": []
-        },
-        {
-          "title": "Find Friends",
-          "id": "sKad11i",
-          "cards": []
-        },
-        {
-          "title": "Make Dinner",
-          "id": "J4ITLQb",
-          "cards": []
-        },
-        {
-          "title": "In Progress",
-          "id": "sAa3PF9",
-          "cards": []
-        },
-        {
-          "title": "Done",
-          "id": "AUNYQHB",
-          "cards": []
-        },
-        {
-          "title": "Scroll",
-          "id": "34F86x9",
-          "cards": []
-        },
-        {
-          "title": "lll",
-          "id": "gu8zH1l",
-          "cards": []
+          ]
         }
       ],
       "activities": [
@@ -294,6 +295,65 @@
             "id": "c101",
             "title": "Replace Logo"
           }
+        }
+      ],
+      "labels": [
+        {
+          "id": "1ns652",
+          "title": "",
+          "color": "#f2d601",
+          "isChoosen": false
+        },
+        {
+          "id": "1nsss2",
+          "title": "Hey",
+          "color": "#04c2e0",
+          "isChoosen": false
+        },
+        {
+          "id": "WizTcIU",
+          "title": "pitot",
+          "color": "#f2d601"
+        },
+        {
+          "id": "rAnW9Kc",
+          "title": "sss",
+          "color": "#f2d601"
+        },
+        {
+          "id": "umxoy55",
+          "title": "pitot",
+          "color": "#c377e0"
+        },
+        {
+          "id": "j3fjkk4",
+          "title": "יש",
+          "color": "#50e898"
+        },
+        {
+          "id": "pI6Z0du",
+          "title": "pitot",
+          "color": "#f2d601"
+        },
+        {
+          "id": "vwrodPQ",
+          "title": "worked?",
+          "color": "#50e898"
+        },
+        {
+          "id": "x6vMbi9",
+          "title": "asd",
+          "color": "#c377e0"
+        },
+        {
+          "id": "IW9UvNB",
+          "title": "ddddd",
+          "color": "#c377e0"
+        },
+        {
+          "id": "omriGmK",
+          "title": "vvvvvvv",
+          "color": "#344563"
         }
       ]
     },
@@ -508,18 +568,7 @@
           }
         }
       ],
-      "labels": [
-        {
-          "id": "fakeIdcd",
-          "title": "red label",
-          "color": "#61BD4F"
-        },
-        {
-          "id": "ncncnascx",
-          "title": "blue label",
-          "color": "#DE3163"
-        }
-      ]
+      "labels": []
     },
     {
       "_id": "b103",
@@ -631,7 +680,7 @@
         },
         {
           "title": "To do this month",
-          "id": "r71",
+          "id": "ssda12",
           "cards": [
             {
               "title": "finish the login",
@@ -740,18 +789,7 @@
           }
         }
       ],
-      "labels": [
-        {
-          "id": "nvnvnud",
-          "title": "red label",
-          "color": "#61BD4F"
-        },
-        {
-          "id": "g1t3y2",
-          "title": "blue label",
-          "color": "#DE3163"
-        }
-      ]
+      "labels": []
     }
   ],
   "user": [

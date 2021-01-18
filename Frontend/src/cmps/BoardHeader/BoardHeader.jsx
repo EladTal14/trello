@@ -100,7 +100,8 @@ export class _BoardHeader extends Component {
           <div className="header-members flex">
             <ul className="member-list flex">
               {members.map(member => {
-                return <li key={member._id} className="header-member">
+                // return <li key={member._id} className="header-member">
+                return <li key={member.fullname} className="header-member">
                   {utilService.convertName(member.fullname)}
                 </li>
               })}
@@ -124,7 +125,6 @@ export class _BoardHeader extends Component {
         </div>
         {isWrapper && <div className="board-menu-wrapper" onClick={(isWrapper) ? this.toggleMenu : () => { return }}>
         </div>}
-        <GroupAdd onAddGroup={this.props.onAddGroup} onScroll={this.props.onScroll} />
         <button className="menu-btn" onClick={this.toggleMenu}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
       </header>
       </>
