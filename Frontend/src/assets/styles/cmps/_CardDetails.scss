@@ -103,6 +103,9 @@
 
   .card-labels-section {
     margin-left: 28px;
+    .labels-container {
+      flex-wrap: wrap;
+    }
   }
 
   .card-label-h2 {
@@ -375,6 +378,21 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
+}
+
+.details-img-wrapper {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(9, 30, 66, 0.04);
+  margin-bottom: 22px;
+  @include aspect-ratio(1, 1);
+}
+
+.details-img-wrapper > img {
+  // transform: translateX(100%);
+  // width: 35%;
+  // position: relative;
+  // top: ;
 }
 
 // animation: progressBar 3s ease-in-out;
