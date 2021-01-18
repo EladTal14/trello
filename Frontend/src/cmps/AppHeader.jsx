@@ -8,6 +8,7 @@ export function AppHeader(props) {
       <h1>Tello header</h1>
       <nav>
         <ul className="header-list flex justify-center">
+          <li><Link to="/login">Login</Link></li>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/boards">Boards</Link></li>
           <li><Link to="/board">Board</Link></li>
