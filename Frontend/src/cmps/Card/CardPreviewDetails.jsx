@@ -107,7 +107,7 @@ class _CardPreviewDetails extends Component {
         }}>
           <div className="flex column">
             <textarea name="title" cols="28" wrap="hard" rows="8" onChange={this.onHandleInputChange} value={card.title} style={{ resize: 'none' }} autoFocus ></textarea>
-            <button>Save</button>
+            <button onClick={() => this.onUpdateCard(card)}>Save</button>
           </div>
           <div className="card-preview-details-changes flex column">
             <button onClick={this.showLabel}>Edit Labels</button>
