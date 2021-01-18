@@ -172,47 +172,47 @@
     }
   }
 
-  .activity-container {
-    .activity-textarea {
-      width: 87.5%;
-      font-family: "montserrat", sans-serif;
-      margin-bottom: 15px;
-      margin-left: 5px;
-    }
+  // .activity-container {
+  //   .activity-textarea {
+  //     width: 87.5%;
+  //     font-family: "montserrat", sans-serif;
+  //     margin-bottom: 15px;
+  //     margin-left: 5px;
+  //   }
 
-    .activity-header {
-      margin-bottom: 10px;
+  //   .activity-header {
+  //     margin-bottom: 10px;
 
-      img {
-        width: 20px;
-        height: 20px;
-        opacity: 0.8;
-        margin-right: 9px;
-      }
-    }
+  //     img {
+  //       width: 20px;
+  //       height: 20px;
+  //       opacity: 0.8;
+  //       margin-right: 9px;
+  //     }
+  //   }
 
-    button {
-      width: 15%;
-      margin: 0px 0px 18px 18px;
-    }
+  //   button {
+  //     width: 15%;
+  //     margin: 0px 0px 18px 18px;
+  //   }
 
     
-    .activity-comment-wrapper {
-      margin-bottom: 15px;
+  //   .activity-comment-wrapper {
+  //     margin-bottom: 15px;
 
-      .activity-comment {
-        margin-left: 10px;
+  //     .activity-comment {
+  //       margin-left: 10px;
 
-        & p {
-          font-size: 14px;
-        }
-      }
+  //       & p {
+  //         font-size: 14px;
+  //       }
+  //     }
 
-      .activity-time {
-        font-size: 12px;
-      }
-    }
-  }
+  //     .activity-time {
+  //       font-size: 12px;
+  //     }
+  //   }
+  // }
 
   .due-date-wrapper {
     margin-left: 28px;
@@ -402,13 +402,16 @@
 
 .details-img-wrapper {
   width: 100%;
+  // width: 150px;
+  // height: 150px;
   background-color: rgba(9, 30, 66, 0.04);
   margin-bottom: 22px;
-  @include aspect-ratio(1, 1);
+  // @include aspect-ratio(1, 1);
 }
 
 .details-img-wrapper > img {
   margin: 0 auto;
+  width: 150px;
   // transform: translateX(100%);
   // width: 35%;
   // position: relative;
@@ -421,3 +424,44 @@
 // 0% { width: 0; }
 // 100% { width: 100%; }
 // }
+.activity-container {
+  .activity-textarea {
+    width: 87.5%;
+    font-family: "montserrat", sans-serif;
+    margin-bottom: 15px;
+    margin-left: 5px;
+  }
+
+  .activity-header {
+    margin-bottom: 10px;
+
+    img {
+      width: 20px;
+      height: 20px;
+      opacity: 0.8;
+      margin-right: 9px;
+    }
+  }
+
+  button {
+    width: 15%;
+    margin: 0px 0px 18px 18px;
+  }
+
+  
+  .activity-comment-wrapper {
+    margin-bottom: 15px;
+
+    .activity-comment {
+      margin-left: 10px;
+
+      & p {
+        font-size: 14px;
+      }
+    }
+
+    .activity-time {
+      font-size: 12px;
+    }
+  }
+}

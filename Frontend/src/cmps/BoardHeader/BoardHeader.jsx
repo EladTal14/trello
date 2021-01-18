@@ -3,9 +3,10 @@ import { utilService } from '../../services/utilService'
 import { saveBoard } from '../../store/actions/boardAction'
 import { loadUsers } from '../../store/actions/userAction'
 import { connect } from 'react-redux'
-import { ChangeBackground } from './ChangeBackground.jsx'
-import { GroupAdd } from '../Group/GroupAdd'
+// import { ChangeBackground } from './ChangeBackground.jsx'
+// import { GroupAdd } from '../Group/GroupAdd'
 import { AddMember } from '../AddMember'
+import { BoardMenu } from './BoardMenu'
 
 export class _BoardHeader extends Component {
 
@@ -120,7 +121,13 @@ export class _BoardHeader extends Component {
             </div>
           </div>
           {/* <BoardFilter /> */}
-          <div className="board-menu-screen" onClick={ev => ev.stopPropagation()} ref={this.boardMenuVisibility} style={{ opacity: '0', visibility: 'hidden' }}>
+          <BoardMenu
+            toggleMenu={this.toggleMenu}
+            mainRef={this.boardMenuVisibility}
+            onChangeBackground={this.onChangeBackground}
+            isChanging={isChanging}
+          />
+          {/* <div className="board-menu-screen" onClick={ev => ev.stopPropagation()} ref={this.boardMenuVisibility} style={{ opacity: '0', visibility: 'hidden' }}>
             <div className="board-menu-header flex space-around">
               <h3 className="board-menu-title">Menu</h3>
               <h4 className="board-menu-close" onClick={this.toggleMenu}>X</h4>
@@ -128,9 +135,8 @@ export class _BoardHeader extends Component {
             <hr />
             {!isChanging && <button onClick={this.onChangeBackground}>Change Background</button>}
             {isChanging && <ChangeBackground toggleMenu={this.toggleMenu} onChangeBackground={this.onChangeBackground} />}
+          </div> */}
 
-
-          </div>
           {isWrapper && <div className="board-menu-wrapper" onClick={(isWrapper) ? this.toggleMenu : () => { return }}>
           </div>}
           <button className="menu-btn" onClick={this.toggleMenu}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610637597/menu_btis53.png" alt="" /></button>
