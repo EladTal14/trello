@@ -749,7 +749,89 @@
 1/18/2021, 12:03:22 AM - INFO - Server is running on port: 3030 
 >>>>>>> 6ee3e3b8fe3e885c8dca12cd14e67ac6d6c41676
 1/18/2021, 10:40:48 AM - INFO - Server is running on port: 3030 
+<<<<<<< HEAD
+1/18/2021, 10:46:14 AM - INFO - Server is running on port: 3030 
+=======
 >>>>>>> 5239288975d789b666edd633248b897ea0ac18b0
 1/18/2021, 10:55:28 AM - INFO - Server is running on port: 3030 
 1/18/2021, 10:57:09 AM - INFO - Server is running on port: 3030 
 1/18/2021, 10:57:50 AM - INFO - Server is running on port: 3030 
+<<<<<<< HEAD
+1/18/2021, 11:13:51 AM - INFO - Server is running on port: 3030 
+=======
+>>>>>>> 5b52b88dfb8d393af92534c530841ceb7e4f042e
+1/18/2021, 11:08:39 AM - INFO - Server is running on port: 3030 
+>>>>>>> 7ef9702a457e8584b32c36ec8717befc9643881b
+1/18/2021, 11:58:37 AM - DEBUG - auth.service - signup with username: test, fullname: test (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 11:58:37 AM - DEBUG - auth.route - new account created: {"username":"test","password":"$2b$10$c51czXCrwkSLyTq9ZdWXA.V/Z8QoSCcy9tkH2/TKKF8hO2gXRK15S","fullname":"test","score":0,"_id":"60055bcd0d7a9b3c38f5e1d8"} (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 11:58:37 AM - DEBUG - auth.service - login with username: test (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:14:48 PM - DEBUG - auth.service - signup with username: test, fullname: test (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:14:49 PM - DEBUG - auth.route - new account created: {"username":"test","password":"$2b$10$QRMphliTiP5nBuFoPmB0lOfwgOuJrVpgC5EmkOuEDTON5dEvrxxcW","fullname":"test","score":0,"_id":"60055f980d7a9b3c38f5e1d9"} (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:14:49 PM - DEBUG - auth.service - login with username: test (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:26:28 PM - DEBUG - auth.service - login with username: sdffg (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:26:29 PM - ERROR - Failed to Login Invalid username or password (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:26:50 PM - DEBUG - auth.service - login with username: zdfsdf (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:26:50 PM - ERROR - Failed to Login Invalid username or password (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:27:12 PM - DEBUG - auth.service - login with username: fff (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:27:12 PM - ERROR - Failed to Login Invalid username or password (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:28:06 PM - DEBUG - auth.service - login with username: 1qq (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:28:06 PM - ERROR - Failed to Login Invalid username or password (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:28:30 PM - DEBUG - auth.service - login with username: czxc (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:28:31 PM - ERROR - Failed to Login Invalid username or password (sid: ipEQuOTo0bJn1dHWSMBcQa0ADxcwLI2G)
+1/18/2021, 12:29:08 PM - DEBUG - auth.service - login with username: sdfsf (sid: oTmFU8yJlJSk8ocxrvw7a7eNuSyToJRs)
+1/18/2021, 12:29:08 PM - ERROR - Failed to Login Invalid username or password (sid: oTmFU8yJlJSk8ocxrvw7a7eNuSyToJRs)
+1/18/2021, 12:29:54 PM - DEBUG - auth.service - login with username: asdasdas (sid: oTmFU8yJlJSk8ocxrvw7a7eNuSyToJRs)
+1/18/2021, 12:29:54 PM - ERROR - Failed to Login Invalid username or password (sid: oTmFU8yJlJSk8ocxrvw7a7eNuSyToJRs)
+1/18/2021, 12:30:16 PM - INFO - Server is running on port: 3030 
+1/18/2021, 12:30:36 PM - INFO - Server is running on port: 3030 
+1/18/2021, 12:31:06 PM - DEBUG - auth.service - login with username: ad (sid: Mvak_kK4EaTk0rw-Gu4MpaEdFw14utAF)
+1/18/2021, 12:31:07 PM - ERROR - Failed to Login Invalid username or password (sid: Mvak_kK4EaTk0rw-Gu4MpaEdFw14utAF)
+1/18/2021, 12:33:24 PM - INFO - Server is running on port: 3030 
+1/18/2021, 12:34:29 PM - INFO - Server is running on port: 3030 
+1/18/2021, 12:37:38 PM - DEBUG - auth.service - login with username: test (sid: RNDxJZiOnWGIfcXVxG7UqHUjDBplFj-f)
+1/18/2021, 12:38:50 PM - DEBUG - auth.service - login with username: test (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:39:34 PM - DEBUG - auth.service - signup with username: elad, fullname: elad (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:39:34 PM - DEBUG - auth.route - new account created: {"username":"elad","password":"$2b$10$DfhhJ7.q5MsZlBOGHGYbLuEinCwoA3Bvs7LvpWu/YI0FLzOSGU.l6","fullname":"elad","_id":"600565669fab4b3a50dadab3"} (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:39:34 PM - DEBUG - auth.service - login with username: elad (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:42:48 PM - DEBUG - auth.service - login with username: test (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:44:14 PM - DEBUG - auth.service - login with username: test (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:44:14 PM - ERROR - Failed to Login Invalid username or password (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:44:24 PM - DEBUG - auth.service - login with username: test (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:45:23 PM - DEBUG - auth.service - signup with username: avigdor, fullname: liberman (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:45:23 PM - DEBUG - auth.route - new account created: {"username":"avigdor","password":"$2b$10$J8h7rAm7sxBvB6VFFVPD/O8A7JiQHKtr3f.XL1rx9mh1sxdXX9C0C","fullname":"liberman","_id":"600566c39fab4b3a50dadab4"} (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:45:23 PM - DEBUG - auth.service - login with username: avigdor (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 12:54:26 PM - DEBUG - auth.service - login with username: test (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 1:02:58 PM - DEBUG - auth.service - login with username: test (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 1:05:00 PM - DEBUG - auth.service - login with username: asd (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 1:05:01 PM - ERROR - Failed to Login Invalid username or password (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 1:06:40 PM - DEBUG - auth.service - login with username: שדג (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 1:06:40 PM - ERROR - Failed to Login Invalid username or password (sid: ZZOtlJsFOL9f-0hBijTBdydkk5GnJP38)
+1/18/2021, 1:07:07 PM - INFO - Server is running on port: 3030 
+1/18/2021, 1:07:11 PM - DEBUG - auth.service - login with username: asdasdas (sid: XSsNeYhKWdNs1q5P-7bDraN5P8XezkRh)
+1/18/2021, 1:07:12 PM - ERROR - Failed to Login Invalid username or password (sid: XSsNeYhKWdNs1q5P-7bDraN5P8XezkRh)
+1/18/2021, 1:07:23 PM - INFO - Server is running on port: 3030 
+1/18/2021, 1:07:30 PM - DEBUG - auth.service - login with username: sdf (sid: gIdz7K9rx9jCvGwyQ6ShyucXzana6oAC)
+1/18/2021, 1:07:32 PM - ERROR - Failed to Login Invalid username or password (sid: gIdz7K9rx9jCvGwyQ6ShyucXzana6oAC)
+1/18/2021, 1:08:05 PM - INFO - Server is running on port: 3030 
+1/18/2021, 1:08:09 PM - DEBUG - auth.service - login with username: dsf (sid: 3idCkwCDpLMT9WyieVjhDO99-hezvt37)
+1/18/2021, 1:08:11 PM - ERROR - Failed to Login Invalid username or password (sid: 3idCkwCDpLMT9WyieVjhDO99-hezvt37)
+1/18/2021, 1:08:41 PM - INFO - Server is running on port: 3030 
+1/18/2021, 1:08:45 PM - DEBUG - auth.service - login with username: asdasdas (sid: CZL9a9y62O6CqciLyTO2yX4eOqXRGAY7)
+1/18/2021, 1:08:47 PM - ERROR - Failed to Login Invalid username or password (sid: CZL9a9y62O6CqciLyTO2yX4eOqXRGAY7)
+1/18/2021, 1:09:53 PM - INFO - Server is running on port: 3030 
+1/18/2021, 1:09:59 PM - DEBUG - auth.service - login with username: dsad (sid: 7c8lMluM5h757E9JJDsNiyHfyxL_jh9w)
+1/18/2021, 1:10:00 PM - ERROR - Failed to Login Invalid username or password (sid: 7c8lMluM5h757E9JJDsNiyHfyxL_jh9w)
+1/18/2021, 1:10:47 PM - INFO - Server is running on port: 3030 
+1/18/2021, 1:10:50 PM - INFO - Server is running on port: 3030 
+1/18/2021, 1:11:07 PM - ERROR - Failed to Login Invalid username or password (sid: 6ortqA-3WMqHj5rMvlzED2cVVcVVBL0f)
+1/18/2021, 1:12:46 PM - ERROR - Failed to Login Invalid username or password (sid: myLszBe9o3igeLrKS8ozEtbSuzkFOQpj)
+1/18/2021, 1:13:45 PM - INFO - Server is running on port: 3030 
+1/18/2021, 1:14:01 PM - ERROR - Failed to Login Invalid username or password (sid: 6o0UfnvUaNSF6vvtjb07zGQ091hmDSgH)
+1/18/2021, 1:14:45 PM - INFO - Server is running on port: 3030 
+1/18/2021, 1:14:59 PM - INFO - Server is running on port: 3030 
+1/18/2021, 1:25:31 PM - ERROR - Failed to Login Invalid username or password (sid: kVCm32mUFtOgFFAjyv7JsAmVrlRrj8o4)
+1/18/2021, 1:30:42 PM - ERROR - Failed to Login Invalid username or password (sid: jqqD2PF2UAhn7QFhCZemfsdCtw2a4Kmz)
+1/18/2021, 2:08:51 PM - ERROR - Failed to Login Invalid username or password (sid: hwjhtej6cWmiRCCUs4x7gD0Mde77LFkj)
+1/18/2021, 2:08:56 PM - ERROR - Failed to Login Invalid username or password (sid: hwjhtej6cWmiRCCUs4x7gD0Mde77LFkj)
+1/18/2021, 2:11:23 PM - ERROR - Failed to Login Invalid username or password (sid: hwjhtej6cWmiRCCUs4x7gD0Mde77LFkj)
+1/18/2021, 2:11:36 PM - ERROR - Failed to Login Invalid username or password (sid: hwjhtej6cWmiRCCUs4x7gD0Mde77LFkj)

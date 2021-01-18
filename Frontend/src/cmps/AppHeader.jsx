@@ -1,28 +1,39 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { Component } from 'react'
+import { logout, loadUser } from '../store/actions/userAction.js'
+class _AppHeader extends Component {
 
-export function AppHeader(props) {
-  return (
-    <header className="app-header flex space-between">
-      <h1>Tello header</h1>
-      <nav>
-        <ul className="header-list flex justify-center">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/boards">Boards</Link></li>
-          <li><Link to="/board">Board</Link></li>
-        </ul>
-      </nav>
-    </header>
-  )
+  render() {
+    const { loggedInUser } = this.props
+    return (
+      <header className="app-header flex space-between">
+        <nav>
+          <ul className="header-list flex justify-center">
+            <li ><Link to="/" className="home-btn"><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/home_seebre.png" alt="" /></Link></li>
+            <li ><Link to="/boards" className="boards-btn">Boards</Link></li>
+          </ul>
+        </nav>
+        <li ><Link to="/" className="header-title">Trello</Link></li>
+        <div className="header-right flex">
+          <button className="header-add-board-btn"><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/plus_ljzrkm.png" alt="" /></button>
+          {loggedInUser && <> <div>{loggedInUser.username}</div> <button onClick={this.props.logout}> Logout</button></>}
+          <button><Link to="/login">Login</Link></button>
+        </div>
+      </header>
+    )
+  }
 }
 
-// const mapStateToProps = (state) => ({
+const mapGlobalStateToProps = (state) => {
+  return {
+    loggedInUser: state.userModule.loggedInUser
+  }
 
-// })
+}
+const mapDispatchToProps = {
+  logout,
+  loadUser
+}
 
-// const mapDispatchToProps = {
-
-// }
-
-// export const AppHeader = connect(mapStateToProps, mapDispatchToProps)(_AppHeader)
+export const AppHeader = connect(mapGlobalStateToProps, mapDispatchToProps)(_AppHeader)

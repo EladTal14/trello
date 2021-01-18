@@ -1,8 +1,9 @@
 
 const initialState = {
-  loggedInUser: null,
+  // loggedInUser: null,
+  loggedInUser: JSON.parse(sessionStorage.getItem('loggedinUser')) || null,
   users: [],
-  filterBy: {fullname: ''}
+  filterBy: { fullname: '' }
 }
 
 export function userReducer(state = initialState, action) {
@@ -10,11 +11,13 @@ export function userReducer(state = initialState, action) {
     case 'SET_USERS':
       return { ...state, users: action.users }
     case 'SET_USER':
-      return { ...state, currBoard: action.user }
-    case 'ADD_USER':
-      return { ...state, users: [...state.users, action.user], currBoard: action.user }
-    case 'FILTER':
-      return { ...state, filterBy: action.filterBy }
+      return { ...state, loggedInUser: action.user }
+    case 'LOGIN':
+      return { ...state, loggedInUser: { ...action.user } }
+    case 'LOGOUT':
+      return { ...state, loggedInUser: null }
+    case 'SIGNUP':
+      return { ...state, users: [...state.users, action.user], loggedInUser: action.user }
     default:
       return state
   }

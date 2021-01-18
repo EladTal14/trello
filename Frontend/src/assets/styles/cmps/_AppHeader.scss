@@ -1,3 +1,77 @@
 .app-header {
-  color: #172b4d;
+  color: white;
+  padding: 0 5px 0;
+  height: 40px;
+  align-items: center;
+  background-color: rgba(0,0,0,.32);
+
+  .header-list{
+
+    .home-btn, .boards-btn{
+      border-radius: 3px;
+      border: 0;
+      align-items: center;
+      background-color: hsla(0,0%,100%,.3);
+      color: #fff;
+      display: flex;
+      font-weight: 700;
+      height: 32px;
+      line-height: 32px;
+      margin: 0 4px 0 0;
+
+      
+      &:hover{
+        background-color: hsla(0,0%,100%,.2);
+      }
+      
+      img{
+        width: 30px;
+        object-fit: cover;
+        filter: invert(1);
+      }
+    }
+    .boards-btn{
+      padding: 0 7px;
+      width: 70px;
+      font-size: rem(16px);
+    }
+  }
+}
+
+  .header-title{
+    color: white;
+    margin: 0;
+    font-size: rem(26px);
+    font-family: pacifico;
+    
+    &:hover{
+      color: rgb(231, 231, 231);
+    }
+
+}
+
+.header-right{
+  .header-add-board-btn{
+    border-radius: 3px;
+    border: 0;
+    align-items: center;
+    background-color: hsla(0,0%,100%,.3);
+    color: #fff;
+    display: flex;
+    font-weight: 700;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px 0 0;
+
+    
+    &:hover{
+      background-color: hsla(0,0%,100%,.2);
+    }
+    
+    img{
+      width: 26px;
+      object-fit: cover;
+      filter: invert(1);
+    }
+  }
 }
