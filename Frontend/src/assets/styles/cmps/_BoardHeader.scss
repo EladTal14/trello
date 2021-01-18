@@ -1,18 +1,22 @@
 .board-header {
   align-items: center;
-  padding: 0 10px;
+  padding: 0 5px;
+  color: white;
+  height: 40px;
+  align-items: center;
 
   .board-header-btn {
     border-radius: 3px;
-    color: #172b4d;
+    color: white;
     cursor: pointer;
     border: none;
     height: 32px;
-    margin: 0 10px 4px;
+    margin: 0 4px;
     max-width: 220px;
     padding: 0 10px;
     align-items: center;
     background-color: rgba(34, 34, 34, 0.11);
+    font-family: montserrat, sans-serif;
 
     &:hover {
       background-color: rgba(34, 34, 34, 0.185);
@@ -21,6 +25,10 @@
     h3 {
       margin: 0;
       margin-right: 10px;
+    }
+
+    img{
+      filter: invert(1);
     }
   }
 
@@ -32,6 +40,7 @@
     outline: none;
     border-radius: 3px;
     background-color: rgba(34, 34, 34, 0.11);
+    color: white;
 
     &:hover {
       background-color: rgba(34, 34, 34, 0.185);
@@ -56,30 +65,31 @@
     border-radius: 50%;
     line-height: 30px;
     margin-left: 5px;
-    border: 1px solid black;
+    color: white;
+    font-weight: 700;
     text-align: center;
-    background-color: gray;
+    background-color: rgb(40, 149, 238);
+    cursor: pointer;
   }
 
   .add-member {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    line-height: 30px;
     margin-left: 5px;
-    border: 1px solid black;
     text-align: center;
-    background-color: gray;
+    background-color: rgb(40, 149, 238);
     cursor: pointer;
     outline: none;
+    border: none;
   }
 
   .add-member,
   .board-header-btn {
     img {
-      width: 25px;
-      height: 25px;
-      opacity: 0.8;
+      object-fit: cover;
+      width: 20px;
+      filter: invert(1);
     }
   }
 
@@ -87,17 +97,16 @@
     // max-width: 200px;
 
     .board-title-input {
-      color: #172b4d;
+      color: white;;
       cursor: pointer;
       outline: none;
       border: none;
       border-radius: 3px;
-      font-family: "montserrat", sans-serif;
+      font-family: montserrat, sans-serif;
       font-weight: 700;
-      font-size: rem(22px);
-      margin: 8px 0 10px;
+      font-size: rem(20px);
+      margin: 0;
       line-height: 32px;
-      padding: 0 12px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -109,15 +118,23 @@
         background-color: rgba(34, 34, 34, 0.185);
         cursor: text;
       }
+
+      &::placeholder{
+        color: #172b4d;
+        font-size: rem(16px);
+      }
     }
 
     .board-title-input:focus {
       background-color: white;
       box-shadow: inset 0 0 0 2px #0079bf;
+      font-family: montserrat, sans-serif;
       font-weight: 700;
-      font-size: rem(22px);
+      font-size: rem(19px);
       line-height: 32px;
-      padding: 0 12px;
+      padding: 0 5px;
+      color: #172b4d;
+
     }
   }
 }
@@ -164,6 +181,10 @@
 }
 .menu-btn {
   cursor: pointer;
+  
+  img{
+    filter: invert(1);
+  }
 }
 .board-menu-wrapper {
   position: absolute;

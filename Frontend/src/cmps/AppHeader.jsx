@@ -4,8 +4,14 @@ import { Component } from 'react'
 import { logout, loadUser } from '../store/actions/userAction.js'
 class _AppHeader extends Component {
   state = {
-    loggedInUser: null
+    loggedInUser: null,
+    isAddBoardShow: false,
   }
+
+  toggleAddBoard = () => {
+    this.setState({ isAddBoardShow: !this.state.isAddBoardShow })
+  }
+
   async componentDidMount() {
     console.log(this.props);
     const user = await this.props.loadUser()
@@ -24,6 +30,7 @@ class _AppHeader extends Component {
     // if (!loggedInUser) return <div>Loading...</div>
     console.log('LOGGED IN USER', loggedInUser);
     return (
+      <>
       <header className="app-header flex space-between">
         <nav>
           <ul className="header-list flex justify-center">
@@ -38,6 +45,7 @@ class _AppHeader extends Component {
           <button><Link to="/login">Login</Link></button>
         </div>
       </header>
+      </>
     )
   }
 }
