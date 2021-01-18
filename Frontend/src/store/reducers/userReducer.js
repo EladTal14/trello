@@ -13,7 +13,7 @@ export function userReducer(state = initialState, action) {
     case 'SET_USER':
       return { ...state, loggedInUser: action.user }
     case 'LOGIN':
-      return { ...state, loggedInUser: action.user }
+      return { ...state, loggedInUser: { ...action.user } }
     case 'LOGOUT':
       return { ...state, loggedInUser: null }
     case 'SIGNUP':

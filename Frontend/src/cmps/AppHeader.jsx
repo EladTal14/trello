@@ -3,26 +3,9 @@ import { connect } from 'react-redux'
 import { Component } from 'react'
 import { logout, loadUser } from '../store/actions/userAction.js'
 class _AppHeader extends Component {
-  state = {
-    loggedInUser: null
-  }
-  async componentDidMount() {
-    console.log(this.props);
-    const user = await this.props.loadUser()
-    if (user) this.setState({ loggedInUser: user })
-  }
-  componentDidUpdate(prevProps, prevState) {
-    console.log('prevProps', prevProps);
-    console.log('prevState', prevState);
-    console.log('state', this.state);
-    if (prevProps.loggedInUser !== this.state.loggedInUser)
-      this.setState({ loggedInUser: prevProps.loggedInUser })
-  }
+
   render() {
-    window.loggedInUser = this.state
-    const { loggedInUser } = this.state
-    // if (!loggedInUser) return <div>Loading...</div>
-    console.log('LOGGED IN USER', loggedInUser);
+    const { loggedInUser } = this.props
     return (
       <header className="app-header flex space-between">
         <nav>
