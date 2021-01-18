@@ -18,7 +18,7 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
 
       {card.labels && card.labels.length >= 1 && <div className="card-labels-section">
         <h2 className="card-label-h2">labels</h2>
-        <div className="flex">
+        <div className="flex labels-container">
         {card.labels.map((label, idx) => {
           return <button key={idx} className="label-btn" style={{ backgroundColor: label.color }}>{label.title}</button>
         })}

@@ -182,8 +182,8 @@ class _CardLabels extends Component {
                   style={{ backgroundColor: label.color }}
                   onClick={() => this.onChooseLabel(label)}>
                   {label.title}
-                  <span>{this.checkForMark(label) ? '✓' : ''}</span>
                 </p>
+                  <span className="checkmark">{this.checkForMark(label) ? '✓' : ''}</span>
                 <button className="label-edit-btn" onClick={() => this.onEditClick(label)}>
                   <img src="https://res.cloudinary.com/basimgs/image/upload/v1610872377/pen_so2afr.png" alt="" />
                 </button>

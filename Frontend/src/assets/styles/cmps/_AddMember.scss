@@ -14,10 +14,10 @@
 
 .members-container{
 
-    color: #233655;
+    color: $clr6;
     background: #fff;
     border-radius: 3px;
-    box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
+    box-shadow: $modal-shadow;
     border: none;
     padding: 8px;
     width: 268px;
@@ -48,7 +48,7 @@
     }
 
     .new-member-list{
-        color: #233655;
+        color: $clr6;
         font-size: 14px;
         margin-bottom: 4px;
         padding: 4px;
