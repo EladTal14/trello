@@ -14,8 +14,8 @@
       },
       "members": [
         {
-          "_id": "u103",
-          "fullname": "Basya Kritchker",
+          "_id": "u101",
+          "fullname": "Adir Hagag",
           "username": "abasdasdi@ababmi.com",
           "password": "123",
           "imgUrl": "http://some-img.jpg"
@@ -24,13 +24,6 @@
           "_id": "u102",
           "fullname": "Elad Tal",
           "username": "abasdi@ababmi.com",
-          "password": "123",
-          "imgUrl": "http://some-img.jpg"
-        },
-        {
-          "_id": "u101",
-          "fullname": "Adir Hagag",
-          "username": "abasdasdi@ababmi.com",
           "password": "123",
           "imgUrl": "http://some-img.jpg"
         }
@@ -128,28 +121,14 @@
               "id": "yS3N5PJ"
             },
             {
-              "title": "sddaas",
-              "id": "dPxGk6O"
+              "title": "lest add members",
+              "id": "C3MY6Pj",
+              "members": []
             },
             {
-              "title": "esd;sd",
-              "id": "tlo"
-            },
-            {
-              "title": "sdfdfsf",
-              "id": "mR2Kea5"
-            },
-            {
-              "title": "sdfsdfsdf",
-              "id": "puvFI8H"
-            },
-            {
-              "title": "aaaa",
-              "id": "865o0OP"
-            },
-            {
-              "title": "asd",
-              "id": "PMtZHel"
+              "title": "and some\nmore members... ya",
+              "id": "OXKstIt",
+              "members": []
             }
           ]
         },
