@@ -835,3 +835,10 @@
 1/18/2021, 2:08:56 PM - ERROR - Failed to Login Invalid username or password (sid: hwjhtej6cWmiRCCUs4x7gD0Mde77LFkj)
 1/18/2021, 2:11:23 PM - ERROR - Failed to Login Invalid username or password (sid: hwjhtej6cWmiRCCUs4x7gD0Mde77LFkj)
 1/18/2021, 2:11:36 PM - ERROR - Failed to Login Invalid username or password (sid: hwjhtej6cWmiRCCUs4x7gD0Mde77LFkj)
+1/18/2021, 2:56:53 PM - DEBUG - auth.service - signup with username: ASI, fullname: ASI GOOD (sid: jiRAnuvurb5ddFUroZ5APvWiSITHA_2x)
+1/18/2021, 2:56:53 PM - DEBUG - auth.route - new account created: {"username":"ASI","password":"$2b$10$Q.i63BzXrW2Wyb0C4yTCuekMr8ETLonXjd4hdzE9GHunZAMpL5DBG","fullname":"ASI GOOD","_id":"60058595eb67bd0f8065b44b"} (sid: jiRAnuvurb5ddFUroZ5APvWiSITHA_2x)
+1/18/2021, 3:20:36 PM - DEBUG - auth.service - signup with username: pukiben, fullname: puki ben (sid: tSVJxwImbjGhs5G29yLGV7TZC3MJAd7Y)
+1/18/2021, 3:20:37 PM - DEBUG - auth.route - new account created: {"username":"pukiben","password":"$2b$10$C8Gprquvici8Xekr56aiLOz9/ZjCbmVdcQRZaWtnc0cqMQbNpv6FW","fullname":"puki ben","_id":"60058b25eb67bd0f8065b44c"} (sid: tSVJxwImbjGhs5G29yLGV7TZC3MJAd7Y)
+1/18/2021, 3:48:11 PM - ERROR - Failed to Login Invalid username or password (sid: e3UMhtPfv6rcD7gBTHCelQYVylC8L5aa)
+1/18/2021, 3:57:59 PM - INFO - Server is running on port: 3030 
+1/18/2021, 4:00:30 PM - INFO - Server is running on port: 3030 
