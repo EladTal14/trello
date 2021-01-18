@@ -6,6 +6,7 @@ async function login(req, res) {
     try {
         const user = await authService.login(username, password)
         req.session.user = user
+        console.log(user);
         res.json(user)
     } catch (err) {
         logger.error('Failed to Login ' + err)
@@ -29,7 +30,7 @@ async function signup(req, res) {
     }
 }
 
-async function logout(req, res){
+async function logout(req, res) {
     try {
         req.session.destroy()
         res.send({ msg: 'Logged out successfully' })

@@ -1,8 +1,5 @@
-import Axios from 'axios'
 import { httpService } from './httpService.js'
-const axios = Axios.create({
-    withCredentials: true
-})
+import { storageService } from './sessionStorage.js'
 
 const STORAGE_KEY = 'loggedinUser'
 
@@ -11,43 +8,43 @@ export const userService = {
     login,
     logout,
     signup,
-    // loadUser
+    loadUser
 }
+
 
 
 // const baseUrl = 'http://localhost:3030/api/user'
 // const baseUrl = 'http://localhost:3030/user'
-const baseUrl = 'http://localhost:3030/api/auth';
+// const baseUrl = 'http://localhost:3030/api/auth';
 
 async function query() {
     return httpService.get(`user`)
 }
 
-
-
-async function login(credentials){
-    return httpService.post(`login`, credentials);
-    // return _handleLogin(user);
+async function login(credentials) {
+    //loadUser()
+    const user = await httpService.post(`auth/login`, credentials);
+    return _handleLogin(user);
 }
 
-async function logout() {
-    return httpService.post(`logout`);
-    // storageService.clear();
+async function logout() {//check with liel how to do this
+    storageService.clear();
+    await httpService.post(`auth/logout`);
 }
 
-// function _handleLogin(user) {
-//     storageService.store(STORAGE_KEY, user)
-//     return user
-// }
 
-async function signup(credentials){
-    console.log('credentials',credentials)
-    return httpService.post(`signup`, credentials);
-    // return _handleLogin(user);
+async function signup(credentials) {
+    console.log('credentials', credentials)
+    const newUser = await httpService.post(`auth/signup`, credentials);
+    return _handleLogin(newUser);
 }
 
-// async function loadUser(){
-//     const user = storageService.load(STORAGE_KEY)
-//     console.log('user', user);
-//     return user
-// }
+async function loadUser() {
+    const user = storageService.load(STORAGE_KEY)
+    console.log('user', user);
+    return user
+}
+function _handleLogin(user) {
+    storageService.store(STORAGE_KEY, user)
+    return user
+}

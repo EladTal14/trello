@@ -11,22 +11,41 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import { connect } from 'react-redux'
+import { login } from '../store/actions/userAction.js'
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+export class _Login extends Component {
+  state = {
+    user: {
+      username: '',
+      password: '',
+    },
+    err: ''
+  }
+  handleChange = ({ target }) => {
+    const field = target.name
+    const value = (target.type === 'number') ? +target.value : target.value
 
-export class Login extends Component {
+    this.setState(prevState => ({
+      user: {
+        ...prevState.user,
+        [field]: value
+      }
+    }))
+  }
+  onLogin = async (ev) => {
+    ev.preventDefault()
+    try {
+      await this.props.login(this.state.user)
+      console.log(this.props.loggedInUser);
+      if (this.props.loggedInUser) this.props.history.push('/boards')
+    } catch (err) {
+      console.log('login', err);
+      this.setState({ err: 'no user' })
+    }
+  }
   render() {
+    const { user, err } = this.state
     return (
       <Container component="main" maxWidth="xs" >
         <CssBaseline />
@@ -43,23 +62,24 @@ export class Login extends Component {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h2" variant="h5">
-            Sign in
+            Login
         </Typography>
-          <form style={{
+          <div className="err">{err}</div>
+          <form onSubmit={this.onLogin} style={{
             width: '100%',
             marginTop: '5px'
-          }} noValidate>
+          }} >
             <TextField
-              variant="filled"
+              variant="outlined"
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="Username"
+              label="Username"
+              name="username"
               autoFocus
-
+              value={user.username}
+              onChange={this.handleChange}
             />
             <TextField
               variant="outlined"
@@ -71,11 +91,10 @@ export class Login extends Component {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={user.password}
+              onChange={this.handleChange}
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+            {err && <span>err</span>}
             <Button
               type="submit"
               fullWidth
@@ -83,15 +102,15 @@ export class Login extends Component {
               color="primary"
               style={{ marginTop: '10px' }}
             >
-              Sign In
+              Login
           </Button>
             <Grid container>
-              <Grid item xs>
+              <Grid item xs style={{ marginTop: '10px' }}>
                 <Link href="#" variant="body2">
                   Forgot password?
               </Link>
               </Grid>
-              <Grid item>
+              <Grid item style={{ marginTop: '10px' }}>
                 <Link href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
@@ -100,10 +119,22 @@ export class Login extends Component {
           </form>
         </div>
         <Box mt={8}>
-          <Copyright />
+
         </Box>
       </Container >
     );
   }
+}
+const mapGlobalStateToProps = (state) => {
+
+  return {
+    users: state.userModule.users,
+    loggedInUser: state.userModule.loggedInUser
+  }
 
 }
+
+const mapDispatchToProps = {
+  login
+}
+export const Login = connect(mapGlobalStateToProps, mapDispatchToProps)(_Login)

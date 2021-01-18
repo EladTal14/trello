@@ -1,7 +1,7 @@
 import { userService } from '../../services/userService.js'
 
 
-export function loadUsers() { 
+export function loadUsers() {
     return async (dispatch) => {
         try {
             const users = await userService.query()
@@ -12,45 +12,45 @@ export function loadUsers() {
     }
 }
 
-export function login(userCred) { 
+export function login(userCred) {
     return async (dispatch) => {
-        try{
-            const user = await userService.login(userCred) 
-             dispatch({ type: 'LOGIN', user })
-        } catch (err){
+        try {
+            const user = await userService.login(userCred)
+            dispatch({ type: 'LOGIN', user })
+        } catch (err) {
             console.log('err userAction LOGIN USER', err);
         }
     }
 }
 
-export function logout() { 
+export function logout() {
     return async (dispatch) => {
-        try{
-            await userService.login() 
-             dispatch({ type: 'LOGOUT' })
-        } catch (err){
+        try {
+            await userService.logout()
+            dispatch({ type: 'LOGOUT' })
+        } catch (err) {
             console.log('err userAction LOGOUT USER', err);
         }
     }
 }
 
-export function signup(userCred) { 
+export function signup(userCred) {
     return async (dispatch) => {
-        try{
-            const user = await userService.signup(userCred) 
-             dispatch({ type: 'SIGNUP', user })
-        } catch (err){
+        try {
+            const user = await userService.signup(userCred)
+            dispatch({ type: 'SIGNUP', user })
+        } catch (err) {
             console.log('err userAction SIGNUP USER', err);
         }
     }
 }
 
-export function loadUser(userCred) { 
+export function loadUser(userCred) {
     return async (dispatch) => {
-        try{
-            const user = await userService.loadUser(userCred) 
-             dispatch({ type: 'SET_USER', user })
-        } catch (err){
+        try {
+            const user = await userService.loadUser(userCred)
+            dispatch({ type: 'SET_USER', user })
+        } catch (err) {
             console.log('err userAction LOAD USER', err);
         }
     }

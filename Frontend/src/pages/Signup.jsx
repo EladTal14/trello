@@ -9,20 +9,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { connect } from 'react-redux'
-// import { addUser } from '../store/actions/userActions.js';
-function Copyright() {
-
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        ToyzRass
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { signup } from '../store/actions/userAction.js';
 
 class _Signup extends Component {
   state = {
@@ -48,7 +35,7 @@ class _Signup extends Component {
   onSignUpUser = async (ev) => {
     ev.preventDefault()
     try {
-      // await this.props.addUser(this.state.user)
+      await this.props.signup(this.state.user)
       this.props.history.push('/boards')
 
     } catch (err) {
@@ -105,7 +92,7 @@ class _Signup extends Component {
               onChange={this.handleChange}
             />
             <TextField
-              variant="outlined"
+              variant="filled"
               margin="normal"
               required
               fullWidth
@@ -113,7 +100,6 @@ class _Signup extends Component {
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
               value={user.password}
               onChange={this.handleChange}
             />
@@ -129,7 +115,7 @@ class _Signup extends Component {
           </form>
         </div>
         <Box mt={8}>
-          <Copyright />
+
         </Box>
       </Container >
     );
@@ -145,6 +131,6 @@ const mapGlobalStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  // addUser
+  signup
 }
 export const Signup = connect(mapGlobalStateToProps, mapDispatchToProps)(_Signup)
