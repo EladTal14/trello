@@ -13,6 +13,6 @@ export function CardHeader({ card, onHandleInputChange, group }) {
           spellCheck="false"
         />
       </div>
-      <p className="card-title-p">In List in {group.title}</p>
+      <p className="card-title-p">In list {group.title}</p>
     </div>)
 }

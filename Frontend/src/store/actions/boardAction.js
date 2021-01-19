@@ -16,6 +16,7 @@ export function loadBoard(boardId) {
     return async (dispatch) => {
         try {
             const board = await boardService.getBoardById(boardId)
+            console.log('board from DISPATCH', board)
             dispatch({ type: 'SET_BOARD', board })
         } catch (err) {
             console.log('err boardAction LOAD BOARD', err);

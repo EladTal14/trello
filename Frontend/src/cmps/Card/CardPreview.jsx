@@ -23,7 +23,6 @@ export class _CardPreview extends Component {
 
     render() {
         const { card, index, group } = this.props
-        const { showDetails, userClicked } = this.state
 
         return (
             <div className="card-preview" onClick={() => this.onShowCard(card, group)}>

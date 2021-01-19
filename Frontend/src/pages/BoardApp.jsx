@@ -65,37 +65,20 @@ export class _BoardApp extends Component {
         await this.props.saveBoard(board)
     }
 
-    // onAddLabel = async (label) => {
-    //     // const isUpdate = board.labels.find((currLabel) => currLabel.id === label.id)
-    //     const { board } = this.props
-    //     let updatedLabels;
-    //     let isUpdate;
-
-    //     if (board.labels) {
-    //         isUpdate = board.labels.find((currLabel) => currLabel.id === label.id)
-    //         if (isUpdate) {
-    //             updatedLabels = board.labels.map((currLabel) => currLabel.id === label.id ? label : currLabel)
-    //         } else {
-    //             updatedLabels = [...board.labels, label]
-    //         }
-    //     } else {
-    //         updatedLabels = new Array(label)
-    //     }
-
-    //     board.labels = [...updatedLabels]
-    //     await this.props.saveBoard(board)
-    // }
-
     onAddLabel = async (label) => {
         const { board } = this.props
         let updatedLabels;
+        let isUpdate;
 
-        const isUpdate = board.labels.find((currLabel) => currLabel.id === label.id)
-
-        if (isUpdate) {
-            updatedLabels = board.labels.map((currLabel) => currLabel.id === label.id ? label : currLabel)
+        if (board.labels) {
+            isUpdate = board.labels.find((currLabel) => currLabel.id === label.id)
+            if (isUpdate) {
+                updatedLabels = board.labels.map((currLabel) => currLabel.id === label.id ? label : currLabel)
+            } else {
+                updatedLabels = [...board.labels, label]
+            }
         } else {
-            updatedLabels = [...board.labels, label]
+            updatedLabels = new Array(label)
         }
 
         board.labels = [...updatedLabels]
