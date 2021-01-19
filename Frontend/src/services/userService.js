@@ -34,14 +34,14 @@ async function logout() {//check with liel how to do this
 
 
 async function signup(credentials) {
-    console.log('credentials', credentials)
+    // console.log('credentials', credentials)
     const newUser = await httpService.post(`auth/signup`, credentials);
     return _handleLogin(newUser);
 }
 
 async function loadUser() {
     const user = storageService.load(STORAGE_KEY)
-    console.log('user', user);
+    // console.log('user', user);
     return user
 }
 function _handleLogin(user) {

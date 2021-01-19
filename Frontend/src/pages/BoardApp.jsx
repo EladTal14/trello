@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadBoard, saveBoard } from '../store/actions/boardAction'
+import { loadBoard, saveBoard, cleanBoard } from '../store/actions/boardAction'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { BoardHeader } from '../cmps/BoardHeader/BoardHeader'
 import { GroupList } from '../cmps/Group/GroupList'
@@ -42,6 +42,8 @@ export class _BoardApp extends Component {
         this.eventBusLabelTerminate()
         this.eventBusRemoveTerminate()
         this.eventBusShowPreviewDetailsTerminate()
+        this.props.cleanBoard()
+        // this.props.board = null
     }
 
     loadBoard = async () => {
@@ -153,8 +155,8 @@ export class _BoardApp extends Component {
         if (!board) return <p>Loading...</p>
         // let { isDetailsShown } = this.state
         let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
-        console.log('isPreviewDetailsShown', isPreviewDetailsShown);
-        console.log('userClicked', userClicked);
+        // console.log('isPreviewDetailsShown', isPreviewDetailsShown);
+        // console.log('userClicked', userClicked);
         // if (this.refBoard && this.refBoard.current) {
         //     console.log(this.refBoard.current.clientHeight);
         //     console.log(this.refBoard.current.scrollHeight);
@@ -198,6 +200,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     loadBoard,
     saveBoard,
+    cleanBoard
 }
 
 export const BoardApp = connect(mapStateToProps, mapDispatchToProps)(_BoardApp);

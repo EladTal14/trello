@@ -14,7 +14,6 @@ export class _CardPreview extends Component {
         eventBusService.emit('show-details', true)
     }
     showPreviewDetails = (ev, card, group) => {
-        console.log('ev', ev);
         this.props.setCard(card)
         this.props.setGroup(group)
         ev.stopPropagation()
@@ -23,8 +22,6 @@ export class _CardPreview extends Component {
 
     render() {
         const { card, index, group } = this.props
-        const { showDetails, userClicked } = this.state
-
         return (
             <div className="card-preview" onClick={() => this.onShowCard(card, group)}>
                 <Draggable key={card.id} draggableId={card.id} index={index}>
@@ -40,12 +37,12 @@ export class _CardPreview extends Component {
                                     {...provided.dragHandleProps}
                                     style={getItemStyle(snapshot.isDragging, provided.draggableProps.style, style)}
                                 >
+                                    <button className="show-preview-details-btn" onClick={(ev) => this.showPreviewDetails(ev, card, group)}><img className="show-preview-details-pen" src="https://res.cloudinary.com/basimgs/image/upload/v1610873061/pen_lgmg47.png" alt="pen" /></button>
                                     {card.style && (card.style.imgUrl ? <div className="card-img-cover" style={{ backgroundImage: `url(${card.style.imgUrl}` }} ></div> :
                                         <div className="card-color-cover" style={{ backgroundColor: card.style.color }}></div>)}
                                     <CardPreviewLabel card={card} />
                                     <div className="flex space-between">
                                         <pre>{card.title}</pre>
-                                        <button className="show-preview-details-btn" onClick={(ev) => this.showPreviewDetails(ev, card, group)}>C</button>
 
                                     </div>
                                     {/* <CardPreviewDetails card={card} /> */}

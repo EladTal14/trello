@@ -33,14 +33,13 @@
 @import "cmps/CardActivity";
 @import "cmps/AddMember";
 @import "cmps/DatePicker";
+@import "cmps/CardPreviewDetails";
 // @import "components/cat-card.scss";
 .App {
   height: 100vh;
   background-size: cover;
 }
-.placeholder {
-  width: 300px;
-}
+
 //transfer to grouplist
 
 // .my-input {

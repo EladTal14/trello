@@ -33,6 +33,15 @@ export function saveBoard(board) {
         }
     }
 }
+export function cleanBoard() {
+    return (dispatch) => {
+        try {
+            dispatch({ type: 'CLEAN_BOARD' })
+        } catch (err) {
+            console.log('err boardAction SAVE BOARD', err);
+        }
+    }
+}
 
 // export function removeBoard(boardId) {
 //     return async (dispatch) => {
