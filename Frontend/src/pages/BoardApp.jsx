@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadBoard, saveBoard } from '../store/actions/boardAction'
+import { loadBoard, saveBoard, cleanBoard } from '../store/actions/boardAction'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { BoardHeader } from '../cmps/BoardHeader/BoardHeader'
 import { GroupList } from '../cmps/Group/GroupList'
@@ -42,6 +42,8 @@ export class _BoardApp extends Component {
         this.eventBusLabelTerminate()
         this.eventBusRemoveTerminate()
         this.eventBusShowPreviewDetailsTerminate()
+        this.props.cleanBoard()
+        // this.props.board = null
     }
 
     loadBoard = async () => {
@@ -65,37 +67,20 @@ export class _BoardApp extends Component {
         await this.props.saveBoard(board)
     }
 
-    // onAddLabel = async (label) => {
-    //     // const isUpdate = board.labels.find((currLabel) => currLabel.id === label.id)
-    //     const { board } = this.props
-    //     let updatedLabels;
-    //     let isUpdate;
-
-    //     if (board.labels) {
-    //         isUpdate = board.labels.find((currLabel) => currLabel.id === label.id)
-    //         if (isUpdate) {
-    //             updatedLabels = board.labels.map((currLabel) => currLabel.id === label.id ? label : currLabel)
-    //         } else {
-    //             updatedLabels = [...board.labels, label]
-    //         }
-    //     } else {
-    //         updatedLabels = new Array(label)
-    //     }
-
-    //     board.labels = [...updatedLabels]
-    //     await this.props.saveBoard(board)
-    // }
-
     onAddLabel = async (label) => {
         const { board } = this.props
         let updatedLabels;
+        let isUpdate;
 
-        const isUpdate = board.labels.find((currLabel) => currLabel.id === label.id)
-
-        if (isUpdate) {
-            updatedLabels = board.labels.map((currLabel) => currLabel.id === label.id ? label : currLabel)
+        if (board.labels) {
+            isUpdate = board.labels.find((currLabel) => currLabel.id === label.id)
+            if (isUpdate) {
+                updatedLabels = board.labels.map((currLabel) => currLabel.id === label.id ? label : currLabel)
+            } else {
+                updatedLabels = [...board.labels, label]
+            }
         } else {
-            updatedLabels = [...board.labels, label]
+            updatedLabels = new Array(label)
         }
 
         board.labels = [...updatedLabels]
@@ -153,8 +138,8 @@ export class _BoardApp extends Component {
         if (!board) return <p>Loading...</p>
         // let { isDetailsShown } = this.state
         let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
-        console.log('isPreviewDetailsShown', isPreviewDetailsShown);
-        console.log('userClicked', userClicked);
+        // console.log('isPreviewDetailsShown', isPreviewDetailsShown);
+        // console.log('userClicked', userClicked);
         // if (this.refBoard && this.refBoard.current) {
         //     console.log(this.refBoard.current.clientHeight);
         //     console.log(this.refBoard.current.scrollHeight);
@@ -198,6 +183,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     loadBoard,
     saveBoard,
+    cleanBoard
 }
 
 export const BoardApp = connect(mapStateToProps, mapDispatchToProps)(_BoardApp);

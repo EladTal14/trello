@@ -1,6 +1,7 @@
 .boards-page {
     padding: 20px;
-
+    max-height: 100vh;
+    overflow-y: auto;
     .boards-container {
         max-width: 960px;
         margin: 0 auto;

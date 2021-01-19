@@ -2,8 +2,7 @@ import { utilService } from "../../services/utilService"
 import { CardActivityContainer } from "./CardActivityContainer";
 import { CardChecklist } from "./CardChecklist"
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-
-var moment = require('moment');
+import moment from "moment"
 
 export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, onHandleActivitiesChange, addOrCancelChecklist }) {
   return (
@@ -22,17 +21,17 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
         {/* </div> */}
       </div>}
 
-      {card.labels && card.labels.length >= 1 && <div className="card-labels-section">
-        <h2 className="card-label-h2">labels</h2>
+      {card.labels && card.labels.length > 0 && <div className="card-labels-section">
+        <h2 className="card-label-h2">Labels</h2>
         <div className="flex labels-container">
-        {card.labels.map((label, idx) => {
-          return <button key={idx} className="label-btn" style={{ backgroundColor: label.color }}>{label.title}</button>
-        })}
+          {card.labels.map((label, idx) => {
+            return <button key={idx} className="label-btn" style={{ backgroundColor: label.color }}>{label.title}</button>
+          })}
         </div>
       </div>}
 
       {card.dueDate && <div className="due-date-wrapper">
-        <h2 className="due-date-h2">due date</h2>
+        <h2 className="due-date-h2">Due Date</h2>
         <p className="due-date">{moment(card.dueDate).format('LLL')}</p>
       </div>}
 
@@ -51,7 +50,7 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
         />
       </div>
 
-      {card.checklist && card.checklist.todos.length >= 1 &&
+      {card.checklist?.todos?.length > 0 &&
         <CardChecklist card={card} onHandleChecklistChange={onHandleChecklistChange} addOrCancelChecklist={addOrCancelChecklist} />}
       <CardActivityContainer card={card} onHandleActivitiesChange={onHandleActivitiesChange} />
     </div>

@@ -27,14 +27,11 @@ export class CardChecklist extends Component {
 
   onHandleTodosChange = (ev, todo) => {
     const { todos } = this.state.checklist
+    const value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value
+    const { name } = ev.target
+    todo[name] = value
 
-    let updatedTodos = todos.map((currTodo) => {
-      if (currTodo.id === todo.id) {
-        if (ev.target.type === 'checkbox') currTodo.isDone = !currTodo.isDone
-        else currTodo.title = ev.target.value
-      }
-      return currTodo
-    })
+    const updatedTodos = [...todos]
 
     this.saveTodos(updatedTodos)
   }
@@ -70,12 +67,7 @@ export class CardChecklist extends Component {
 
   onHandleNewTodoChange = ({ target }) => {
     const { value } = target
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        newTodoTitle: value
-      }
-    })
+    this.setState({ newTodoTitle: value })
   }
 
   toggleIsAddOpen = () => {

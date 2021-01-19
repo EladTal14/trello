@@ -38,6 +38,7 @@ async function getById(boardId) {
         //     delete board.byUser
         //     return board
         // })
+        console.log('board FROM SERVICE', board)
         return board
     } catch (err) {
         logger.error(`while finding board ${boardId}`, err)
