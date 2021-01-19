@@ -57,7 +57,7 @@ class _CardDetails extends Component {
         ...prevState.card,
         [name]: value
       }
-    }))
+    }), () => this.saveChanges())
   }
 
   onHandleChecklistChange = (checklist) => {
@@ -66,7 +66,7 @@ class _CardDetails extends Component {
         ...prevState.card,
         checklist: { ...checklist }
       }
-    }))
+    }), () => this.saveChanges())
   }
 
   onHandleActivitiesChange = (comments) => {
@@ -182,10 +182,9 @@ class _CardDetails extends Component {
 
   render() {
     const { card } = this.state
-    const { group, board } = this.props
+    const { group } = this.props
     const usersForDisplay = this.usersForDisplay
     if (!card) return <div>Loading...</div>
-    // let cardWithTxt = {}
 
     return (
       <div className="card-details flex column align-center">
@@ -202,7 +201,15 @@ class _CardDetails extends Component {
           </div>}
 
         <div className="card-details-wrapper flex column">
+<<<<<<< HEAD
+          <CardHeader
+            card={card}
+            onHandleInputChange={this.onHandleInputChange}
+            group={group}
+          />
+=======
           <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
+>>>>>>> 7404d448c0da15ec8d7f1dc9d00c91d1fddee926
           <div className="card-content flex">
             <CardInfo
               card={card}
