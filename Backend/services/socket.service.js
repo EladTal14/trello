@@ -45,11 +45,9 @@ function connectSockets(http, session) {
             gIo.to(socket.myTopic).emit('chat addMsg', msg)
         })
         socket.on('new comment', (comment) => {
-            console.log('nickname: ', comment);
             gIo.emit('commented', comment);
         });
         socket.on('card added', (val) => {
-            console.log('VAL IS', val);
             gIo.emit('load board', val);
         });
 
