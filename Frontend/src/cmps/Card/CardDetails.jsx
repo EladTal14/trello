@@ -6,7 +6,6 @@ import { CardInfo } from './CardInfo'
 import { clearState } from '../../store/actions/cardAction.js'
 import { saveBoard } from '../../store/actions/boardAction.js'
 import { CardSide } from './CardSide'
-// TODO: find a way to merge all handle inputs
 // TODO: go back to handle click outside async lielm1995
 
 class _CardDetails extends Component {
@@ -66,11 +65,11 @@ class _CardDetails extends Component {
         ...prevState.card,
         checklist: { ...checklist }
       }
-    }), () => this.saveChanges())
+    }))
+    // }), () => this.saveChanges())
   }
 
   onHandleActivitiesChange = (comments) => {
-    console.log('comments', comments)
     this.setState(prevState => ({
       card: {
         ...prevState.card,

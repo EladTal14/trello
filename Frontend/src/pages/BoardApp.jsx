@@ -24,6 +24,8 @@ export class _BoardApp extends Component {
     componentDidMount() {
         socketService.setup()
         this.loadBoard()
+        socketService.setup()
+        socketService.on('load board', this.updateBoard)
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
         this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
@@ -35,8 +37,14 @@ export class _BoardApp extends Component {
         this.eventBusLabelTerminate()
         this.eventBusRemoveTerminate()
         this.eventBusShowPreviewDetailsTerminate()
+        socketService.terminate()
         this.props.cleanBoard()
         // this.props.board = null
+    }
+
+    // check if right
+    updateBoard = (board) => {
+     this.props.saveBoard(board)   
     }
 
     loadBoard = async () => {
@@ -90,6 +98,8 @@ export class _BoardApp extends Component {
         const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
         board.groups[groupIdx].cards.push(card)
         await this.props.saveBoard(board)
+
+        socketService.emit('card added', board)
     }
 
     onDragEnd = (result) => {
