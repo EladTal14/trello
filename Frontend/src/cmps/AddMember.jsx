@@ -2,13 +2,23 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { utilService } from '../services/utilService'
 import Input from '@material-ui/core/Input';
+import { CSSTransition } from 'react-transition-group'
 
 export class _AddMember extends Component {
 
     state = {
+        mounted: false,
         filterBy: {
             fullname: '',
         }
+    }
+
+    componentDidMount() {
+        this.setState({ mounted: true })
+    }
+
+    onClose = () => {
+        this.setState({ mounted: false })
     }
 
     handleChange = ({ target }) => {
@@ -27,13 +37,14 @@ export class _AddMember extends Component {
 
     render() {
         const { users, members } = this.props
-        const { filterBy } = this.state
+        const { filterBy, mounted } = this.state
         console.log('current members', members);
         return ( 
+            <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleMembers}>
             <div className="members-container">
                 <div className="add-member-header flex spase-between">
                     <h3>Members</h3>
-                    <button onClick={this.props.toggleMembers} className="member-close-btn">✕</button>
+                    <button onClick={this.onClose} className="member-close-btn">✕</button>
                 </div>
                 <Input type="text" name="fullname" value={filterBy.fullname} onChange={this.handleChange} placeholder="Search members..." />
                 <div className="new-member-list flex column">
@@ -48,6 +59,7 @@ export class _AddMember extends Component {
                         </div>)}
                 </div>
             </div>
+            </CSSTransition>
         )
     }
 }

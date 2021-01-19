@@ -7,13 +7,18 @@ import { GroupList } from '../cmps/Group/GroupList'
 import { CardDetails } from '../cmps/Card/CardDetails'
 import { boardService } from '../services/boardService'
 import { eventBusService } from '../services/eventBusService.js'
+import { CardPreviewDetails } from '../cmps/Card/CardPreviewDetails'
 
 export class _BoardApp extends Component {
 
     state = {
         isDetailsShown: false,
         scrollLeft: 0,
-        isPreviewDetailsShown: false
+        isPreviewDetailsShown: false,
+        userClicked: {
+            x: null,
+            y: null
+        }
     }
     refBoard = React.createRef()
     componentDidMount() {
@@ -21,14 +26,22 @@ export class _BoardApp extends Component {
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
         this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
+        this.eventBusShowPreviewDetailsTerminate = eventBusService.on('show-preview-details', this.showPreviewCardDetails)
     }
-
+    showPreviewCardDetails = (ev) => {
+        console.log(ev);
+        this.setState({
+            userClicked: { x: ev?.clientX, y: ev?.clientY },
+            isPreviewDetailsShown: !this.state.isPreviewDetailsShown
+        })
+    }
     check = (ev) => { console.log(ev); }
 
     componentWillUnmount() {
         this.eventBusTerminate()
         this.eventBusLabelTerminate()
         this.eventBusRemoveTerminate()
+        this.eventBusShowPreviewDetailsTerminate()
     }
 
     loadBoard = async () => {
@@ -137,12 +150,15 @@ export class _BoardApp extends Component {
     render() {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
-        let { isDetailsShown } = this.state
         if (!board) return <p>Loading...</p>
-        if (this.refBoard && this.refBoard.current) {
-            console.log(this.refBoard.current.clientHeight);
-            console.log(this.refBoard.current.scrollHeight);
-        }
+        // let { isDetailsShown } = this.state
+        let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
+        console.log('isPreviewDetailsShown', isPreviewDetailsShown);
+        console.log('userClicked', userClicked);
+        // if (this.refBoard && this.refBoard.current) {
+        //     console.log(this.refBoard.current.clientHeight);
+        //     console.log(this.refBoard.current.scrollHeight);
+        // }
         return (
             <>
                 {this.props.currCard && isDetailsShown &&
@@ -150,13 +166,12 @@ export class _BoardApp extends Component {
                         <div className="modal-cover" onClick={() => this.toggleDetails(false)}> </div>
                         <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
-                {}
+                {isPreviewDetailsShown && <CardPreviewDetails board={board} showPreviewCardDetails={this.showPreviewCardDetails} userClicked={userClicked} card={this.props.currCard} group={this.props.currGroup} />}
                 <BoardHeader title={board.title} members={board.members} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
                 <section className="board-container" ref={this.refBoard} onScroll={this.onScroll}>
                     <DragDropContext onDragEnd={this.onDragEnd} >
                         <Droppable droppableId="app" type="group" direction="horizontal" >
                             {(provided) => (
-
                                 <div style={{ width: (board.groups.length) * 287 }} ref={provided.innerRef} {...provided.droppableProps}>
                                     <GroupList groups={board.groups} onAddCard={this.onAddCard} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
                                     {provided.placeholder}

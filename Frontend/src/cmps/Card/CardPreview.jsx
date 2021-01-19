@@ -6,34 +6,25 @@ import { setCard, setGroup } from '../../store/actions/cardAction.js'
 import { CardPreviewLabel } from './CardPreviewLabel';
 import { CardPreviewBottom } from './CardPreviewBottom';
 import NaturalDragAnimation from 'natural-drag-animation-rbdnd'
-import { CardPreviewDetails } from './CardPreviewDetails.jsx';
 export class _CardPreview extends Component {
-    state = {
-        showDetails: false,
-        userClicked: {
-            x: null,
-            y: null
-        }
-    }
+
     onShowCard = (card, group) => {
         this.props.setCard(card)
         this.props.setGroup(group)
         eventBusService.emit('show-details', true)
     }
-    showDetails = (ev) => {
+    showPreviewDetails = (ev, card, group) => {
         console.log('ev', ev);
+        this.props.setCard(card)
+        this.props.setGroup(group)
         ev.stopPropagation()
-        this.setState(prevState => {
-            return {
-                ...prevState,
-                showDetails: !this.state.showDetails,
-                userClicked: { x: ev.clientX, y: ev.clientY }
-            }
-        })
+        eventBusService.emit('show-preview-details', ev, true)
     }
+
     render() {
         const { card, index, group } = this.props
         const { showDetails, userClicked } = this.state
+
         return (
             <div className="card-preview" onClick={() => this.onShowCard(card, group)}>
                 <Draggable key={card.id} draggableId={card.id} index={index}>
@@ -54,17 +45,17 @@ export class _CardPreview extends Component {
                                     <CardPreviewLabel card={card} />
                                     <div className="flex space-between">
                                         <pre>{card.title}</pre>
-                                        <button className="show-preview-details-btn" onClick={(ev) => this.showDetails(ev)}>C</button>
+                                        <button className="show-preview-details-btn" onClick={(ev) => this.showPreviewDetails(ev, card, group)}>C</button>
 
                                     </div>
-                                    <CardPreviewDetails card={card} />
+                                    {/* <CardPreviewDetails card={card} /> */}
                                     <CardPreviewBottom card={card} />
                                 </article>
                             )}
                         </NaturalDragAnimation>
                     )}
                 </Draggable>
-                {showDetails && <CardPreviewDetails card={showDetails ? card : null} userClicked={userClicked} />}
+                {/* {showDetails && <CardPreviewDetails card={showDetails ? card : null} userClicked={userClicked} />} */}
             </div>
         )
     }
