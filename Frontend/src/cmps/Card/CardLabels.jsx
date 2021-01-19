@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { utilService } from '../../services/utilService'
 import { eventBusService } from '../../services/eventBusService'
+import { CSSTransition } from 'react-transition-group'
 // import { cardService } from '../../services/cardService'
 // TODO: maybe put in two cmps
 
@@ -16,7 +17,12 @@ class _CardLabels extends Component {
       color: ''
     },
     colors: ['#f2d601', '#ff9f19', '#eb5a46', '#c377e0', '#0179bf', '#04c2e0',
-      '#61bd50', '#50e898', '#ff78cb', '#344563', '#b3bac5']
+      '#61bd50', '#50e898', '#ff78cb', '#344563', '#b3bac5'],
+    mounted: false
+  }
+
+  onClose = () => {
+    this.setState({ mounted: false })
   }
 
   componentDidMount() {
@@ -26,7 +32,8 @@ class _CardLabels extends Component {
       this.setState(prevState => {
         return {
           ...prevState,
-          labels: [...labels]
+          labels: [...labels],
+          mounted: true
         }
       })
     }
@@ -164,13 +171,14 @@ class _CardLabels extends Component {
 
   render() {
     const { board } = this.props
-    const { isCreateLabel, colors, newLabel } = this.state
+    const { isCreateLabel, colors, newLabel, mounted } = this.state
     return (
+      <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.onToggleLabels}>
       <div className="card-labels flex column" style={{ height: isCreateLabel ? '320px' : '450px' }}>
 
         <header className="labels-header flex">
           <p>{!isCreateLabel ? 'Labels' : 'Create Label'}</p>
-          <button className="close-btn" onClick={this.props.onToggleLabels}>✕</button>
+          <button className="close-btn" onClick={this.onClose}>✕</button>
         </header>
 
         {!isCreateLabel && <section className="label-choose-container flex column">
@@ -222,6 +230,7 @@ class _CardLabels extends Component {
         </footer>
 
       </div>
+      </CSSTransition>
     )
   }
 }
