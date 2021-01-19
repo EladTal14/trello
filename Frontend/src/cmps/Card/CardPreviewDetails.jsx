@@ -141,8 +141,10 @@ class _CardPreviewDetails extends Component {
             <button className="card-preview-details-changes-btn" onClick={this.showLabel}><span className="card-preview-details-changes-icon">
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610794160/price-tag_evse4z.png" alt="label" />
             </span>Edit Labels</button>
-            {isCreateLabel && <CardLabels onToggleLabels={this.showLabel}
-              onHandleLabelsChange={this.onHandleLabelsChange} card={card} />}
+            {isCreateLabel &&
+              <div className="card-preview-details-label-wrap" style={{ top: -45, right: -130 }}>
+                <CardLabels onToggleLabels={this.showLabel}
+                  onHandleLabelsChange={this.onHandleLabelsChange} card={card} /></div>}
             <button className="card-preview-details-changes-btn flex space-between"
               onClick={this.showMembers}><span className="card-preview-details-changes-icon">
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/user_g2y481.png" alt="member" />
@@ -162,7 +164,7 @@ class _CardPreviewDetails extends Component {
               <button onClick={this.showDueDate} className="close-date-btn">✕</button>
               <Calendar onChange={this.onChange} value={value} />
             </div>}
-            <button className="card-preview-details-changes-btn " onClick={this.onRemoveCard}>
+            <button className="card-preview-details-changes-btn" onClick={this.onRemoveCard}>
               <span className="card-preview-details-changes-icon">
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" alt="Trash" />
               </span>

@@ -16,7 +16,6 @@ async function getBoards(req, res) {
 async function getBoard(req, res) {
     try {
         const board = await boardService.getById(req.params.id)
-        // socketService.emit({type: 'board changed', data: board})
         res.send(board)
     } catch (err) {
         logger.error('Failed to get board', err)
