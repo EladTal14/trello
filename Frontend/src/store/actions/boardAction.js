@@ -38,7 +38,7 @@ export function cleanBoard() {
         try {
             dispatch({ type: 'CLEAN_BOARD' })
         } catch (err) {
-            console.log('err boardAction SAVE BOARD', err);
+            console.log('err boardAction CLEAN BOARD', err);
         }
     }
 }

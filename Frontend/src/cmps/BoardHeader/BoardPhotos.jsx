@@ -5,15 +5,20 @@ import { saveBoard } from '../../store/actions/boardAction.js'
 class _BoardPhotos extends Component {
 
   photos = () => {
-    return [{ imgUrl: 'https://res.cloudinary.com/dxh5keaol/image/upload/v1610271954/samples/landscapes/nature-mountains.jpg' },
-    { imgUrl: 'https://res.cloudinary.com/dxh5keaol/image/upload/v1610271951/samples/landscapes/beach-boat.jpg' }
-      , { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712048/pexels-riccardo-bertolo-4245826_eoizb4.jpg' },
-    { imgUrl: 'https://res.cloudinary.com/dxh5keaol/image/upload/v1610271947/samples/landscapes/girl-urban-view.jpg' },
+    return [{ imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712043/pexels-roberto-nickson-2885320_ghwa3m.jpg' },
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712043/pexels-vishnu-r-nair-1105666_nkvc5j.jpg' }
+      , { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712045/pexels-eberhard-grossgasteiger-844297_xsbtqx.jpg' },
     { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712048/pexels-eberhard-grossgasteiger-1287145_iyiwh5.jpg' },
-    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712045/pexels-roberto-nickson-2559941_cguwhp.jpg' },
-    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712052/pexels-pixabay-461940_znnsxj.jpg' },
-    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712043/pexels-vishnu-r-nair-1105666_nkvc5j.jpg' },
-    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712044/pexels-sourav-mishra-3136673_tvifhm.jpg' }
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610814688/pexels-asad-photo-maldives-1450353_oq4mbu.jpg' },
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610814689/pexels-frans-van-heerden-624015_fjsy7m.jpg' },
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610814691/pexels-asad-photo-maldives-3601425_h5x2md.jpg' },
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610814691/pexels-aphiwat-chuangchoem-358904_vyfkhj.jpg' },
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611063798/pexels-pixabay-301494_iwx7bt.jpg' },
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611063800/pexels-pixabay-414102_pwa09f.jpg' },
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611063800/pexels-steve-397857_n8hqga.jpg' },
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611063805/pexels-roberto-shumski-1903702_vtanbj.jpg' },
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712046/pexels-pixabay-2150_mujmra.jpg' },
+    { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1610712043/pexels-abdullah-ghatasheh-1631677_jmc0uh.jpg' }
     ]
   }
   useImgForBgc = async (imgUrl) => {
