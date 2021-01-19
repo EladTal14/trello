@@ -10,33 +10,27 @@ export const boardService = {
 
 }
 
-async function query() {
+function query() {
     return httpService.get(`board`)
-
 }
 
-async function remove(boardId) {
+function remove(boardId) {
     return httpService.delete(`board/${boardId}`)
 }
-
-async function save(board) {
+function save(board) {
     if (board._id) {
-        const savedBoard = await httpService.put(`board/${board._id}`, board)
-        return savedBoard
+       return httpService.put(`board/${board._id}`, board)
     } else {
-        const savedBoard = await httpService.post('board', board)
-        return savedBoard
+        return httpService.post('board', board)
     }
 }
 
-async function getBoardById(boardId) {
-    const board = await httpService.get(`board/${boardId}`)
-    return board
-
+function getBoardById(boardId) {
+    return httpService.get(`board/${boardId}`)
 }
 
 async function getGroupIdxById(boardId, groupId) {
-    try {//delete try and catch????
+    try {
         const board = await getBoardById(boardId)
         const groupIdx = board.groups.findIndex(group => group.id === groupId)
         return groupIdx

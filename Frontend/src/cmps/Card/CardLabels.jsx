@@ -11,10 +11,10 @@ class _CardLabels extends Component {
   state = {
     labels: [],
     isCreateLabel: false,
-    newLabel: {
+    currLabel: {
       id: '',
       title: '',
-      color: ''
+      color: '#f2d601'
     },
     colors: ['#f2d601', '#ff9f19', '#eb5a46', '#c377e0', '#0179bf', '#04c2e0',
       '#61bd50', '#50e898', '#ff78cb', '#344563', '#b3bac5'],
@@ -44,7 +44,7 @@ class _CardLabels extends Component {
       return {
         ...prevState,
         isCreateLabel: true,
-        newLabel: { ...label }
+        currLabel: { ...label }
       }
     })
   }
@@ -60,8 +60,8 @@ class _CardLabels extends Component {
     this.setState(prevState => {
       return {
         ...prevState,
-        newLabel: {
-          ...this.state.newLabel,
+        currLabel: {
+          ...this.state.currLabel,
           [name]: val
         }
       }
@@ -78,15 +78,15 @@ class _CardLabels extends Component {
   }
 
   onAddLabel = () => {
-    const { newLabel } = this.state
+    const { currLabel } = this.state
     let labelsCopy = [...this.state.labels]
 
-    if (!newLabel.id) {
-      newLabel.id = utilService.makeId()
-      labelsCopy.push(newLabel)
+    if (!currLabel.id) {
+      currLabel.id = utilService.makeId()
+      labelsCopy.push(currLabel)
     } else {
-      const idx = labelsCopy.findIndex((label) => label.id === newLabel.id)
-      labelsCopy.splice(idx, 1, newLabel)
+      const idx = labelsCopy.findIndex((label) => label.id === currLabel.id)
+      labelsCopy.splice(idx, 1, currLabel)
     }
 
     this.setState(prevState => {
@@ -96,9 +96,8 @@ class _CardLabels extends Component {
       }
     }, () => {
       this.props.onHandleLabelsChange(this.state.labels)
-      eventBusService.emit('label-added', newLabel)
+      eventBusService.emit('label-added', currLabel)
       this.onToggleLabel()
-      // this.props.saveChanges()
       this.clearNewLabel()
     })
   }
@@ -107,7 +106,7 @@ class _CardLabels extends Component {
     this.setState(prevState => {
       return {
         ...prevState,
-        newLabel: {
+        currLabel: {
           id: '',
           title: '',
           color: ''
@@ -171,65 +170,67 @@ class _CardLabels extends Component {
 
   render() {
     const { board } = this.props
-    const { isCreateLabel, colors, newLabel, mounted } = this.state
+    const { isCreateLabel, colors, currLabel, mounted } = this.state
     return (
       <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.onToggleLabels}>
-      <div className="card-labels flex column" style={{ height: isCreateLabel ? '320px' : '450px' }}>
+        <div className="card-labels flex column" style={{ height: isCreateLabel ? '320px' : '450px' }}>
 
-        <header className="labels-header flex">
-          <p>{!isCreateLabel ? 'Labels' : 'Create Label'}</p>
-          <button className="close-btn" onClick={this.onClose}>✕</button>
-        </header>
+          <header className="labels-header flex">
+            <button className="close-btn go-back" onClick={this.onToggleLabel}>{isCreateLabel && '〈' }</button>
+            <p>{!isCreateLabel ? 'Labels' : 'Create Label'}</p>
+            <button className="close-btn" onClick={this.onClose}>✕</button>
+          </header>
 
-        {!isCreateLabel && <section className="label-choose-container flex column">
-          <ul>
-            {board.labels && board.labels.map((label, idx) => (
-              <li key={idx} className="label flex">
-                <div className="label-title flex space-between" onClick={() => this.onChooseLabel(label)} style={{ backgroundColor: label.color }}>
-                  <p>{label.title} </p>
-                  <span className="checkmark">{this.checkForMark(label) ? '✓' : ''}</span>
-                </div>
-                <button className="label-edit-btn" onClick={() => this.onEditClick(label)}>
-                  <img src="https://res.cloudinary.com/basimgs/image/upload/v1610872377/pen_so2afr.png" alt="" />
-                </button>
-              </li>
-            ))}
-          </ul>
-        </section>}
+          {!isCreateLabel && <section className="label-choose-container flex column">
+            <ul>
+              {board.labels?.map((label, idx) => (
+                <li key={label.id} className="label flex">
+                  <div className="label-title flex space-between" onClick={() => this.onChooseLabel(label)} style={{ backgroundColor: label.color }}>
+                    <p>{label.title} </p>
+                    <span className="checkmark">{this.checkForMark(label) ? '✓' : ''}</span>
+                  </div>
+                  <button className="label-edit-btn" onClick={() => this.onEditClick(label)}>
+                    <img src="https://res.cloudinary.com/basimgs/image/upload/v1610872377/pen_so2afr.png" alt="" />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>}
 
-        {isCreateLabel && <section className="create-label-container flex column">
-          <label htmlFor="title">Name</label>
-          <input
-            type="text"
-            placeholder="Enter label name..."
-            name="title"
-            id="title"
-            value={newLabel.title}
-            onChange={this.onHandleNewLabel}
-          />
-          <p>Select a color</p>
-          <ul className="flex">
-            {colors.map((color, idx) => (
-              <li
-                className="label-color-picker flex align-center justify-center"
-                key={idx}
-                name="color"
-                style={{ backgroundColor: color }}
-                onClick={() => this.onHandleNewLabel(color)}
-              >{newLabel.color === color ? '✓' : ''}</li>
-            ))}
-          </ul>
-          <div className="flex space-between">
-            <button className="save-btn" onClick={this.onAddLabel}>Create</button>
-            {newLabel.id && <button className="delete-btn" onClick={() => this.onRemoveLabel(newLabel)}>Delete</button>}
-          </div>
-        </section>}
+          {isCreateLabel && <section className="create-label-container flex column">
+            <label htmlFor="title">Name</label>
+            <input
+              type="text"
+              placeholder="Enter label name..."
+              name="title"
+              id="title"
+              value={currLabel.title}
+              onChange={this.onHandleNewLabel}
+            />
+            <p>Select a color</p>
+            <ul className="flex">
+              {colors.map((color) => (
+                <li
+                  className="label-color-picker flex align-center justify-center"
+                  key={color}
+                  name="color"
+                  style={{ backgroundColor: color }}
+                  onClick={() => this.onHandleNewLabel(color)}
+                >{currLabel.color === color ? '✓' : ''}</li>
+              ))}
+            </ul>
+            <div className="flex space-between">
+              <button className="save-btn" onClick={this.onAddLabel}>Create</button>
+              {currLabel.id && <button className="delete-btn" onClick={() => this.onRemoveLabel(currLabel)}>Delete</button>}
+            </div>
+          </section>}
 
-        <footer>
-          {!isCreateLabel && <button className="add-label-btn" onClick={this.onToggleLabel}>+ Create New Label</button>}
-        </footer>
+          {!isCreateLabel &&
+            <footer>
+              <button className="add-label-btn" onClick={this.onToggleLabel}>+ Create New Label</button>
+            </footer>}
 
-      </div>
+        </div>
       </CSSTransition>
     )
   }

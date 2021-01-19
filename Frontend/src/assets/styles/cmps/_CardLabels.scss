@@ -14,7 +14,10 @@
     border-bottom: 0.2px solid rgba(94, 108, 132, 0.25);
   }
 
-  & header :first-child {
+  // & header :first-child {
+  // }
+  
+  & header > p {
     font-size: 1.2rem;
     padding-top: 0.5rem;
     text-align: center;
@@ -100,6 +103,11 @@
 
   .add-label-btn {
     width: 100%;
+  }
+
+  .go-back {
+    padding-left: 0px;
+    font-size: 19px;
   }
 }
 

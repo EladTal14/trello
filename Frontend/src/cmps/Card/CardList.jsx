@@ -3,7 +3,7 @@ import { Droppable } from 'react-beautiful-dnd'
 import { CardPreview } from './CardPreview.jsx'
 import { CardAdd } from './CardAdd';
 import { Component } from 'react'
-// import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 
 export class CardList extends Component {
@@ -54,15 +54,4 @@ export class CardList extends Component {
 }
 
 
-{/* <TransitionGroup className="cards-preview-list">
-                                {cards.map((card, index) =>
-                                    <CSSTransition
-                                        key={card.id}
-                                        timeout={500}
-                                        classNames="item"
-                                    >
-                                        <CardPreview key={card.id} card={card} group={group}
-                                            index={index} groupId={id} groupTitle={groupTitle} />
-                                    </CSSTransition>
-                                )}
-                            </TransitionGroup> */}
+

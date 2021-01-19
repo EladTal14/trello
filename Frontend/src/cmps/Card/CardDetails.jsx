@@ -189,13 +189,11 @@ class _CardDetails extends Component {
     return (
       <div className="card-details flex column align-center">
 
-        {card.style &&
-          card.style.color &&
+        {card.style?.color &&
           <div className="details-img-wrapper" style={{ backgroundColor: card.style.color, height: '150px' }}>
           </div>}
 
-        {card.style &&
-          card.style.imgUrl &&
+        {card.style?.imgUrl &&
           <div className="details-img-wrapper flex justify-center" style={{ height: '200px' }}>
             <img src={card.style.imgUrl} alt="" />
           </div>}

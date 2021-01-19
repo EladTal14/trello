@@ -1,7 +1,8 @@
 import { utilService } from "../../services/utilService"
 import { CardActivityContainer } from "./CardActivityContainer";
 import { CardChecklist } from "./CardChecklist"
-var moment = require('moment');
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import moment from "moment"
 
 export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, onHandleActivitiesChange, addOrCancelChecklist }) {
   return (
@@ -9,24 +10,28 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
 
       {card.members && <div className="members flex column">
         <h2 className="members-header">Members</h2>
-        <div className="members-list flex">
-          {card.members.map((member, idx) => {
-            return <span key={idx} className="member">{utilService.convertName(member.fullname)}</span>
+        {/* <div className="members-list flex"> */}
+        <TransitionGroup className="members-list flex">
+          {card.members.map((member, idx) => 
+          <CSSTransition key={idx} timeout={500} classNames="item">
+             <span key={idx} className="member">{utilService.convertName(member.fullname)}</span>
+             </CSSTransition>
+        )}
+          </TransitionGroup>
+        {/* </div> */}
+      </div>}
+
+      {card.labels && card.labels.length > 0 && <div className="card-labels-section">
+        <h2 className="card-label-h2">Labels</h2>
+        <div className="flex labels-container">
+          {card.labels.map((label, idx) => {
+            return <button key={idx} className="label-btn" style={{ backgroundColor: label.color }}>{label.title}</button>
           })}
         </div>
       </div>}
 
-      {card.labels && card.labels.length >= 1 && <div className="card-labels-section">
-        <h2 className="card-label-h2">labels</h2>
-        <div className="flex labels-container">
-        {card.labels.map((label, idx) => {
-          return <button key={idx} className="label-btn" style={{ backgroundColor: label.color }}>{label.title}</button>
-        })}
-        </div>
-      </div>}
-
       {card.dueDate && <div className="due-date-wrapper">
-        <h2 className="due-date-h2">due date</h2>
+        <h2 className="due-date-h2">Due Date</h2>
         <p className="due-date">{moment(card.dueDate).format('LLL')}</p>
       </div>}
 
@@ -45,19 +50,22 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
         />
       </div>
 
-      {card.checklist && card.checklist.todos.length >= 1 &&
+      {card.checklist?.todos?.length > 0 &&
         <CardChecklist card={card} onHandleChecklistChange={onHandleChecklistChange} addOrCancelChecklist={addOrCancelChecklist} />}
       <CardActivityContainer card={card} onHandleActivitiesChange={onHandleActivitiesChange} />
     </div>
   )
 }
 
-// USE IT LATER FOR CALENDER
-// {/* <div>
-// <Calendar
-//   onChange={onChange}
-//   defaultActiveStartDate={new Date(2017, 0, 1)}
-
-//   // value={new Date(1610705369396)}
-// />
-// </div> */}
+{/* <TransitionGroup className="cards-preview-list">
+                                {cards.map((card, index) =>
+                                    <CSSTransition
+                                        key={card.id}
+                                        timeout={500}
+                                        classNames="item"
+                                    >
+                                        <CardPreview key={card.id} card={card} group={group}
+                                            index={index} groupId={id} groupTitle={groupTitle} />
+                                    </CSSTransition>
+                                )}
+                            </TransitionGroup> */}
