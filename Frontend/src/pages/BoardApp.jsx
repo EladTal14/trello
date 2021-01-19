@@ -122,8 +122,8 @@ export class _BoardApp extends Component {
         this.onDragCard()
     }
 
-    toggleDetails = (isShown) => {
-        this.setState({ isDetailsShown: isShown })
+    toggleDetails = () => {
+        this.setState({ isDetailsShown: !this.state.isDetailsShown })
     }
     onScroll = (ev, scrolltoleft = 0) => {
 
@@ -152,7 +152,7 @@ export class _BoardApp extends Component {
             <>
                 {this.props.currCard && isDetailsShown &&
                     <>
-                        <div className="modal-cover" onClick={() => this.toggleDetails(false)}> </div>
+                        {/* <div className="modal-cover" onClick={this.toggleDetails}> </div> */}
                         <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
                 {isPreviewDetailsShown && <CardPreviewDetails board={board} showPreviewCardDetails={this.showPreviewCardDetails} userClicked={userClicked} card={this.props.currCard} group={this.props.currGroup} />}

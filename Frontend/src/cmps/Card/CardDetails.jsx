@@ -6,6 +6,7 @@ import { CardInfo } from './CardInfo'
 import { clearState } from '../../store/actions/cardAction.js'
 import { saveBoard } from '../../store/actions/boardAction.js'
 import { CardSide } from './CardSide'
+import { CSSTransition } from 'react-transition-group'
 // TODO: find a way to merge all handle inputs
 // TODO: go back to handle click outside async lielm1995
 
@@ -14,26 +15,33 @@ class _CardDetails extends Component {
     card: null,
     filterBy: {
       fullname: ''
-    }
+    },
+    mounted: false
   }
 
   componentDidMount() {
     const { card } = this.props
+    this.setState({ mounted: true })
     this.setState({ card })
-    document.addEventListener('click', this.handleClickOutside, true)
+    // document.addEventListener('click', this.handleClickOutside, true)
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('click', this.handleClickOutside, true)
-  }
+  onClose = () => {
+    this.saveChanges()
+    this.setState({ mounted: false })
+}
 
-  handleClickOutside = event => {
-    const domNode = ReactDOM.findDOMNode(this)
-    if (!domNode || !domNode.contains(event.target)) {
-      this.saveChanges()
-      // this.props.clearState(null)
-    }
-  }
+  // componentWillUnmount() {
+  //   document.removeEventListener('click', this.handleClickOutside, true)
+  // }
+
+  // handleClickOutside = event => {
+  //   const domNode = ReactDOM.findDOMNode(this)
+  //   if (!domNode || !domNode.contains(event.target)) {
+  //     this.saveChanges()
+  //     // this.props.clearState(null)
+  //   }
+  // }
 
   saveChanges = () => {
     this.checklistValidation()
@@ -181,14 +189,15 @@ class _CardDetails extends Component {
 
 
   render() {
-    const { card } = this.state
+    const { card, mounted } = this.state
     const { group } = this.props
     const usersForDisplay = this.usersForDisplay
     if (!card) return <div>Loading...</div>
 
     return (
-      <div className="card-details flex column align-center">
-
+    <div className="modal-cover" onClick={this.onClose}>
+      <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleDetails}>
+      <div className="card-details flex column align-center" onClick={ ev => ev.stopPropagation() }>
         {card.style?.color &&
           <div className="details-img-wrapper" style={{ backgroundColor: card.style.color, height: '150px' }}>
           </div>}
@@ -223,6 +232,8 @@ class _CardDetails extends Component {
             />
           </div>
         </div>
+      </div>
+      </CSSTransition>
       </div>
     )
   }

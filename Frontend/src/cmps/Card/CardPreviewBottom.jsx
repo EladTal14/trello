@@ -3,6 +3,17 @@ import { utilService } from '../../services/utilService'
 const _ = require('lodash');
 export function CardPreviewBottom({ card }) {
 
+    
+
+
+
+    // <CardPreviewFeature type={dueDate} src={iconsMap.imgUrl} content={key.content}/>
+    // {card[type] && <div className={`${type}-container flex`}>
+    // <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/clock_zwp9d9.png" alt="" />
+    // <p className="date">{utilService.getDueDate(card.dueDate)}</p></div>}
+
+    // const types = Object.keys(card)
+
     const progress = utilService.getTodoProgress(card)
     return (
         <div className="card-extras-container flex space-between">
