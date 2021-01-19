@@ -9,13 +9,6 @@ export function boardReducer(state = initialState, action) {
       return { ...state, boards: action.boards }
     case 'SET_BOARD':
       return { ...state, currBoard: { ...action.board } }
-    case 'UPDATE_GROUPS':
-      return {
-        ...state, currBoard: {
-          ...state.currBoard,
-          groups: [...state.action.groups]
-        }
-      }
     case 'UPDATE_BOARD':
       return { ...state, currBoard: action.board }
     case 'CLEAN_BOARD':

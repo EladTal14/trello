@@ -45,14 +45,12 @@ export class _CardPreview extends Component {
                                         <pre>{card.title}</pre>
 
                                     </div>
-                                    {/* <CardPreviewDetails card={card} /> */}
                                     <CardPreviewBottom card={card} />
                                 </article>
                             )}
                         </NaturalDragAnimation>
                     )}
                 </Draggable>
-                {/* {showDetails && <CardPreviewDetails card={showDetails ? card : null} userClicked={userClicked} />} */}
             </div>
         )
     }
