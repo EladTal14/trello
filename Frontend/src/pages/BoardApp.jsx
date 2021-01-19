@@ -22,7 +22,6 @@ export class _BoardApp extends Component {
     }
     refBoard = React.createRef()
     componentDidMount() {
-        socketService.setup()
         this.loadBoard()
         socketService.setup()
         socketService.on('load board', this.updateBoard)
@@ -44,7 +43,7 @@ export class _BoardApp extends Component {
 
     // check if right
     updateBoard = (board) => {
-     this.props.saveBoard(board)   
+        this.props.saveBoard(board)
     }
 
     loadBoard = async () => {
