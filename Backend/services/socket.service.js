@@ -1,5 +1,3 @@
-
-
 const asyncLocalStorage = require('./als.service');
 const logger = require('./logger.service');
 
@@ -12,7 +10,14 @@ function emit({ type, data }) {
 
 
 function connectSockets(http, session) {
-    gIo = require('socket.io')(http);
+    gIo = require("socket.io")(http, {
+        cors: {
+            origin: '//localhost:3030',
+            methods: ["GET", "POST", "PUT", "DELETE"],
+            allowdHeaders: ["my-custom-header"],
+            credentials: true
+        }
+    });
 
     const sharedSession = require('express-socket.io-session');
 
@@ -20,6 +25,7 @@ function connectSockets(http, session) {
         autoSave: true
     }));
     gIo.on('connection', socket => {
+        console.log('Someone ')
         // console.log('socket.handshake', socket.handshake)
         gSocketBySessionIdMap[socket.handshake.sessionID] = socket
         socket.on('disconnect', socket => {
@@ -42,17 +48,21 @@ function connectSockets(http, session) {
             // emits only to sockets in the same room
             gIo.to(socket.myTopic).emit('chat addMsg', msg)
         })
+        socket.on('new comment', (comment) => {
+            console.log('nickname: ' + comment);
+            socketIO.emit('commented', comment);
+        });
 
     })
 }
 
 // Send to all sockets BUT not the current socket 
 function broadcast({ type, data }) {
-    const store = asyncLocalStorage.getStore()
+    const store = getStore()
     const { sessionId } = store
-    if (!sessionId) return logger.debug('Shoudnt happen, no sessionId in asyncLocalStorage store')
+    if (!sessionId) return debug('Shoudnt happen, no sessionId in asyncLocalStorage store')
     const excludedSocket = gSocketBySessionIdMap[sessionId]
-    if (!excludedSocket) return logger.debug('Shouldnt happen, No socket in map', gSocketBySessionIdMap)
+    if (!excludedSocket) return debug('Shouldnt happen, No socket in map', gSocketBySessionIdMap)
     excludedSocket.broadcast.emit(type, data)
 }
 

@@ -1,0 +1,40 @@
+.activity-container {
+  .activity-textarea {
+    width: 87.5%;
+    font-family: "montserrat", sans-serif;
+    margin-bottom: 15px;
+    margin-left: 5px;
+  }
+
+  .activity-header {
+    margin-bottom: 10px;
+
+    img {
+      width: 20px;
+      height: 20px;
+      opacity: 0.8;
+      margin-right: 9px;
+    }
+  }
+
+  button {
+    width: 15%;
+    margin: 0px 0px 18px 18px;
+  }
+
+  .activity-comment-wrapper {
+    margin-bottom: 15px;
+
+    .activity-comment {
+      margin-left: 10px;
+
+      & p {
+        font-size: 14px;
+      }
+    }
+
+    .activity-time {
+      font-size: 12px;
+    }
+  }
+}

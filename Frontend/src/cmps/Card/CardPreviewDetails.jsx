@@ -16,8 +16,7 @@ class _CardPreviewDetails extends Component {
 
   componentDidMount() {
     // this.setState({ card: this.props.card }, () => console.log(this.state.card))
-    this.setState({ card: this.props.card, userClicked: this.props?.userClicked },
-      () => console.log(this.state))
+    this.setState({ card: this.props.card, userClicked: this.props?.userClicked })
   }
 
   modalRef = React.createRef()
@@ -91,13 +90,14 @@ class _CardPreviewDetails extends Component {
 
   render() {
     const { userClicked, card, isCreateLabel, isChangeMembers, isChangeDueDate, value } = this.state
-    const { board } = this.props
+    if ((!card || !userClicked) || Object.keys(userClicked).length) return <div>Loading...</div>
+
     console.log(userClicked, card);
     if (!card) return <div>Loading...</div>
     return (
       <>
         <div className="wrapper-preview-details" ref={this.modalRef} onClick={this.closeModal} style={{
-          backgroundColor: 'red', position: 'absolute',
+          position: 'absolute',
           zIndex: 9000, top: 0, left: 0, right: 0, bottom: 0,
           backgroundColor: 'black', opacity: 0.5
         }}></div>
@@ -107,7 +107,7 @@ class _CardPreviewDetails extends Component {
         }}>
           <div className="flex column">
             <textarea name="title" cols="28" wrap="hard" rows="8" onChange={this.onHandleInputChange} value={card.title} style={{ resize: 'none' }} autoFocus ></textarea>
-            <button>Save</button>
+            <button onClick={() => this.onUpdateCard(card)}>Save</button>
           </div>
           <div className="card-preview-details-changes flex column">
             <button onClick={this.showLabel}>Edit Labels</button>

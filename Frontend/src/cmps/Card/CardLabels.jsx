@@ -183,7 +183,7 @@ class _CardLabels extends Component {
 
         {!isCreateLabel && <section className="label-choose-container flex column">
           <ul>
-            {board.labels.map((label, idx) => (
+            {board.labels && board.labels.map((label, idx) => (
               <li key={idx} className="label flex">
                 <div className="label-title flex space-between" onClick={() => this.onChooseLabel(label)} style={{ backgroundColor: label.color }}>
                   <p>{label.title} </p>
