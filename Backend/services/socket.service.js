@@ -10,14 +10,15 @@ function emit({ type, data }) {
 
 
 function connectSockets(http, session) {
-    gIo = require("socket.io")(http, {
-        cors: {
-            origin: '//localhost:3030',
-            methods: ["GET", "POST", "PUT", "DELETE"],
-            allowdHeaders: ["my-custom-header"],
-            credentials: true
-        }
-    });
+    gIo = require("socket.io")(http)
+    // gIo = require("socket.io")(http, {
+    //     cors: {
+    //         origin: '//localhost:3030',
+    //         methods: ["GET", "POST", "PUT", "DELETE"],
+    //         allowdHeaders: ["my-custom-header"],
+    //         credentials: true
+    //     }
+    // });
 
     const sharedSession = require('express-socket.io-session');
 

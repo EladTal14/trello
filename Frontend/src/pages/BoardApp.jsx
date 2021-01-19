@@ -8,6 +8,7 @@ import { CardDetails } from '../cmps/Card/CardDetails'
 import { boardService } from '../services/boardService'
 import { eventBusService } from '../services/eventBusService.js'
 import { CardPreviewDetails } from '../cmps/Card/CardPreviewDetails'
+import { socketService } from '../services/socketService'
 
 export class _BoardApp extends Component {
     state = {
@@ -21,6 +22,7 @@ export class _BoardApp extends Component {
     }
     refBoard = React.createRef()
     componentDidMount() {
+        socketService.setup()
         this.loadBoard()
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
