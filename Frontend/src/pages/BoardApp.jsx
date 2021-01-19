@@ -10,7 +10,6 @@ import { eventBusService } from '../services/eventBusService.js'
 import { CardPreviewDetails } from '../cmps/Card/CardPreviewDetails'
 
 export class _BoardApp extends Component {
-
     state = {
         isDetailsShown: false,
         scrollLeft: 0,
@@ -28,14 +27,6 @@ export class _BoardApp extends Component {
         this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
         this.eventBusShowPreviewDetailsTerminate = eventBusService.on('show-preview-details', this.showPreviewCardDetails)
     }
-    showPreviewCardDetails = (ev) => {
-        console.log(ev);
-        this.setState({
-            userClicked: { x: ev?.clientX, y: ev?.clientY },
-            isPreviewDetailsShown: !this.state.isPreviewDetailsShown
-        })
-    }
-    check = (ev) => { console.log(ev); }
 
     componentWillUnmount() {
         this.eventBusTerminate()
@@ -132,18 +123,18 @@ export class _BoardApp extends Component {
                 this.refBoard.current.scrollLeft = 10000 + scrolltoleft
         })
     }
+    showPreviewCardDetails = (ev) => {
+        console.log(ev);
+        this.setState({
+            userClicked: { x: ev?.clientX, y: ev?.clientY },
+            isPreviewDetailsShown: !this.state.isPreviewDetailsShown
+        })
+    }
     render() {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
         if (!board) return <p>Loading...</p>
-        // let { isDetailsShown } = this.state
-        let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
-        // console.log('isPreviewDetailsShown', isPreviewDetailsShown);
-        // console.log('userClicked', userClicked);
-        // if (this.refBoard && this.refBoard.current) {
-        //     console.log(this.refBoard.current.clientHeight);
-        //     console.log(this.refBoard.current.scrollHeight);
-        // }
+        let { isDetailsShown, isPreviewDetailsShown, userClicked: userClicked } = this.state
         return (
             <>
                 {this.props.currCard && isDetailsShown &&

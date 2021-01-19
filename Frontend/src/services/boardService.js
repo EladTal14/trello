@@ -6,8 +6,6 @@ export const boardService = {
     save,
     getBoardById,
     getGroupIdxById,
-    getUpdatedGroups
-
 }
 
 function query() {
@@ -19,7 +17,7 @@ function remove(boardId) {
 }
 function save(board) {
     if (board._id) {
-       return httpService.put(`board/${board._id}`, board)
+        return httpService.put(`board/${board._id}`, board)
     } else {
         return httpService.post('board', board)
     }
@@ -38,19 +36,4 @@ async function getGroupIdxById(boardId, groupId) {
         console.log('err boardService GET GROUP IDX BY ID', err)
     }
 }
-
-function getUpdatedGroups(oldGroups, newGroups) {
-    try {
-        const updatedGroups = oldGroups.filter(oldGroup => {
-            return newGroups.map(newGroup => {
-                if (newGroup.id === oldGroup.id) return newGroup
-                else return oldGroup
-            })
-        })
-        return updatedGroups
-    } catch (err) {
-        console.log('err boardService GET UPDATE GROUPS', err)
-    }
-}
-
 
