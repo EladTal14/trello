@@ -915,6 +915,9 @@
 >>>>>>> 5990d9e067990e94aab530de2e6487a8f237cd19
 >>>>>>> 912389f1aca5a508fa4a30c674e400d2c2a4c36a
 1/19/2021, 1:57:42 PM - INFO - Server is running on port: 3030 
+<<<<<<< HEAD
 1/19/2021, 2:00:07 PM - INFO - Server is running on port: 3030 
 1/19/2021, 3:43:07 PM - INFO - Server is running on port: 3030 
 1/19/2021, 3:43:18 PM - INFO - Server is running on port: 3030 
+=======
+>>>>>>> be49df3988f98a640cf0baff8dc1458201d80bce
