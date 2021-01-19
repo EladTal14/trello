@@ -3,7 +3,11 @@
     width: 241px;
     // max-width: 290px;
     // min-height: 20px;
-
+    &:hover {
+        .show-preview-details-btn {
+            opacity: 0.5;
+        }
+    }
     .card-img-cover {
         min-height: 100px;
         background-size: cover;
@@ -17,7 +21,30 @@
         height: 20px;
         border-radius: 3px;
         margin-bottom: 2px;
-        
+    }
+    .show-preview-details-btn {
+        border: 0;
+        background-color: unset;
+        position: absolute;
+        left: 84%;
+        top: 1;
+        z-index: 1000;
+        opacity: 0.6;
+        width: 27px;
+        height: 24px;
+        outline: 0;
+        opacity: 0;
+        // visibility: hidden;
+        transition: opacity 0.4s;
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+        .show-preview-details-pen {
+            width: 27px;
+            background-color: #ebecf0;
+            padding: 3px;
+        }
     }
 }
 
@@ -35,7 +62,7 @@
         // opacity: 0.8;
         border-radius: 3px;
         border: none;
-        font-size: .75rem;
+        font-size: 0.75rem;
         font-weight: 700;
         margin: 3px;
         min-width: 40px;
@@ -44,19 +71,18 @@
         text-align: center;
         overflow: hidden;
         min-height: 8px;
-        transition: min-width 1s,min-height .5s,opacity .5s;
+        transition: min-width 1s, min-height 0.5s, opacity 0.5s;
         color: white;
 
         &:hover {
             opacity: 1;
         }
 
-        &.open{
+        &.open {
             min-width: auto;
-            transition: min-width 1s,min-height .5s,opacity .5s;
+            transition: min-width 1s, min-height 0.5s, opacity 0.5s;
         }
     }
-
 }
 
 .card-extras-container {

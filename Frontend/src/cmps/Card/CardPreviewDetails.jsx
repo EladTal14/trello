@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { CardLabels } from './CardLabels'
 import Calendar from 'react-calendar';
 import { saveBoard } from '../../store/actions/boardAction'
+import { AddMember } from '../AddMember';
 
 class _CardPreviewDetails extends Component {
   state = {
@@ -18,7 +19,15 @@ class _CardPreviewDetails extends Component {
     // this.setState({ card: this.props.card }, () => console.log(this.state.card))
     this.setState({ card: this.props.card, userClicked: this.props?.userClicked })
   }
-
+  componentWillUnmount() {
+    this.setState({
+      card: null,
+      userClicked: null,
+      isCreateLabel: false,
+      isChangeMembers: false,
+      isChangeDueDate: false,
+    })
+  }
   modalRef = React.createRef()
   modalLabelRef = React.createRef()
 
@@ -68,13 +77,32 @@ class _CardPreviewDetails extends Component {
     this.onUpdateCard(newCard)
   }
 
-  onUpdateCard = (updatedCard) => {
+  onUpdateMembers = async (member) => {
+    const copyCard = { ...this.state.card }
+    console.log('copyCard', copyCard);
+    const memberIdx = copyCard.members.findIndex(currMember => currMember._id === member._id)
+    console.log('copyCard', memberIdx);
+    if (memberIdx > -1) {
+      copyCard.members.splice(memberIdx, 1)
+      this.setState({ card: copyCard })
+    } else {
+      copyCard.members.push(member)
+      this.setState({ card: copyCard })
+
+    }
+    this.onUpdateCard(this.state.card)
+  }
+
+  onUpdateCard = (updatedCard, isSave = null) => {
     const { board, group } = this.props
     const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
     group.cards[cardIdx] = updatedCard
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    this.setState({ card: updatedCard }, () => { this.props.saveBoard(board) })
+    this.setState({ card: updatedCard }, () => {
+      this.props.saveBoard(board)
+      if (isSave) this.closeModal()
+    })
   }
 
   onRemoveCard = () => {
@@ -90,10 +118,10 @@ class _CardPreviewDetails extends Component {
 
   render() {
     const { userClicked, card, isCreateLabel, isChangeMembers, isChangeDueDate, value } = this.state
-    if ((!card || !userClicked) || Object.keys(userClicked).length) return <div>Loading...</div>
-
-    console.log(userClicked, card);
+    // const { users } = this.props
     if (!card) return <div>Loading...</div>
+    console.log('x', userClicked.x);
+    console.log('y', userClicked.y);
     return (
       <>
         <div className="wrapper-preview-details" ref={this.modalRef} onClick={this.closeModal} style={{
@@ -103,22 +131,42 @@ class _CardPreviewDetails extends Component {
         }}></div>
         <div className="card-preview-details flex" style={{
           position: 'absolute',
-          zIndex: 10000, top: userClicked?.y, left: userClicked?.x - 217
+          zIndex: 10000, top: userClicked?.y + 10, left: userClicked?.x - 217
         }}>
-          <div className="flex column">
-            <textarea name="title" cols="28" wrap="hard" rows="8" onChange={this.onHandleInputChange} value={card.title} style={{ resize: 'none' }} autoFocus ></textarea>
-            <button onClick={() => this.onUpdateCard(card)}>Save</button>
+          <div className="flex column space-between">
+            <textarea className="card-preview-details-textarea" name="title" cols="28" wrap="hard" rows="8" onChange={this.onHandleInputChange} value={card.title} autoFocus ></textarea>
+            <button className="card-preview-details-save" onClick={() => this.onUpdateCard(card, 'save')}>Save</button>
           </div>
           <div className="card-preview-details-changes flex column">
-            <button onClick={this.showLabel}>Edit Labels</button>
-            {isCreateLabel && <CardLabels onToggleLabels={this.showLabel} onHandleLabelsChange={this.onHandleLabelsChange} card={card} />}
-            <button>Change Members</button>
-            <button onClick={this.showDueDate}>Change Due Date</button>
+            <button className="card-preview-details-changes-btn" onClick={this.showLabel}><span className="card-preview-details-changes-icon">
+              <img src="https://res.cloudinary.com/basimgs/image/upload/v1610794160/price-tag_evse4z.png" alt="label" />
+            </span>Edit Labels</button>
+            {isCreateLabel && <CardLabels onToggleLabels={this.showLabel}
+              onHandleLabelsChange={this.onHandleLabelsChange} card={card} />}
+            <button className="card-preview-details-changes-btn flex space-between"
+              onClick={this.showMembers}><span className="card-preview-details-changes-icon">
+                <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/user_g2y481.png" alt="member" />
+              </span><span style={{ flexGrow: 1 }}>Change Members</span>
+            </button>
+            {isChangeMembers && <div className="card-details-member-container"
+              style={{ position: "absolute", top: 0, left: 0 }} >
+              <AddMember toggleMembers={this.showMembers}
+                onUpdateMembers={this.onUpdateMembers}
+                onSetUserFilter={this.props.onSetUserFilter} members={card.members}
+                users={this.props.board.members} /></div>}
+            <button className="card-preview-details-changes-btn" onClick={this.showDueDate}>
+              <span className="card-preview-details-changes-icon">
+                <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/clock_zwp9d9.png" alt="clock" />
+              </span><span style={{ flexGrow: 1 }}> Change Due Date</span></button>
             {isChangeDueDate && <div className="date-picker">
               <button onClick={this.showDueDate} className="close-date-btn">✕</button>
               <Calendar onChange={this.onChange} value={value} />
             </div>}
-            <button onClick={this.onRemoveCard}>Delete</button>
+            <button className="card-preview-details-changes-btn " onClick={this.onRemoveCard}>
+              <span className="card-preview-details-changes-icon">
+                <img src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" alt="Trash" />
+              </span>
+              <span style={{ flexGrow: 1, textAlign: 'left' }}>Delete</span></button>
           </div>
 
         </div>
@@ -130,7 +178,7 @@ class _CardPreviewDetails extends Component {
 
 
 const mapStateToProps = (state) => ({
-
+  board: state.boardModule.currBoard,
 })
 
 const mapDispatchToProps = {

@@ -8,7 +8,7 @@ class _BoardMenu extends Component {
   render() {
     const { toggleMenu, mainRef, onChangeBackground, isChanging, board } = this.props
     return (
-      <div className="board-menu-screen flex justify-center" onClick={ev => ev.stopPropagation()} ref={mainRef} style={{ opacity: '0', visibility: 'hidden' }}>
+      <div className="board-menu-screen flex justify-center" onClick={ev => ev.stopPropagation()} ref={mainRef} style={{ opacity: '0', visibility: 'hidden', width: 0 }}>
 
         <section className="menu-container">
           <div className="board-menu-header flex space-around">
