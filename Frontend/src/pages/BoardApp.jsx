@@ -53,14 +53,14 @@ export class _BoardApp extends Component {
 
     onAddGroup = async (group) => {
         const { board } = this.props
-        const copyBoard = {...board}
+        const copyBoard = { ...board }
         copyBoard.groups.push(group)
         await this.props.saveBoard(copyBoard)
     }
 
     onRemoveLabel = async (label) => {
         const { board } = this.props
-        const copyBoard = {...board}
+        const copyBoard = { ...board }
         const labels = [...board.labels]
         const idx = copyBoard.labels.findIndex((currLabel) => currLabel.id === label.id)
         labels.splice(idx, 1)
@@ -91,13 +91,16 @@ export class _BoardApp extends Component {
 
     onDragCard = async () => {
         const { board } = this.props
-        const copyBoard = {...board}
+        const copyBoard = { ...board }
+        console.log('copyBoard', copyBoard);
+        console.log('board', board);
         await this.props.saveBoard(copyBoard)
+        socketService.emit('card dragged', board)
     }
 
     onAddCard = async (card, groupId) => {
         const { board } = this.props
-        const copyBoard = {...board}
+        const copyBoard = { ...board }
         const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
         copyBoard.groups[groupIdx].cards.push(card)
         await this.props.saveBoard(copyBoard)
@@ -134,7 +137,7 @@ export class _BoardApp extends Component {
             scrollLeft: scrollLeft
         }, () => {
             if (scrolltoleft)
-                this.refBoard.current.scrollLeft = 10000 + scrolltoleft
+                this.refBoard.current.scrollLeft += scrolltoleft
         })
     }
     showPreviewCardDetails = (ev) => {
@@ -148,7 +151,7 @@ export class _BoardApp extends Component {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
         if (!board) return <p>Loading...</p>
-        let { isDetailsShown, isPreviewDetailsShown, userClicked: userClicked } = this.state
+        let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
         return (
             <>
                 {this.props.currCard && isDetailsShown &&
@@ -157,7 +160,7 @@ export class _BoardApp extends Component {
                         <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
                 {isPreviewDetailsShown && <CardPreviewDetails board={board} showPreviewCardDetails={this.showPreviewCardDetails} userClicked={userClicked} card={this.props.currCard} group={this.props.currGroup} />}
-                <BoardHeader title={board.title} members={board.members} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
+                <BoardHeader title={board.title} members={board.members} onAddGroup={this.onAddGroup} />
                 <section className="board-container" ref={this.refBoard} onScroll={this.onScroll}>
                     <DragDropContext onDragEnd={this.onDragEnd} >
                         <Droppable droppableId="app" type="group" direction="horizontal" >

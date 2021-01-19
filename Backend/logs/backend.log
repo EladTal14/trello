@@ -963,3 +963,29 @@
 =======
 1/19/2021, 5:50:42 PM - INFO - Server is running on port: 3030 
 >>>>>>> a5a9f819c4cefe5c1642490009e3fd43b2e78e7b
+1/19/2021, 6:23:00 PM - INFO - Server is running on port: 3030 
+1/19/2021, 7:04:34 PM - INFO - Server is running on port: 3030 
+1/19/2021, 7:06:45 PM - INFO - Server is running on port: 3030 
+1/19/2021, 8:56:21 PM - DEBUG - auth.service - signup with username: liel, fullname: Liel Malihi (sid: JeS5JScAnY7GZRPsfCxJnpybxiegB09j)
+1/19/2021, 8:56:21 PM - DEBUG - auth.route - new account created: {"username":"liel","password":"$2b$10$ALfy0/wk5kB1dQmTTwRPnOdsYUU6rt8Vq1tsPEu1m2nbcx0U.Z5c.","fullname":"Liel Malihi","_id":"60072b554229832ec8fcbd35"} (sid: JeS5JScAnY7GZRPsfCxJnpybxiegB09j)
+1/19/2021, 9:00:43 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:03:03 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:04:24 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:05:00 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:05:10 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:05:22 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:05:51 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:06:18 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:06:38 PM - ERROR - Failed to Login Invalid username or password (sid: hk0knT6Jn_-Bgnd-MFm40Sv-FhY1rrVN)
+1/19/2021, 9:07:59 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:09:27 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:14:10 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:19:57 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:21:40 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:22:31 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:22:58 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:23:10 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:23:12 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:23:23 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:23:37 PM - INFO - Server is running on port: 3030 
+1/19/2021, 9:23:55 PM - INFO - Server is running on port: 3030 

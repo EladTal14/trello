@@ -50,6 +50,10 @@ function connectSockets(http, session) {
         socket.on('card added', (val) => {
             gIo.emit('load board', val);
         });
+        socket.on('card dragged', (val) => {
+            console.log('card dragged');
+            gIo.emit('load board', val);
+        });
 
     })
 }
