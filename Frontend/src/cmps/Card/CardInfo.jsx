@@ -1,6 +1,8 @@
 import { utilService } from "../../services/utilService"
 import { CardActivityContainer } from "./CardActivityContainer";
 import { CardChecklist } from "./CardChecklist"
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+
 var moment = require('moment');
 
 export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, onHandleActivitiesChange, addOrCancelChecklist }) {
@@ -9,11 +11,15 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
 
       {card.members && <div className="members flex column">
         <h2 className="members-header">Members</h2>
-        <div className="members-list flex">
-          {card.members.map((member, idx) => {
-            return <span key={idx} className="member">{utilService.convertName(member.fullname)}</span>
-          })}
-        </div>
+        {/* <div className="members-list flex"> */}
+        <TransitionGroup className="members-list flex">
+          {card.members.map((member, idx) => 
+          <CSSTransition key={idx} timeout={500} classNames="item">
+             <span key={idx} className="member">{utilService.convertName(member.fullname)}</span>
+             </CSSTransition>
+        )}
+          </TransitionGroup>
+        {/* </div> */}
       </div>}
 
       {card.labels && card.labels.length >= 1 && <div className="card-labels-section">
@@ -52,12 +58,15 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
   )
 }
 
-// USE IT LATER FOR CALENDER
-// {/* <div>
-// <Calendar
-//   onChange={onChange}
-//   defaultActiveStartDate={new Date(2017, 0, 1)}
-
-//   // value={new Date(1610705369396)}
-// />
-// </div> */}
+{/* <TransitionGroup className="cards-preview-list">
+                                {cards.map((card, index) =>
+                                    <CSSTransition
+                                        key={card.id}
+                                        timeout={500}
+                                        classNames="item"
+                                    >
+                                        <CardPreview key={card.id} card={card} group={group}
+                                            index={index} groupId={id} groupTitle={groupTitle} />
+                                    </CSSTransition>
+                                )}
+                            </TransitionGroup> */}

@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 // import { GroupAdd } from '../Group/GroupAdd'
 import { AddMember } from '../AddMember'
 import { BoardMenu } from './BoardMenu'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 export class _BoardHeader extends Component {
 
@@ -108,12 +109,15 @@ export class _BoardHeader extends Component {
             </button>
             <div className="header-members flex">
               <ul className="member-list flex">
-                {members.map(member => {
-                  // return <li key={member._id} className="header-member">
-                  return <li key={member.fullname} className="header-member">
+              <TransitionGroup className="members-list flex">
+                {members.map((member, idx) => 
+                  <CSSTransition key={idx} timeout={500} classNames="item">
+                   <li key={member.fullname} className="header-member">
                     {utilService.convertName(member.fullname)}
                   </li>
-                })}
+                  </CSSTransition>
+                )}
+                </TransitionGroup>
               </ul>
               <button className="add-member" onClick={this.toggleMembers}>
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625640/add-user_qxgidw.png" alt="" />
