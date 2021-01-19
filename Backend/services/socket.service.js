@@ -2,6 +2,7 @@ const asyncLocalStorage = require('./als.service');
 const logger = require('./logger.service');
 
 var gIo = null
+// Key: sessionId value: socket
 var gSocketBySessionIdMap = {}
 
 function emit({ type, data }) {
@@ -10,27 +11,22 @@ function emit({ type, data }) {
 
 
 function connectSockets(http, session) {
-    gIo = require("socket.io")(http, {
-        cors: {
-            origin: '//localhost:3030',
-            methods: ["GET", "POST", "PUT", "DELETE"],
-            allowdHeaders: ["my-custom-header"],
-            credentials: true
-        }
-    });
+    gIo = require("socket.io")(http)
 
     const sharedSession = require('express-socket.io-session');
 
-    gIo.use(sharedSession(session, {
+    gIo.use(sharedSession(session, { //aware to the user session
         autoSave: true
     }));
     gIo.on('connection', socket => {
         console.log('Someone ')
         // console.log('socket.handshake', socket.handshake)
+        // Keeping the socket inside the map above
         gSocketBySessionIdMap[socket.handshake.sessionID] = socket
         socket.on('disconnect', socket => {
             console.log('Someone disconnected')
             if (socket.handshake) {
+                // removing the user from the map
                 gSocketBySessionIdMap[socket.handshake.sessionID] = null
             }
         })
@@ -49,8 +45,12 @@ function connectSockets(http, session) {
             gIo.to(socket.myTopic).emit('chat addMsg', msg)
         })
         socket.on('new comment', (comment) => {
-            console.log('nickname: ' + comment);
-            socketIO.emit('commented', comment);
+            console.log('nickname: ' , comment);
+            gIo.emit('commented', comment);
+        });
+        socket.on('card added', (val) => {
+            console.log('VAL IS' , val);
+            gIo.emit('load board', val);
         });
 
     })

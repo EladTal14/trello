@@ -13,11 +13,11 @@ class _CardActivityContainer extends Component {
   }
 
   componentDidMount() {
-    socketService.setup()
+    // socketService.setup()
 
-    socketService.on('commented', (cmt) => {
-      console.log('cmt', cmt)
-    }) 
+    // socketService.on('commented', (cmt) => {
+    //   console.log('cmt', cmt)
+    // }) 
 
     const { comments } = this.props.card
     this.setState({ comments })
@@ -66,13 +66,9 @@ class _CardActivityContainer extends Component {
     }
   }
 
-  sendSocket = () => {
-
-  }
-
   onSaveNewComment = () => {
-    socketService.emit('new comment', { name: 'me' })
-    // this.sendSocket()
+    // socketService.emit('new comment', { name: 'me' })
+
     const comment = this.createComment()
     let commentsCopy = this.state.comments
     if (commentsCopy) commentsCopy.unshift(comment)

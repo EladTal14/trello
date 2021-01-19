@@ -74,11 +74,11 @@ class _CardDetails extends Component {
         ...prevState.card,
         checklist: { ...checklist }
       }
-    }), () => this.saveChanges())
+    }))
+    // }), () => this.saveChanges())
   }
 
   onHandleActivitiesChange = (comments) => {
-    console.log('comments', comments)
     this.setState(prevState => ({
       card: {
         ...prevState.card,

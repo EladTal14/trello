@@ -57,15 +57,15 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
   )
 }
 
-{/* <TransitionGroup className="cards-preview-list">
-                                {cards.map((card, index) =>
-                                    <CSSTransition
-                                        key={card.id}
-                                        timeout={500}
-                                        classNames="item"
-                                    >
-                                        <CardPreview key={card.id} card={card} group={group}
-                                            index={index} groupId={id} groupTitle={groupTitle} />
-                                    </CSSTransition>
-                                )}
-                            </TransitionGroup> */}
+// {/* <TransitionGroup className="cards-preview-list">
+//                                 {cards.map((card, index) =>
+//                                     <CSSTransition
+//                                         key={card.id}
+//                                         timeout={500}
+//                                         classNames="item"
+//                                     >
+//                                         <CardPreview key={card.id} card={card} group={group}
+//                                             index={index} groupId={id} groupTitle={groupTitle} />
+//                                     </CSSTransition>
+//                                 )}
+//                             </TransitionGroup> */}
