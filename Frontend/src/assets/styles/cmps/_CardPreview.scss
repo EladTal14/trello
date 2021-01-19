@@ -79,7 +79,7 @@
         }
 
         &.open {
-            min-width: auto;
+            min-width: 45px;
             transition: min-width 1s, min-height 0.5s, opacity 0.5s;
         }
     }

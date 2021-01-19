@@ -53,18 +53,20 @@ export class _BoardApp extends Component {
 
     onAddGroup = async (group) => {
         const { board } = this.props
-        board.groups.push(group)
-        await this.props.saveBoard(board)
+        const copyBoard = {...board}
+        copyBoard.groups.push(group)
+        await this.props.saveBoard(copyBoard)
     }
 
     onRemoveLabel = async (label) => {
         const { board } = this.props
+        const copyBoard = {...board}
         const labels = [...board.labels]
-        const idx = board.labels.findIndex((currLabel) => currLabel.id === label.id)
+        const idx = copyBoard.labels.findIndex((currLabel) => currLabel.id === label.id)
         labels.splice(idx, 1)
 
-        board.labels = [...labels]
-        await this.props.saveBoard(board)
+        copyBoard.labels = [...labels]
+        await this.props.saveBoard(copyBoard)
     }
 
     onAddLabel = async (label) => {
@@ -89,14 +91,16 @@ export class _BoardApp extends Component {
 
     onDragCard = async () => {
         const { board } = this.props
-        await this.props.saveBoard(board)
+        const copyBoard = {...board}
+        await this.props.saveBoard(copyBoard)
     }
 
     onAddCard = async (card, groupId) => {
         const { board } = this.props
+        const copyBoard = {...board}
         const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
-        board.groups[groupIdx].cards.push(card)
-        await this.props.saveBoard(board)
+        copyBoard.groups[groupIdx].cards.push(card)
+        await this.props.saveBoard(copyBoard)
     }
 
     onDragEnd = (result) => {
