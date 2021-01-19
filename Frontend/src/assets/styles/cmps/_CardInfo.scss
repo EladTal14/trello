@@ -1,0 +1,172 @@
+.card-info {
+  flex-grow: 1;
+
+  & > * {
+    margin-bottom: 18px;
+  }
+
+  .members {
+    flex-wrap: wrap;
+    margin-left: 28px;
+    .members-header {
+      display: block;
+      color: #5e6c84;
+      font-size: rem(14px);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 16px;
+      margin-top: 16px;
+      text-transform: uppercase;
+      line-height: 20px;
+      margin: 0 8px 4px 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  .card-labels-section {
+    margin-left: 28px;
+    .labels-container {
+      flex-wrap: wrap;
+    }
+  }
+
+  .card-label-h2 {
+    display: block;
+    color: #5e6c84;
+    font-size: rem(14px);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 16px;
+    margin-top: 16px;
+    text-transform: uppercase;
+    line-height: 20px;
+    margin: 0 8px 4px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .label-btn {
+    border-radius: 3px;
+    font-weight: 600;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px 4px 0;
+    min-width: 40px;
+    padding: 0 12px;
+    // width: auto;
+    width: fit-content;
+    color: #fff;
+    border: none;
+  }
+
+  .card-description {
+    .desc-img {
+      width: 20px;
+      height: 20px;
+      opacity: 0.8;
+      margin-right: 9px;
+    }
+  }
+
+  .desc-textarea {
+    background-color: rgba(9, 30, 66, 0.04);
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    width: 90%;
+    min-height: 100px;
+    margin-left: 28px;
+
+    &:hover {
+      background-color: rgba(9, 30, 66, 0.08);
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 2px #0079bf;
+      background-color: #fff;
+      outline: none;
+      padding: 8px 8px 8px 4px;
+      min-height: 100px;
+    }
+  }
+
+  // .activity-container {
+  //   .activity-textarea {
+  //     width: 87.5%;
+  //     font-family: "montserrat", sans-serif;
+  //     margin-bottom: 15px;
+  //     margin-left: 5px;
+  //   }
+
+  //   .activity-header {
+  //     margin-bottom: 10px;
+
+  //     img {
+  //       width: 20px;
+  //       height: 20px;
+  //       opacity: 0.8;
+  //       margin-right: 9px;
+  //     }
+  //   }
+
+  //   button {
+  //     width: 15%;
+  //     margin: 0px 0px 18px 18px;
+  //   }
+
+  //   .activity-comment-wrapper {
+  //     margin-bottom: 15px;
+
+  //     .activity-comment {
+  //       margin-left: 10px;
+
+  //       & p {
+  //         font-size: 14px;
+  //       }
+  //     }
+
+  //     .activity-time {
+  //       font-size: 12px;
+  //     }
+  //   }
+  // }
+
+  .due-date-wrapper {
+    margin-left: 28px;
+  }
+
+  .due-date-h2 {
+    display: block;
+    color: #5e6c84;
+    font-size: rem(14px);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 16px;
+    margin-top: 16px;
+    text-transform: uppercase;
+    line-height: 20px;
+    margin: 0 8px 4px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .due-date {
+    background-color: rgba(9, 30, 66, 0.04);
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 32px;
+    margin-top: 8px;
+    max-width: 200px;
+    overflow: hidden;
+    padding: 6px 12px;
+  }
+}

@@ -58,7 +58,7 @@ class _CardDetails extends Component {
         ...prevState.card,
         [name]: value
       }
-    }))
+    }), () => this.saveChanges())
   }
 
   onHandleChecklistChange = (checklist) => {
@@ -67,11 +67,10 @@ class _CardDetails extends Component {
         ...prevState.card,
         checklist: { ...checklist }
       }
-    }))
+    }), () => this.saveChanges())
   }
 
   onHandleActivitiesChange = (comments) => {
-    console.log('comments' ,comments)
     this.setState(prevState => ({
       card: {
         ...prevState.card,
@@ -183,51 +182,54 @@ class _CardDetails extends Component {
 
   render() {
     const { card } = this.state
-    const { group, board } = this.props
+    const { group } = this.props
     const usersForDisplay = this.usersForDisplay
     if (!card) return <div>Loading...</div>
-    // let cardWithTxt = {}
 
     return (
-        <div className="card-details flex column align-center">
+      <div className="card-details flex column align-center">
 
-          {card.style &&
-            card.style.color &&
-            <div className="details-img-wrapper" style={{ backgroundColor: card.style.color, height: '150px' }}>
-            </div>}
-
-              {card.style &&
-                card.style.imgUrl &&
-                <div className="details-img-wrapper flex justify-center" style={{ height: '200px' }}>
-                  <img src={card.style.imgUrl} alt="" />
+        {card.style &&
+          card.style.color &&
+          <div className="details-img-wrapper" style={{ backgroundColor: card.style.color, height: '150px' }}>
           </div>}
-        
-          <div className="card-details-wrapper flex column">
-            <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
-            <div className="card-content flex">
-              <CardInfo
-                card={card}
-                onHandleChecklistChange={this.onHandleChecklistChange}
-                onHandleInputChange={this.onHandleInputChange}
-                onHandleActivitiesChange={this.onHandleActivitiesChange}
-                addOrCancelChecklist={this.addOrCancelChecklist}
-              />
-              <CardSide
-                card={card}
-                onRemoveCard={this.onRemoveCard}
-                onSavedueDate={this.onSavedueDate}
-                addOrCancelChecklist={this.addOrCancelChecklist}
-                onUploadCardCoverImg={this.onUploadCardCoverImg}
-                onHandleLabelsChange={this.onHandleLabelsChange}
-                onUpdateCoverColor={this.onUpdateCoverColor}
-                saveChanges={this.saveChanges}
-                users={usersForDisplay}
-                onUpdateMembers={this.onUpdateMembers}
-                onSetUserFilter={this.onSetUserFilter}
-              />
-            </div>
+
+        {card.style &&
+          card.style.imgUrl &&
+          <div className="details-img-wrapper flex justify-center" style={{ height: '200px' }}>
+            <img src={card.style.imgUrl} alt="" />
+          </div>}
+
+        <div className="card-details-wrapper flex column">
+          <CardHeader
+            card={card}
+            onHandleInputChange={this.onHandleInputChange}
+            group={group}
+          />
+          <div className="card-content flex">
+            <CardInfo
+              card={card}
+              onHandleChecklistChange={this.onHandleChecklistChange}
+              onHandleInputChange={this.onHandleInputChange}
+              onHandleActivitiesChange={this.onHandleActivitiesChange}
+              addOrCancelChecklist={this.addOrCancelChecklist}
+            />
+            <CardSide
+              card={card}
+              onRemoveCard={this.onRemoveCard}
+              onSavedueDate={this.onSavedueDate}
+              addOrCancelChecklist={this.addOrCancelChecklist}
+              onUploadCardCoverImg={this.onUploadCardCoverImg}
+              onHandleLabelsChange={this.onHandleLabelsChange}
+              onUpdateCoverColor={this.onUpdateCoverColor}
+              saveChanges={this.saveChanges}
+              users={usersForDisplay}
+              onUpdateMembers={this.onUpdateMembers}
+              onSetUserFilter={this.onSetUserFilter}
+            />
           </div>
         </div>
+      </div>
     )
   }
 }

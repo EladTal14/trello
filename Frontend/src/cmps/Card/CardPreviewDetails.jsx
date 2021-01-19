@@ -7,13 +7,11 @@ export class CardPreviewDetails extends Component {
   }
   componentDidMount() {
     // this.setState({ card: this.props.card }, () => console.log(this.state.card))
-    this.setState({ card: this.props.card, userClicked: this.props?.userClicked },
-      () => console.log(this.state))
+    this.setState({ card: this.props.card, userClicked: this.props?.userClicked })
   }
 
   render() {
     const { userClicked, card } = this.state
-    console.log(userClicked, card);
     if ((!card || !userClicked) || Object.keys(userClicked).length) return <div>Loading...</div>
     return (
       <div className="card-preview-details" style={{ position: 'absolute', zIndex: 10000, top: userClicked?.y, right: userClicked?.x }}>
