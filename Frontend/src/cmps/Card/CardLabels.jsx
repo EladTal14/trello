@@ -172,7 +172,7 @@ class _CardLabels extends Component {
     const { board } = this.props
     const { isCreateLabel, colors, currLabel, mounted } = this.state
     return (
-      <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.onToggleLabels}>
+      <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleLableMenu}>
         <div className="card-labels flex column" style={{ height: isCreateLabel ? '320px' : '450px' }}>
 
           <header className="labels-header flex">

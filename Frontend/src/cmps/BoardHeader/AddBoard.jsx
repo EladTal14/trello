@@ -6,9 +6,11 @@ export class AddBoard extends Component {
     state = {
         board: {
             title: '',
-            imgUrl: ''
+            imgUrlLarge: '',
+            imgUrlmedium: ''
         },
-        mounted: false
+        mounted: false,
+        picked: ''
     }
 
     componentDidMount() {
@@ -26,27 +28,28 @@ export class AddBoard extends Component {
 
     bgColors = () => {
 
-        return [{ imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611063805/pexels-roberto-shumski-1903702_vtanbj.jpg' },
-        { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611063803/pexels-pixabay-268533_twp7q4.jpg' },
-        { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611063800/pexels-pixabay-414102_pwa09f.jpg' },
-        { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611063801/pexels-pixabay-302769_elwsut.jpg' },
-        { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611063804/pexels-pixabay-247431_pazkxw.jpg' },
-        { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611084082/green-1_rp1fjx.jpg' },
-        { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611084082/cooldownpink_y0m0db.jpg' },
-        { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611084082/mizu_qlr5uq.png' },
-        { imgUrl: 'https://res.cloudinary.com/basimgs/image/upload/v1611084082/0322_purple_hkmphn.jpg' }]
+        return [{ imgUrlLarge: 'https://res.cloudinary.com/basimgs/image/upload/w_1500/v1610712048/pexels-eberhard-grossgasteiger-1287145_iyiwh5.jpg', imgUrlmedium: 'https://res.cloudinary.com/basimgs/image/upload/w_300/v1610712048/pexels-eberhard-grossgasteiger-1287145_iyiwh5.jpg'},
+        { imgUrlLarge: 'https://res.cloudinary.com/basimgs/image/upload/w_1500/v1610814688/pexels-asad-photo-maldives-1450353_oq4mbu.jpg', imgUrlmedium: 'https://res.cloudinary.com/basimgs/image/upload/w_300/v1610814688/pexels-asad-photo-maldives-1450353_oq4mbu.jpg'},
+        { imgUrlLarge: 'https://res.cloudinary.com/basimgs/image/upload/w_1500/v1610814689/pexels-frans-van-heerden-624015_fjsy7m.jpg', imgUrlmedium: 'https://res.cloudinary.com/basimgs/image/upload/w_300/v1610814689/pexels-frans-van-heerden-624015_fjsy7m.jpg'},
+        { imgUrlLarge: 'https://res.cloudinary.com/basimgs/image/upload/w_1500/v1610814691/pexels-asad-photo-maldives-3601425_h5x2md.jpg', imgUrlmedium: 'https://res.cloudinary.com/basimgs/image/upload/w_300/v1610814691/pexels-asad-photo-maldives-3601425_h5x2md.jpg'},
+        { imgUrlLarge: 'https://res.cloudinary.com/basimgs/image/upload/w_1500/v1610712052/pexels-pixabay-461940_znnsxj.jpg', imgUrlmedium: 'https://res.cloudinary.com/basimgs/image/upload/w_300/v1610712052/pexels-pixabay-461940_znnsxj.jpg'},
+        { imgUrlLarge: 'https://res.cloudinary.com/basimgs/image/upload/v1611084082/green-1_rp1fjx.jpg', imgUrlmedium:'https://res.cloudinary.com/basimgs/image/upload/v1611084082/green-1_rp1fjx.jpg' },
+        { imgUrlLarge: 'https://res.cloudinary.com/basimgs/image/upload/v1611084082/cooldownpink_y0m0db.jpg', imgUrlmedium:'https://res.cloudinary.com/basimgs/image/upload/v1611084082/cooldownpink_y0m0db.jpg' },
+        { imgUrlLarge: 'https://res.cloudinary.com/basimgs/image/upload/v1611084082/mizu_qlr5uq.png', imgUrlmedium:'https://res.cloudinary.com/basimgs/image/upload/v1611084082/mizu_qlr5uq.png' },
+        { imgUrlLarge: 'https://res.cloudinary.com/basimgs/image/upload/v1611084082/0322_purple_hkmphn.jpg', imgUrlmedium: 'https://res.cloudinary.com/basimgs/image/upload/v1611084082/0322_purple_hkmphn.jpg'}]
       }
 
-    setBgcImg = (imgUrl) => {
-        console.log('the chosen url is', imgUrl);
+    setBgcImg = (imgUrlLarge, imgUrlmedium, idx) => {
+        console.log('the chosen url is', imgUrlLarge);
         this.setState(prevState => {
-            return {board: { ...prevState.board, imgUrl}}
+            return {board: { ...prevState.board, imgUrlLarge, imgUrlmedium}}
         })
+        this.setState({ picked: idx })
     }
 
     onAddBoard = () => {
-        const { title, imgUrl } = this.state.board
-        const board = { title, style: {backgroundImage: imgUrl} }
+        const { title, imgUrlLarge, imgUrlmedium } = this.state.board
+        const board = { title, style: {backgroundImage: imgUrlLarge, backgroundImagePreview: imgUrlmedium} }
         this.props.addBoard(board)
         this.onClose()
     }
@@ -65,7 +68,7 @@ export class AddBoard extends Component {
     }
 
     render() {
-        const { mounted } = this.state
+        const { mounted, picked } = this.state
         return (
             <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleAddBoard}>
             <div className="new-board-modal flex column">
@@ -74,8 +77,8 @@ export class AddBoard extends Component {
             </div>
                 <div className="board-cover-colors">
                         {this.bgColors().map((color, idx) => {
-                            return <div className="new-board-color" key={idx}
-                                onClick={() => this.setBgcImg(color.imgUrl)}><img src={color.imgUrl} alt=""/></div>
+                            return <div className={(picked === idx)? "new-board-color picked": "new-board-color"} key={idx}
+                                onClick={() => this.setBgcImg(color.imgUrlLarge ,color.imgUrlmedium, idx)}><img src={color.imgUrlmedium} alt=""/></div>
                         })}
                 </div>
                 <input type="text" name="title" value={this.state.title} onChange={this.handleInput}
