@@ -62,7 +62,8 @@ class _CardDetails extends Component {
     group.cards[cardIdx] = card
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    await this.props.saveBoard(board)
+    this.props.saveBoard(board)
+    // await this.props.saveBoard(board) // if not working add async!!
 
     // socketService.emit('card changed', board)
   }
@@ -122,10 +123,10 @@ class _CardDetails extends Component {
     group.cards.splice(cardIdx, 1)
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    await this.props.saveBoard(board)
+    this.props.saveBoard(board)
 
     // socketService.emit('card removed', board)
-    this.props.toggleDetails(false)
+    this.props.toggleDetails()
   }
 
   onSavedueDate = (date) => {
