@@ -7,6 +7,7 @@ import { clearState } from '../../store/actions/cardAction.js'
 import { saveBoard } from '../../store/actions/boardAction.js'
 import { CardSide } from './CardSide'
 import { CSSTransition } from 'react-transition-group'
+import { socketService } from '../../services/socketService'
 // TODO: find a way to merge all handle inputs
 // TODO: go back to handle click outside async lielm1995
 
@@ -20,16 +21,22 @@ class _CardDetails extends Component {
   }
 
   componentDidMount() {
+    socketService.setup()
     const { card } = this.props
     this.setState({ mounted: true })
     this.setState({ card })
     // document.addEventListener('click', this.handleClickOutside, true)
   }
 
+  // componentWillUnmount() {
+  //   socketService.terminate()
+  // }
+
+
   onClose = () => {
     this.saveChanges()
     this.setState({ mounted: false })
-}
+  }
 
   // componentWillUnmount() {
   //   document.removeEventListener('click', this.handleClickOutside, true)
@@ -48,14 +55,16 @@ class _CardDetails extends Component {
     this.sendUpdatedBoard()
   }
 
-  sendUpdatedBoard = () => {
+  sendUpdatedBoard = async () => {
     const { board, group } = this.props
     const { card } = this.state
     const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
     group.cards[cardIdx] = card
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    this.props.saveBoard(board)
+    await this.props.saveBoard(board)
+
+    // socketService.emit('card changed', board)
   }
 
   onHandleInputChange = ({ target }) => {
@@ -106,14 +115,16 @@ class _CardDetails extends Component {
     }))
   }
 
-  onRemoveCard = () => {
+  onRemoveCard = async () => {
     const { board, group } = this.props
     const { card } = this.state
     const cardIdx = group.cards.findIndex((currCard) => currCard.id === card.id)
     group.cards.splice(cardIdx, 1)
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    this.props.saveBoard(board)
+    await this.props.saveBoard(board)
+
+    // socketService.emit('card removed', board)
     this.props.toggleDetails(false)
   }
 
@@ -195,45 +206,45 @@ class _CardDetails extends Component {
     if (!card) return <div>Loading...</div>
 
     return (
-    <div className="modal-cover" onClick={this.onClose}>
-      <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleDetails}>
-      <div className="card-details flex column align-center" onClick={ ev => ev.stopPropagation() }>
-        {card.style?.color &&
-          <div className="details-img-wrapper" style={{ backgroundColor: card.style.color, height: '150px' }}>
-          </div>}
+      <div className="modal-cover" onClick={this.onClose}>
+        <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleDetails}>
+          <div className="card-details flex column align-center" onClick={ev => ev.stopPropagation()}>
+            {card.style?.color &&
+              <div className="details-img-wrapper" style={{ backgroundColor: card.style.color, height: '150px' }}>
+              </div>}
 
-        {card.style?.imgUrl &&
-          <div className="details-img-wrapper flex justify-center" style={{ height: '200px' }}>
-            <img src={card.style.imgUrl} alt="" />
-          </div>}
+            {card.style?.imgUrl &&
+              <div className="details-img-wrapper flex justify-center" style={{ height: '200px' }}>
+                <img src={card.style.imgUrl} alt="" />
+              </div>}
 
-        <div className="card-details-wrapper flex column">
-          <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
-          <div className="card-content flex">
-            <CardInfo
-              card={card}
-              onHandleChecklistChange={this.onHandleChecklistChange}
-              onHandleInputChange={this.onHandleInputChange}
-              onHandleActivitiesChange={this.onHandleActivitiesChange}
-              addOrCancelChecklist={this.addOrCancelChecklist}
-            />
-            <CardSide
-              card={card}
-              onRemoveCard={this.onRemoveCard}
-              onSavedueDate={this.onSavedueDate}
-              addOrCancelChecklist={this.addOrCancelChecklist}
-              onUploadCardCoverImg={this.onUploadCardCoverImg}
-              onHandleLabelsChange={this.onHandleLabelsChange}
-              onUpdateCoverColor={this.onUpdateCoverColor}
-              saveChanges={this.saveChanges}
-              users={usersForDisplay}
-              onUpdateMembers={this.onUpdateMembers}
-              onSetUserFilter={this.onSetUserFilter}
-            />
+            <div className="card-details-wrapper flex column">
+              <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
+              <div className="card-content flex">
+                <CardInfo
+                  card={card}
+                  onHandleChecklistChange={this.onHandleChecklistChange}
+                  onHandleInputChange={this.onHandleInputChange}
+                  onHandleActivitiesChange={this.onHandleActivitiesChange}
+                  addOrCancelChecklist={this.addOrCancelChecklist}
+                />
+                <CardSide
+                  card={card}
+                  onRemoveCard={this.onRemoveCard}
+                  onSavedueDate={this.onSavedueDate}
+                  addOrCancelChecklist={this.addOrCancelChecklist}
+                  onUploadCardCoverImg={this.onUploadCardCoverImg}
+                  onHandleLabelsChange={this.onHandleLabelsChange}
+                  onUpdateCoverColor={this.onUpdateCoverColor}
+                  saveChanges={this.saveChanges}
+                  users={usersForDisplay}
+                  onUpdateMembers={this.onUpdateMembers}
+                  onSetUserFilter={this.onSetUserFilter}
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      </CSSTransition>
+        </CSSTransition>
       </div>
     )
   }

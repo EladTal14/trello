@@ -1,4 +1,5 @@
 import { boardService } from '../../services/boardService.js'
+import { socketService } from '../../services/socketService.js';
 
 export function loadBoards() { // Action Creator
     return async (dispatch) => {
@@ -23,10 +24,14 @@ export function loadBoard(boardId) {
     }
 }
 
-export function saveBoard(board) {
+export function saveBoard(board, isRenderSocket = false) {
     return async (dispatch) => {
         try {
             const savedBoard = await boardService.save(board)
+            if (!isRenderSocket) {
+                console.log('SOCKET BOARD', board.groups)
+                socketService.emit('render', board)
+            }
             dispatch({ type: (board._id) ? 'UPDATE_BOARD' : 'ADD_BOARD', board: savedBoard })
         } catch (err) {
             console.log('err boardAction SAVE BOARD', err);

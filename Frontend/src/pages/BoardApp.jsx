@@ -25,6 +25,7 @@ export class _BoardApp extends Component {
         this.loadBoard()
         socketService.setup()
         socketService.on('load board', this.updateBoard)
+
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
         this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
@@ -41,9 +42,8 @@ export class _BoardApp extends Component {
         // this.props.board = null
     }
 
-    // check if right
     updateBoard = (board) => {
-        this.props.saveBoard(board)
+        this.props.saveBoard(board, true)
     }
 
     loadBoard = async () => {
@@ -56,6 +56,8 @@ export class _BoardApp extends Component {
         const copyBoard = { ...board }
         copyBoard.groups.push(group)
         await this.props.saveBoard(copyBoard)
+
+        // socketService.emit('group added', board)
     }
 
     onRemoveLabel = async (label) => {
@@ -92,8 +94,11 @@ export class _BoardApp extends Component {
     onDragCard = async () => {
         const { board } = this.props
         const copyBoard = { ...board }
+<<<<<<< HEAD
+=======
         console.log('copyBoard', copyBoard);
         console.log('board', board);
+>>>>>>> 9af35fc0f460cb5bc161ed5c681bd02da5034f0d
         await this.props.saveBoard(copyBoard)
         socketService.emit('card dragged', board)
     }
@@ -104,7 +109,8 @@ export class _BoardApp extends Component {
         const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
         copyBoard.groups[groupIdx].cards.push(card)
         await this.props.saveBoard(copyBoard)
-        socketService.emit('card added', board)
+
+        // socketService.emit('card added', board)
     }
 
     onDragEnd = (result) => {
@@ -151,6 +157,8 @@ export class _BoardApp extends Component {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
         if (!board) return <p>Loading...</p>
+        console.log('board', board.groups)
+        socketService.emit('set label', this.props.board._id)
         let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
         return (
             <>
@@ -166,7 +174,7 @@ export class _BoardApp extends Component {
                         <Droppable droppableId="app" type="group" direction="horizontal" >
                             {(provided) => (
                                 <div style={{ width: (board.groups.length) * 287 }} ref={provided.innerRef} {...provided.droppableProps}>
-                                    <GroupList groups={board.groups} onAddCard={this.onAddCard} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
+                                    <GroupList updateBoard={this.updateBoard} groups={board.groups} onAddCard={this.onAddCard} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
                                     {provided.placeholder}
                                 </div>
                             )}

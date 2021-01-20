@@ -24,7 +24,7 @@ export class GroupPreview extends Component {
         })
     }
     render() {
-        const { group, idx, onAddCard } = this.props
+        const { group, idx, onAddCard, updateBoard } = this.props
         return (
             <Draggable draggableId={group.id} index={idx} >
                 {(provided, snapshot) => (
@@ -39,7 +39,7 @@ export class GroupPreview extends Component {
                                     ref={provided.innerRef}>
                                     <div  {...provided.dragHandleProps} style={{ width: 272, height: '1.175em' }}>
                                     </div>
-                                    <GroupTitle group={group} dragHandle={provided.dragHandleProps} />
+                                    <GroupTitle updateBoard={updateBoard} group={group} dragHandle={provided.dragHandleProps} />
                                     <CardList refs={this.refCard} cards={group.cards}
                                         id={idx} group={group} onScroll={this.onScroll}
                                         grpTitle={group.title} groupId={group.id} onAddCard={onAddCard} />

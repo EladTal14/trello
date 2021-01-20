@@ -25,7 +25,7 @@ class _AppHeader extends Component {
     // console.log('prevState', prevState);
     // console.log('state', this.state);
     if (prevProps.loggedInUser !== this.state.loggedInUser)
-    this.setState({ loggedInUser: prevProps.loggedInUser })
+      this.setState({ loggedInUser: prevProps.loggedInUser })
   }
 
   toggleAddBoard = () => {
@@ -34,8 +34,10 @@ class _AppHeader extends Component {
 
   addBoard = async (board) => {
     await this.props.saveBoard(board)
-    this.props.history.push(`board/${this.props.board._id}`)
-}
+    const newBoardId = this.props.board._id
+    this.props.history.push(`/`)
+    this.props.history.push(`board/${newBoardId}`)
+  }
 
   render() {
     window.loggedInUser = this.state
@@ -44,7 +46,7 @@ class _AppHeader extends Component {
     // console.log('LOGGED IN USER', loggedInUser);
     return (
       <>
-        {isAddBoardShow && <AddBoard addBoard={this.addBoard} toggleAddBoard={this.toggleAddBoard} /> }
+        {isAddBoardShow && <AddBoard addBoard={this.addBoard} toggleAddBoard={this.toggleAddBoard} />}
         <header className="app-header flex space-between">
           <nav>
             <ul className="header-list flex justify-center">

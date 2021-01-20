@@ -67,7 +67,6 @@ class _CardActivityContainer extends Component {
   }
 
   onSaveNewComment = () => {
-    // socketService.emit('new comment', { name: 'me' })
 
     const comment = this.createComment()
     let commentsCopy = this.state.comments
