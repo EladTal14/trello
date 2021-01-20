@@ -14,7 +14,7 @@ export function boardReducer(state = initialState, action) {
     case 'CLEAN_BOARD':
       return { ...state, currBoard: null }
     case 'ADD_BOARD':
-      return { ...state, boards: [...state.boards, action.board], currBoard: action.board }
+      return { ...state, boards: [...state.boards, action.board], currBoard: { ...action.board } }
     case 'SAVE_BOARD':
       return {
         ...state, boards: state.boards.map(board => {
