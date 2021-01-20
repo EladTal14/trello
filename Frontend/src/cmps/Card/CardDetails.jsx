@@ -55,16 +55,24 @@ class _CardDetails extends Component {
     this.sendUpdatedBoard()
   }
 
-  sendUpdatedBoard = async () => {
+  sendUpdatedBoard = () => {
     const { board, group } = this.props
     const { card } = this.state
     const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
     group.cards[cardIdx] = card
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    await this.props.saveBoard(board)
+    this.props.saveBoard(board)
 
     // socketService.emit('card changed', board)
+  }
+  onUpdateCard = (updatedCard) => {
+    const { board, group } = this.props
+    const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
+    group.cards[cardIdx] = updatedCard
+    const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
+    board.groups[groupIdx] = group
+    this.setState({ card: updatedCard }, () => { this.props.saveBoard(board) })
   }
 
   onHandleInputChange = ({ target }) => {
@@ -115,15 +123,14 @@ class _CardDetails extends Component {
     }))
   }
 
-  onRemoveCard = async () => {
+  onRemoveCard = () => {
     const { board, group } = this.props
     const { card } = this.state
     const cardIdx = group.cards.findIndex((currCard) => currCard.id === card.id)
     group.cards.splice(cardIdx, 1)
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
-    await this.props.saveBoard(board)
-
+    this.props.saveBoard(board)
     // socketService.emit('card removed', board)
     this.props.toggleDetails(false)
   }
@@ -143,14 +150,7 @@ class _CardDetails extends Component {
     this.onUpdateCard(newCard)
   }
 
-  onUpdateCard = (updatedCard) => {
-    const { board, group } = this.props
-    const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
-    group.cards[cardIdx] = updatedCard
-    const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
-    board.groups[groupIdx] = group
-    this.setState({ card: updatedCard }, () => { this.props.saveBoard(board) })
-  }
+
 
   onUpdateCoverColor = (color) => {
     const { card } = this.state

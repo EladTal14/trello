@@ -5,14 +5,12 @@
 html {
     font-family: "montserrat", sans-serif;
     line-height: 1.6;
-    color: $clr4;
     scroll-behavior: smooth;
     font-size: rem(14px);
 }
 
 body {
     margin: 0;
-    background-color: $clr5;
     overflow-y: hidden;
 }
 
@@ -27,7 +25,7 @@ ul {
     margin: 5px 0;
 }
 
-li{
+li {
     list-style-type: none;
 }
 
@@ -59,4 +57,9 @@ pre {
     font-weight: 700;
     background-color: rgb(4, 78, 236);
     text-align: center;
+}
+root {
+    ::-webkit-scrollbar {
+        background-color: green;
+    }
 }
