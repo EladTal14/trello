@@ -9,6 +9,7 @@ import { socketService } from '../../services/socketService.js'
 import { AddMember } from '../AddMember'
 import { BoardMenu } from './BoardMenu'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { Link } from 'react-router-dom'
 
 export class _BoardHeader extends Component {
 
@@ -107,6 +108,8 @@ export class _BoardHeader extends Component {
   render() {
     const { members, users } = this.props
     const { board, isChanging, isWrapper, isMoreMembersShown } = this.state
+    const currBoardId = this.props.board._id
+    if (!board && !currBoardId) return <div>Loading ...</div>
     return (
       <>
         {isMoreMembersShown && <div className="board-header-member-box"><AddMember toggleMembers={this.toggleMembers} onUpdateMembers={this.onUpdateMembers}
@@ -118,10 +121,12 @@ export class _BoardHeader extends Component {
               <input type="text" name="title" value={board.title} onChange={this.handleInput}
                 className="board-title-input" placeholder="Enter board title..." autoComplete="off" />
             </form>
-            <button className="board-header-btn flex space-around">
-              <h3>Statistics</h3>
-              <img src="https://res.cloudinary.com/basimgs/image/upload/v1610626728/pie-chart_fnvwct.png" alt="" />
-            </button>
+            <Link to={`/board/${currBoardId}/dashboard`}>
+              <button className="board-header-btn flex space-around">
+                <h3>Statistics</h3>
+                <img src="https://res.cloudinary.com/basimgs/image/upload/v1610626728/pie-chart_fnvwct.png" alt="" />
+              </button>
+            </Link>
             <div className="header-members flex">
               <ul className="member-list flex">
                 <TransitionGroup className="members-list flex">

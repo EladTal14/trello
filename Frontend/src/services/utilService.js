@@ -4,7 +4,8 @@ export const utilService = {
   createTime,
   getDueDate,
   convertName,
-  getTodoProgress
+  getTodoProgress,
+  getRandomColor
 }
 
 
@@ -60,4 +61,12 @@ function getTodoProgress(card) {
   }
   else return
 
+}
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }

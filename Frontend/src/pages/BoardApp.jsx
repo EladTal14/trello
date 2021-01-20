@@ -19,14 +19,14 @@ export class _BoardApp extends Component {
         userClicked: {
             x: null,
             y: null
-        }
+        },
     }
     refBoard = React.createRef()
     componentDidMount() {
         this.loadBoard()
         socketService.setup()
         socketService.on('load board', (board) => this.updateBoard(board, true))
-        
+
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
         this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
@@ -174,6 +174,7 @@ export class _BoardApp extends Component {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
         if (!board) return <p>Loading...</p>
+        // console.log('board', board._id)
         let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
         console.log('this.props.board', this.props.board)
         socketService.emit('set label', this.props.board._id)

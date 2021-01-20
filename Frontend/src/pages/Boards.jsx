@@ -4,6 +4,7 @@ import { BoardPreview } from '../cmps/BoardPreview'
 import { loadBoards, saveBoard } from '../store/actions/boardAction'
 
 export class _Boards extends Component {
+    
     componentDidMount() {
         this.props.loadBoards()
     }
@@ -17,11 +18,14 @@ export class _Boards extends Component {
     // }
 
     addBoard = async () => {
-        const board = { title: 'New Board' }
-        await this.props.saveBoard(board, true)
-        console.log('this.props', this.props.board._id)
+        const board = { title: 'New Board', style: {} }
+        await this.props.saveBoard(board)
+        console.log('board to add new', this.props.board);
         this.props.history.push(`board/${this.props.board._id}`)
     }
+    // const board = { title: 'New Board' }
+    // await this.props.saveBoard(board, true)
+    // console.log('this.props', this.props.board._id)
     // addBoard = async () => {
     //     const board = { title: 'New Board' }
     //     await this.props.saveBoard(board)

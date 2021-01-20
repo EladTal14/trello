@@ -169,7 +169,7 @@
     border: none;
     outline: none;
     // color: #5e6c84;
-    color: white;
+    color: #172b4d;
     height: 30px;
     line-height: 30px;
     // margin: 2px 0 8px 8px;
@@ -217,4 +217,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.photos-btn{
+  background-image: url("https://res.cloudinary.com/basimgs/image/upload/v1611150997/collage.48948499_gdkpwo.jpg");
+  background-color: #dfe1e6;
+  background-size: cover;
+  border-radius: 8px;
+  height: 80px;
+  margin-bottom: 8px;
+  width: 130px;
+  margin-right: 5px;
+  cursor: pointer;
+  &:hover{
+    opacity: 0.7;
+  }
+
+}
+
+.colors-menu-btn{
+  background-image: url("https://res.cloudinary.com/basimgs/image/upload/v1611150997/colors.864f4df1_utbebh.jpg");
+  background-color: #dfe1e6;
+  background-size: cover;
+  border-radius: 8px;
+  height: 80px;
+  margin-bottom: 8px;
+  width: 130px;
+  cursor: pointer;
+  &:hover{
+    opacity: 0.7;
+  }
 }

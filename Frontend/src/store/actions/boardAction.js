@@ -38,6 +38,7 @@ export function saveBoard(board, isRenderSocket = false) {
         }
     }
 }
+
 export function cleanBoard() {
     return (dispatch) => {
         try {

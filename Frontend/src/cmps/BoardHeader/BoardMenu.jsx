@@ -13,7 +13,7 @@ class _BoardMenu extends Component {
         <section className="menu-container">
           <div className="board-menu-header flex space-around">
             <h3 className="board-menu-title">Menu</h3>
-            <h4 className="board-menu-close" onClick={toggleMenu}>X</h4>
+            <h4 className="board-menu-close" onClick={toggleMenu}>✕</h4>
           </div>
 
           {!isChanging &&
