@@ -79,4 +79,28 @@
             background-color: #cecece;
         }
     }
+
+    .new-board-header{
+
+        border-bottom: .0625rem solid rgba(9,30,66,.13);
+        h3{
+            flex-grow: 2;
+            margin: 0;
+        }
+
+        button{
+            border: none;
+            outline: none;
+            background-color: unset;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: rem(18px);
+            margin-bottom: 5px;
+            &:hover{
+                background-color: #e7e7e7;
+            }
+        }
+
+        
+    }
 }

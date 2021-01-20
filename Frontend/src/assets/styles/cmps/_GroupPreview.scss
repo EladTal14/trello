@@ -8,17 +8,24 @@
   // max-height: 70vh;
 }
 
+.title-form{
+  height: 20px;
+  align-items: center;
+  margin-bottom: 2.5px;
+}
+
 .title-input {
+  height: 18px;
   outline: none;
   border: none;
   background-color: unset;
   border-radius: 3px;
   font-family: "montserrat", sans-serif;
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: rem(16px);
   margin-left: 8px;
   color: #172b4d;
-  padding: 0;
+  padding: 0 0 0 3px;
 }
 
 .title-input:focus {

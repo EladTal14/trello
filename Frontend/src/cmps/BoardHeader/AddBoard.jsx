@@ -69,7 +69,7 @@ export class AddBoard extends Component {
         return (
             <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleAddBoard}>
             <div className="new-board-modal flex column">
-            <div className="flex space-around">
+            <div className="new-board-header flex space-around">
                 <h3>Create New Board</h3><button onClick={this.onClose}>✕</button>
             </div>
                 <div className="board-cover-colors">
