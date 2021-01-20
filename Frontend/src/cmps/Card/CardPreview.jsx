@@ -35,7 +35,7 @@ export class _CardPreview extends Component {
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
-                                    style={getItemStyle(snapshot.isDragging, provided.draggableProps.style, style)}
+                                    style={getItemStyle(snapshot.isDragging, provided.draggableProps.style, style, snapshot.isDraggingOver)}
                                 >
                                     <button className="show-preview-details-btn" onClick={(ev) => this.showPreviewDetails(ev, card, group)}><img className="show-preview-details-pen" src="https://res.cloudinary.com/basimgs/image/upload/v1610873061/pen_lgmg47.png" alt="pen" /></button>
                                     {card.style && (card.style.imgUrl ? <div className="card-img-cover" style={{ backgroundImage: `url(${card.style.imgUrl}` }} ></div> :
@@ -56,13 +56,14 @@ export class _CardPreview extends Component {
     }
 }
 
-const getItemStyle = (isDragging, draggableStyle, style) => ({
+const getItemStyle = (isDragging, draggableStyle, style, isDraggingOver) => ({
     userSelect: 'none',
     padding: 8,
 
     margin: '0 4px 8px 3px',
     borderRadius: '3px',
     background: isDragging ? '##e4e0e0' : 'white',
+    // background: isDraggingOver ? 'black' : 'green',
     boxShadow: `0 1px 0 rgba(9, 30, 66, 0.25)`,
     ...draggableStyle,
     ...style

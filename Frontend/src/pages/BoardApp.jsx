@@ -96,7 +96,7 @@ export class _BoardApp extends Component {
         const { board } = this.props
         const copyBoard = { ...board }
         await this.props.saveBoard(copyBoard)
-        socketService.emit('card dragged', board)
+        // socketService.emit('card dragged', board)
     }
 
     onAddCard = async (card, groupId) => {
