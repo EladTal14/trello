@@ -2,6 +2,14 @@
     padding: 20px;
     max-height: 100vh;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.404);
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    }
     .boards-container {
         max-width: 960px;
         margin: 0 auto;
@@ -9,7 +17,6 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 10px;
-
         .board-preview {
             padding: 60px 10px;
             width: 280px;

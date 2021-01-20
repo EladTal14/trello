@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export function BoardPreview({ board }) {
     return (
-        <Link to={`/board/${board._id}`}>
+        <Link style={{ width: '280px' }} to={`/board/${board._id}`}>
             <div style={{
                 backgroundImage: `url(${board.style.backgroundImage})`, backgroundColor: "#6DB3F2",
                 backgroundRepeat: "no-repeat",
