@@ -9,17 +9,8 @@
         grid-column: 2;
     }
 }
-
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.group-list {
-    display: flex;
-    // grid-template-columns: repeat(8, 280px);
-    // gap: 10px;
-    margin: 20px auto;
-    // justify-items: center;
 }

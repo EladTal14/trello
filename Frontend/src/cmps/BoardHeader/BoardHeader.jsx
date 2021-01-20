@@ -30,13 +30,12 @@ export class _BoardHeader extends Component {
     if (current.style.opacity === '0') {
       current.style.opacity = '1'
       current.style.visibility = 'visible'
-      current.style.width = '27vw'
+      current.style.width = '290px'
 
-    }
-    else if (current.style.opacity === '1') {
+    } else if (current.style.opacity === '1') {
       current.style.opacity = '0'
       current.style.visibility = 'hidden'
-      current.style.width = '1vw'
+      current.style.width = '0'
     }
     this.setState({ isChanging: false, isWrapper: !this.state.isWrapper })
   }

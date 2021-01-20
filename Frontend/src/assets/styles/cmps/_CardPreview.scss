@@ -1,8 +1,6 @@
 .card-preview {
     border-radius: 3px;
-    width: 241px;
-    // max-width: 290px;
-    // min-height: 20px;
+    position: relative;
     &:hover {
         .show-preview-details-btn {
             opacity: 0.5;
@@ -26,8 +24,8 @@
         border: 0;
         background-color: unset;
         position: absolute;
-        left: 84%;
-        top: 1;
+        left: 85.5%;
+        top: 4px;
         z-index: 6;
         opacity: 0.6;
         width: 27px;

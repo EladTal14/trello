@@ -37,7 +37,7 @@ export class GroupPreview extends Component {
                                 <article className="group-preview" {...provided.draggableProps}
                                     style={getItemStyle(snapshot.isDragging, provided.draggableProps.style, style)}
                                     ref={provided.innerRef}>
-                                    <div  {...provided.dragHandleProps} style={{ width: 272, height: '1.175em' }}>
+                                    <div  {...provided.dragHandleProps} style={{ width: 272 }}>
                                     </div>
                                     <GroupTitle updateBoard={updateBoard} group={group} dragHandle={provided.dragHandleProps} />
                                     <CardList refs={this.refCard} cards={group.cards}

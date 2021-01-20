@@ -67,6 +67,14 @@ class _CardDetails extends Component {
 
     // socketService.emit('card changed', board)
   }
+  onUpdateCard = (updatedCard) => {
+    const { board, group } = this.props
+    const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
+    group.cards[cardIdx] = updatedCard
+    const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
+    board.groups[groupIdx] = group
+    this.setState({ card: updatedCard }, () => { this.props.saveBoard(board) })
+  }
 
   onHandleInputChange = ({ target }) => {
     const { value, name } = target

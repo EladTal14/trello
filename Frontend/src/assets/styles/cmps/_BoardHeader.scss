@@ -141,14 +141,12 @@
   transition: opacity 0.7s, width 0.7s, visibility 0.7s ease-in-out;
   position: fixed;
   z-index: 10;
-  bottom: 0;
+  top: 0;
   height: 100px;
   right: 0;
   background-color: #ebecf0;
-  width: 27vw;
-  height: 95vh;
-  border-radius: 7px;
-
+  height: 100vh;
+  color: $clr6;
   .menu-container {
     width: 90%;
   }

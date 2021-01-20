@@ -12,8 +12,10 @@ export class CardList extends Component {
     }
     // refCard = React.createRef()
     getListStyle = isDraggingOver => ({
-        padding: 5,
-        width: 245,
+        // padding: 5,
+        paddingTop: 5,
+        paddingBottom: 5,
+        paddingLeft: 5,
         position: "relative",
         backgroundColor: (isDraggingOver) ? 'lightgray' : 'unset'
     })
@@ -39,11 +41,11 @@ export class CardList extends Component {
                     {(provided, snapshot) => (
                         <div ref={provided.innerRef} style={this.getListStyle(snapshot.isDraggingOver)}
                             {...provided.droppableProps}>
-                                {cards.map((card, index) =>
+                            {cards.map((card, index) =>
 
-                                        <CardPreview key={card.id} card={card} group={group}
-                                            index={index} groupId={id} groupTitle={groupTitle} />
-                                )}
+                                <CardPreview key={card.id} card={card} group={group}
+                                    index={index} groupId={id} groupTitle={groupTitle} />
+                            )}
                             {provided.placeholder}
                         </div>
                     )}
