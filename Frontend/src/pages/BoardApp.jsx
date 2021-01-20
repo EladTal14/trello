@@ -9,6 +9,7 @@ import { boardService } from '../services/boardService'
 import { eventBusService } from '../services/eventBusService.js'
 import { CardPreviewDetails } from '../cmps/Card/CardPreviewDetails'
 import { socketService } from '../services/socketService'
+import { activityService } from '../services/activityService'
 
 export class _BoardApp extends Component {
     state = {
@@ -101,8 +102,13 @@ export class _BoardApp extends Component {
     onAddCard = async (card, groupId) => {
         const { board } = this.props
         const copyBoard = { ...board }
+
         const groupIdx = await boardService.getGroupIdxById(board._id, groupId)
         copyBoard.groups[groupIdx].cards.push(card)
+
+        const activity = activityService.createActivity(this.props.loggedInUser, 'added card ', card, copyBoard.groups[groupIdx], 'to')
+        copyBoard.activities ? copyBoard.activities.unshift(activity) : copyBoard.activities = new Array(activity)
+
         await this.props.saveBoard(copyBoard)
 
         // socketService.emit('card added', board)
@@ -185,9 +191,9 @@ const mapStateToProps = state => {
     return {
         board: state.boardModule.currBoard,
         currCard: state.cardModule.currCard,
-        currGroup: state.cardModule.currGroup
+        currGroup: state.cardModule.currGroup,
+        loggedInUser: state.userModule.loggedInUser
         // filterBy: state.boardModule.filterBy,
-        // loggedInUser: state.userModule.loggedInUser,
     }
 }
 

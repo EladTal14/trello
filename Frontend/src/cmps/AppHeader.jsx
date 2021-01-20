@@ -35,6 +35,7 @@ class _AppHeader extends Component {
   addBoard = async (board) => {
     await this.props.saveBoard(board)
     const newBoardId = this.props.board._id
+    console.log('newBoardId', newBoardId)
     this.props.history.push(`/`)
     this.props.history.push(`board/${newBoardId}`)
   }

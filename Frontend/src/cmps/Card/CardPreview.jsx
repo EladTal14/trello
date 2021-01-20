@@ -59,7 +59,8 @@ export class _CardPreview extends Component {
 const getItemStyle = (isDragging, draggableStyle, style) => ({
     userSelect: 'none',
     padding: 8,
-    margin: `0 0 ${8}px 0`,
+
+    margin: '0 4px 8px 3px',
     borderRadius: '3px',
     background: isDragging ? '##e4e0e0' : 'white',
     boxShadow: `0 1px 0 rgba(9, 30, 66, 0.25)`,

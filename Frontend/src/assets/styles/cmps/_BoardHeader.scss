@@ -1,7 +1,7 @@
 .board-header {
   align-items: center;
   padding: 0 5px;
-  color: white;
+  color: black;
   height: 40px;
   align-items: center;
 
@@ -153,6 +153,7 @@
 
   .activities-wrapper {
     overflow-y: auto;
+    max-height: 100%;
   }
 
   .board-menu-header {
