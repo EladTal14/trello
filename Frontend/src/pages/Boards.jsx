@@ -9,17 +9,35 @@ export class _Boards extends Component {
         this.props.loadBoards()
     }
 
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.boards === prevProps.boards && this.props.board) {
+    //         this.props.loadBoards()
+    //         console.log('this.props UPDATE', this.props)
+    //         // this.props.history.push(`board/${this.props.board._id}`)
+    //     }
+    // }
+
     addBoard = async () => {
         const board = { title: 'New Board', style: {} }
         await this.props.saveBoard(board)
         console.log('board to add new', this.props.board);
         this.props.history.push(`board/${this.props.board._id}`)
     }
+    // const board = { title: 'New Board' }
+    // await this.props.saveBoard(board, true)
+    // console.log('this.props', this.props.board._id)
+    // addBoard = async () => {
+    //     const board = { title: 'New Board' }
+    //     await this.props.saveBoard(board)
+    //     console.log('board', board)
+    //     this.props.history.push(`board/${this.props.board._id}`)
+    // }
 
     render() {
         const { boards } = this.props
         const load = <p>Loading...</p>
         if (!boards) return load
+        console.log('this.props UPDATE', this.props)
         return (
             <div className="boards-page">
                 <h2>Our Boards</h2>

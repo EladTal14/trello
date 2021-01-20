@@ -22,19 +22,19 @@
     margin: 0px 0px 18px 18px;
   }
 
-  .activity-comment-wrapper {
-    margin-bottom: 15px;
+}
+.activity-comment-wrapper {
+  margin-bottom: 15px;
 
-    .activity-comment {
-      margin-left: 10px;
+  .activity-comment {
+    margin-left: 10px;
 
-      & p {
-        font-size: 14px;
-      }
+    & p {
+      font-size: 14px;
     }
+  }
 
-    .activity-time {
-      font-size: 12px;
-    }
+  .activity-time {
+    font-size: 12px;
   }
 }

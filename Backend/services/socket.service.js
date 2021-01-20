@@ -20,7 +20,7 @@ function connectSockets(http, session) {
     }));
     gIo.on('connection', socket => {
         // Keeping the socket inside the map above
-        gSocketBySessionIdMap[socket.handshake.sessionID] = socket
+        // gSocketBySessionIdMap[socket.handshake.sessionID] = socket
         socket.on('disconnect', socket => {
             console.log('Someone disconnected')
             if (socket.handshake) {
@@ -29,7 +29,7 @@ function connectSockets(http, session) {
             }
         })
         socket.on('set label', boardId => {
-            console.log('boardId', boardId)
+            console.log('set label -> boardId', boardId)
             // if (socket.myTopic) {
             //     socket.leave(socket.myTopic)
             // }
@@ -67,7 +67,7 @@ function connectSockets(http, session) {
             gIo.to(socket.myTopic).emit('load board', board)
         })
         socket.on('render', (board) => {
-            console.log('socket.myTopic', socket.myTopic)
+            console.log('render -> socket.myTopic', socket.myTopic)
             // gIo.to(socket.myTopic).emit('load board', board)
             socket.broadcast.to(socket.myTopic).emit('load board' ,board)
         })

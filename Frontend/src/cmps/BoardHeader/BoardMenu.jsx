@@ -29,12 +29,15 @@ class _BoardMenu extends Component {
                     <div className="member">{activity.byMember ? utilService.convertName(activity.byMember.fullname) : 'G'}</div>
 
                     <div className="activity-comment">
-                      <p>{activity.byMember ? activity.byMember.fullname : 'Guest'}: {activity.txt}
-                        {activity.card?.title} {activity.group?.title}</p>
+                      {!activity.toGroup && <p>{activity.byMember ? activity.byMember.fullname : 'Guest'}: {activity.txt}
+                        {activity.card?.title} {activity.group?.title}</p>}
+
+                      {activity.toGroup && <p>{activity.byMember ? activity.byMember.fullname : 'Guest'}: {activity.txt}
+                       from {activity.group.title} to {activity.toGroup.title}</p>}
+
                       <TimeAgo className="activity-time" date={activity.createdAt} />
                     </div>
-                  </div>
-                ))}
+                  </div>))}
               </section>
             </>
           }

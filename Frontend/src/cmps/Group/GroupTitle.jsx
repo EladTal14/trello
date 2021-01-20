@@ -8,18 +8,31 @@ export class _GroupTitle extends Component {
     state = {
         groupIdx: null,
         group: {
-            title: this.props.group.title,
+            title: ''
         }
     }
     textInput = React.createRef()
 
     componentDidMount() {
         const groupId = this.props.group.id
-        const { board } = this.props
+        const { board, group } = this.props
         const groupIdx = board.groups.findIndex(group => group.id === groupId)
-        this.setState({ groupIdx })
+
+        this.setState({ groupIdx, group: { title: group.title } })
     }
 
+    componentDidUpdate(prevProps) {
+
+        if (this.props.group.title !== prevProps.group.title) {
+            this.setState(prevState => ({
+                group: {
+                    ...prevState.group,
+                    title: this.props.group.title
+                }
+            }))
+        }
+
+    }
 
     handleInput = ({ target }) => {
         const { name } = target
@@ -32,31 +45,24 @@ export class _GroupTitle extends Component {
                     [name]: value
                 }
             }
-        }) 
+        })
     }
 
     onSaveTitle = async (ev) => {
-        const groupId = this.props.group.id
         ev.preventDefault()
-        const { board } = this.props
+        const groupId = this.props.group.id
+        const board = { ...this.props.board }
         console.log('board from title', board)
         const { title } = this.state.group
-        const boardCopy = { ...board }
         const groupIdx = board.groups.findIndex(group => group.id === groupId)
-        boardCopy.groups[groupIdx].title = title
-        // boardCopy.groups[this.state.groupIdx - 1].title = title
-        await this.props.updateBoard(boardCopy)
-        // await this.props.saveBoard(boardCopy, false)
-        // await this.props.saveBoard(boardCopy, false)
-        // this.textInput.current.blur()
-
+        board.groups[groupIdx].title = title
+        await this.props.updateBoard(board)
         this.setState({ groupIdx: null })
-        // console.log(ev.target[0]);
-        // if (ev.target[0]) ev.target[0].blur()
     }
 
     render() {
         const { group } = this.state
+        console.log('GROUP_TITLE:', group.title);
         return <section className="group-title" {...this.props.dragHandle}>
             <form onSubmit={this.onSaveTitle} ref={this.textInput} {...this.props.dragHandle} className="title-form flex space-between">
                 {/* <input type="text" ref={this.textInput} name="title" value={group.title} onChange={this.handleInput} */}

@@ -25,13 +25,21 @@ export class _BoardApp extends Component {
     componentDidMount() {
         this.loadBoard()
         socketService.setup()
-        socketService.on('load board', this.props.updateBoard)
+        socketService.on('load board', (board) => this.updateBoard(board, true))
 
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
         this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
         this.eventBusShowPreviewDetailsTerminate = eventBusService.on('show-preview-details', this.showPreviewCardDetails)
     }
+
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.board === prevProps.board) {
+    //     // if (this.props.board !== prevProps.board && !this.props.board) {
+    //         this.props.loadBoards()
+    //         // this.props.history.push(`board/${this.props.board._id}`)
+    //     }
+    // }
 
     componentWillUnmount() {
         this.eventBusTerminate()
@@ -43,8 +51,8 @@ export class _BoardApp extends Component {
         // this.props.board = null
     }
 
-    updateBoard = (board) => {
-        this.props.saveBoard(board, true)
+    updateBoard = (board, isRenderSocket = false) => {
+        this.props.saveBoard(board, isRenderSocket)
     }
 
     loadBoard = async () => {
@@ -92,11 +100,19 @@ export class _BoardApp extends Component {
         await this.props.saveBoard(board)
     }
 
-    onDragCard = async () => {
+    onDragCard = async (sourceGroup = null, destinationGroup = null) => {
         const { board } = this.props
         const copyBoard = { ...board }
+
+        if (sourceGroup && destinationGroup) {
+            if (sourceGroup.title !== destinationGroup.title) {
+                var activity = activityService.createActivity(this.props.loggedInUser, 'moved card ', null, sourceGroup, ' to', destinationGroup)
+                copyBoard.activities ? copyBoard.activities.unshift(activity) : copyBoard.activities = new Array(activity)
+            }
+        }
+
         await this.props.saveBoard(copyBoard)
-        // socketService.emit('card dragged', board)
+        // socketService.emit('card dragged', board) 
     }
 
     onAddCard = async (card, groupId) => {
@@ -130,7 +146,7 @@ export class _BoardApp extends Component {
         const draggingCard = sourceGroup.cards.find(card => card.id === draggableId)
         sourceGroup.cards.splice(source.index, 1)
         destinationGroup.cards.splice(destination.index, 0, draggingCard)
-        this.onDragCard()
+        this.onDragCard(sourceGroup, destinationGroup)
     }
 
     toggleDetails = () => {
@@ -159,8 +175,9 @@ export class _BoardApp extends Component {
         console.log('want to check if a new board is add', board);
         if (!board) return <p>Loading...</p>
         // console.log('board', board._id)
-        socketService.emit('set label', this.props.board._id)
         let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
+        console.log('this.props.board', this.props.board)
+        socketService.emit('set label', this.props.board._id)
         return (
             <>
                 {this.props.currCard && isDetailsShown &&

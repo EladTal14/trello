@@ -31,6 +31,7 @@ export function saveBoard(board, isRenderSocket = false) {
             console.log('savedBoard', savedBoard);
             if (!isRenderSocket) {
                 socketService.emit('render', savedBoard)
+                // socketService.emit('render', board)
             }
             dispatch({ type: (board._id) ? 'UPDATE_BOARD' : 'ADD_BOARD', board: savedBoard })
         } catch (err) {
