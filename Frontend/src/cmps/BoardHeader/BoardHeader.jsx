@@ -29,13 +29,12 @@ export class _BoardHeader extends Component {
     if (current.style.opacity === '0') {
       current.style.opacity = '1'
       current.style.visibility = 'visible'
-      current.style.width = '27vw'
+      current.style.width = '290px'
 
-    }
-    else if (current.style.opacity === '1') {
+    } else if (current.style.opacity === '1') {
       current.style.opacity = '0'
       current.style.visibility = 'hidden'
-      current.style.width = '1vw'
+      current.style.width = '0'
     }
     this.setState({ isChanging: false, isWrapper: !this.state.isWrapper })
   }
@@ -109,14 +108,14 @@ export class _BoardHeader extends Component {
             </button>
             <div className="header-members flex">
               <ul className="member-list flex">
-              <TransitionGroup className="members-list flex">
-                {members.map((member, idx) => 
-                  <CSSTransition key={idx} timeout={500} classNames="item">
-                   <li key={member.fullname} className="header-member">
-                    {utilService.convertName(member.fullname)}
-                  </li>
-                  </CSSTransition>
-                )}
+                <TransitionGroup className="members-list flex">
+                  {members.map((member, idx) =>
+                    <CSSTransition key={idx} timeout={500} classNames="item">
+                      <li key={member.fullname} className="header-member">
+                        {utilService.convertName(member.fullname)}
+                      </li>
+                    </CSSTransition>
+                  )}
                 </TransitionGroup>
               </ul>
               <button className="add-member" onClick={this.toggleMembers}>

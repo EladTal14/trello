@@ -10,7 +10,7 @@ import { Signup } from './pages/Signup'
 
 export function _App({ currBoard }) {
   return (
-    <div className="App" style={{ backgroundImage: `url(${(currBoard) ? currBoard.style.backgroundImage : '#cccccc'})` }}>
+    <div className="App" style={{ backgroundImage: `url(${(currBoard) ? currBoard.style.backgroundImage : 'white'})` }}>
       <AppHeader />
       <Switch>
         <Route component={Login} path="/login" />
