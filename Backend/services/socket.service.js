@@ -19,8 +19,6 @@ function connectSockets(http, session) {
         autoSave: true
     }));
     gIo.on('connection', socket => {
-        console.log('Someone ')
-        // console.log('socket.handshake', socket.handshake)
         // Keeping the socket inside the map above
         gSocketBySessionIdMap[socket.handshake.sessionID] = socket
         socket.on('disconnect', socket => {
@@ -29,6 +27,14 @@ function connectSockets(http, session) {
                 // removing the user from the map
                 gSocketBySessionIdMap[socket.handshake.sessionID] = null
             }
+        })
+        socket.on('set label', boardId => {
+            console.log('boardId', boardId)
+            // if (socket.myTopic) {
+            //     socket.leave(socket.myTopic)
+            // }
+            socket.join(boardId)
+            socket.myTopic = boardId
         })
         socket.on('chat topic', topic => {
             if (socket.myTopic) {
@@ -44,12 +50,27 @@ function connectSockets(http, session) {
             // emits only to sockets in the same room
             gIo.to(socket.myTopic).emit('chat addMsg', msg)
         })
-        socket.on('new comment', (comment) => {
-            gIo.emit('commented', comment);
-        });
-        socket.on('card added', (val) => {
-            gIo.emit('load board', val);
-        });
+        socket.on('card added', (board) => {
+            console.log('socket.myTopic', socket.myTopic)
+            gIo.to(socket.myTopic).emit('load board', board)
+        })
+        socket.on('card changed', (board) => {
+            console.log('socket.myTopic', socket.myTopic)
+            gIo.to(socket.myTopic).emit('load board', board)
+        })
+        socket.on('card removed', (board) => {
+            console.log('socket.myTopic', socket.myTopic)
+            gIo.to(socket.myTopic).emit('load board', board)
+        })
+        socket.on('group added', (board) => {
+            console.log('socket.myTopic', socket.myTopic)
+            gIo.to(socket.myTopic).emit('load board', board)
+        })
+        socket.on('render', (board) => {
+            console.log('socket.myTopic', socket.myTopic)
+            // gIo.to(socket.myTopic).emit('load board', board)
+            socket.broadcast.to(socket.myTopic).emit('load board' ,board)
+        })
 
     })
 }
