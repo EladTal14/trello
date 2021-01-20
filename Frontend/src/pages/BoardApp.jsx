@@ -19,8 +19,7 @@ export class _BoardApp extends Component {
         userClicked: {
             x: null,
             y: null
-        },
-        check: false
+        }
     }
     refBoard = React.createRef()
     componentDidMount() {
@@ -32,7 +31,6 @@ export class _BoardApp extends Component {
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
         this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
         this.eventBusShowPreviewDetailsTerminate = eventBusService.on('show-preview-details', this.showPreviewCardDetails)
-        this.setState({ check: true })
     }
 
     componentWillUnmount() {
@@ -159,9 +157,9 @@ export class _BoardApp extends Component {
     render() {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
-        if (!board && this.state.check) return <p>Loading...</p>
-        console.log('board', board._id)
-        socketService.emit('set label', board._id)
+        if (!board) return <p>Loading...</p>
+        console.log('board', board.groups)
+        socketService.emit('set label', this.props.board._id)
         let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
         return (
             <>
