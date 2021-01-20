@@ -1,6 +1,10 @@
 .card-preview {
     border-radius: 3px;
     position: relative;
+
+    .lower-card{
+        padding: 6px 8px;
+    }
     &:hover {
         .show-preview-details-btn {
             opacity: 0.5;
@@ -15,7 +19,7 @@
     }
 
     .card-color-cover {
-        width: 219px;
+        width: 100%;
         height: 20px;
         border-radius: 3px;
         margin-bottom: 2px;

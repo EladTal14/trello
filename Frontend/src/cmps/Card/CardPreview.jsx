@@ -40,12 +40,15 @@ export class _CardPreview extends Component {
                                     <button className="show-preview-details-btn" onClick={(ev) => this.showPreviewDetails(ev, card, group)}><img className="show-preview-details-pen" src="https://res.cloudinary.com/basimgs/image/upload/v1610873061/pen_lgmg47.png" alt="pen" /></button>
                                     {card.style && (card.style.imgUrl ? <div className="card-img-cover" style={{ backgroundImage: `url(${card.style.imgUrl}` }} ></div> :
                                         <div className="card-color-cover" style={{ backgroundColor: card.style.color }}></div>)}
-                                    <CardPreviewLabel card={card} />
-                                    <div className="flex space-between">
-                                        <pre>{card.title}</pre>
+                                    <div className="lower-card">
+                                        <CardPreviewLabel card={card} />
+                                        <div className="flex space-between">
+                                            <pre>{card.title}</pre>
+
+                                        </div>
+                                        <CardPreviewBottom card={card} />
 
                                     </div>
-                                    <CardPreviewBottom card={card} />
                                 </article>
                             )}
                         </NaturalDragAnimation>
@@ -58,7 +61,7 @@ export class _CardPreview extends Component {
 
 const getItemStyle = (isDragging, draggableStyle, style) => ({
     userSelect: 'none',
-    padding: 8,
+    padding: '0',
 
     margin: '0 4px 8px 3px',
     borderRadius: '3px',

@@ -14,6 +14,7 @@ export class CardSide extends Component {
     // value: new Date(),
     isDateShown: false,
     isLabelsShown: false,
+    isLabelsMenuShown: false,
     isCoverMenuShown: false,
     isMoreMembersShown: false
   }
@@ -34,10 +35,9 @@ export class CardSide extends Component {
     this.setState({ isCoverMenuShown: !this.state.isCoverMenuShown })
   }
 
-  // onChange = (value) => {
-  //   this.setState({ value }, () => this.props.onSavedueDate((this.state.value + '').substring(4, 32)))
-  //   this.toggleDate()
-  // }
+  toggleLableMenu = () => {
+    this.setState({ isLabelsMenuShown: !this.state.isLabelsMenuShown })
+  }
 
 
 
@@ -54,22 +54,14 @@ export class CardSide extends Component {
 
 
   render() {
-    const { value, isDateShown, isLabelsShown, isCoverMenuShown, isMoreMembersShown } = this.state
+    const { value, isDateShown, isLabelsShown, isCoverMenuShown, isMoreMembersShown, isLabelsMenuShown } = this.state
     const { card, onHandleLabelsChange, saveChanges, users } = this.props
     return (
       <>
-        {isLabelsShown && <CardLabels saveChanges={saveChanges} card={card} onToggleLabels={this.onToggleLabels} onHandleLabelsChange={onHandleLabelsChange} />}
+        {isLabelsMenuShown && <CardLabels saveChanges={saveChanges} card={card} onToggleLabels={this.onToggleLabels} toggleLableMenu={this.toggleLableMenu} onHandleLabelsChange={onHandleLabelsChange} />}
         {isCoverMenuShown && <CardCover onFinishUpload={this.props.onUploadCardCoverImg}
           onUpdateCoverColor={this.props.onUpdateCoverColor} toggleCoverMenu={this.toggleCoverMenu} />}
-        {isDateShown &&  <DatePicker onSavedueDate={this.props.onSavedueDate} toggleDate={this.toggleDate}/>
-        // <div className="date-picker">
-        //   <button onClick={this.toggleDate} className="close-date-btn">✕</button>
-        //   <Calendar style={{zIndex: 2000, position:'absolute'}}
-        //     onChange={this.onChange}
-        //     value={value}
-        //   />
-        // </div>
-        } 
+        {isDateShown &&  <DatePicker onSavedueDate={this.props.onSavedueDate} toggleDate={this.toggleDate}/>} 
         {isMoreMembersShown && <div className="card-details-member-container"><AddMember toggleMembers={this.toggleMembers} 
         onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users}/></div> }
         {/* <DatePicker /> */}
@@ -79,7 +71,7 @@ export class CardSide extends Component {
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/user_g2y481.png" alt="" />
             </span> Members</button>
 
-          <button className="side-btn" onClick={this.onToggleLabels}>
+          <button className="side-btn" onClick={this.toggleLableMenu}>
             <span>
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610794160/price-tag_evse4z.png" alt="" />
             </span> Labels</button>
