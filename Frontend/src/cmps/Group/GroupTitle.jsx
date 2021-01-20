@@ -9,7 +9,6 @@ export class _GroupTitle extends Component {
         groupIdx: null,
         group: {
             title: this.props.group.title,
-
         }
     }
     textInput = React.createRef()

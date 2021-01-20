@@ -91,7 +91,7 @@ async function add(board) {
             groups: [],
             members: [],
             activities: [],
-            style: {},
+            style: {backgroundImage: (board.style? board.style.backgroundImage : '')},
             labels: []
         }
         const collection = await dbService.getCollection('board')

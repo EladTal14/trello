@@ -57,7 +57,7 @@ export class CardAdd extends Component {
             {isAddOpen &&
                 <form onSubmit={() => { return }} className="new-card-form">
                     <textarea type="text" name="title" value={card.title} onChange={this.handleInput}
-                        className="my-input" placeholder="Enter a title card title..." autoFocus
+                        className="my-input" placeholder="Enter a card title..." autoFocus
                         cols="35" rows="4"></textarea>
                     <div>
                         <button onMouseDown={this.onSaveCard} className="submit-card-btn">Add card</button>

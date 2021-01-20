@@ -94,7 +94,13 @@ export class _BoardApp extends Component {
     onDragCard = async () => {
         const { board } = this.props
         const copyBoard = { ...board }
+<<<<<<< HEAD
+=======
+        console.log('copyBoard', copyBoard);
+        console.log('board', board);
+>>>>>>> 9af35fc0f460cb5bc161ed5c681bd02da5034f0d
         await this.props.saveBoard(copyBoard)
+        socketService.emit('card dragged', board)
     }
 
     onAddCard = async (card, groupId) => {
@@ -137,7 +143,7 @@ export class _BoardApp extends Component {
             scrollLeft: scrollLeft
         }, () => {
             if (scrolltoleft)
-                this.refBoard.current.scrollLeft = 10000 + scrolltoleft
+                this.refBoard.current.scrollLeft += scrolltoleft
         })
     }
     showPreviewCardDetails = (ev) => {
@@ -153,7 +159,7 @@ export class _BoardApp extends Component {
         if (!board) return <p>Loading...</p>
         console.log('board', board.groups)
         socketService.emit('set label', this.props.board._id)
-        let { isDetailsShown, isPreviewDetailsShown, userClicked: userClicked } = this.state
+        let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
         return (
             <>
                 {this.props.currCard && isDetailsShown &&
@@ -162,7 +168,7 @@ export class _BoardApp extends Component {
                         <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
                 {isPreviewDetailsShown && <CardPreviewDetails board={board} showPreviewCardDetails={this.showPreviewCardDetails} userClicked={userClicked} card={this.props.currCard} group={this.props.currGroup} />}
-                <BoardHeader title={board.title} members={board.members} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
+                <BoardHeader title={board.title} members={board.members} onAddGroup={this.onAddGroup} />
                 <section className="board-container" ref={this.refBoard} onScroll={this.onScroll}>
                     <DragDropContext onDragEnd={this.onDragEnd} >
                         <Droppable droppableId="app" type="group" direction="horizontal" >
