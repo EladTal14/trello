@@ -5,6 +5,7 @@ import { loadUsers } from '../../store/actions/userAction'
 import { connect } from 'react-redux'
 // import { ChangeBackground } from './ChangeBackground.jsx'
 // import { GroupAdd } from '../Group/GroupAdd'
+import { socketService } from '../../services/socketService.js'
 import { AddMember } from '../AddMember'
 import { BoardMenu } from './BoardMenu'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
@@ -109,14 +110,14 @@ export class _BoardHeader extends Component {
             </button>
             <div className="header-members flex">
               <ul className="member-list flex">
-              <TransitionGroup className="members-list flex">
-                {members.map((member, idx) => 
-                  <CSSTransition key={idx} timeout={500} classNames="item">
-                   <li key={member.fullname} className="header-member">
-                    {utilService.convertName(member.fullname)}
-                  </li>
-                  </CSSTransition>
-                )}
+                <TransitionGroup className="members-list flex">
+                  {members.map((member, idx) =>
+                    <CSSTransition key={idx} timeout={500} classNames="item">
+                      <li key={member.fullname} className="header-member">
+                        {utilService.convertName(member.fullname)}
+                      </li>
+                    </CSSTransition>
+                  )}
                 </TransitionGroup>
               </ul>
               <button className="add-member" onClick={this.toggleMembers}>
