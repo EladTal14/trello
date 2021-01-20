@@ -25,7 +25,7 @@ export class _BoardApp extends Component {
     componentDidMount() {
         this.loadBoard()
         socketService.setup()
-        socketService.on('load board', this.updateBoard)
+        socketService.on('load board', this.props.updateBoard)
 
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
@@ -96,7 +96,7 @@ export class _BoardApp extends Component {
         const { board } = this.props
         const copyBoard = { ...board }
         await this.props.saveBoard(copyBoard)
-        socketService.emit('card dragged', board)
+        // socketService.emit('card dragged', board)
     }
 
     onAddCard = async (card, groupId) => {
@@ -158,7 +158,7 @@ export class _BoardApp extends Component {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
         if (!board) return <p>Loading...</p>
-        console.log('board', board.groups)
+        // console.log('board', board._id)
         socketService.emit('set label', this.props.board._id)
         let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
         return (

@@ -28,8 +28,7 @@ export function saveBoard(board, isRenderSocket = false) {
     return async (dispatch) => {
         try {
             const savedBoard = await boardService.save(board)
-            console.log('savedBoard',savedBoard);
-            if (!isRenderSocket && !board._id) {
+            if (!isRenderSocket) {
                 socketService.emit('render', savedBoard)
             }
             dispatch({ type: (board._id) ? 'UPDATE_BOARD' : 'ADD_BOARD', board: savedBoard })

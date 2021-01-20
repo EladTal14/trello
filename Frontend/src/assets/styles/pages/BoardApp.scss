@@ -8,17 +8,24 @@
   margin-left: 5px;
   margin-top: 6px;
   scroll-behavior: smooth;
-  // &::-webkit-scrollbar {
-  //   width: 0.7rem;
-  // }
+  &::-webkit-scrollbar {
+    width: 0.7rem;
+    height: 12px;
+  }
   // &::-webkit-scrollbar-track {
   //   box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
   //   border-radius: 10px;
   // }
+  // &::-webkit-scrollbar-track-piece {
+  //   background: rgba(0, 0, 0, 0.301);
+  // }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: #060d184f;
+  }
   &::-webkit-scrollbar-thumb {
-    background-color: rgb(184, 184, 186);
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    background-color: #ccc7c7e3;
+    border-radius: 4px;
   }
   .group-list {
     display: flex;

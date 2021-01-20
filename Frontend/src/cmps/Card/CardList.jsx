@@ -17,7 +17,7 @@ export class CardList extends Component {
         paddingBottom: 5,
         paddingLeft: 5,
         position: "relative",
-        backgroundColor: (isDraggingOver) ? 'lightgray' : 'unset'
+        // backgroundColor: (isDraggingOver) ? 'lightgray' : 'unset'
     })
 
     onScroll = (ev, scrolltobottom = 0) => {
