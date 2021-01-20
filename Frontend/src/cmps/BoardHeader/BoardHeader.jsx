@@ -14,7 +14,7 @@ export class _BoardHeader extends Component {
 
   state = {
     board: {
-      title: this.props.board.title,
+      title: ''
     },
     isChanging: false,
     isWrapper: false,
@@ -23,14 +23,29 @@ export class _BoardHeader extends Component {
 
   componentDidMount() {
     this.props.loadUsers()
+    this.setState({ board: { title: this.props.board.title } })
   }
+
+  componentDidUpdate(prevProps) {
+    
+    if (this.props.board.title !== prevProps.board.title) {
+      this.setState(prevState => ({
+        board: {
+          ...prevState.board,
+          title: this.props.board.title
+        }
+      }))
+    }
+
+  }
+
 
   toggleMenu = () => {
     const { current } = this.boardMenuVisibility
     if (current.style.opacity === '0') {
       current.style.opacity = '1'
       current.style.visibility = 'visible'
-      current.style.width = '290px'
+      current.style.width = '339px'
 
     } else if (current.style.opacity === '1') {
       current.style.opacity = '0'

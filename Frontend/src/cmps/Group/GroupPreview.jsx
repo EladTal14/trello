@@ -25,6 +25,7 @@ export class GroupPreview extends Component {
     }
     render() {
         const { group, idx, onAddCard, updateBoard } = this.props
+        console.log('GROUP_PREVIEW', group)
         return (
             <Draggable draggableId={group.id} index={idx} >
                 {(provided, snapshot) => (
