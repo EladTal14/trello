@@ -3,13 +3,11 @@ import { utilService } from '../../services/utilService'
 import { saveBoard } from '../../store/actions/boardAction'
 import { loadUsers } from '../../store/actions/userAction'
 import { connect } from 'react-redux'
-// import { ChangeBackground } from './ChangeBackground.jsx'
-// import { GroupAdd } from '../Group/GroupAdd'
-import { socketService } from '../../services/socketService.js'
 import { AddMember } from '../AddMember'
 import { BoardMenu } from './BoardMenu'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
+import Loader from 'react-loader-spinner'
 
 export class _BoardHeader extends Component {
 
@@ -22,6 +20,7 @@ export class _BoardHeader extends Component {
     isMoreMembersShown: false
   }
 
+  
   componentDidMount() {
     this.props.loadUsers()
     this.setState({ board: { title: this.props.board.title } })
@@ -109,7 +108,7 @@ export class _BoardHeader extends Component {
     const { members, users } = this.props
     const { board, isChanging, isWrapper, isMoreMembersShown } = this.state
     const currBoardId = this.props.board._id
-    if (!board && !currBoardId) return <div>Loading ...</div>
+    if (!board && !currBoardId) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
     return (
       <>
         {isMoreMembersShown && <div className="board-header-member-box"><AddMember toggleMembers={this.toggleMembers} onUpdateMembers={this.onUpdateMembers}

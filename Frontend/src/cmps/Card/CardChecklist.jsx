@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { cardService } from '../../services/cardService'
 // import { on, emit } from '../services/eventBusService.js'
+import Loader from 'react-loader-spinner'
 
 export class CardChecklist extends Component {
   state = {
@@ -92,7 +93,7 @@ export class CardChecklist extends Component {
 
   render() {
     const { checklist, isAddOpen, newTodoTitle } = this.state
-    if (!checklist) return <div>Loading...</div>
+    if (!checklist) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
     return (
       <div className="checklist flex column" >
         <div className="checklist-header flex">

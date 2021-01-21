@@ -13,12 +13,25 @@ export class _CardPreview extends Component {
         this.props.setGroup(group)
         eventBusService.emit('show-details', true)
     }
+
     showPreviewDetails = (ev, card, group) => {
+        this.calculateClick(ev)
         this.props.setCard(card)
         this.props.setGroup(group)
         ev.stopPropagation()
         eventBusService.emit('show-preview-details', ev, true)
     }
+
+    calculateClick = (ev) => {
+        console.log('ev.clientX', ev.clientX)
+        console.log('ev.clientY', ev.clientY)
+        console.log('window.innerWidth', window.innerWidth)
+        console.log('window.innerHeight', window.innerHeight)
+        const sumY = window.innerHeight - ev.clientY
+        if (sumY < 210) console.log('sumY', sumY)
+        // if (sumY < 210) return sumY
+    }
+
     render() {
         const { card, index, group } = this.props
         return (

@@ -3,6 +3,7 @@ import { storageService } from './sessionStorage.js'
 
 const STORAGE_KEY = 'loggedinUser'
 
+
 export const userService = {
     query,
     login,

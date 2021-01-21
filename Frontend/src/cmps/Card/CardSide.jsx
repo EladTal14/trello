@@ -55,7 +55,7 @@ export class CardSide extends Component {
 
 
   render() {
-    const { value, isDateShown, isLabelsShown, isCoverMenuShown, isMoreMembersShown, isLabelsMenuShown } = this.state
+    const { isDateShown, isCoverMenuShown, isMoreMembersShown, isLabelsMenuShown } = this.state
     const { card, onHandleLabelsChange, saveChanges, users } = this.props
     return (
       <>

@@ -9,6 +9,7 @@ import { Login } from './pages/Login'
 import { Login1 } from './pages/Login1'
 import { Signup } from './pages/Signup'
 import { DashBoard } from './pages/DashBoard'
+
 export function _App({ currBoard }) {
   return (
     <div className="App" style={{ backgroundImage: `url(${(currBoard) ? currBoard.style.backgroundImage : 'white'})` }}>
