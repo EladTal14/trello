@@ -10,6 +10,7 @@ import { eventBusService } from '../services/eventBusService.js'
 import { CardPreviewDetails } from '../cmps/Card/CardPreviewDetails'
 import { socketService } from '../services/socketService'
 import { activityService } from '../services/activityService'
+import Loader from 'react-loader-spinner'
 
 export class _BoardApp extends Component {
     state = {
@@ -166,7 +167,6 @@ export class _BoardApp extends Component {
         })
     }
     showPreviewCardDetails = (ev) => {
-        console.log(ev);
         this.setState({
             userClicked: { x: ev?.clientX, y: ev?.clientY },
             isPreviewDetailsShown: !this.state.isPreviewDetailsShown
@@ -175,13 +175,13 @@ export class _BoardApp extends Component {
     render() {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
-        if (!board) return <p>Loading...</p>
+        if (!board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
         // console.log('board', board._id)
         let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
         // console.log('this.props.board', this.props.board)
         // socketService.emit('set label', this.props.board._id) // was here
         return (
-            <>
+            < >
                 {this.props.currCard && isDetailsShown &&
                     <>
                         {/* <div className="modal-cover" onClick={this.toggleDetails}> </div> */}

@@ -9,6 +9,7 @@ import { CardSide } from './CardSide'
 import { CSSTransition } from 'react-transition-group'
 import { socketService } from '../../services/socketService'
 import { activityService } from '../../services/activityService'
+import Loader from 'react-loader-spinner'
 // TODO: go back to handle click outside async lielm1995
 
 class _CardDetails extends Component {
@@ -192,7 +193,7 @@ class _CardDetails extends Component {
     const { card, mounted } = this.state
     const { group } = this.props
     const usersForDisplay = this.usersForDisplay
-    if (!card) return <div>Loading...</div>
+    if (!card) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
 
     return (
       <div className="modal-cover" onClick={this.onClose}>
