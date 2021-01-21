@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import { Droppable } from 'react-beautiful-dnd'
 import { CardPreview } from './CardPreview.jsx'
-import { CardAdd } from './CardAdd';
 import { Component } from 'react'
 import Loader from 'react-loader-spinner'
 

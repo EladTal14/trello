@@ -3,9 +3,6 @@ import { utilService } from '../../services/utilService'
 import { saveBoard } from '../../store/actions/boardAction'
 import { loadUsers } from '../../store/actions/userAction'
 import { connect } from 'react-redux'
-// import { ChangeBackground } from './ChangeBackground.jsx'
-// import { GroupAdd } from '../Group/GroupAdd'
-import { socketService } from '../../services/socketService.js'
 import { AddMember } from '../AddMember'
 import { BoardMenu } from './BoardMenu'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
@@ -23,6 +20,7 @@ export class _BoardHeader extends Component {
     isMoreMembersShown: false
   }
 
+  
   componentDidMount() {
     this.props.loadUsers()
     this.setState({ board: { title: this.props.board.title } })

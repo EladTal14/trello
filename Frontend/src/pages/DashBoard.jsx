@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+// eslint-disable-next-line
 import { Polar, Doughnut, Bar } from 'react-chartjs-2'
 import { loadBoard } from '../store/actions/boardAction.js'
 import { loadUsers } from '../store/actions/userAction.js'

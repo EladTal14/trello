@@ -1,7 +1,5 @@
 import React from 'react'
 import { utilService } from '../../services/utilService'
-import { CardPreviewFeature } from './CardPreviewFeature'
-const _ = require('lodash');
 
 export function CardPreviewBottom({ card }) {
     
@@ -30,7 +28,6 @@ export function CardPreviewBottom({ card }) {
         //         <p className="date">{utilService.getDueDate(card.dueDate)}</p></div>
         // }
 
-    const types = Object.keys(card)
 
     return (
         <div className="card-extras-container flex space-between">
