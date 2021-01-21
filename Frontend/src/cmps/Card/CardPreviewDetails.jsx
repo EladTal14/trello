@@ -4,6 +4,7 @@ import { CardLabels } from './CardLabels'
 import Calendar from 'react-calendar';
 import { saveBoard } from '../../store/actions/boardAction'
 import { AddMember } from '../AddMember';
+import Loader from 'react-loader-spinner'
 
 class _CardPreviewDetails extends Component {
   state = {
@@ -117,10 +118,17 @@ class _CardPreviewDetails extends Component {
     this.closeModal()
   }
 
+  // getUserClick = (ev) => {
+  //   console.log('ev.clientX', ev.clientX)
+  //   console.log('ev.clientY', ev.clientY)
+  //   console.log('window.innerWidth', window.innerWidth)
+  //   console.log('window.innerHeight', window.innerHeight)
+  // }
+
   render() {
     const { userClicked, card, isCreateLabel, isChangeMembers, isChangeDueDate, value } = this.state
     // const { users } = this.props
-    if (!card) return <div>Loading...</div>
+    if (!card) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
     // console.log('x', userClicked.x);
     // console.log('y', userClicked.y);
     return (

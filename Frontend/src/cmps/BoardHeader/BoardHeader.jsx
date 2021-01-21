@@ -10,6 +10,7 @@ import { AddMember } from '../AddMember'
 import { BoardMenu } from './BoardMenu'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
+import Loader from 'react-loader-spinner'
 
 export class _BoardHeader extends Component {
 
@@ -28,7 +29,7 @@ export class _BoardHeader extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    
+
     if (this.props.board.title !== prevProps.board.title) {
       this.setState(prevState => ({
         board: {
@@ -109,7 +110,7 @@ export class _BoardHeader extends Component {
     const { members, users } = this.props
     const { board, isChanging, isWrapper, isMoreMembersShown } = this.state
     const currBoardId = this.props.board._id
-    if (!board && !currBoardId) return <div>Loading ...</div>
+    if (!board && !currBoardId) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
     return (
       <>
         {isMoreMembersShown && <div className="board-header-member-box"><AddMember toggleMembers={this.toggleMembers} onUpdateMembers={this.onUpdateMembers}
@@ -132,7 +133,7 @@ export class _BoardHeader extends Component {
                 <TransitionGroup className="members-list flex">
                   {members.map((member, idx) =>
                     <CSSTransition key={idx} timeout={500} classNames="item">
-                      <li key={member.fullname} className="header-member" style={{backgroundColor: member.color? member.color: "#3f72af"}}>
+                      <li key={member.fullname} className="header-member" style={{ backgroundColor: member.color ? member.color : "#3f72af" }}>
                         {utilService.convertName(member.fullname)}
                       </li>
                     </CSSTransition>

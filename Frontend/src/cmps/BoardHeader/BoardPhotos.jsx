@@ -31,7 +31,7 @@ class _BoardPhotos extends Component {
   }
   render() {
     return (
-      <div className="board-photos">
+      <div className="board-photos flex justify-center">
         {this.photos().map((photo, idx) => { return <div key={idx} className="menu-img-box"><img onClick={() => this.useImgForBgc(photo.imgUrlLarge, photo.imgUrlmedium)} className="board-photos-grid" src={photo.imgUrlSmall} alt="not good" /></div>})}
       </div>
     )

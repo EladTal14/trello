@@ -13,11 +13,23 @@ export class _CardPreview extends Component {
         this.props.setGroup(group)
         eventBusService.emit('show-details', true)
     }
+
     showPreviewDetails = (ev, card, group) => {
+        this.calculateClick(ev)
         this.props.setCard(card)
         this.props.setGroup(group)
         ev.stopPropagation()
         eventBusService.emit('show-preview-details', ev, true)
+    }
+
+    calculateClick = (ev) => {
+        console.log('ev.clientX', ev.clientX)
+        console.log('ev.clientY', ev.clientY)
+        console.log('window.innerWidth', window.innerWidth)
+        console.log('window.innerHeight', window.innerHeight)
+        const sumY = window.innerHeight - ev.clientY
+        if (sumY < 210) console.log('sumY', sumY) 
+        // if (sumY < 210) return sumY
     }
 
     render() {
@@ -38,8 +50,8 @@ export class _CardPreview extends Component {
                                     style={getItemStyle(snapshot.isDragging, provided.draggableProps.style, style, snapshot.isDraggingOver)}
                                 >
                                     <button className="show-preview-details-btn" onClick={(ev) => this.showPreviewDetails(ev, card, group)}><img className="show-preview-details-pen" src="https://res.cloudinary.com/basimgs/image/upload/v1610873061/pen_lgmg47.png" alt="pen" /></button>
-                                    {card.style && (card.style.imgUrl ? <div className="card-img-cover" style={{ backgroundImage: `url(${card.style.imgUrl}` }} ></div> :
-                                        <div className="card-color-cover" style={{ backgroundColor: card.style.color }}></div>)}
+                                    {card.style && (card.style.imgUrl ? <div className="card-img-cover" style={{ backgroundImage: `url(${card.style.imgUrl}` }} ></div>
+                                        : <div className="card-color-cover" style={{ backgroundColor: card.style.color }}></div>)}
                                     <div className="lower-card">
                                         <CardPreviewLabel card={card} />
                                         <div className="flex space-between">

@@ -3,7 +3,7 @@ import { Droppable } from 'react-beautiful-dnd'
 import { CardPreview } from './CardPreview.jsx'
 import { CardAdd } from './CardAdd';
 import { Component } from 'react'
-
+import Loader from 'react-loader-spinner'
 
 
 export class CardList extends Component {
@@ -32,7 +32,7 @@ export class CardList extends Component {
     }
     render() {
         const { cards, id, groupTitle, group } = this.props
-        if (!cards) return <div>Loading Cards...</div>
+        if (!cards) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
 
         return (
             // <div className="card-list" ref={this.refCard} onScroll={this.props.onScroll}>
