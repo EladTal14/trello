@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { loadBoard, saveBoard } from '../../store/actions/boardAction'
+import { setGroup } from '../../store/actions/cardAction'
 import { connect } from 'react-redux'
-// import { TextField } from '@material-ui/core';
+import { eventBusService } from '../../services/eventBusService.js'
 export class _GroupTitle extends Component {
 
     state = {
@@ -60,6 +61,12 @@ export class _GroupTitle extends Component {
         this.setState({ groupIdx: null })
     }
 
+    showGroupMenu = (ev, group) => {
+        this.props.setGroup(group)
+        ev.stopPropagation()
+        eventBusService.emit('show-group-menu', ev, true)
+    }
+
     render() {
         const { group } = this.state
         // console.log('GROUP_TITLE:', group.title);
@@ -69,7 +76,7 @@ export class _GroupTitle extends Component {
                 {/* <TextField id="standard-basic" label="Standard" /> */}
                 <input type="text" name="title" value={group.title} onChange={this.handleInput}
                     className="title-input" placeholder="Enter group title..." autoComplete="off" onBlur={this.onSaveTitle} />
-                <button className="more-options-btn" ><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/more_e8mezf.png" alt="" /></button>
+                <button className="more-options-btn" onClick={(ev) => this.showGroupMenu(ev, group)}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/more_e8mezf.png" alt="" /></button>
             </form>
         </section>
     }
@@ -86,6 +93,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     loadBoard,
     saveBoard,
+    setGroup
 }
 
 

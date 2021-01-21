@@ -18,7 +18,7 @@ export class _Boards extends Component {
 
     addBoard = async () => {
         const board = { title: 'New Board', style: {} }
-        await this.props.saveBoard(board)
+        await this.props.saveBoard(board, true)
         console.log('board to add new', board);
         this.props.history.push(`board/${this.props.board._id}`)
     }

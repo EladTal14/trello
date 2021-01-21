@@ -4,6 +4,7 @@ import { loadBoard, saveBoard, cleanBoard } from '../store/actions/boardAction'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { BoardHeader } from '../cmps/BoardHeader/BoardHeader'
 import { GroupList } from '../cmps/Group/GroupList'
+import { GroupMenu } from '../cmps/Group/GroupMenu'
 import { CardDetails } from '../cmps/Card/CardDetails'
 import { boardService } from '../services/boardService'
 import { eventBusService } from '../services/eventBusService.js'
@@ -19,18 +20,20 @@ export class _BoardApp extends Component {
         userClicked: {
             x: null,
             y: null
-        }
+        },
+        isGroupMenuShown: false
     }
     refBoard = React.createRef()
     componentDidMount() {
-        this.loadBoard()
         socketService.setup()
+        this.loadBoard()
         socketService.on('load board', (board) => this.updateBoard(board, true))
 
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
         this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
         this.eventBusShowPreviewDetailsTerminate = eventBusService.on('show-preview-details', this.showPreviewCardDetails)
+        this.eventBusShowGroupMenuTerminate = eventBusService.on('show-group-menu', this.showGroupMenu)
     }
 
     // componentDidUpdate(prevProps) {
@@ -48,6 +51,7 @@ export class _BoardApp extends Component {
         this.eventBusShowPreviewDetailsTerminate()
         socketService.terminate()
         this.props.cleanBoard()
+        this.eventBusShowGroupMenuTerminate()
         // this.props.board = null
     }
 
@@ -170,12 +174,22 @@ export class _BoardApp extends Component {
             isPreviewDetailsShown: !this.state.isPreviewDetailsShown
         })
     }
+
+    showGroupMenu = (ev) => {
+        // console.log(ev);
+        this.setState({
+            userClicked: { x: ev?.clientX, y: ev?.clientY },
+            isGroupMenuShown: !this.state.isGroupMenuShown
+        })
+    }
+
+
     render() {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
         if (!board) return <p>Loading...</p>
         // console.log('board', board._id)
-        let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
+        let { isDetailsShown, isPreviewDetailsShown, userClicked, isGroupMenuShown } = this.state
         console.log('this.props.board', this.props.board)
         socketService.emit('set label', this.props.board._id)
         return (
@@ -185,6 +199,8 @@ export class _BoardApp extends Component {
                         {/* <div className="modal-cover" onClick={this.toggleDetails}> </div> */}
                         <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
+                
+                {isGroupMenuShown && <GroupMenu board={board} showGroupMenu={this.showGroupMenu} userClicked={userClicked} group={this.props.currGroup} />}
                 {isPreviewDetailsShown && <CardPreviewDetails board={board} showPreviewCardDetails={this.showPreviewCardDetails} userClicked={userClicked} card={this.props.currCard} group={this.props.currGroup} />}
                 <BoardHeader title={board.title} members={board.members} onAddGroup={this.onAddGroup} />
                 <section className="board-container" ref={this.refBoard} onScroll={this.onScroll}>
