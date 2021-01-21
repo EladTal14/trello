@@ -43,12 +43,12 @@ export function CardPreviewBottom({ card }) {
             {card.comments && <div className="comments-container flex">
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610704026/messenger_ypya0t.png" alt="" />
                 <p className="comments">{card.comments.length}</p></div>}
-            {card.checklist && <div className="checklist-container flex">
+            {card.checklist && <div className={(progress.done===progress.total)? 'checklist-container complete flex' : 'checklist-container flex'}>
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/check-box_pzd2ul.png" alt="" />
                 <p className="checklist">{progress.done}/{progress.total}</p></div>}
             {card.members && <div className="preview-members-container flex">
                 {card.members.map(member => {
-                    return <div key={member.fullname} className="member">
+                    return <div key={member.fullname} className="member" style={{backgroundColor: member.color? member.color: "#3f72af"}}>
                         {utilService.convertName(member.fullname)}
                     </div>
                 })}

@@ -117,7 +117,7 @@ export class _BoardHeader extends Component {
                 <TransitionGroup className="members-list flex">
                   {members.map((member, idx) =>
                     <CSSTransition key={idx} timeout={500} classNames="item">
-                      <li key={member.fullname} className="header-member">
+                      <li key={member.fullname} className="header-member" style={{backgroundColor: member.color? member.color: "#3f72af"}}>
                         {utilService.convertName(member.fullname)}
                       </li>
                     </CSSTransition>
