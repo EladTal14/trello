@@ -52,6 +52,7 @@ export class _BoardApp extends Component {
     }
 
     updateBoard = (board, isRenderSocket = false) => {
+        console.log('here')
         this.props.saveBoard(board, isRenderSocket)
     }
 
@@ -72,11 +73,11 @@ export class _BoardApp extends Component {
     onRemoveLabel = async (label) => {
         const { board } = this.props
         const copyBoard = { ...board }
-        const labels = [...board.labels]
+        // const labels = [...copyBoard.labels]
         const idx = copyBoard.labels.findIndex((currLabel) => currLabel.id === label.id)
-        labels.splice(idx, 1)
+        copyBoard.labels.splice(idx, 1)
 
-        copyBoard.labels = [...labels]
+        // copyBoard.labels = [...labels]
         await this.props.saveBoard(copyBoard)
     }
 
@@ -176,7 +177,7 @@ export class _BoardApp extends Component {
         if (!board) return <p>Loading...</p>
         // console.log('board', board._id)
         let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
-        console.log('this.props.board', this.props.board)
+        // console.log('this.props.board', this.props.board)
         socketService.emit('set label', this.props.board._id)
         return (
             <>

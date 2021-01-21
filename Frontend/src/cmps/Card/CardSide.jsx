@@ -63,8 +63,10 @@ export class CardSide extends Component {
         {isCoverMenuShown && <CardCover onFinishUpload={this.props.onUploadCardCoverImg}
           onUpdateCoverColor={this.props.onUpdateCoverColor} toggleCoverMenu={this.toggleCoverMenu} />}
         {isDateShown && <DatePicker onSavedueDate={this.props.onSavedueDate} toggleDate={this.toggleDate} />}
-        {isMoreMembersShown && <div className="card-details-member-container"><AddMember toggleMembers={this.toggleMembers}
-          onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users} /></div>}
+        {isMoreMembersShown && <AddMember toggleMembers={this.toggleMembers}
+          onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users} />}
+        {/* {isMoreMembersShown && <div className="card-details-member-container"><AddMember toggleMembers={this.toggleMembers}
+          onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users} /></div>} */}
         {/* <DatePicker /> */}
         <div className="card-side flex column">
           <button className="side-btn" onClick={this.toggleMembers}>

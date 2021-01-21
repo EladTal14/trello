@@ -30,9 +30,6 @@ function connectSockets(http, session) {
         })
         socket.on('set label', boardId => {
             console.log('set label -> boardId', boardId)
-            if (socket.myTopic) {
-                socket.leave(socket.myTopic)
-            }
             socket.join(boardId)
             socket.myTopic = boardId
         })

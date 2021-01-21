@@ -1,67 +1,76 @@
-.board-header-member-box{
+.board-header-member-box {
     width: 274px;
     margin: 0px 403px;
     align-items: center;
     position: absolute;
 }
 
-.card-details-member-container{
+.card-details-member-container {
     width: 300px;
     margin: -89px 321px;
     align-items: center;
-    position: absolute
+    position: absolute;
 }
 
-.members-container{
-
-    color: $clr6;
-    background: #fff;
-    border-radius: 3px;
-    box-shadow: $modal-shadow;
-    border: none;
-    padding: 8px;
-    width: 300px;
-    height: 410px;
-    overflow-y: auto;
-    z-index: 500;
-    display: block;
+.members-container {
+    // color: $clr6;
+    // background: #fff;
+    // border-radius: 3px;
+    // box-shadow: $modal-shadow;
+    // border: none;
+    // padding: 8px;
+    // width: 300px;
+    // height: 410px;
+    // overflow-y: auto;
+    // z-index: 500;
+    // // display: block;
     // position: absolute;
-    right: 13%;
-    top: 8vh;
-    position: relative;
+    // right: 323px;
+    // // right: 13%;
+    // top: 40px;
+    // // top: 8vh;
+    // // position: relative;
+    box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+    width: 300px;
+    height: 450px;
+    z-index: 1;
+    position: absolute;
+    top: 40px;
+    border-radius: 3px;
+    right: 10px;
+    background-color: white;
 
-    .add-member-header{
-
+    .add-member-header {
         align-items: center;
-        border-bottom: .2px solid rgba(94,108,132,.25);
+        border-bottom: 0.2px solid rgba(94, 108, 132, 0.25);
         font-family: roboto-light;
         font-size: 14px;
         margin-bottom: 12px;
         height: 40px;
 
-        h3{
+        h3 {
             flex-grow: 2;
             margin: auto;
             text-align: center;
-            font-family: 'montserrat', sans-serif;
+            font-family: "montserrat", sans-serif;
         }
     }
 
-    .member-close-btn{
+    .member-close-btn {
         border: none;
         outline: none;
         background-color: unset;
         font-weight: 700;
-        font-family: 'montserrat', sans-serif;
+        font-family: "montserrat", sans-serif;
         cursor: pointer;
         border-radius: 3px;
 
-        &:hover{
+        &:hover {
             background-color: rgba(34, 34, 34, 0.185);
         }
     }
 
-    .new-member-list{
+    .new-member-list {
         color: $clr6;
         font-size: 14px;
         margin-bottom: 4px;
@@ -70,16 +79,18 @@
         cursor: pointer;
         overflow: hidden;
         min-height: 43px;
+        height: 79%;
+        overflow-y: auto;
 
-        .member-items{
+        .member-items {
             line-height: 40px;
 
-            &:hover{
-                background-color: rgba(9,30,66,.04)
+            &:hover {
+                background-color: rgba(9, 30, 66, 0.04);
             }
         }
 
-        .member-item{
+        .member-item {
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -87,30 +98,29 @@
             margin: 5px 10px;
             text-align: center;
             font-weight: 700;
-            
         }
 
-        .checked-member{
+        .checked-member {
             width: 26px;
             background-color: unset;
             border: none;
             outline: none;
             opacity: 1;
 
-            img{
+            img {
                 width: 100%;
                 opacity: 0.8;
             }
         }
 
-        .unchecked-member{
+        .unchecked-member {
             width: 26px;
             background-color: unset;
             border: none;
             outline: none;
             opacity: 0;
 
-            img{
+            img {
                 width: 100%;
                 opacity: 0;
             }
@@ -118,3 +128,17 @@
     }
 }
 
+@media (max-width: 670px) {
+    .header-members {
+        right: 240px;
+    }
+}
+
+@media (max-width: 440px) {
+    .header-members {
+        top: 78px;
+        right: 360px;
+    }
+}
+// height: 79%;
+//     overflow-y: scroll;

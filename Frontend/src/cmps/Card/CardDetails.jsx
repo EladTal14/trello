@@ -188,7 +188,6 @@ class _CardDetails extends Component {
   }
 
 
-
   render() {
     const { card, mounted } = this.state
     const { group } = this.props
@@ -206,11 +205,12 @@ class _CardDetails extends Component {
               </div>
             }
 
-            {card.style?.imgUrl &&
+            {
+              card.style?.imgUrl &&
               <div className="details-img-wrapper flex justify-center" style={{ height: '200px' }}>
                 <img src={card.style.imgUrl} alt="" />
                 <img onClick={this.onDeleteCover} src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" className="trash" alt="" />
-              </div>}
+              </div >}
 
             <div className="card-details-wrapper flex column" style={{ paddingTop: (card.style?.imgUrl || card.style?.color) ? '0' : '15px' }}>
               <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
@@ -237,9 +237,9 @@ class _CardDetails extends Component {
                 />
               </div>
             </div>
-          </div>
-        </CSSTransition>
-      </div>
+          </div >
+        </CSSTransition >
+      </div >
     )
   }
 }
