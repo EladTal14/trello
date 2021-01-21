@@ -67,7 +67,7 @@ export class _Login extends Component {
             Login
         </Typography>
           <div className="err">{err}</div>
-          <form onSubmit={() => { return }} style={{
+          <form style={{
             width: '100%',
             marginTop: '5px'
           }} >
