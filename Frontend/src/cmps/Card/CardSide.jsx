@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Calendar from 'react-calendar';
+// import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { cardService } from '../../services/cardService';
 import { CardCover } from './CardCover';
@@ -35,8 +35,9 @@ export class CardSide extends Component {
     this.setState({ isCoverMenuShown: !this.state.isCoverMenuShown })
   }
 
-  toggleLableMenu = () => {
+  toggleLabelMenu = () => {
     this.setState({ isLabelsMenuShown: !this.state.isLabelsMenuShown })
+    window.isLabelsMenuShown = this.state.isLabelsMenuShown
   }
 
 
@@ -50,7 +51,7 @@ export class CardSide extends Component {
     this.setState({ isLabelsShown: !this.state.isLabelsShown })
   }
 
-  
+
 
 
   render() {
@@ -58,12 +59,12 @@ export class CardSide extends Component {
     const { card, onHandleLabelsChange, saveChanges, users } = this.props
     return (
       <>
-        {isLabelsMenuShown && <CardLabels saveChanges={saveChanges} card={card} onToggleLabels={this.onToggleLabels} toggleLableMenu={this.toggleLableMenu} onHandleLabelsChange={onHandleLabelsChange} />}
+        {isLabelsMenuShown && <CardLabels saveChanges={saveChanges} card={card} onToggleLabels={this.onToggleLabels} toggleLabelMenu={this.toggleLabelMenu} onHandleLabelsChange={onHandleLabelsChange} />}
         {isCoverMenuShown && <CardCover onFinishUpload={this.props.onUploadCardCoverImg}
           onUpdateCoverColor={this.props.onUpdateCoverColor} toggleCoverMenu={this.toggleCoverMenu} />}
-        {isDateShown &&  <DatePicker onSavedueDate={this.props.onSavedueDate} toggleDate={this.toggleDate}/>} 
-        {isMoreMembersShown && <div className="card-details-member-container"><AddMember toggleMembers={this.toggleMembers} 
-        onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users}/></div> }
+        {isDateShown && <DatePicker onSavedueDate={this.props.onSavedueDate} toggleDate={this.toggleDate} />}
+        {isMoreMembersShown && <div className="card-details-member-container"><AddMember toggleMembers={this.toggleMembers}
+          onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users} /></div>}
         {/* <DatePicker /> */}
         <div className="card-side flex column">
           <button className="side-btn" onClick={this.toggleMembers}>
@@ -71,7 +72,7 @@ export class CardSide extends Component {
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/user_g2y481.png" alt="" />
             </span> Members</button>
 
-          <button className="side-btn" onClick={this.toggleLableMenu}>
+          <button className="side-btn" onClick={this.toggleLabelMenu}>
             <span>
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610794160/price-tag_evse4z.png" alt="" />
             </span> Labels</button>

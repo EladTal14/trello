@@ -9,7 +9,6 @@ import { CardSide } from './CardSide'
 import { CSSTransition } from 'react-transition-group'
 import { socketService } from '../../services/socketService'
 import { activityService } from '../../services/activityService'
-// TODO: find a way to merge all handle inputs
 // TODO: go back to handle click outside async lielm1995
 
 class _CardDetails extends Component {
@@ -18,62 +17,43 @@ class _CardDetails extends Component {
     filterBy: {
       fullname: ''
     },
-    mounted: false
+    mounted: false,
+    initialCard: null
   }
 
   componentDidMount() {
     socketService.setup()
     const { card } = this.props
-    this.setState({ mounted: true })
-    this.setState({ card })
+    this.setState({ mounted: true, card, initialCard: card })
   }
-
-  // componentWillUnmount() {
-  //   document.removeEventListener('click', this.handleClickOutside, true)
-  // }
-
-  // handleClickOutside = event => {
-  //   const domNode = ReactDOM.findDOMNode(this)
-  //   if (!domNode || !domNode.contains(event.target)) {
-  //     this.saveChanges()
-  //     // this.props.clearState(null)
-  //   }
-  // }
 
   onClose = () => {
     this.saveChanges(true)
+    this.checklistValidation()
     this.setState({ mounted: false })
   }
 
   saveChanges = (isActivityUpdate = false) => {
-    this.checklistValidation()
+    // this.checklistValidation()
     this.sendUpdatedBoard(isActivityUpdate)
   }
 
   sendUpdatedBoard = async (isActivityUpdate = false) => {
-    const { board, group } = this.props
-    const { card } = this.state
+    const board = { ...this.props.board }
+    const group = { ...this.props.group }
+    const { card, initialCard } = this.state
     const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
     group.cards[cardIdx] = card
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
 
-    if (isActivityUpdate) {
+    if (isActivityUpdate && JSON.stringify(initialCard) !== JSON.stringify(card)) {
       var activity = activityService.createActivity(this.props.loggedInUser, 'update card ', card, board.groups[groupIdx], ' in')
       board.activities ? board.activities.unshift(activity) : board.activities = new Array(activity)
     }
 
     await this.props.saveBoard(board)
-
     // socketService.emit('card changed', board)
-  }
-  onUpdateCard = (updatedCard) => {
-    const { board, group } = this.props
-    const cardIdx = group.cards.findIndex((card) => card.id === this.state.card.id)
-    group.cards[cardIdx] = updatedCard
-    const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
-    board.groups[groupIdx] = group
-    this.setState({ card: updatedCard }, () => { this.props.saveBoard(board) })
   }
 
   onHandleInputChange = ({ target }) => {
@@ -92,8 +72,7 @@ class _CardDetails extends Component {
         ...prevState.card,
         checklist: { ...checklist }
       }
-    }))
-    // }), () => this.saveChanges())
+    }), () => this.saveChanges())
   }
 
   onHandleActivitiesChange = (comments) => {
@@ -120,7 +99,7 @@ class _CardDetails extends Component {
         ...prevState.card,
         checklist
       }
-    }))
+    }), () => this.saveChanges())
   }
 
   onSavedueDate = (date) => {
@@ -176,6 +155,7 @@ class _CardDetails extends Component {
     group.cards[cardIdx] = newCard
     const groupIdx = board.groups.findIndex((currGroup) => currGroup.id === group.id)
     board.groups[groupIdx] = group
+
     this.setState({ card: newCard }, () => { this.props.saveBoard(board) })
   }
 
@@ -210,16 +190,20 @@ class _CardDetails extends Component {
       <div className="modal-cover" onClick={this.onClose}>
         <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleDetails}>
           <div className="card-details flex column align-center" onClick={ev => ev.stopPropagation()}>
+            <button className="close-btn" onClick={this.onClose}>✕</button>
             {card.style?.color &&
               <div className="details-img-wrapper" style={{ backgroundColor: card.style.color, height: '150px' }}>
-              </div>}
+              <img onClick={() => this.onUpdateCoverColor('')} src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" className="trash" alt=""/>
+            </div>
+            }
 
             {card.style?.imgUrl &&
               <div className="details-img-wrapper flex justify-center" style={{ height: '200px' }}>
                 <img src={card.style.imgUrl} alt="" />
+                <img onClick={() => this.onUploadCardCoverImg('')} src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" className="trash" alt=""/>
               </div>}
 
-            <div className="card-details-wrapper flex column" style={{ paddingTop: card.style ? '0' : '15px' }}>
+            <div className="card-details-wrapper flex column" style={{ paddingTop: (card.style?.imgUrl || card.style?.color) ? '0' : '15px' }}>
               <CardHeader card={card} onHandleInputChange={this.onHandleInputChange} group={group} />
               <div className="card-content flex">
                 <CardInfo

@@ -24,8 +24,8 @@ class _AppHeader extends Component {
     // console.log('prevProps', prevProps);
     // console.log('prevState', prevState);
     // console.log('state', this.state);
-    if (prevProps.loggedInUser !== this.state.loggedInUser)
-      this.setState({ loggedInUser: prevProps.loggedInUser })
+    if (this.props.loggedInUser !== this.state.loggedInUser)
+      this.setState({ loggedInUser: this.props.loggedInUser })
   }
 
   toggleAddBoard = () => {
@@ -41,7 +41,7 @@ class _AppHeader extends Component {
   }
 
   render() {
-    window.loggedInUser = this.state
+    // window.loggedInUser = this.state
     const { loggedInUser, isAddBoardShow } = this.state
     // if (!loggedInUser) return <div>Loading...</div>
     // console.log('LOGGED IN USER', loggedInUser);
