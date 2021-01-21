@@ -18,12 +18,12 @@ class _CardLabels extends Component {
     },
     colors: ['#f2d601', '#ff9f19', '#eb5a46', '#c377e0', '#0179bf', '#04c2e0',
       '#61bd50', '#50e898', '#ff78cb', '#344563', '#b3bac5'],
-    mounted: false
+    // mounted: false
   }
 
-  onClose = () => {
-    this.setState({ mounted: false })
-  }
+  // onClose = () => {
+  //   this.setState({ mounted: false })
+  // }
 
   componentDidMount() {
     // const { labels } = this.props.currCard //fucked me up
@@ -172,13 +172,13 @@ class _CardLabels extends Component {
     const { board } = this.props
     const { isCreateLabel, colors, currLabel, mounted } = this.state
     return (
-      <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleLableMenu}>
+      <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleLabelMenu}>
         <div className="card-labels flex column" style={{ height: isCreateLabel ? '320px' : '450px' }}>
 
           <header className="labels-header flex">
-          {isCreateLabel &&<button className="go-back" onClick={this.onToggleLabel}> 〈</button>}
+            {isCreateLabel && <button className="go-back" onClick={this.onToggleLabel}> 〈</button>}
             <p>{!isCreateLabel ? 'Labels' : 'Create Label'}</p>
-            <button className="close-btn inside-close" onClick={this.onClose}>✕</button>
+            <button className="close-btn inside-close" onClick={this.props.toggleLabelMenu}>✕</button>
           </header>
 
           {!isCreateLabel && <section className="label-choose-container flex column">

@@ -4,7 +4,7 @@ import { BoardPreview } from '../cmps/BoardPreview'
 import { loadBoards, saveBoard } from '../store/actions/boardAction'
 
 export class _Boards extends Component {
-    
+
     componentDidMount() {
         this.props.loadBoards()
     }
@@ -37,7 +37,7 @@ export class _Boards extends Component {
         const { boards } = this.props
         const load = <p>Loading...</p>
         if (!boards) return load
-        console.log('this.props UPDATE', this.props)
+        // console.log('this.props UPDATE', this.props)
         return (
             <div className="boards-page">
                 <h2>Our Boards</h2>

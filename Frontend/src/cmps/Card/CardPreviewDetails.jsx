@@ -19,6 +19,7 @@ class _CardPreviewDetails extends Component {
     // this.setState({ card: this.props.card }, () => console.log(this.state.card))
     this.setState({ card: this.props.card, userClicked: this.props?.userClicked })
   }
+
   componentWillUnmount() {
     this.setState({
       card: null,
@@ -36,7 +37,7 @@ class _CardPreviewDetails extends Component {
     this.props.showPreviewCardDetails()
   }
 
-  showLabel = () => {
+  toggleLabelMenu = () => {
     this.setState({ isCreateLabel: !this.state.isCreateLabel })
   }
   showMembers = () => {
@@ -120,8 +121,8 @@ class _CardPreviewDetails extends Component {
     const { userClicked, card, isCreateLabel, isChangeMembers, isChangeDueDate, value } = this.state
     // const { users } = this.props
     if (!card) return <div>Loading...</div>
-    console.log('x', userClicked.x);
-    console.log('y', userClicked.y);
+    // console.log('x', userClicked.x);
+    // console.log('y', userClicked.y);
     return (
       <>
         <div className="wrapper-preview-details" ref={this.modalRef} onClick={this.closeModal} style={{
@@ -138,12 +139,12 @@ class _CardPreviewDetails extends Component {
             <button className="card-preview-details-save" onClick={() => this.onUpdateCard(card, 'save')}>Save</button>
           </div>
           <div className="card-preview-details-changes flex column">
-            <button className="card-preview-details-changes-btn" onClick={this.showLabel}><span className="card-preview-details-changes-icon">
+            <button className="card-preview-details-changes-btn" onClick={this.toggleLabelMenu}><span className="card-preview-details-changes-icon">
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610794160/price-tag_evse4z.png" alt="label" />
             </span>Edit Labels</button>
             {isCreateLabel &&
               <div className="card-preview-details-label-wrap" style={{ top: -45, right: -130 }}>
-                <CardLabels onToggleLabels={this.showLabel}
+                <CardLabels toggleLabelMenu={this.toggleLabelMenu}
                   onHandleLabelsChange={this.onHandleLabelsChange} card={card} /></div>}
             <button className="card-preview-details-changes-btn flex space-between"
               onClick={this.showMembers}><span className="card-preview-details-changes-icon">
