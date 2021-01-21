@@ -21,7 +21,10 @@ class _BoardMenu extends Component {
               <div className="bgc-change flex align-center">
                 <button onClick={onChangeBackground}>Change Background</button>
               </div>
-              <div className="side-activity-title" ><span>L </span> Activity</div>
+              <div className="side-activity-title" >
+                <span>
+                  <img className="desc-img" src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/left-align_qaakok.png" alt="" />
+                </span><p> Activity</p></div>
 
               <section className="activities-wrapper">
                 {board.activities && board.activities.map((activity, idx) => (
