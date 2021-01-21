@@ -28,7 +28,7 @@ export class _BoardHeader extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    
+
     if (this.props.board.title !== prevProps.board.title) {
       this.setState(prevState => ({
         board: {
@@ -132,7 +132,7 @@ export class _BoardHeader extends Component {
                 <TransitionGroup className="members-list flex">
                   {members.map((member, idx) =>
                     <CSSTransition key={idx} timeout={500} classNames="item">
-                      <li key={member.fullname} className="header-member" style={{backgroundColor: member.color? member.color: "#3f72af"}}>
+                      <li key={member.fullname} className="header-member" style={{ backgroundColor: member.color ? member.color : "#3f72af" }}>
                         {utilService.convertName(member.fullname)}
                       </li>
                     </CSSTransition>

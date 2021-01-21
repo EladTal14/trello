@@ -5,7 +5,7 @@
 html {
     font-family: "montserrat", sans-serif;
     line-height: 1.6;
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
     font-size: rem(14px);
 }
 
@@ -57,7 +57,7 @@ pre {
     font-weight: 700;
     text-align: center;
     background-color: rgb(41, 91, 255);
-    &:hover{
+    &:hover {
         opacity: 0.8;
     }
 }

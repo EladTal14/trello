@@ -178,6 +178,15 @@ class _CardDetails extends Component {
     return users
   }
 
+  onDeleteCover = () => {
+    this.setState(prevState => ({
+      card: {
+        ...prevState.card,
+        style: null
+      }
+    }), () => this.saveChanges())
+  }
+
 
 
   render() {
@@ -193,14 +202,14 @@ class _CardDetails extends Component {
             <button className="close-btn" onClick={this.onClose}>✕</button>
             {card.style?.color &&
               <div className="details-img-wrapper" style={{ backgroundColor: card.style.color, height: '150px' }}>
-              <img onClick={() => this.onUpdateCoverColor('')} src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" className="trash" alt=""/>
-            </div>
+                <img onClick={this.onDeleteCover} src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" className="trash" alt="" />
+              </div>
             }
 
             {card.style?.imgUrl &&
               <div className="details-img-wrapper flex justify-center" style={{ height: '200px' }}>
                 <img src={card.style.imgUrl} alt="" />
-                <img onClick={() => this.onUploadCardCoverImg('')} src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" className="trash" alt=""/>
+                <img onClick={this.onDeleteCover} src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" className="trash" alt="" />
               </div>}
 
             <div className="card-details-wrapper flex column" style={{ paddingTop: (card.style?.imgUrl || card.style?.color) ? '0' : '15px' }}>
