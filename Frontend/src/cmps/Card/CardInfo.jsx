@@ -14,7 +14,7 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
         <TransitionGroup className="members-list flex">
           {card.members.map((member, idx) => 
           <CSSTransition key={idx} timeout={500} classNames="item">
-             <span key={idx} className="member">{utilService.convertName(member.fullname)}</span>
+             <span key={idx} className="member" style={{backgroundColor: member.color? member.color: "#3f72af"}}>{utilService.convertName(member.fullname)}</span>
              </CSSTransition>
         )}
           </TransitionGroup>

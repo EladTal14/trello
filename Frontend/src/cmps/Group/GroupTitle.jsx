@@ -52,7 +52,7 @@ export class _GroupTitle extends Component {
         ev.preventDefault()
         const groupId = this.props.group.id
         const board = { ...this.props.board }
-        console.log('board from title', board)
+        // console.log('board from title', board)
         const { title } = this.state.group
         const groupIdx = board.groups.findIndex(group => group.id === groupId)
         board.groups[groupIdx].title = title
@@ -62,7 +62,7 @@ export class _GroupTitle extends Component {
 
     render() {
         const { group } = this.state
-        console.log('GROUP_TITLE:', group.title);
+        // console.log('GROUP_TITLE:', group.title);
         return <section className="group-title" {...this.props.dragHandle}>
             <form onSubmit={this.onSaveTitle} ref={this.textInput} {...this.props.dragHandle} className="title-form flex space-between">
                 {/* <input type="text" ref={this.textInput} name="title" value={group.title} onChange={this.handleInput} */}

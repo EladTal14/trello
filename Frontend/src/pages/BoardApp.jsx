@@ -19,7 +19,7 @@ export class _BoardApp extends Component {
         userClicked: {
             x: null,
             y: null
-        },
+        }
     }
     refBoard = React.createRef()
     componentDidMount() {

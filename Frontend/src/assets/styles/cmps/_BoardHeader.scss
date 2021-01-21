@@ -2,7 +2,7 @@
   align-items: center;
   padding: 0 5px;
   color: black;
-  height: 40px;
+  min-height: 40px;
   align-items: center;
 
   .board-header-btn {
@@ -39,8 +39,9 @@
     border: none;
     outline: none;
     border-radius: 3px;
-    background-color: rgba(34, 34, 34, 0.11);
+    background-color: rgba(34, 34, 34, 0.4);
     color: white;
+    margin-top: 35px;
 
     &:hover {
       background-color: rgba(34, 34, 34, 0.185);
@@ -54,6 +55,7 @@
 
   .header-options {
     align-items: center;
+    flex-wrap: wrap
   }
   .header-members {
     align-items: center;
@@ -64,12 +66,14 @@
     height: 30px;
     border-radius: 50%;
     line-height: 30px;
-    margin-left: 5px;
+    margin-left: -5px;
     color: white;
     font-weight: 700;
     text-align: center;
-    background-color: rgb(40, 149, 238);
     cursor: pointer;
+    &:hover{
+      opacity: 0.8;
+  }
   }
 
   .add-member {
@@ -257,4 +261,55 @@
   &:hover {
     opacity: 0.7;
   }
+}
+@media (min-width: 460px) {
+  .board-header {
+
+    .menu-btn{
+      background-color: rgba(34, 34, 34, 0.11);
+      color: white;
+      margin-top: 0;
+    }
+
+  }
+}
+
+
+
+/* NORMAL */
+
+@media (min-width: 720px) {
+  .board-header {
+
+    .menu-btn{
+      background-color: rgba(34, 34, 34, 0.11);
+      color: white;
+      margin-top: 0;
+    }
+
+  }
+  
+}
+
+/* WIDE */
+
+@media (min-width: 960px) {
+  .board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    color: black;
+    height: 40px;
+    align-items: center;
+    .menu-btn{
+      background-color: rgba(34, 34, 34, 0.11);
+      color: white;
+      margin-top: 0;
+    }
+
+  }
+
+
+  
 }
