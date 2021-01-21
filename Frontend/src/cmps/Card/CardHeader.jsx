@@ -1,6 +1,6 @@
 export function CardHeader({ card, onHandleInputChange, group }) {
   return (
-    <div className="card-header">
+    <div className="card-header"> 
       <div className="card-title-area flex">
         <img className="card-title-img" src="https://res.cloudinary.com/basimgs/image/upload/v1610782307/document-header_xtqrpy.png" alt="" />
         <textarea
