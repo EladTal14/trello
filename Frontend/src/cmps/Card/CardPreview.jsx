@@ -1,13 +1,13 @@
 import { Component } from 'react'
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable } from "react-beautiful-dnd"
 import { connect } from 'react-redux'
 import { eventBusService } from '../../services/eventBusService.js'
 import { setCard, setGroup } from '../../store/actions/cardAction.js'
-import { CardPreviewLabel } from './CardPreviewLabel';
-import { CardPreviewBottom } from './CardPreviewBottom';
+import { CardPreviewLabel } from './CardPreviewLabel'
+import { CardPreviewBottom } from './CardPreviewBottom'
 import NaturalDragAnimation from 'natural-drag-animation-rbdnd'
-export class _CardPreview extends Component {
 
+export class _CardPreview extends Component {
     onShowCard = (card, group) => {
         this.props.setCard(card)
         this.props.setGroup(group)
@@ -19,7 +19,6 @@ export class _CardPreview extends Component {
         ev.stopPropagation()
         eventBusService.emit('show-preview-details', ev, true)
     }
-
     render() {
         const { card, index, group } = this.props
         return (
@@ -47,7 +46,6 @@ export class _CardPreview extends Component {
 
                                         </div>
                                         <CardPreviewBottom card={card} />
-
                                     </div>
                                 </article>
                             )}

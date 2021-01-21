@@ -10,19 +10,13 @@ export class CardAdd extends Component {
     }
 
     openInput = () => {
-        this.setState({
-            isAddOpen: true
-        }, () => this.props.onScroll(null, 1000))
-
+        this.setState({ isAddOpen: true }, () => {
+            this.props.onScroll(null, 1000)
+        })
     }
 
     closeInput = () => {
-        this.setState({
-            isAddOpen: false,
-            card: {
-                title: ''
-            }
-        }, () => setTimeout(() => {
+        this.setState({ isAddOpen: false, card: { title: '' } }, () => setTimeout(() => {
             this.props.onScroll(null, 1000)
         }, 150))
     }
@@ -35,7 +29,6 @@ export class CardAdd extends Component {
         this.setState(
             {
                 card: { title: '' },
-
             }, () => this.closeInput())
     }
 
