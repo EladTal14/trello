@@ -59,6 +59,7 @@ export class _BoardApp extends Component {
     loadBoard = async () => {
         const { boardId } = this.props.match.params
         await this.props.loadBoard(boardId)
+        socketService.emit('set label', boardId)
     }
 
     onAddGroup = async (group) => {
@@ -178,7 +179,7 @@ export class _BoardApp extends Component {
         // console.log('board', board._id)
         let { isDetailsShown, isPreviewDetailsShown, userClicked } = this.state
         // console.log('this.props.board', this.props.board)
-        socketService.emit('set label', this.props.board._id)
+        // socketService.emit('set label', this.props.board._id) // was here
         return (
             <>
                 {this.props.currCard && isDetailsShown &&

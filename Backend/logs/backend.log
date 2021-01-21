@@ -1140,4 +1140,8 @@
 1/21/2021, 2:32:31 PM - INFO - Server is running on port: 3030 
 1/21/2021, 2:36:28 PM - INFO - Server is running on port: 3030 
 1/21/2021, 2:37:04 PM - INFO - Server is running on port: 3030 
+<<<<<<< HEAD
+1/21/2021, 2:46:38 PM - INFO - Server is running on port: 3030 
+=======
 1/21/2021, 2:39:39 PM - INFO - Server is running on port: 3030 
+>>>>>>> 9e4571f64af6b1bccc35f982dce026edda9c17e8
