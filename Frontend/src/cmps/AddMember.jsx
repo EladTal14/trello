@@ -41,7 +41,7 @@ export class _AddMember extends Component {
         // console.log('current members', members);
         return (
             <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleMembers}>
-                <div className="members-container">
+                <div className="members-container header-members">
                     <div className="add-member-header flex spase-between">
                         <h3>Members</h3>
                         <button onClick={this.onClose} className="member-close-btn">✕</button>

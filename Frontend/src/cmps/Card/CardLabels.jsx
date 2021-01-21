@@ -109,7 +109,7 @@ class _CardLabels extends Component {
         currLabel: {
           id: '',
           title: '',
-          color: ''
+          color: '#f2d601'
         }
       }
     })
@@ -151,8 +151,10 @@ class _CardLabels extends Component {
         labels: labelsCopy
       }
     }, () => {
-      this.props.onHandleLabelsChange(this.state.labels)
-      if (isClose) this.props.onToggleLabels()
+        this.props.onHandleLabelsChange(this.state.labels)
+        if (isClose) this.props.onToggleLabels()
+        this.clearNewLabel()
+        this.onToggleLabel()
     })
   }
 
