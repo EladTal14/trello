@@ -204,6 +204,17 @@
 
 .side-activity-title {
   margin-bottom: 10px;
+  display: flex;
+
+  & > p {
+    font-size: 1.1rem;
+  }
+  .desc-img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    margin-right: 9px;
+  }
 }
 
 .board-menu-wrapper {
@@ -219,7 +230,7 @@
   align-items: center;
 }
 
-.photos-btn{
+.photos-btn {
   background-image: url("https://res.cloudinary.com/basimgs/image/upload/v1611150997/collage.48948499_gdkpwo.jpg");
   background-color: #dfe1e6;
   background-size: cover;
@@ -229,13 +240,12 @@
   width: 130px;
   margin-right: 5px;
   cursor: pointer;
-  &:hover{
+  &:hover {
     opacity: 0.7;
   }
-
 }
 
-.colors-menu-btn{
+.colors-menu-btn {
   background-image: url("https://res.cloudinary.com/basimgs/image/upload/v1611150997/colors.864f4df1_utbebh.jpg");
   background-color: #dfe1e6;
   background-size: cover;
@@ -244,7 +254,7 @@
   margin-bottom: 8px;
   width: 130px;
   cursor: pointer;
-  &:hover{
+  &:hover {
     opacity: 0.7;
   }
 }

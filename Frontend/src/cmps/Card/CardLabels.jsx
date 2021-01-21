@@ -176,14 +176,14 @@ class _CardLabels extends Component {
         <div className="card-labels flex column" style={{ height: isCreateLabel ? '320px' : '450px' }}>
 
           <header className="labels-header flex">
-            <button className="close-btn go-back" onClick={this.onToggleLabel}>{isCreateLabel && '〈' }</button>
+          {isCreateLabel &&<button className="go-back" onClick={this.onToggleLabel}> 〈</button>}
             <p>{!isCreateLabel ? 'Labels' : 'Create Label'}</p>
-            <button className="close-btn" onClick={this.onClose}>✕</button>
+            <button className="close-btn inside-close" onClick={this.onClose}>✕</button>
           </header>
 
           {!isCreateLabel && <section className="label-choose-container flex column">
             <ul>
-              {board.labels?.map((label, idx) => (
+              {board.labels?.map((label) => (
                 <li key={label.id} className="label flex">
                   <div className="label-title flex space-between" onClick={() => this.onChooseLabel(label)} style={{ backgroundColor: label.color }}>
                     <p>{label.title} </p>

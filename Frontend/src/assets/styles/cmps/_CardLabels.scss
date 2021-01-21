@@ -14,9 +14,6 @@
     border-bottom: 0.2px solid rgba(94, 108, 132, 0.25);
   }
 
-  // & header :first-child {
-  // }
-  
   & header > p {
     font-size: 1.2rem;
     padding-top: 0.5rem;
@@ -39,6 +36,10 @@
         min-height: 20px;
         border-radius: 3px;
         cursor: pointer;
+        &:hover {
+          box-shadow: inset 5px 0 5px 0 rgba(0,0,0,.404);
+          padding-left: 8px;
+        }
       }
 
       .label-edit-btn {
@@ -106,9 +107,24 @@
     width: 100%;
   }
 
+  .inside-close {
+    padding: 4px 8px;
+    margin: 4px;
+  }
+
   .go-back {
     padding-left: 0px;
-    font-size: 19px;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-right: 13px;
+    margin: 2px;
+
+    &:hover {
+      border-radius: 2rem;
+      background-color: rgba(9, 30, 66, 0.08);
+    }
   }
 }
 
@@ -133,5 +149,3 @@
     background-color: red;
   }
 }
-
-
