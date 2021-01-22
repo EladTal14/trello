@@ -1,6 +1,7 @@
 const initialState = {
   currCard: null,
-  currGroup: null
+  currGroup: null,
+  isAddOpen: false
 }
 
 export function cardReducer(state = initialState, action) {
@@ -11,6 +12,8 @@ export function cardReducer(state = initialState, action) {
       return { ...state, currGroup: { ...action.group } }
     case 'CLEAR_STATE':
       return { ...state, currGroup: action.clear, currCard: action.clear }
+    case 'TOGGLE_ADD_CARD':
+      return { ...state, isAddOpen: action.isAddOpen }
     default:
       return state
   }

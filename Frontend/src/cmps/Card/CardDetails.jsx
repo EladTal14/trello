@@ -51,7 +51,6 @@ class _CardDetails extends Component {
       var activity = activityService.createActivity(this.props.loggedInUser, 'update card ', card, board.groups[groupIdx], ' in')
       board.activities ? board.activities.unshift(activity) : board.activities = new Array(activity)
     }
-
     await this.props.saveBoard(board)
     // socketService.emit('card changed', board)
   }

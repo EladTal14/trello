@@ -5,9 +5,26 @@ export const utilService = {
   getDueDate,
   convertName,
   getTodoProgress,
-  getRandomColor
+  getRandomColor,
+  getSpaceCalculatedPos
 }
 
+
+function getSpaceCalculatedPos(ev, { width, height }) {
+  const sumY = window.innerHeight - ev.clientY
+  const sumX = window.innerWidth - ev.clientX
+  var newClientPosX
+  var newClientPosY
+
+  if (ev.clientX - width < 0) newClientPosX = 10
+  if (sumX < width) newClientPosX = window.innerWidth - (width + 10)
+  if (sumY < height) newClientPosY = ev.clientY - (height - sumY)
+
+  if(!newClientPosX) newClientPosX = ev.clientX
+  if(!newClientPosY) newClientPosY = ev.clientY
+
+  return { x: newClientPosX, y: newClientPosY }
+}
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);

@@ -30,6 +30,7 @@ export function saveBoard(board, isRenderSocket = false) {
             const savedBoard = await boardService.save(board)
             // console.log('savedBoard', savedBoard);
             if (!isRenderSocket) {
+                console.log('ACTIONboard', board)
                 socketService.emit('render', board)
                 // socketService.emit('render', board)
             }

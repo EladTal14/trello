@@ -6,13 +6,11 @@ import { CardAdd } from '../Card/CardAdd.jsx';
 import NaturalDragAnimation from 'natural-drag-animation-rbdnd'
 
 export class GroupPreview extends Component {
-    // function isScroll() {
-
-    // }
     state = {
         scrollTop: 0
     }
     refCard = React.createRef()
+
     onScroll = (ev, scrolltobottom = 0) => {
         if (!scrolltobottom) return
         const scrollTop = this.refCard.current.scrollTop
@@ -25,7 +23,6 @@ export class GroupPreview extends Component {
     }
     render() {
         const { group, idx, onAddCard, updateBoard } = this.props
-        // console.log('GROUP_PREVIEW', group)
         return (
             <Draggable draggableId={group.id} index={idx} >
                 {(provided, snapshot) => (
@@ -44,7 +41,7 @@ export class GroupPreview extends Component {
                                     <CardList refs={this.refCard} cards={group.cards}
                                         id={idx} group={group} onScroll={this.onScroll}
                                         grpTitle={group.title} groupId={group.id} onAddCard={onAddCard} />
-                                    <CardAdd groupId={group.id} onAddCard={onAddCard} onScroll={this.onScroll} />
+                                    <CardAdd groupId={group.id} onScroll={this.onScroll} />
                                 </article>
                             </div>
                         )}
