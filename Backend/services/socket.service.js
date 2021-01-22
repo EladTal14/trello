@@ -75,9 +75,8 @@ function connectSockets(http, session) {
         socket.on('render', (board) => {
             console.log('render -> socket.myTopic', socket.myTopic)
             // gIo.to(socket.myTopic).emit('load board', board)
-            socket.broadcast.to(socket.myTopic).emit('load board', board)
+            socket.to(socket.myTopic).emit('load board', board)
         })
-
     })
 }
 
