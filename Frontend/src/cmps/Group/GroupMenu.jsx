@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { saveBoard } from '../../store/actions/boardAction'
 import { CSSTransition } from 'react-transition-group'
+import { utilService } from '../../services/utilService'
 
 class _GroupMenu extends Component {
     state = {
@@ -38,12 +39,19 @@ class _GroupMenu extends Component {
     }
 
     onAddCard = () => {
-        console.log('haha');
+        console.log('not working yet');
     }
 
-    onCopyGroup = () => {
-        console.log(' im am doing nothimg...');
+    onCopyGroup = async () => {
+        const copyBoard = {...this.props.board}
+        const { group } = this.state
+        const groupIdx = copyBoard.groups.findIndex((currGroup) => currGroup.id === group.id)
+        const copyGroup = {...group, id: utilService.makeId()}
+        copyBoard.groups.splice(groupIdx, 0, copyGroup)
+        await this.props.saveBoard(copyBoard)
+        this.onClose()
     }
+
 
     render() {
         const { userClicked, group, mounted } = this.state

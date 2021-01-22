@@ -40,13 +40,31 @@
 }
 
 .header-title {
-  color: white;
-  margin: 0;
-  font-size: rem(26px);
-  font-family: pacifico;
+  display: flex;
+  align-items: center;
+  
+  h2{
+    color: white;
+    margin: 0;
+    font-size: rem(26px);
+    font-family: pacifico;
+    font-weight: 500;
+  
+    &:hover {
+      color: rgb(231, 231, 231);
+    }
+  }
 
-  &:hover {
-    color: rgb(231, 231, 231);
+
+    img{
+      width: 28px;
+      object-fit: cover;
+      margin-right: 5px;
+      filter: invert(1);
+      &:hover{
+        filter: invert(0.8);
+      }
+    
   }
 }
 

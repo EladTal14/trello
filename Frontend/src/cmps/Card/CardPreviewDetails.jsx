@@ -6,6 +6,7 @@ import { saveBoard } from '../../store/actions/boardAction'
 import { AddMember } from '../AddMember';
 import Loader from 'react-loader-spinner'
 import { eventBusService } from '../../services/eventBusService'
+import { utilService } from '../../services/utilService';
 
 class _CardPreviewDetails extends Component {
   state = {
@@ -14,7 +15,8 @@ class _CardPreviewDetails extends Component {
     isCreateLabel: false,
     isChangeMembers: false,
     isChangeDueDate: false,
-    value: new Date()
+    value: new Date(),
+    modalChangePos: null
   }
 
   componentDidMount() {
@@ -39,14 +41,20 @@ class _CardPreviewDetails extends Component {
     this.props.showPreviewCardDetails()
   }
 
-  toggleLabelMenu = () => {
-    this.setState({ isCreateLabel: !this.state.isCreateLabel })
+  toggleLabelMenu = (ev) => {
+    const pos = this.getNewPos(ev, 300, 450)
+
+    this.setState({ isCreateLabel: !this.state.isCreateLabel, modalChangePos: pos })
   }
-  showMembers = () => {
-    this.setState({ isChangeMembers: !this.state.isChangeMembers })
+
+  showMembers = (ev) => {
+    const pos = this.getNewPos(ev, 300, 450)
+    this.setState({ isChangeMembers: !this.state.isChangeMembers, modalChangePos: pos })
   }
-  showDueDate = () => {
-    this.setState({ isChangeDueDate: !this.state.isChangeDueDate })
+
+  showDueDate = (ev) => {
+    const pos = this.getNewPos(ev, 340, 288)
+    this.setState({ isChangeDueDate: !this.state.isChangeDueDate, modalChangePos: pos })
   }
 
   onHandleInputChange = ({ target }) => {
@@ -59,6 +67,7 @@ class _CardPreviewDetails extends Component {
       }
     }))
   }
+
   onHandleLabelsChange = (labels) => {
     this.setState(prevState => ({
       card: {
@@ -119,19 +128,15 @@ class _CardPreviewDetails extends Component {
     this.closeModal()
   }
 
-  // getUserClick = (ev) => {
-  //   console.log('ev.clientX', ev.clientX)
-  //   console.log('ev.clientY', ev.clientY)
-  //   console.log('window.innerWidth', window.innerWidth)
-  //   console.log('window.innerHeight', window.innerHeight)
-  // }
+  getNewPos = (ev, width, height) => {
+    const size = { width, height }
+    return utilService.getSpaceCalculatedPos(ev, size)
+  }
 
   render() {
-    const { userClicked, card, isCreateLabel, isChangeMembers, isChangeDueDate, value } = this.state
-    // const { users } = this.props
+    const { userClicked, card, isCreateLabel, isChangeMembers, isChangeDueDate, value, modalChangePos } = this.state
+    console.log('modalChangePos', modalChangePos)
     if (!card) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
-    // console.log('x', userClicked.x);
-    // console.log('y', userClicked.y);
     return (
       <>
         <div className="wrapper-preview-details" ref={this.modalRef} onClick={this.closeModal} style={{
@@ -141,12 +146,10 @@ class _CardPreviewDetails extends Component {
         }}></div>
         <div className="card-preview-details flex" style={{
           position: 'absolute',
-          zIndex: 10000, top: userClicked?.y || userClicked?.y + 10 , left: userClicked?.x - 217
+          top: userClicked.y,
+          left: userClicked.x,
+          zIndex: 10000
         }}>
-          {/* <div className="card-preview-details flex" style={{
-          position: 'absolute',
-          zIndex: 10000, top: userClicked?.y + 10, left: userClicked?.x - 217
-        }}> */}
           <div className="flex column space-between">
             <textarea className="card-preview-details-textarea" name="title" cols="28" wrap="hard" rows="8" onChange={this.onHandleInputChange} value={card.title} autoFocus ></textarea>
             <button className="card-preview-details-save" onClick={() => this.onUpdateCard(card, 'save')}>Save</button>
@@ -156,7 +159,7 @@ class _CardPreviewDetails extends Component {
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610794160/price-tag_evse4z.png" alt="label" />
             </span>Edit Labels</button>
             {isCreateLabel &&
-              <div className="card-preview-details-label-wrap" style={{ top: -45, right: -130 }}>
+              <div className="card-preview-details-label-wrap" style={{ top: -modalChangePos.y, right: -130 }}>
                 <CardLabels toggleLabelMenu={this.toggleLabelMenu}
                   onHandleLabelsChange={this.onHandleLabelsChange} card={card} /></div>}
             <button className="card-preview-details-changes-btn flex space-between"
@@ -164,19 +167,21 @@ class _CardPreviewDetails extends Component {
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/user_g2y481.png" alt="member" />
               </span><span style={{ flexGrow: 1 }}>Change Members</span>
             </button>
-            {isChangeMembers && <div className="card-details-member-container"
-              style={{ position: "absolute", top: 0, left: 0 }} >
-              <AddMember toggleMembers={this.showMembers}
-                onUpdateMembers={this.onUpdateMembers}
-                onSetUserFilter={this.props.onSetUserFilter} members={card.members}
-                users={this.props.board.members} /></div>}
+            {isChangeMembers && <AddMember
+              modalChangePos={modalChangePos}
+              toggleMembers={this.showMembers}
+              onUpdateMembers={this.onUpdateMembers}
+              onSetUserFilter={this.props.onSetUserFilter} members={card.members}
+              users={this.props.board.members} />}
             <button className="card-preview-details-changes-btn" onClick={this.showDueDate}>
               <span className="card-preview-details-changes-icon">
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/clock_zwp9d9.png" alt="clock" />
               </span><span style={{ flexGrow: 1 }}> Change Due Date</span></button>
-            {isChangeDueDate && <div className="date-picker">
+            {isChangeDueDate && <div className="date-picker " style={{ position: "fixed", top: modalChangePos.y - 30, left: modalChangePos.x }}>
               <button onClick={this.showDueDate} className="close-date-btn">✕</button>
-              <Calendar onChange={this.onChange} value={value} />
+              <Calendar
+                onChange={this.onChange}
+                value={value} />
             </div>}
             <button className="card-preview-details-changes-btn" onClick={this.onRemoveCard}>
               <span className="card-preview-details-changes-icon">

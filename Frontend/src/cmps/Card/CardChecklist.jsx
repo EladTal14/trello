@@ -107,7 +107,8 @@ export class CardChecklist extends Component {
             onChange={this.onHandleTitleChange}
           />
         </div>
-        <div className="progress-bar"><div style={{ width: `${this.progressBarPrecentage()}%` }}></div></div>
+        <div className="progress-container flex space-between"><p>{Math.floor(this.progressBarPrecentage())}%</p>
+        <div className="progress-bar flex"><div style={{ width: `${this.progressBarPrecentage()}%` }} className="todo-progress"></div></div></div>
         {checklist.todos && checklist.todos.map((todo, idx) => {
           return <div className="checklist-todo flex" key={idx}>
             <input

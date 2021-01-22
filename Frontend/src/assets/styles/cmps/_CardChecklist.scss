@@ -34,21 +34,34 @@
     }
   }
 
+  .progress-container{
+    line-height: 9px;
+    p{
+      font-size: rem(14px);
+    }
+  }
+
   .progress-bar {
     background: rgba(9, 30, 66, 0.08);
     border-radius: 4px;
     clear: both;
     height: 8px;
-    margin: 0 0 20px 25px;
+    margin: 0 0 17px 10px;
     overflow: hidden;
     position: relative;
+    flex-grow: 2;
   }
 
-  .progress-bar > div {
-    background-color: #5ba4cf;
-    width: 40%;
-    height: 20px;
-    border-radius: 0 0 4px 0;
+  .progress-bar{
+
+    .todo-progress{
+      background-color: #5ba4cf;
+      width: 40%;
+      height: 20px;
+      border-radius: 0 0 4px 0;
+      transition: width 1s;
+
+    }
   }
 
   .checklist-todo {

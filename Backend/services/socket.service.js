@@ -38,8 +38,8 @@ function connectSockets(http, session) {
             if (socket.myTopic) {
                 socket.leave(socket.myTopic)
             }
-            console.log('set label -> boardId', boardId)
             socket.join(boardId)
+            console.log('set label -> boardId', boardId)
             socket.myTopic = boardId
         })
         socket.on('chat topic', topic => {
@@ -73,7 +73,8 @@ function connectSockets(http, session) {
             gIo.to(socket.myTopic).emit('load board', board)
         })
         socket.on('render', (board) => {
-            console.log('render -> socket.myTopic', socket.myTopic)
+            console.log('SOCKETboard', board)
+            // console.log('render -> socket.myTopic', socket.myTopic)
             // gIo.to(socket.myTopic).emit('load board', board)
             socket.to(socket.myTopic).emit('load board', board)
         })

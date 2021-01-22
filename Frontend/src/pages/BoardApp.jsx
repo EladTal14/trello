@@ -28,6 +28,7 @@ export class _BoardApp extends Component {
     componentDidMount() {
         socketService.setup()
         this.loadBoard()
+
         socketService.on('load board', (board) => this.updateBoard(board, true))
 
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
@@ -57,7 +58,7 @@ export class _BoardApp extends Component {
     }
 
     updateBoard = (board, isRenderSocket = false) => {
-        console.log('here')
+        console.log('here', board.groups)
         this.props.saveBoard(board, isRenderSocket)
     }
 
@@ -171,35 +172,14 @@ export class _BoardApp extends Component {
         })
     }
     showPreviewCardDetails = (pos) => {
-
-        if (pos?.newClientPosY) {
-            this.setState({
-                userClicked: { x: pos?.newClientPosY, y: pos?.newClientPosY },
-                isPreviewDetailsShown: !this.state.isPreviewDetailsShown
-            })
-        } else {
-            this.setState({
-                userClicked: { x: pos?.ev?.clientX, y: pos?.ev?.clientY },
-                isPreviewDetailsShown: !this.state.isPreviewDetailsShown
-            })
-        }
-
+        this.setState({
+            userClicked: {
+                x: pos?.newClientPos.x,
+                y: pos?.newClientPos.y
+            },
+            isPreviewDetailsShown: !this.state.isPreviewDetailsShown
+        })
     }
-    // showPreviewCardDetails = (ev) => {
-
-    //     if (pos.newClientPosY) {
-    //         this.setState({
-    //             userClicked: { x: ev?.clientX, y: ev?.clientY },
-    //             isPreviewDetailsShown: !this.state.isPreviewDetailsShown
-    //         })
-    //     } else {
-    //         this.setState({
-    //             userClicked: { x: pos.ev?.clientX, y: pos.ev?.clientY },
-    //             isPreviewDetailsShown: !this.state.isPreviewDetailsShown
-    //         })
-    //     }
-
-    // }
 
     showGroupMenu = (ev) => {
         // console.log(ev);
@@ -214,10 +194,8 @@ export class _BoardApp extends Component {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
         if (!board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
-        // console.log('board', board._id)
         let { isDetailsShown, isPreviewDetailsShown, userClicked, isGroupMenuShown } = this.state
-        // console.log('this.props.board', this.props.board)
-        // socketService.emit('set label', this.props.board._id) // was here
+        socketService.emit('set label', this.props.board._id) // was here
         return (
             < >
                 {this.props.currCard && isDetailsShown &&
@@ -225,7 +203,7 @@ export class _BoardApp extends Component {
                         {/* <div className="modal-cover" onClick={this.toggleDetails}> </div> */}
                         <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
-                
+
                 {isGroupMenuShown && <GroupMenu board={board} showGroupMenu={this.showGroupMenu} userClicked={userClicked} group={this.props.currGroup} />}
                 {isPreviewDetailsShown && <CardPreviewDetails board={board} showPreviewCardDetails={this.showPreviewCardDetails} userClicked={userClicked} card={this.props.currCard} group={this.props.currGroup} />}
                 <BoardHeader title={board.title} members={board.members} onAddGroup={this.onAddGroup} />

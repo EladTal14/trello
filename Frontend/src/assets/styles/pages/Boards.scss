@@ -15,8 +15,9 @@
         margin: 0 auto;
         padding: 30px;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 0.8fr));
+        grid-template-columns: repeat(auto-fill, 250px);
         gap: 20px 10px;
+        justify-content: center;
         .board-preview {
             padding: 15px 10px;
             width: 240px;
