@@ -39,7 +39,7 @@ export class CardAddForm extends Component {
   }
 
   closeInput = () => {
-    this.setState({ isAddOpen: false }, () => {
+    this.setState({ isAddOpen: false, card: { title: '' } }, () => {
       eventBusService.emit('close-card-add', false, this.state.groupId)
       setTimeout(() => {
         this.props.onScroll(null, 1000)
@@ -52,13 +52,7 @@ export class CardAddForm extends Component {
     if (!this.state.card.title) return
     const card = { title: this.state.card.title, id: utilService.makeId(), members: [], labels: [] }
     this.props.onAddCard(card, this.props.groupId)
-    this.setState(
-      {
-        card: { title: '' },
-      }, () => {
-        this.closeInput()
-
-      })
+    this.closeInput()
   }
 
   render() {
