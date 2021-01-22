@@ -29,6 +29,16 @@ export function clearState(clear) {
   }
 }
 
+export function toggleAddCard(isAddOpen) {
+  return (dispatch) => {
+    try {
+      dispatch({ type: 'TOGGLE_ADD_CARD', isAddOpen })
+    } catch (err) {
+      console.log('err cardAction CLEAR STATE', err);
+    }
+  }
+}
+
 // export function addLabel(label) {
 //   return (dispatch) => {
 //     try {

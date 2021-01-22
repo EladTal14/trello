@@ -28,6 +28,7 @@ export class _BoardApp extends Component {
     componentDidMount() {
         socketService.setup()
         this.loadBoard()
+
         socketService.on('load board', (board) => this.updateBoard(board, true))
 
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
@@ -57,7 +58,7 @@ export class _BoardApp extends Component {
     }
 
     updateBoard = (board, isRenderSocket = false) => {
-        console.log('here')
+        console.log('here', board.groups)
         this.props.saveBoard(board, isRenderSocket)
     }
 
@@ -194,7 +195,7 @@ export class _BoardApp extends Component {
         console.log('want to check if a new board is add', board);
         if (!board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
         let { isDetailsShown, isPreviewDetailsShown, userClicked, isGroupMenuShown } = this.state
-        // socketService.emit('set label', this.props.board._id) // was here
+        socketService.emit('set label', this.props.board._id) // was here
         return (
             < >
                 {this.props.currCard && isDetailsShown &&
