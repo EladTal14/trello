@@ -49,7 +49,7 @@ function convertName(fullname) {
   if (!fullname) return
   let letterName;
   const names = fullname.split(' ')
-  if(!names[1]) letterName = names[0][0].toUpperCase()
+  if (!names[1]) letterName = names[0][0].toUpperCase()
   else letterName = names[0][0].toUpperCase() + names[1][0].toUpperCase()
   return letterName
 }
@@ -65,10 +65,7 @@ function getTodoProgress(card) {
 
 }
 function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
+  var colors = ['#f9ed69', '#f08a5d', '#54e346', '#00adb5', '#6a2c70', '#b83b5e']
+
+  return colors[getRandomInt(0, 6)];
 }

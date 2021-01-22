@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+// eslint-disable-next-line
 import { Polar, Doughnut, Bar } from 'react-chartjs-2'
 import { loadBoard } from '../store/actions/boardAction.js'
 import { loadUsers } from '../store/actions/userAction.js'
@@ -10,27 +11,32 @@ export class _DashBoard extends Component {
   state = {
     board: null
   }
-  componentDidMount() {
+  async componentDidMount() {
     const board = this.props.board
     if (!board) {
       let boardId = this.props.match.params.boardId
-      loadBoard(boardId)
-      this.setState({ board: this.props.board })
+      await this.loadBoard(boardId)
+      console.log(boardId);
+      this.setState({ board: this.props.board }, () => console.log(this.state.board))
     }
     this.setState({ board: this.props.board })
 
   }
+
   loadBoard = async (boardId) => {
     await this.props.loadBoard(boardId)
   }
 
   showTaskPerGroup = () => {
-    console.log(this.state.board.groups);
     const mapGroup = this.state.board.groups.reduce((acc, group) => {
       acc[group.title] = group.cards.length
       return acc
     }, {})
+    console.log(mapGroup);
+    console.log(Object.keys(mapGroup).map(title => title));
+    console.log(Object.values(mapGroup).map(title => title));
     return {
+
       labels:
         Object.keys(mapGroup).map(title => title),
       datasets: [{
@@ -43,6 +49,7 @@ export class _DashBoard extends Component {
         ]
       }]
     };
+
   }
 
   showTaskPerLabel = () => {
@@ -56,12 +63,11 @@ export class _DashBoard extends Component {
       })
       return acc
     }, {})
-    console.log(mapLabels);
     return {
       labels:
-        Object.keys(mapLabels).map(title => title),
+        [...Object.keys(mapLabels).map(title => title)],
       datasets: [{
-        data: Object.values(mapLabels).map(title => title),
+        data: [...Object.values(mapLabels).map(title => title)],
         backgroundColor: [
           ...Object.keys(mapLabels).map(() => utilService.getRandomColor())
 
@@ -88,43 +94,71 @@ export class _DashBoard extends Component {
     return { cardNum, cardUnassignedNum }
   }
 
-  showStatistics = () => {
-    const { members } = this.state.board
-    const mapObj = members.reduce((acc, member) => {
-      if (!acc[member.fullname]) acc[member.fullname] = 1
-      else acc[member.fullname] += 1
-      return acc
-    }, {})
-
-    return {
-      labels:
-        Object.keys(mapObj).map(fullname => fullname),
-      datasets: [{
-        data: Object.values(mapObj).map(fullname => fullname),
-        backgroundColor: [
-          ...Object.keys(mapObj).map(() => utilService.getRandomColor())
-        ],
-        hoverBackgroundColor: [
-          ...Object.keys(mapObj).map(() => '#FFFFFF')
-        ]
-      }]
-    };
-  }
-
   render() {
     if (!this.state.board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
     return (
-      <div>
+      <div className="statistics-page">
         <h1>Hello Statisctis</h1>
         <header className="dashboard-header flex">
           <div className="dashboard-preview flex column"><span>{this.showTotalCards().cardNum}</span> <span> TOTAL CARDS</span></div>
           <div className="dashboard-preview flex column"><span>{this.showTotalCards().cardUnassignedNum}</span> <span> UNASSIGNED CARDS</span></div>
           <div className="dashboard-preview flex column"><span>0</span> <span> ADDED TODAY</span></div>
         </header>
-        <div className="dashboard-content flex" style={{ height: '600px', width: '600px', flexWrap: 'wrap' }}>
+        <div className="dashboard-content flex" style={{ margin: '0 auto', height: '600px', width: '600px', flexWrap: 'wrap' }}>
           {/* <Polar className="test" data={this.showStatistics()} /> */}
-          <Bar className="test" data={this.showTaskPerGroup()} />
-          <Doughnut className="test" data={this.showTaskPerLabel()} />
+          <Bar options={{
+            scales: {
+              yAxes: [{
+                stacked: true,
+                gridLines: {
+                  display: true,
+                  color: "rgba(255,255,255,0.8)"
+                }
+              }],
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }]
+            },
+            title: {
+              display: true,
+              text: 'Task Per Group',
+              fontSize: 25
+            },
+            legend: {
+              display: true,
+              position: 'right'
+            },
+            labels: {
+              fontColor: 'rgb(0, 0, 0)'
+            }
+          }} className="test" data={this.showTaskPerGroup()} />
+          <Doughnut options={{
+            scales: {
+              yAxes: [{
+                stacked: true,
+                gridLines: {
+                  display: true,
+                  color: "rgba(255,255,255,0.8)"
+                }
+              }],
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }]
+            },
+            title: {
+              display: true,
+              text: 'Task Per Label',
+              fontSize: 25
+            },
+            legend: {
+              display: true,
+              position: 'right'
+            }
+          }} className="test" data={this.showTaskPerLabel()} />
         </div>
       </div>
     )

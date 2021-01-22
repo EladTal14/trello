@@ -55,16 +55,10 @@
 
 .label-container {
     flex-wrap: wrap;
+    opacity: 0.8;
+
     .card-label {
-        // max-width: 44px;
-        // min-width: 44px;
-        // height: 10px;
-        // margin: 0 4px 4px 0;
-        // border-radius: 4px;
         cursor: pointer;
-        // transition: text-overflow 0.8s;
-        // -webkit-font-smoothing: antialiased;
-        // opacity: 0.8;
         border-radius: 3px;
         border: none;
         font-size: 0.75rem;
@@ -79,14 +73,14 @@
         transition: min-width 1s, min-height 0.5s, opacity 0.5s;
         color: white;
 
-        &:hover {
-            opacity: 1;
-        }
-
+        
         &.open {
             min-width: 45px;
             transition: min-width 1s, min-height 0.5s, opacity 0.5s;
         }
+    }
+    &:hover {
+        opacity: 1;
     }
 }
 
@@ -99,22 +93,24 @@
             height: 28px;
             border-radius: 50%;
             line-height: 28px;
-            margin: 0 1px;
+            margin: 1px;
             &:hover {
                 opacity: 0.7;
             }
         }
     }
-
-    .dueDate-container:hover {
-        // background-color: ;
+    .chec-klist-container
+    .comments-contaniner
+    .dueDate-container {
+        line-height: 16px;
+        padding: 1px;
     }
 
     .dueDate,
     .comments,
-    .checklist {
+    .chec-klist {
         font-size: 12px;
-        margin-left: 7px;
+        margin-left: 3px;
     }
 
     img {
@@ -129,6 +125,18 @@
     border-radius: 3px;
     color: #fff;
     padding: 2px 0 0 2px;
+
+    img {
+        filter: invert(1);
+    }
+}
+
+
+.red {
+    background-color: #eb5a46;
+    border-radius: 3px;
+    color: #fff;
+    padding: 1px 1.5px;
 
     img {
         filter: invert(1);

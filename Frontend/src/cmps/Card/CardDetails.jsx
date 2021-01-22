@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import ReactDOM from 'react-dom'
 import { CardHeader } from './CardHeader'
 import { CardInfo } from './CardInfo'
 import { clearState } from '../../store/actions/cardAction.js'
