@@ -93,8 +93,17 @@ async function add(board) {
             activities: [],
             // style: {backgroundImage: (board.style? board.style.backgroundImage : '')},
             style: board.style,
-            labels: []
+            labels: [
+                { id: '12346a12341', title: 'Low Priority', color: '#57b041' },
+                { id: '1234a12342', title: 'Medium Priority', color: '#f8c800' },
+                { id: '1235a12353', title: 'High Priority', color: '#ee473c' },
+                { id: '1235a12355', title: 'Improvment', color: '#ff9615' },
+                { id: '1235a12354', title: 'Meeting', color: '#b300b3' },
+                { id: '1235a12356', title: 'Re Do', color: '#00c8e0' },
+                { id: '1235a123579', title: 'After QA', color: '#7c898e' },
+            ]
         }
+
         const collection = await dbService.getCollection('board')
         await collection.insertOne(boardToAdd)
         return boardToAdd

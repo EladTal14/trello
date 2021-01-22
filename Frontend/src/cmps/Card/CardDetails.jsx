@@ -22,7 +22,7 @@ class _CardDetails extends Component {
   }
 
   componentDidMount() {
-    socketService.setup()
+    // socketService.setup()
     const { card } = this.props
     this.setState({ mounted: true, card, initialCard: card })
   }
