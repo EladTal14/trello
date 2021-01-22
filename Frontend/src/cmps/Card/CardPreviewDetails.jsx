@@ -5,6 +5,7 @@ import Calendar from 'react-calendar';
 import { saveBoard } from '../../store/actions/boardAction'
 import { AddMember } from '../AddMember';
 import Loader from 'react-loader-spinner'
+import { eventBusService } from '../../services/eventBusService'
 
 class _CardPreviewDetails extends Component {
   state = {
@@ -140,8 +141,12 @@ class _CardPreviewDetails extends Component {
         }}></div>
         <div className="card-preview-details flex" style={{
           position: 'absolute',
-          zIndex: 10000, top: userClicked?.y + 10, left: userClicked?.x - 217
+          zIndex: 10000, top: userClicked?.y || userClicked?.y + 10 , left: userClicked?.x - 217
         }}>
+          {/* <div className="card-preview-details flex" style={{
+          position: 'absolute',
+          zIndex: 10000, top: userClicked?.y + 10, left: userClicked?.x - 217
+        }}> */}
           <div className="flex column space-between">
             <textarea className="card-preview-details-textarea" name="title" cols="28" wrap="hard" rows="8" onChange={this.onHandleInputChange} value={card.title} autoFocus ></textarea>
             <button className="card-preview-details-save" onClick={() => this.onUpdateCard(card, 'save')}>Save</button>

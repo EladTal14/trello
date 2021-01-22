@@ -166,12 +166,37 @@ export class _BoardApp extends Component {
                 this.refBoard.current.scrollLeft += scrolltoleft
         })
     }
-    showPreviewCardDetails = (ev) => {
-        this.setState({
-            userClicked: { x: ev?.clientX, y: ev?.clientY },
-            isPreviewDetailsShown: !this.state.isPreviewDetailsShown
-        })
+    showPreviewCardDetails = (pos) => {
+
+        if (pos?.newClientPosY) {
+            this.setState({
+                userClicked: { x: pos?.newClientPosY, y: pos?.newClientPosY },
+                isPreviewDetailsShown: !this.state.isPreviewDetailsShown
+            })
+        } else {
+            this.setState({
+                userClicked: { x: pos?.ev?.clientX, y: pos?.ev?.clientY },
+                isPreviewDetailsShown: !this.state.isPreviewDetailsShown
+            })
+        }
+
     }
+    // showPreviewCardDetails = (ev) => {
+
+    //     if (pos.newClientPosY) {
+    //         this.setState({
+    //             userClicked: { x: ev?.clientX, y: ev?.clientY },
+    //             isPreviewDetailsShown: !this.state.isPreviewDetailsShown
+    //         })
+    //     } else {
+    //         this.setState({
+    //             userClicked: { x: pos.ev?.clientX, y: pos.ev?.clientY },
+    //             isPreviewDetailsShown: !this.state.isPreviewDetailsShown
+    //         })
+    //     }
+
+    // }
+
     render() {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
