@@ -6,6 +6,7 @@ import { setCard, setGroup } from '../../store/actions/cardAction.js'
 import { CardPreviewLabel } from './CardPreviewLabel'
 import { CardPreviewBottom } from './CardPreviewBottom'
 import NaturalDragAnimation from 'natural-drag-animation-rbdnd'
+import { utilService } from '../../services/utilService.js'
 
 export class _CardPreview extends Component {
     onShowCard = (card, group) => {
@@ -15,49 +16,16 @@ export class _CardPreview extends Component {
     }
 
     showPreviewDetails = (ev, card, group) => {
-        const newClientPosY = this.calculateClick(ev)
-        const pos = {
-            ev,
-            newClientPosY
-        }
+        const PreviewDetailsSize = { width: 420, height: 210 }
+        const newClientPos = utilService.getSpaceCalculatedPos(ev, PreviewDetailsSize)
+        const pos = { ev, newClientPos }
+
         this.props.setCard(card)
         this.props.setGroup(group)
         ev.stopPropagation()
         eventBusService.emit('show-preview-details', pos, true)
-        // eventBusService.emit('user-pos', newClientPosY)
     }
-    // showPreviewDetails = (ev, card, group) => {
-    //     const newClientPosY = this.calculateClick(ev)
-    //     this.props.setCard(card)
-    //     this.props.setGroup(group)
-    //     ev.stopPropagation()
-    //     eventBusService.emit('show-preview-details', ev, true)
-    //     eventBusService.emit('user-pos', newClientPosY)
-    // }
-
-    calculateClick = (ev) => {
-        console.log('ev.clientX', ev.clientX)
-        console.log('ev.clientY', ev.clientY)
-        console.log('window.innerWidth', window.innerWidth)
-        console.log('window.innerHeight', window.innerHeight)
-        const sumY = window.innerHeight - ev.clientY
-        // const sumX = 420 - ev.clientX < 0
-
-        if (ev.clientX - 420 < 0) {
-            // const newClientPosX = window.innerWidth 
-        }
-
-        if (sumY < 210) {
-            const newClientPosY = ev.clientY - (210 - sumY)
-            // const newClientPosY = window.innerHeight - (210 - sumY)
-            return newClientPosY
-            // return 210 - sumY  
-        } 
-
-        if (sumY < 210) console.log('sumY', sumY)
-        // if (sumY < 210) return sumY
-    }
-
+    
     render() {
         const { card, index, group } = this.props
         return (
