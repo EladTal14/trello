@@ -54,7 +54,9 @@ class _CardActivityContainer extends Component {
       byMember = {
         _id: loggedInUser._id,
         fullname: loggedInUser.fullname,
-        imgUrl: loggedInUser.imgUrl
+        imgUrl: loggedInUser.imgUrl,
+        color: loggedInUser.color
+
       }
     }
 
@@ -96,7 +98,7 @@ class _CardActivityContainer extends Component {
     return (
       <div className="activity-container">
         <div className="activity-header flex">
-          <img src="https://res.cloudinary.com/basimgs/image/upload/v1610792909/menu_1_o2l8cs.png" alt="" />
+          <img src="https://res.cloudinary.com/basimgs/image/upload/v1611394931/list_fd3uv1.png" alt="" />
           <h3>Activity</h3>
         </div>
         <div className="flex column">
@@ -117,7 +119,7 @@ class _CardActivityContainer extends Component {
         </div>
         {comments && comments.map((comment, index) => {
           return <div key={index} className="activity-comment-wrapper flex">
-            <div className="member">
+            <div className="member" style={{ backgroundColor: comment.byMember ? comment.byMember.color : "#3f72af" }}>
               {comment.byMember ? utilService.convertName(comment.byMember.fullname) : 'G'}
             </div>
             <div className="activity-comment">

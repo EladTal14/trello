@@ -4,6 +4,7 @@
   height: 40px;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.32);
+  
 
   .header-list {
     .home-btn,
@@ -32,8 +33,8 @@
       }
     }
     .boards-btn {
-      padding: 0 7px;
-      width: 70px;
+      padding: 0 2px;
+      width: 55px;
       font-size: rem(16px);
     }
   }
@@ -46,7 +47,7 @@
   h2{
     color: white;
     margin: 0;
-    font-size: rem(26px);
+    font-size: rem(24px);
     font-family: pacifico;
     font-weight: 500;
   
@@ -57,7 +58,7 @@
 
 
     img{
-      width: 28px;
+      width: 26px;
       object-fit: cover;
       margin-right: 5px;
       filter: invert(1);
@@ -75,8 +76,9 @@
     height: 32px;
     border-radius: 50%;
     line-height: 32px;
-    margin: 0 8px 0 8px;
+    margin: 0 4px 0 4px;
     text-align: center;
+    font-weight: 600;
     background-color: rgba(255, 255, 255, 0.3);
   }
   .header-add-board-btn,
@@ -90,9 +92,9 @@
     font-weight: 700;
     height: 32px;
     line-height: 32px;
-    margin: 0 4px 0 0;
     outline: none;
     cursor: pointer;
+    font-family: "montserrat", sans-serif;
     
     a{
       color: white;
@@ -104,9 +106,72 @@
     }
 
     img {
-      width: 26px;
+      width: 22px;
       object-fit: cover;
       filter: invert(1);
     }
   }
 }
+
+@media (min-width: 460px) {
+  
+}
+
+
+
+/* NORMAL */
+
+@media (min-width: 720px) {
+  .header-list {
+    .boards-btn {
+      padding: 0 7px;
+      width: 70px;
+      font-size: rem(16px);
+    }
+  }
+
+  .header-title {
+   
+    h2{
+      color: white;
+      margin: 0;
+      font-size: rem(26px);
+      font-family: pacifico;
+      font-weight: 500;
+    
+    }
+      img{
+        width: 28px;
+        object-fit: cover;
+        margin-right: 5px;
+        filter: invert(1);
+        &:hover{
+          filter: invert(0.8);
+        }
+      
+    }
+  }
+
+  .header-right{
+  
+    .header-user-logged-in {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      line-height: 32px;
+      margin: 0 8px 0 8px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+  
+
+
+/* WIDE */
+
+@media (min-width: 960px) {
+  
+
+}
+

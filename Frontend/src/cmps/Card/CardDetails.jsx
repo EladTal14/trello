@@ -197,7 +197,7 @@ class _CardDetails extends Component {
       <div className="modal-cover" onClick={this.onClose}>
         <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleDetails}>
           <div className="card-details flex column align-center" onClick={ev => ev.stopPropagation()}>
-            <button className="close-btn" onClick={this.onClose}>✕</button>
+            <button className="close-modal-btn" onClick={this.onClose}>✕</button>
             {card.style?.color &&
               <div className="details-img-wrapper" style={{ backgroundColor: card.style.color, height: '150px' }}>
                 <img onClick={this.onDeleteCover} src="https://res.cloudinary.com/basimgs/image/upload/v1610793816/trash_nrq5xi.png" className="trash" alt="" />
