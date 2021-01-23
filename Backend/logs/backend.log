@@ -1203,6 +1203,9 @@
 1/22/2021, 3:30:06 PM - INFO - Server is running on port: 3030 
 1/22/2021, 3:30:44 PM - INFO - Server is running on port: 3030 
 1/22/2021, 3:31:58 PM - INFO - Server is running on port: 3030 
+<<<<<<< HEAD
+1/22/2021, 3:40:56 PM - INFO - Server is running on port: 3030 
+=======
 >>>>>>> 68c7dc01193a07ec0000e5c92c42adec365224a7
 1/22/2021, 3:52:14 PM - INFO - Server is running on port: 3030 
 1/22/2021, 3:56:43 PM - INFO - Server is running on port: 3030 
@@ -1258,4 +1261,10 @@
 1/22/2021, 7:14:02 PM - INFO - Server is running on port: 3030 
 1/22/2021, 7:18:00 PM - INFO - Server is running on port: 3030 
 1/22/2021, 7:18:35 PM - INFO - Server is running on port: 3030 
+<<<<<<< HEAD
 1/23/2021, 8:48:54 AM - INFO - Server is running on port: 3030 
+=======
+>>>>>>> 8bce0c4b4c8306cefec5150d35f2d5d845554524
+1/22/2021, 7:56:38 PM - INFO - Server is running on port: 3030 
+1/23/2021, 9:10:42 AM - ERROR - Failed to Login Invalid username or password (sid: l4x-Vxg5u28YfruT2mwZbqBklzMqcaYE)
+>>>>>>> e0d25a2bce4a21a44402098bf6cc1ad6887d82dd

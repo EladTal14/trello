@@ -63,16 +63,16 @@ class _GroupMenu extends Component {
                 zIndex: 1000, top: userClicked?.y + 10, left: userClicked?.x - 150
             }}>
                 <div className="group-actions flex spase-between">
-                    <h3>Group Actions</h3>
+                    <h3>List Actions</h3>
                     <button onClick={this.onClose} className="group-close-btn">✕</button>
                 </div>
                 <div className="group-menu-btns flex column">
                     <button className="group-menu-btn" onClick={this.onAddCard}>
                     Add Card...</button>
                     <button className="group-menu-btn" onClick={this.onCopyGroup}>
-                    Copy Group...</button>
+                    Copy List...</button>
                     <button className="group-menu-btn" onClick={this.onRemoveGroup}>
-                    Delete Group...</button>
+                    Delete List...</button>
                     <button className="group-menu-btn">
                     Watch...</button>
                     <hr/>

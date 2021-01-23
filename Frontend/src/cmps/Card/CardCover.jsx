@@ -39,6 +39,10 @@ export class CardCover extends Component {
         return (
             <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleCoverMenu}>
                 <div className="card-cover-modal flex column">
+                    <div className="card-cover-header flex">
+                        <h3>Cover</h3>
+                        <button onClick={this.onClose} className="close-cover-btn">✕</button>
+                    </div>
                     <div className="uploader">
                         <label className="upload-btn" htmlFor="imageUploader">{isUploading ? 'Uploading....' : 'Upload Image'}</label>
                         <input onChange={this.onUploadImg} hidden
@@ -50,10 +54,6 @@ export class CardCover extends Component {
                             return <div className="cover-colors-menu" key={idx}
                                 style={{ backgroundColor: color }} onClick={() => this.setColor(color)}></div>
                         })}
-                    </div>
-                    <div className="card-cover-btns flex">
-                        <button onClick={this.onClose} className="card-cover-btn">Ok</button>
-                        <button onClick={this.onClose} className="card-cover-btn">✕</button>
                     </div>
                 </div>
             </CSSTransition>

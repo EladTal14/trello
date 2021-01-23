@@ -45,7 +45,7 @@ export class _AddMember extends Component {
                         <h3>Members</h3>
                         <button onClick={this.onClose} className="member-close-btn">✕</button>
                     </div>
-                    <Input type="text" name="fullname" value={filterBy.fullname} onChange={this.handleChange} placeholder="Search members..." />
+                    <Input className="member-filter" type="text" name="fullname" value={filterBy.fullname} onChange={this.handleChange} placeholder="Search members..." />
                     <div className="new-member-list flex column">
                         {users.map(user => <div key={user._id} className="member-items flex space-between" onClick={() => this.onToggleUser(user)}>
                             <div className="flex space-between"><div className="member-item" style={{ backgroundColor: user.color ? user.color : "#3f72af" }}><span>{utilService.convertName(user.fullname)}</span>

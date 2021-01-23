@@ -3,50 +3,47 @@ import { connect } from 'react-redux'
 import { BoardPreview } from '../cmps/BoardPreview'
 import { loadBoards, saveBoard } from '../store/actions/boardAction'
 import Loader from 'react-loader-spinner'
+import { AddBoard } from '../cmps/BoardHeader/AddBoard'
 
 export class _Boards extends Component {
+
+    state = {
+        isAddBoardShown: false
+    }
+
     componentDidMount() {
         this.props.loadBoards()
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.boards === prevProps.boards && this.props.board) {
-    //         this.props.loadBoards()
-    //         console.log('this.props UPDATE', this.props)
-    //         // this.props.history.push(`board/${this.props.board._id}`)
-    //     }
-    // }
-
-    addBoard = async () => {
-        const board = { title: 'New Board', style: {} }
-        await this.props.saveBoard(board, true)
-        console.log('board to add new', board);
-        this.props.history.push(`board/${this.props.board._id}`)
+    toggleAddBoard = () => {
+        this.setState({ isAddBoardShown: !this.state.isAddBoardShown })
     }
-    // const board = { title: 'New Board' }
-    // await this.props.saveBoard(board, true)
-    // console.log('this.props', this.props.board._id)
-    // addBoard = async () => {
-    //     const board = { title: 'New Board' }
-    //     await this.props.saveBoard(board)
-    //     console.log('board', board)
-    //     this.props.history.push(`board/${this.props.board._id}`)
-    // }
+
+    addBoard = async (board) => {
+        await this.props.saveBoard(board, true)
+        const newBoardId = this.props.board._id
+        console.log('newBoardId', newBoardId)
+        this.props.history.push(`board/${newBoardId}`)
+    }
 
     render() {
         const { boards } = this.props
         if (!boards) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
+        const { isAddBoardShown } = this.state
         // console.log('this.props UPDATE', this.props)
         return (
-            <div className="boards-page">
-                <h2>Our Boards</h2>
-                <section className="boards-container">
-                    <div className="new-board" onClick={this.addBoard}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/plus_ljzrkm.png" alt="" /></div>
-                    {boards.map(board => {
-                        return <BoardPreview key={board._id} board={board} />
-                    })}
-                </section>
-            </div>
+            <>
+                {isAddBoardShown && <AddBoard addBoard={this.addBoard} toggleAddBoard={this.toggleAddBoard} />}
+                <div className="boards-page">
+                    <h2>Our Boards</h2>
+                    <section className="boards-container">
+                        <div className="new-board" onClick={this.toggleAddBoard}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/plus_ljzrkm.png" alt="" /></div>
+                        {boards.map(board => {
+                            return <BoardPreview key={board._id} board={board} />
+                        })}
+                    </section>
+                </div>
+            </>
         )
     }
 }
