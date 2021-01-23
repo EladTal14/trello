@@ -93,7 +93,7 @@ export class CardChecklist extends Component {
 
   render() {
     const { checklist, isAddOpen, newTodoTitle } = this.state
-    if (!checklist) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
+    if (!checklist) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
     return (
       <div className="checklist flex column" >
         <div className="checklist-header flex">
@@ -108,7 +108,7 @@ export class CardChecklist extends Component {
           />
         </div>
         <div className="progress-container flex space-between"><p>{Math.floor(this.progressBarPrecentage())}%</p>
-        <div className="progress-bar flex"><div style={{ width: `${this.progressBarPrecentage()}%` }} className="todo-progress"></div></div></div>
+          <div className="progress-bar flex"><div style={{ width: `${this.progressBarPrecentage()}%` }} className="todo-progress"></div></div></div>
         {checklist.todos && checklist.todos.map((todo, idx) => {
           return <div className="checklist-todo flex" key={idx}>
             <input

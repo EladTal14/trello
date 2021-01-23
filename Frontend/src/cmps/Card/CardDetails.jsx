@@ -191,7 +191,7 @@ class _CardDetails extends Component {
     const { card, mounted } = this.state
     const { group } = this.props
     const usersForDisplay = this.usersForDisplay
-    if (!card) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
+    if (!card) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
 
     return (
       <div className="modal-cover" onClick={this.onClose}>

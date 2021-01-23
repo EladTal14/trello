@@ -42,34 +42,25 @@
 .header-title {
   display: flex;
   align-items: center;
-  
-  h2{
+  &:hover {
+    opacity: 0.7;
+  }
+  h2 {
     color: white;
     margin: 0;
     font-size: rem(26px);
     font-family: pacifico;
     font-weight: 500;
-  
-    &:hover {
-      color: rgb(231, 231, 231);
-    }
   }
-
-
-    img{
-      width: 28px;
-      object-fit: cover;
-      margin-right: 5px;
-      filter: invert(1);
-      &:hover{
-        filter: invert(0.8);
-      }
-    
+  img {
+    width: 28px;
+    object-fit: cover;
+    margin-right: 5px;
+    filter: invert(1);
   }
 }
 
-.header-right{
-  
+.header-right {
   .header-user-logged-in {
     width: 32px;
     height: 32px;
@@ -93,8 +84,8 @@
     margin: 0 4px 0 0;
     outline: none;
     cursor: pointer;
-    
-    a{
+
+    a {
       color: white;
       font-family: "montserrat", sans-serif;
     }
@@ -104,9 +95,12 @@
     }
 
     img {
-      width: 26px;
+      width: 20px;
       object-fit: cover;
       filter: invert(1);
     }
+  }
+  .header-add-board-btn {
+    margin: 0;
   }
 }

@@ -136,7 +136,7 @@ class _CardPreviewDetails extends Component {
   render() {
     const { userClicked, card, isCreateLabel, isChangeMembers, isChangeDueDate, value, modalChangePos } = this.state
     console.log('modalChangePos', modalChangePos)
-    if (!card) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
+    if (!card) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
     return (
       <>
         <div className="wrapper-preview-details" ref={this.modalRef} onClick={this.closeModal} style={{

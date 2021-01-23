@@ -35,7 +35,7 @@ export class _Boards extends Component {
 
     render() {
         const { boards } = this.props
-        if (!boards) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
+        if (!boards) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
         // console.log('this.props UPDATE', this.props)
         return (
             <div className="boards-page">

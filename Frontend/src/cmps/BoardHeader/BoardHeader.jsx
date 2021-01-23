@@ -20,7 +20,7 @@ export class _BoardHeader extends Component {
     isMoreMembersShown: false
   }
 
-  
+
   componentDidMount() {
     this.props.loadUsers()
     this.setState({ board: { title: this.props.board.title } })
@@ -108,7 +108,7 @@ export class _BoardHeader extends Component {
     const { members, users } = this.props
     const { board, isChanging, isWrapper, isMoreMembersShown } = this.state
     const currBoardId = this.props.board._id
-    if (!board && !currBoardId) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
+    if (!board && !currBoardId) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
     return (
       <>
         {isMoreMembersShown && <div className="board-header-member-box"><AddMember toggleMembers={this.toggleMembers} onUpdateMembers={this.onUpdateMembers}

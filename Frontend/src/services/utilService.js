@@ -5,7 +5,8 @@ export const utilService = {
   getDueDate,
   convertName,
   getTodoProgress,
-  getRandomColor,
+  getRandomDarkColor,
+  getRandomBrightColor,
   getSpaceCalculatedPos
 }
 
@@ -20,8 +21,8 @@ function getSpaceCalculatedPos(ev, { width, height }) {
   if (sumX < width) newClientPosX = window.innerWidth - (width + 10)
   if (sumY < height) newClientPosY = ev.clientY - (height - sumY)
 
-  if(!newClientPosX) newClientPosX = ev.clientX
-  if(!newClientPosY) newClientPosY = ev.clientY
+  if (!newClientPosX) newClientPosX = ev.clientX
+  if (!newClientPosY) newClientPosY = ev.clientY
 
   return { x: newClientPosX, y: newClientPosY }
 }
@@ -81,8 +82,13 @@ function getTodoProgress(card) {
   else return
 
 }
-function getRandomColor() {
-  var colors = ['#f9ed69', '#f08a5d', '#54e346', '#00adb5', '#6a2c70', '#b83b5e']
+function getRandomDarkColor() {
+  var colors = ['#00adb5', '#6a2c70', '#b83b5e', '#0000FF', '#9d83eb', '#9a9a9a', '#323232']
 
-  return colors[getRandomInt(0, 6)];
+  return colors[getRandomInt(0, 7)];
+}
+function getRandomBrightColor() {
+  var colors = ['#FFFF00', '#FFA500', '	#00FF00', '#FF0000', '#e16941', '#32cd32', '#cdcd32']
+
+  return colors[getRandomInt(0, 7)];
 }

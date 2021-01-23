@@ -198,7 +198,7 @@ export class _BoardApp extends Component {
     render() {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
-        if (!board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
+        if (!board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
         let { isDetailsShown, isPreviewDetailsShown, userClicked, isGroupMenuShown } = this.state
         // socketService.emit('set label', this.props.board._id) // was here
         return (
@@ -223,6 +223,7 @@ export class _BoardApp extends Component {
                             )}
                         </Droppable>
                     </DragDropContext>
+
                 </section>
             </>
         )

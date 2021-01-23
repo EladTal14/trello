@@ -31,12 +31,12 @@
         border: 0;
         background-color: unset;
         position: absolute;
-        left: 85.5%;
+        left: 87.5%;
         top: 4px;
         z-index: 6;
         opacity: 0.6;
-        width: 27px;
-        height: 24px;
+        width: 23px;
+        height: 23px;
         outline: 0;
         opacity: 0;
         // visibility: hidden;
@@ -46,7 +46,7 @@
             cursor: pointer;
         }
         .show-preview-details-pen {
-            width: 27px;
+            width: 21px;
             background-color: #ebecf0;
             padding: 3px;
         }
@@ -73,7 +73,6 @@
         transition: min-width 1s, min-height 0.5s, opacity 0.5s;
         color: white;
 
-        
         &.open {
             min-width: 45px;
             transition: min-width 1s, min-height 0.5s, opacity 0.5s;
@@ -99,9 +98,7 @@
             }
         }
     }
-    .chec-klist-container
-    .comments-contaniner
-    .dueDate-container {
+    .chec-klist-container .comments-contaniner .dueDate-container {
         line-height: 16px;
         padding: 1px;
     }
@@ -130,7 +127,6 @@
         filter: invert(1);
     }
 }
-
 
 .red {
     background-color: #eb5a46;
