@@ -1,5 +1,5 @@
 .group-preview {
-  max-width: 272px;
+  max-width: 270px;
   background-color: #ebecf0;
   border-radius: 5px;
 }
@@ -53,10 +53,10 @@
   }
 }
 
-.group-menu{
+.group-menu {
   background-color: #fff;
   border-radius: 3px;
-  box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
+  box-shadow: 0 8px 16px -4px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
   width: 270px;
   height: 300px;
   color: #172b4d;
@@ -71,13 +71,12 @@
     height: 40px;
 
     h3 {
-        flex-grow: 2;
-        margin: auto;
-        text-align: center;
-        font-family: "montserrat", sans-serif;
-        font-weight: 500;
+      flex-grow: 2;
+      margin: auto;
+      text-align: center;
+      font-family: "montserrat", sans-serif;
+      font-weight: 500;
     }
-
   }
 
   .group-close-btn {
@@ -90,11 +89,11 @@
     border-radius: 3px;
 
     &:hover {
-        background-color: rgba(34, 34, 34, 0.185);
+      background-color: rgba(34, 34, 34, 0.185);
     }
   }
 
-  .group-menu-btn{
+  .group-menu-btn {
     cursor: pointer;
     font-weight: 400;
     font-family: "montserrat", sans-serif;
@@ -108,14 +107,12 @@
     margin-bottom: 5px;
 
     &:hover {
-        background-color: rgba(26, 25, 25, 0.068);
+      background-color: rgba(26, 25, 25, 0.068);
     }
   }
 
-  hr{
+  hr {
     margin: 0;
     border: 0 0 0.1px solid rgba(94, 108, 132, 0.25);
   }
-
-
 }

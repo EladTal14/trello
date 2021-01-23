@@ -1,7 +1,7 @@
 .card-list {
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: 74vh;
+  max-height: 60vh;
   scroll-behavior: smooth;
   margin-right: 5px;
   // &::-webkit-scrollbar {
@@ -20,6 +20,11 @@
   }
 }
 
+@media (min-width: 400px) {
+  .card-list {
+    max-height: 74vh;
+  }
+}
 // .item-enter {
 //   opacity: 0;
 // }
