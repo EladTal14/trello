@@ -45,8 +45,10 @@ export function CardPreviewBottom({ card }) {
                 <p className="chec-klist">{progress.done}/{progress.total}</p></div>}
             {card.members && <div className="preview-members-container flex">
                 {card.members.map(member => {
-                    return <div key={member.fullname} className="member" style={{backgroundColor: member.color? member.color: "#3f72af"}}>
-                        {utilService.convertName(member.fullname)}
+                    return <div key={member.fullname} className="member" 
+                    // style={{backgroundColor: member.color? member.color: "#3f72af"}}>
+                    style={{ backgroundImage: `url(${(member.imgUrl) ? member.imgUrl : '#3f72af'})` }}>
+                        {/* {utilService.convertName(member.fullname)} */}
                     </div>
                 })}
             </div>}

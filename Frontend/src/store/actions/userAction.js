@@ -1,10 +1,10 @@
 import { userService } from '../../services/userService.js'
 
 
-export function loadUsers() {
+export function loadUsers(filterBy) {
     return async (dispatch) => {
         try {
-            const users = await userService.query()
+            const users = await userService.query(filterBy)
             dispatch({ type: 'SET_USERS', users })
         } catch (err) {
             console.log('err userAction LOAD users', err);
@@ -58,5 +58,5 @@ export function loadUser(userCred) {
 
 
 export function setUserFilter(filterBy) {
-    return (dispatch) => { dispatch({ type: 'FILTER', filterBy }) }
+    return (dispatch) => { dispatch({ type: 'SET_FILTER', filterBy }) }
 }

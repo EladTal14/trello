@@ -18,6 +18,8 @@ export function userReducer(state = initialState, action) {
       return { ...state, loggedInUser: null }
     case 'SIGNUP':
       return { ...state, users: [...state.users, action.user], loggedInUser: action.user }
+    case 'SET_FILTER':
+      return { ...state, filterBy: action.filterBy }
     default:
       return state
   }
