@@ -103,9 +103,9 @@ class _CardActivityContainer extends Component {
         </div>
         <div className="flex column">
           <div className="flex">
-            <div className="member">
-              {loggedInUser ? utilService.convertName(loggedInUser.fullname) : 'G'}
-            </div>
+
+            <div className="member" style={{ backgroundImage: `url(${(loggedInUser?.imgUrl) ? loggedInUser?.imgUrl : '#3f72af'})` }}>{!loggedInUser?.imgUrl ? 'G' : ''}</div>
+
             <textarea
               className="activity-textarea"
               type="text"
@@ -119,11 +119,9 @@ class _CardActivityContainer extends Component {
         </div>
         {comments && comments.map((comment, index) => {
           return <div key={index} className="activity-comment-wrapper flex">
-            <div className="member" style={{ backgroundColor: comment.byMember ? comment.byMember.color : "#3f72af" }}>
-              {comment.byMember ? utilService.convertName(comment.byMember.fullname) : 'G'}
-            </div>
+            <div className="member" style={{ backgroundImage: `url(${(comment.byMember?.imgUrl) ? comment.byMember?.imgUrl : '#3f72af'})` }}>{!comment.byMember?.imgUrl ? 'G' : ''}</div>
             <div className="activity-comment">
-              <p>{loggedInUser ? loggedInUser.fullname : 'Guest'}: {comment.txt}</p>
+              <p>{comment.byMember ? comment.byMember.fullname : 'Guest'}: {comment.txt}</p>
               <TimeAgo className="activity-time" date={comment.createdAt} />
             </div>
           </div>

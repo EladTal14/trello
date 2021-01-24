@@ -29,7 +29,8 @@ class _BoardMenu extends Component {
               <section className="activities-wrapper">
                 {board.activities && board.activities.map((activity, idx) => (
                   <div className="activity-comment-wrapper flex" key={idx}>
-                    <div className="member">{activity.byMember ? utilService.convertName(activity.byMember.fullname) : 'G'}</div>
+                    {/* <div className="member" style={{ backgroundImage: `url(${(activity.createdBy.imgUrl) ? activity.createdBy.imgUrl : '#3f72af'})` }}>{activity.byMember ? utilService.convertName(activity.byMember.fullname) : 'G'}</div> */}
+                    <div className="member" style={{ backgroundImage: `url(${(activity.byMember?.imgUrl) ? activity.byMember?.imgUrl : '#3f72af'})` }}>{!activity.byMember?.imgUrl ? 'G' : ''}</div>
 
                     <div className="activity-comment">
                       {!activity.toGroup && <p>{activity.byMember ? activity.byMember.fullname : 'Guest'}: {activity.txt}
