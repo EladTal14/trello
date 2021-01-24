@@ -129,19 +129,19 @@ export class _BoardHeader extends Component {
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610626728/pie-chart_fnvwct.png" alt="" />
               </button>
             </Link>
-            <FilterCards
+            {/* <FilterCards
               saveBoard={this.props.saveBoard}
               board={this.props.board}
               members={members}
-            />
+            /> */}
             <div className="header-members flex">
               <ul className="member-list flex">
                 <TransitionGroup className="members-list flex">
                   {members.map((member, idx) =>
                     <CSSTransition key={idx} timeout={500} classNames="item">
-                      <li key={member.fullname} className="header-member" 
-                      style={{ backgroundImage: `url(${(member.imgUrl) ? member.imgUrl : '#3f72af'})` }}>
-                      {/* style={{ backgroundColor: member.color ? member.color : "#3f72af" }}> */}
+                      <li key={member.fullname} className="header-member"
+                        style={{ backgroundImage: `url(${(member.imgUrl) ? member.imgUrl : '#3f72af'})` }}>
+                        {/* style={{ backgroundColor: member.color ? member.color : "#3f72af" }}> */}
                         {/* {utilService.convertName(member.fullname)} */}
                       </li>
                     </CSSTransition>

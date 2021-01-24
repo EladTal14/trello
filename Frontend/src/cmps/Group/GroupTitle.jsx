@@ -83,11 +83,14 @@ export class _GroupTitle extends Component {
             <form onSubmit={this.onSaveTitle} ref={this.textInput} {...this.props.dragHandle} className="title-form flex space-between">
                 {/* <input type="text" ref={this.textInput} name="title" value={group.title} onChange={this.handleInput} */}
                 {/* <TextField id="standard-basic" label="Standard" /> */}
-                {/* {!isTitleShown && <h3 className="title-input title" onClick={this.showInput}>{group.title}</h3>}
-                {isTitleShown && <input type="text" name="title" value={group.title} onChange={this.handleInput}
-                    className="title-input" placeholder="Enter List title..." autoComplete="off" onBlur={this.onSaveTitle} />} */}
-                <input type="text" name="title" value={group.title} onChange={this.handleInput}
-                    className="title-input" placeholder="Enter List title..." autoComplete="off" onBlur={this.onSaveTitle} />
+                {!isTitleShown && <h3 style={{ width: '100%' }} className="title-input title" onClick={this.showInput}>{group.title}</h3>}
+                {isTitleShown && <input type="text" name="title" style={{
+                    width: '90%', fontFamily: "montserrat", fontWeight: 600,
+                    fontSize: "1rem", paddingTop: 10, paddingBottom: 10
+                }} autoFocus value={group.title} onChange={this.handleInput}
+                    className="title-input" placeholder="Enter List title..." autoComplete="off" onBlur={this.onSaveTitle} />}
+                {/* <input type="text" name="title" value={group.title} onChange={this.handleInput}
+                    className="title-input" placeholder="Enter List title..." autoComplete="off" onBlur={this.onSaveTitle} /> */}
                 <button className="more-options-btn" onClick={(ev) => this.showGroupMenu(ev)}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/more_e8mezf.png" alt="" /></button>
             </form>
         </section>

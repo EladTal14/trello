@@ -3,6 +3,7 @@
   background-color: #ebecf0;
   border-radius: 5px;
   height: 100%;
+  padding-top: 0.8rem;
 }
 
 .title-form {
@@ -23,6 +24,9 @@
   margin-left: 8px;
   color: #172b4d;
   padding: 0 0 0 3px;
+  margin: 0;
+  margin-left: 7px;
+  margin-bottom: 5px;
 }
 
 .title-input:focus {
@@ -32,9 +36,11 @@
   font-size: 14px;
 }
 
-// h3.title {
-
-// }
+h3.title {
+  margin-top: 8px;
+  margin-left: 7px;
+  height: 20px;
+}
 
 .more-options-btn {
   height: 25px;
