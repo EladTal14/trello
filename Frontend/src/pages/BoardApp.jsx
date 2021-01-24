@@ -64,6 +64,7 @@ export class _BoardApp extends Component {
 
     loadBoard = async () => {
         const { boardId } = this.props.match.params
+        // socketService.emit('set label', boardId)
         await this.props.loadBoard(boardId)
         socketService.emit('set label', boardId)
     }

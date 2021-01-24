@@ -87,7 +87,7 @@ export class CardSide extends Component {
           <button className="side-btn" onClick={this.toggleDate}>
             <span>
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/clock_zwp9d9.png" alt="" />
-            </span> Due date</button>
+            </span> Due Date</button>
 
           <button className="side-btn" onClick={this.toggleCoverMenu}>
             <span>
