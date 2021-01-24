@@ -31,19 +31,19 @@ export class GroupPreview extends Component {
                         snapshot={snapshot}
                     >
                         {style => (
-                            <div>
-                                <article className="group-preview" {...provided.draggableProps}
-                                    style={getItemStyle(snapshot.isDragging, provided.draggableProps.style, style)}
-                                    ref={provided.innerRef}>
-                                    <div  {...provided.dragHandleProps} style={{ width: 272, height: '0.8rem' }}>
-                                    </div>
-                                    <GroupTitle updateBoard={updateBoard} group={group} dragHandle={provided.dragHandleProps} />
-                                    <CardList refs={this.refCard} cards={group.cards}
-                                        id={idx} group={group} onScroll={this.onScroll}
-                                        grpTitle={group.title} groupId={group.id} onAddCard={onAddCard} />
-                                    <CardAdd groupId={group.id} onScroll={this.onScroll} />
-                                </article>
-                            </div>
+                            // <div>
+                            <article className="group-preview" {...provided.draggableProps}
+                                style={getItemStyle(snapshot.isDragging, provided.draggableProps.style, style)}
+                                ref={provided.innerRef}>
+                                <div  {...provided.dragHandleProps} style={{ width: 272, height: '0.8rem', outline: 'none' }}>
+                                </div>
+                                <GroupTitle updateBoard={updateBoard} group={group} dragHandle={provided.dragHandleProps} />
+                                <CardList refs={this.refCard} cards={group.cards}
+                                    id={idx} group={group} onScroll={this.onScroll}
+                                    grpTitle={group.title} groupId={group.id} onAddCard={onAddCard} />
+                                <CardAdd groupId={group.id} onScroll={this.onScroll} />
+                            </article>
+                            // </div>
                         )}
                     </NaturalDragAnimation>
                 )}

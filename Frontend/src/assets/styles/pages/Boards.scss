@@ -1,9 +1,10 @@
 .boards-page {
     padding: 24px;
-    max-height: 100vh;
+    // max-height: 100vh;
     overflow-y: auto;
     background-color: rgb(26, 26, 26);
     color: white;
+    flex-grow: 1;
     &::-webkit-scrollbar {
         width: 1rem;
     }
