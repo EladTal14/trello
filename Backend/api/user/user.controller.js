@@ -12,12 +12,9 @@ async function getUser(req, res) {
 }
 
 async function getUsers(req, res) {
+    console.log('req.filter by', req);
     try {
-        const filterBy = {
-            txt: req.query?.txt || '',
-            minBalance: +req.query?.minBalance || 0
-        }
-        const users = await userService.query(filterBy)
+        const users = await userService.query(req.query)
         res.send(users)
     } catch (err) {
         logger.error('Failed to get users', err)

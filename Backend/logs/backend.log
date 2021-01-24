@@ -1275,3 +1275,27 @@
 =======
 1/24/2021, 8:33:42 AM - INFO - Server is running on port: 3030 
 >>>>>>> 503328bc3a8d6c2a003758ed0f60ddcbb4d6c242
+1/24/2021, 8:55:30 AM - DEBUG - auth.service - signup with username: nina, fullname: nina malina (sid: hLn74VrCobEAmzkJvHOY0xG---SE07dD)
+1/24/2021, 8:55:31 AM - DEBUG - auth.route - new account created: {"username":"nina","password":"$2b$10$wP4KKKc70y0M7LFu8fEXKuEqZVEpEYmzFBDrHjqoubF8e805o9mL6","fullname":"nina malina","_id":"600d19e266bc252d88833b06"} (sid: hLn74VrCobEAmzkJvHOY0xG---SE07dD)
+1/24/2021, 8:58:07 AM - DEBUG - auth.service - signup with username: dani, fullname: dani ami (sid: UV_gLnBs17_U2d6ABbyGeEJ8tocluxkG)
+1/24/2021, 8:58:07 AM - DEBUG - auth.route - new account created: {"username":"dani","password":"$2b$10$VV6x.3Fw15KSE/dqGpcKZuSAcU5rGQjtVgF88tJ/2lwZLQqx2AHg.","fullname":"dani ami","_id":"600d1a7f66bc252d88833b07"} (sid: UV_gLnBs17_U2d6ABbyGeEJ8tocluxkG)
+1/24/2021, 9:24:14 AM - DEBUG - auth.service - signup with username: hanna, fullname: hanna bandana (sid: bxUxisEaSUC4BH3H6DZmiygpPak3rl_N)
+1/24/2021, 9:24:14 AM - DEBUG - auth.route - new account created: {"username":"hanna","password":"$2b$10$jgN5YTmYH5rfjjVN6c5Sbu/RayCeQ6t8WH2exUzaULi50RUD08Miq","fullname":"hanna bandana","_id":"600d209e66bc252d88833b08"} (sid: bxUxisEaSUC4BH3H6DZmiygpPak3rl_N)
+1/24/2021, 9:32:55 AM - DEBUG - auth.service - signup with username: puki, fullname: puki ben david (sid: dy02F7kxyl744SnSx55gCHFAILC6dQ1P)
+1/24/2021, 9:32:55 AM - DEBUG - auth.route - new account created: {"username":"puki","password":"$2b$10$CtnCTvZAORxbpzxartyO7ODKqjhNK4FFl.oCo49Hw9bF/NYmDRrP.","fullname":"puki ben david","_id":"600d22a766bc252d88833b09"} (sid: dy02F7kxyl744SnSx55gCHFAILC6dQ1P)
+1/24/2021, 10:13:10 AM - ERROR - Failed to Login Invalid username or password (sid: KZhSa8QNr33xlmOAzOUU7-6-NIqfcBi_)
+1/24/2021, 10:13:40 AM - ERROR - Failed to Login Invalid username or password (sid: KZhSa8QNr33xlmOAzOUU7-6-NIqfcBi_)
+1/24/2021, 10:37:05 AM - INFO - Server is running on port: 3030 
+1/24/2021, 10:48:11 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:12:20 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:16:47 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:20:53 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:22:31 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:24:29 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:29:34 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:31:42 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:32:09 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:35:42 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:45:12 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:46:43 AM - INFO - Server is running on port: 3030 
+1/24/2021, 11:48:03 AM - INFO - Server is running on port: 3030 

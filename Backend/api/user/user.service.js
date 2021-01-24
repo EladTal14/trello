@@ -26,6 +26,7 @@ async function query(filterBy = {}) {
             // user.createdAt = Date.now() - (1000 * 60 * 60 * 24 * 3) // 3 days ago
             return user
         })
+        console.log('users from backend', users, 'filterby', criteria);
         return users
     } catch (err) {
         logger.error('cannot find users', err)
@@ -111,21 +112,11 @@ async function add(user) {
 }
 
 function _buildCriteria(filterBy) {
-    const criteria = {}
-    if (filterBy.txt) {
-        const txtCriteria = { $regex: filterBy.txt, $options: 'i' }
-        criteria.$or = [
-            {
-                username: txtCriteria
-            },
-            {
-                fullname: txtCriteria
-            }
-        ]
-    }
-    if (filterBy.minBalance) {
-        criteria.balance = { $gte: filterBy.minBalance }
-    }
+    console.log('filter by....', filterBy);
+    const {fullname} = filterBy
+    const regexName = new RegExp(fullname, 'i')
+    const criteria = {
+        fullname: {$regex : regexName}}
     return criteria
 }
 

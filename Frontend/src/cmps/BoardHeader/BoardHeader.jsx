@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { utilService } from '../../services/utilService'
 import { saveBoard } from '../../store/actions/boardAction'
-import { loadUsers } from '../../store/actions/userAction'
+import { loadUsers, setUserFilter } from '../../store/actions/userAction'
 import { connect } from 'react-redux'
 import { AddMember } from '../AddMember'
 import { BoardMenu } from './BoardMenu'
@@ -17,12 +17,15 @@ export class _BoardHeader extends Component {
     },
     isChanging: false,
     isWrapper: false,
-    isMoreMembersShown: false
+    isMoreMembersShown: false,
+    filterUserBy: {
+      fullname: ''
+    },
   }
 
 
   componentDidMount() {
-    this.props.loadUsers()
+    this.props.loadUsers(this.props.filterUserBy)
     this.setState({ board: { title: this.props.board.title } })
   }
 
@@ -97,9 +100,8 @@ export class _BoardHeader extends Component {
   }
 
   onSetUserFilter = (filterBy) => {
-    console.log('filtermember by', filterBy)
-    // this.props.setUserFilter(filterBy)
-    // this.props.loadUsers(filterBy)
+    this.setState({ filterUserBy: filterBy }, () => this.props.setUserFilter(this.state.filterUserBy))
+    this.props.loadUsers(this.props.filterUserBy)
 
   }
 
@@ -131,8 +133,10 @@ export class _BoardHeader extends Component {
                 <TransitionGroup className="members-list flex">
                   {members.map((member, idx) =>
                     <CSSTransition key={idx} timeout={500} classNames="item">
-                      <li key={member.fullname} className="header-member" style={{ backgroundColor: member.color ? member.color : "#3f72af" }}>
-                        {utilService.convertName(member.fullname)}
+                      <li key={member.fullname} className="header-member" 
+                      style={{ backgroundImage: `url(${(member.imgUrl) ? member.imgUrl : '#3f72af'})` }}>
+                      {/* style={{ backgroundColor: member.color ? member.color : "#3f72af" }}> */}
+                        {/* {utilService.convertName(member.fullname)} */}
                       </li>
                     </CSSTransition>
                   )}
@@ -164,8 +168,8 @@ export class _BoardHeader extends Component {
 const mapStateToProps = state => {
   return {
     board: state.boardModule.currBoard,
-    users: state.userModule.users
-    // filterBy: state.boardModule.filterBy,
+    users: state.userModule.users,
+    filterUserBy: state.userModule.filterBy,
     // loggedInUser: state.userModule.loggedInUser,
   }
 }
@@ -173,6 +177,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   saveBoard,
   loadUsers,
+  setUserFilter
 }
 
 
