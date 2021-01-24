@@ -5,7 +5,7 @@ export function Home() {
             <div className="home-img"></div>
             <div className="text-container flex column">
                 <h1 className="h1-main-header">Welcome to TasKooler</h1>
-                <h3 className="h3-secondary-header">TasKooler enables you and your team to organize and prioritize all your shit in a fun, flexible way.</h3>
+                <h3 className="h3-secondary-header">TasKooler enables you and your team to organize and prioritize all your projects in a fun, flexible way.</h3>
                 <Link to="/boards" className="boards-btn" className="get-started-btn">GET STARTED!</Link>
             </div>
 

@@ -1269,5 +1269,9 @@
 1/23/2021, 9:10:42 AM - ERROR - Failed to Login Invalid username or password (sid: l4x-Vxg5u28YfruT2mwZbqBklzMqcaYE)
 >>>>>>> e0d25a2bce4a21a44402098bf6cc1ad6887d82dd
 1/23/2021, 2:49:32 PM - INFO - Server is running on port: 3030 
+<<<<<<< HEAD
 1/23/2021, 4:29:17 PM - INFO - Server is running on port: 3030 
 1/23/2021, 4:32:23 PM - INFO - Server is running on port: 3030 
+=======
+1/24/2021, 8:33:42 AM - INFO - Server is running on port: 3030 
+>>>>>>> 503328bc3a8d6c2a003758ed0f60ddcbb4d6c242

@@ -29,13 +29,7 @@ export class _BoardApp extends Component {
     async componentDidMount() {
         socketService.setup()
         await this.loadBoard()
-
-        socketService.on('load board', (board) => {
-
-            console.log('lalalalal');
-            this.updateBoard(board, true)
-        })
-
+        socketService.on('load board', board => this.updateBoard(board, true))
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
         this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
@@ -78,7 +72,6 @@ export class _BoardApp extends Component {
         const copyBoard = { ...board }
         copyBoard.groups.push(group)
         await this.props.saveBoard(copyBoard)
-
         // socketService.emit('group added', board)
     }
 
@@ -176,6 +169,7 @@ export class _BoardApp extends Component {
                 this.refBoard.current.scrollLeft += scrolltoleft
         })
     }
+
     showPreviewCardDetails = (pos) => {
         this.setState({
             userClicked: {
