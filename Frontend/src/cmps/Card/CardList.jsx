@@ -13,7 +13,7 @@ export class CardList extends Component {
     // refCard = React.createRef()
     getListStyle = isDraggingOver => ({
         // padding: 5,
-        paddingTop: 5,
+        paddingTop: 1,
         paddingBottom: 5,
         paddingLeft: 5,
         position: "relative",

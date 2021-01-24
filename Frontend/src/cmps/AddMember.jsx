@@ -23,7 +23,7 @@ export class _AddMember extends Component {
 
     handleChange = ({ target }) => {
         const field = target.name
-        const value = target.value
+        const {value} = target
 
         this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }), () => {
             this.props.onSetUserFilter(this.state.filterBy)
@@ -32,7 +32,6 @@ export class _AddMember extends Component {
 
     onToggleUser = (user) => {
         this.props.onUpdateMembers(user)
-        // console.log('check', user);
     }
 
     render() {

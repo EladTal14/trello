@@ -33,6 +33,7 @@ async function getById(boardId) {
     try {
         const collection = await dbService.getCollection('board')
         const board = await collection.findOne({ '_id': ObjectId(boardId) })
+
         // user.givenBoards = await boardService.query({ byUserId: ObjectId(user._id) })
         // user.givenBoards = user.givenBoards.map(board => {
         //     delete board.byUser
@@ -44,6 +45,22 @@ async function getById(boardId) {
         throw err
     }
 }
+// async function getById(boardId) {
+//     try {
+//         const collection = await dbService.getCollection('board')
+//         const board = await collection.findOne({ '_id': ObjectId(boardId) })
+
+//         // user.givenBoards = await boardService.query({ byUserId: ObjectId(user._id) })
+//         // user.givenBoards = user.givenBoards.map(board => {
+//         //     delete board.byUser
+//         //     return board
+//         // })
+//         return board
+//     } catch (err) {
+//         logger.error(`while finding board ${boardId}`, err)
+//         throw err
+//     }
+// }
 
 
 async function remove(boardId) {
@@ -134,3 +151,27 @@ function _buildCriteria(filterBy) {
 }
 
 
+
+
+// const collection = await dbService.getCollection('board')
+// const board = await collection.findOne({ '_id': ObjectId(boardId) })
+// const txtCriteria = { $regex: 'a', $options: 'i' }
+// criteria.$or = [{ board: txtCriteria }]
+
+// db.quiz.aggregate(
+//     //Match the documents by query. Search for science course
+//     {"$match":{"name":"Science"}},
+
+//     //De-normalize the nested array of chapters.
+//     {"$unwind":"$chapters"},
+//     {"$unwind":"$chapters.tests"},
+
+//     //Match the document with test name Science Chapter
+//     {"$match":{"chapters.tests.name":"ScienceChap1test2"}},
+
+//     //Unwind nested questions array
+//     {"$unwind":"$chapters.tests.questions"},
+
+//     //Match questions of type mcq
+//     {"$match":{"chapters.tests.questions.type":"mcq"}}
+// ).pretty()

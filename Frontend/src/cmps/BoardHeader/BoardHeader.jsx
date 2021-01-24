@@ -8,6 +8,7 @@ import { BoardMenu } from './BoardMenu'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
+import { FilterCards } from './FilterCards'
 
 export class _BoardHeader extends Component {
 
@@ -126,6 +127,11 @@ export class _BoardHeader extends Component {
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610626728/pie-chart_fnvwct.png" alt="" />
               </button>
             </Link>
+            <FilterCards
+              saveBoard={this.props.saveBoard}
+              board={this.props.board}
+              members={members}
+            />
             <div className="header-members flex">
               <ul className="member-list flex">
                 <TransitionGroup className="members-list flex">
