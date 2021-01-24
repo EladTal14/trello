@@ -46,7 +46,7 @@ export class CardAdd extends Component {
                         </div>
                     </form>
                 } */}
-                {isAddOpen && <div style={{ height: 45 }}></div>}
+                {/* {isAddOpen && <div style={{ height: 45 }}></div>} */}
                 {!isAddOpen && <button className="add-card-btn" onClick={this.openInput}>
                     <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/plus_ljzrkm.png" alt="" />
                     <span>Add another card</span></button>}

@@ -17,7 +17,7 @@ export class _CardPreview extends Component {
 
     showPreviewDetails = (ev, card, group) => {
         const PreviewDetailsSize = { width: 420, height: 210 }
-        const newClientPos = utilService.getSpaceCalculatedPos(ev, PreviewDetailsSize)
+        const newClientPos = utilService.getModalPos(ev, PreviewDetailsSize)
         const pos = { ev, newClientPos }
 
         this.props.setCard(card)
@@ -25,7 +25,7 @@ export class _CardPreview extends Component {
         ev.stopPropagation()
         eventBusService.emit('show-preview-details', pos, true)
     }
-    
+
     render() {
         const { card, index, group } = this.props
         return (
@@ -44,8 +44,8 @@ export class _CardPreview extends Component {
                                     style={getItemStyle(snapshot.isDragging, provided.draggableProps.style, style, snapshot.isDraggingOver)}
                                 >
                                     <button className="show-preview-details-btn" onClick={(ev) => this.showPreviewDetails(ev, card, group)}><img className="show-preview-details-pen" src="https://res.cloudinary.com/basimgs/image/upload/v1610873061/pen_lgmg47.png" alt="pen" /></button>
-                                    {card.style && (card.style.imgUrl ? <div className="card-img-cover"><img src={card.style.imgUrl} alt=""/></div>
-                                        : <div className="card-color-cover" style={{ backgroundColor: card.style.color }}></div>)} 
+                                    {card.style && (card.style.imgUrl ? <div className="card-img-cover"><img src={card.style.imgUrl} alt="" /></div>
+                                        : <div className="card-color-cover" style={{ backgroundColor: card.style.color }}></div>)}
                                     <div className="lower-card">
                                         <CardPreviewLabel card={card} />
                                         <div className="flex space-between">

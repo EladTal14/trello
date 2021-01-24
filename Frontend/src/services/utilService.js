@@ -7,24 +7,22 @@ export const utilService = {
   getTodoProgress,
   getRandomDarkColor,
   getRandomBrightColor,
-  getSpaceCalculatedPos
+  getModalPos,
+
 }
 
+function getModalPos(ev, { width, height }) {
+  if (!ev) return
 
-function getSpaceCalculatedPos(ev, { width, height }) {
-  const sumY = window.innerHeight - ev.clientY
-  const sumX = window.innerWidth - ev.clientX
-  var newClientPosX
-  var newClientPosY
+  const diffX = window.innerWidth - ev.clientX
+  const diffY = window.innerHeight - ev.clientY
+  const pos = { x: ev.clientX, y: ev.clientY }
 
-  if (ev.clientX - width < 0) newClientPosX = 10
-  if (sumX < width) newClientPosX = window.innerWidth - (width + 10)
-  if (sumY < height) newClientPosY = ev.clientY - (height - sumY)
+  if (pos.x < width) pos.x = 10
+  if (diffX < width) pos.x = window.innerWidth - (width + 10)
+  if (diffY < height) pos.y -= (height - diffY)
 
-  if (!newClientPosX) newClientPosX = ev.clientX
-  if (!newClientPosY) newClientPosY = ev.clientY
-
-  return { x: newClientPosX, y: newClientPosY }
+  return pos
 }
 
 function getRandomInt(min, max) {

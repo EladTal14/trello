@@ -150,8 +150,7 @@ export class _DashBoard extends Component {
               }],
               xAxes: [{
                 gridLines: {
-                  display: true,
-                  color: "rgba(0,0,0,0.8)"
+                  display: false,
                 }
               }]
             },
@@ -182,8 +181,7 @@ export class _DashBoard extends Component {
               }],
               xAxes: [{
                 gridLines: {
-                  display: true,
-                  color: "rgba(0,0,0,0.8)"
+                  display: false,
                 }
               }]
             },
