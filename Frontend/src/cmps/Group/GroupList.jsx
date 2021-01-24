@@ -7,8 +7,8 @@ export function GroupList({ groups, onAddCard, onAddGroup, onScroll, updateBoard
             {groups.map((group, idx) =>
                 <GroupPreview updateBoard={updateBoard} key={group.id} group={group} idx={idx} onAddCard={onAddCard} />
             )}
-            <GroupAdd onAddGroup={onAddGroup} onScroll={onScroll} />
 
+            <GroupAdd onAddGroup={onAddGroup} onScroll={onScroll} />
         </div>
     )
 }

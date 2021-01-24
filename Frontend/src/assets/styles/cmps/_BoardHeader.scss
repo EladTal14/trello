@@ -4,7 +4,7 @@
   color: black;
   min-height: 40px;
   align-items: center;
-
+  margin-top: 5px;
   .board-header-btn {
     border-radius: 3px;
     color: white;
@@ -55,7 +55,7 @@
 
   .header-options {
     align-items: center;
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
   .header-members {
     align-items: center;
@@ -71,9 +71,9 @@
     font-weight: 700;
     text-align: center;
     cursor: pointer;
-    &:hover{
+    &:hover {
       opacity: 0.8;
-  }
+    }
   }
 
   .add-member {
@@ -151,6 +151,10 @@
   background-color: #ebecf0;
   height: 100vh;
   color: $clr6;
+  ::-webkit-scrollbar-thumb {
+    background-color: #9b969663;
+    border-radius: 4px;
+  }
   .menu-container {
     width: 90%;
   }
@@ -264,31 +268,24 @@
 }
 @media (min-width: 460px) {
   .board-header {
-
-    .menu-btn{
+    .menu-btn {
       background-color: rgba(34, 34, 34, 0.11);
       color: white;
       margin-top: 0;
     }
-
   }
 }
-
-
 
 /* NORMAL */
 
 @media (min-width: 720px) {
   .board-header {
-
-    .menu-btn{
+    .menu-btn {
       background-color: rgba(34, 34, 34, 0.11);
       color: white;
       margin-top: 0;
     }
-
   }
-  
 }
 
 /* WIDE */
@@ -302,14 +299,10 @@
     color: black;
     height: 40px;
     align-items: center;
-    .menu-btn{
+    .menu-btn {
       background-color: rgba(34, 34, 34, 0.11);
       color: white;
       margin-top: 0;
     }
-
   }
-
-
-  
 }

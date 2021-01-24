@@ -47,7 +47,8 @@ export class AddBoard extends Component {
         this.setState({ picked: idx })
     }
 
-    onAddBoard = () => {
+    onAddBoard = (ev) => {
+        ev.preventDefault()
         const { title, imgUrlLarge, imgUrlmedium } = this.state.board
         const board = { title, style: {backgroundImage: imgUrlLarge, backgroundImagePreview: imgUrlmedium} }
         this.props.addBoard(board)
@@ -73,7 +74,8 @@ export class AddBoard extends Component {
             <CSSTransition in={mounted} classNames="modal" timeout={300} onExited={this.props.toggleAddBoard}>
             <div className="new-board-modal flex column">
             <div className="new-board-header flex space-around">
-                <h3>Create New Board</h3><button onClick={this.onClose}>✕</button>
+                <h3>Create New Board</h3>
+                <button onClick={this.onClose}>✕</button>
             </div>
                 <div className="board-cover-colors">
                         {this.bgColors().map((color, idx) => {
@@ -81,9 +83,9 @@ export class AddBoard extends Component {
                                 onClick={() => this.setBgcImg(color.imgUrlLarge ,color.imgUrlmedium, idx)}><img src={color.imgUrlmedium} alt=""/></div>
                         })}
                 </div>
-                <input type="text" name="title" value={this.state.title} onChange={this.handleInput}
-                    className="add-board-input" placeholder="Enter a board title..." autoComplete="off"/>
-                    <button onClick={this.onAddBoard} className="create-board-btn">Create board</button>
+                <form onSubmit={this.onAddBoard}><input type="text" name="title" value={this.state.title} onChange={this.handleInput}
+                    className="add-board-input" placeholder="Enter a board title..." autoComplete="off" required/>
+                    <button className="create-board-btn">Create board</button></form>
             </div>
             </CSSTransition>
         )

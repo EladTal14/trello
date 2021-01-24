@@ -21,9 +21,6 @@ class _AppHeader extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // console.log('prevProps', prevProps);
-    // console.log('prevState', prevState);
-    // console.log('state', this.state);
     if (this.props.loggedInUser !== this.state.loggedInUser)
       this.setState({ loggedInUser: this.props.loggedInUser })
   }
@@ -55,7 +52,7 @@ class _AppHeader extends Component {
               <li ><Link to="/boards" className="boards-btn">Boards</Link></li>
             </ul>
           </nav>
-          <li ><Link to="/" className="header-title">Trello</Link></li>
+          <li ><Link to="/" className="header-title"><img src="https://res.cloudinary.com/basimgs/image/upload/v1611315507/multitask_1_fjrnbt.png" alt="" /><h2>TasKooler</h2></Link></li>
           <div className="header-right flex">
             <button className="header-add-board-btn" onClick={this.toggleAddBoard}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625350/plus_ljzrkm.png" alt="" /></button>
             {loggedInUser && <> <div className="header-user-logged-in">{utilService.convertName(loggedInUser.fullname)}</div> <button className="header-log-board-btn" onClick={this.props.logout}> Logout</button></>}

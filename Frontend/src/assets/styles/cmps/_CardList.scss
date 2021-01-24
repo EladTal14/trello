@@ -20,6 +20,11 @@
   }
 }
 
+@media (min-width: 400px) {
+  .card-list {
+    max-height: 74vh;
+  }
+}
 // .item-enter {
 //   opacity: 0;
 // }

@@ -11,74 +11,32 @@ function emit({ type, data }) {
 
 
 function connectSockets(http, session) {
-    gIo = require("socket.io")(http)
+    gIo = require('socket.io')(http)
 
     const sharedSession = require('express-socket.io-session');
 
-    gIo.use(sharedSession(session, { //aware to the user session
+    gIo.use(sharedSession(session, {
         autoSave: true
     }));
     gIo.on('connection', socket => {
-        // Keeping the socket inside the map above
-        // if (socket.myTopic) {
-        //     socket.leave(socket.myTopic)
-        // }
-        // gSocketBySessionIdMap[socket.handshake.sessionID] = socket
+        console.log('Someone connected')
+        gSocketBySessionIdMap[socket.handshake.sessionID] = socket
         socket.on('disconnect', socket => {
             console.log('Someone disconnected')
-            // if (socket.myTopic) {
-            //     socket.leave(socket.myTopic)
-            // }
-            // if (socket.handshake) {
-            //     // removing the user from the map
-            //     gSocketBySessionIdMap[socket.handshake.sessionID] = null
-            // }
+            if (socket.handshake) {
+                delete gSocketBySessionIdMap[socket.handshake.sessionID]
+            }
         })
         socket.on('set label', boardId => {
-            if (socket.myTopic) {
-                socket.leave(socket.myTopic)
+            if (socket.boardId) {
+                socket.leave(socket.boardId)
             }
             socket.join(boardId)
-            console.log('set label -> boardId', boardId)
-            socket.myTopic = boardId
-        })
-        socket.on('chat topic', topic => {
-            if (socket.myTopic) {
-                socket.leave(socket.myTopic)
-            }
-            socket.join(topic)
-            // logger.debug('Session ID is', socket.handshake.sessionID)
-            socket.myTopic = topic
-        })
-        socket.on('chat newMsg', msg => {
-            // emits to all sockets:
-            // gIo.emit('chat addMsg', msg)
-            // emits only to sockets in the same room
-            gIo.to(socket.myTopic).emit('chat addMsg', msg)
-        })
-        socket.on('card added', (board) => {
-            console.log('socket.myTopic', socket.myTopic)
-            gIo.to(socket.myTopic).emit('load board', board)
-        })
-        socket.on('card changed', (board) => {
-            console.log('socket.myTopic', socket.myTopic)
-            gIo.to(socket.myTopic).emit('load board', board)
-        })
-        socket.on('card removed', (board) => {
-            console.log('socket.myTopic', socket.myTopic)
-            gIo.to(socket.myTopic).emit('load board', board)
-        })
-        socket.on('group added', (board) => {
-            console.log('socket.myTopic', socket.myTopic)
-            gIo.to(socket.myTopic).emit('load board', board)
+            socket.boardId = boardId
         })
         socket.on('render', (board) => {
-            console.log('SOCKETboard', board)
-            // console.log('render -> socket.myTopic', socket.myTopic)
-            // gIo.to(socket.myTopic).emit('load board', board)
-            socket.broadcast.to(socket.myTopic).emit('load board', board)
+            socket.to(socket.boardId).emit('load board', board)
         })
-
     })
 }
 

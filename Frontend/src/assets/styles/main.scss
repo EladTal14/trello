@@ -38,10 +38,13 @@
 @import "cmps/DatePicker";
 @import "cmps/CardPreviewDetails";
 @import "cmps/AddBoard";
+@import "pages/Home";
 // @import "components/cat-card.scss";
 .App {
   height: 100vh;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 //transfer to grouplist

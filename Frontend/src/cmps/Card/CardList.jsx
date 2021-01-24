@@ -32,7 +32,7 @@ export class CardList extends Component {
     // }
     render() {
         const { cards, id, groupTitle, group, onAddCard } = this.props
-        if (!cards) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
+        if (!cards) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
 
         return (
             // <div className="card-list" ref={this.refCard} onScroll={this.props.onScroll}>

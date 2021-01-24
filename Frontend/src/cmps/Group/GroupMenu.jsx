@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { saveBoard } from '../../store/actions/boardAction'
 import { CSSTransition } from 'react-transition-group'
+import { utilService } from '../../services/utilService'
 
 class _GroupMenu extends Component {
     state = {
@@ -38,12 +39,19 @@ class _GroupMenu extends Component {
     }
 
     onAddCard = () => {
-        console.log('haha');
+        console.log('not working yet');
     }
 
-    onCopyGroup = () => {
-        console.log(' im am doing nothimg...');
+    onCopyGroup = async () => {
+        const copyBoard = {...this.props.board}
+        const { group } = this.state
+        const groupIdx = copyBoard.groups.findIndex((currGroup) => currGroup.id === group.id)
+        const copyGroup = {...group, id: utilService.makeId()}
+        copyBoard.groups.splice(groupIdx, 0, copyGroup)
+        await this.props.saveBoard(copyBoard)
+        this.onClose()
     }
+
 
     render() {
         const { userClicked, group, mounted } = this.state
@@ -55,16 +63,16 @@ class _GroupMenu extends Component {
                 zIndex: 1000, top: userClicked?.y + 10, left: userClicked?.x - 150
             }}>
                 <div className="group-actions flex spase-between">
-                    <h3>Group Actions</h3>
+                    <h3>List Actions</h3>
                     <button onClick={this.onClose} className="group-close-btn">✕</button>
                 </div>
                 <div className="group-menu-btns flex column">
                     <button className="group-menu-btn" onClick={this.onAddCard}>
                     Add Card...</button>
                     <button className="group-menu-btn" onClick={this.onCopyGroup}>
-                    Copy Group...</button>
+                    Copy List...</button>
                     <button className="group-menu-btn" onClick={this.onRemoveGroup}>
-                    Delete Group...</button>
+                    Delete List...</button>
                     <button className="group-menu-btn">
                     Watch...</button>
                     <hr/>

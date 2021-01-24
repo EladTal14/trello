@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // eslint-disable-next-line
-import { Polar, Doughnut, Bar } from 'react-chartjs-2'
+import { Polar, Doughnut, Bar, Line, Bubble, Radar } from 'react-chartjs-2'
 import { loadBoard } from '../store/actions/boardAction.js'
 import { loadUsers } from '../store/actions/userAction.js'
 import { utilService } from '../services/utilService.js'
@@ -9,19 +9,37 @@ import Loader from 'react-loader-spinner'
 
 export class _DashBoard extends Component {
   state = {
-    board: null
+    board: null,
+    textSize: 25
+  }
+  updateTextSize = () => {
+    if (window.innerWidth < 500) {
+      this.setState({ textSize: 15 });
+    }
+    else if (window.innerWidth === 501) {
+      this.setState({ textSize: 25 });
+    }
   }
   async componentDidMount() {
+    window.addEventListener('resize', this.updateTextSize)
     const board = this.props.board
     if (!board) {
       let boardId = this.props.match.params.boardId
       await this.loadBoard(boardId)
-      console.log(boardId);
-      this.setState({ board: this.props.board }, () => console.log(this.state.board))
+      this.setState({ board: this.props.board })
     }
     this.setState({ board: this.props.board })
 
   }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateTextSize);
+  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log(1);
+  //   if (window.innerWidth < 400) this.setState({ textSize: 15 })
+
+  // }
+
 
   loadBoard = async (boardId) => {
     await this.props.loadBoard(boardId)
@@ -32,17 +50,20 @@ export class _DashBoard extends Component {
       acc[group.title] = group.cards.length
       return acc
     }, {})
-    console.log(mapGroup);
-    console.log(Object.keys(mapGroup).map(title => title));
-    console.log(Object.values(mapGroup).map(title => title));
+    // console.log(mapGroup);
+    console.log(Object.keys(mapGroup));
+    // console.log(Object.values(mapGroup).map(title => title));
     return {
-
       labels:
-        Object.keys(mapGroup).map(title => title),
+        [...Object.keys(mapGroup)],
       datasets: [{
-        data: Object.values(mapGroup).map(title => title),
+        data: [...Object.values(mapGroup).map(title => title)],
         backgroundColor: [
-          ...Object.keys(mapGroup).map(() => utilService.getRandomColor())
+          ...Object.keys(mapGroup).map((key, index) => {
+            if (index % 2 === 0)
+              return utilService.getRandomBrightColor()
+            else return utilService.getRandomDarkColor()
+          })
         ],
         hoverBackgroundColor: [
           ...Object.keys(mapGroup).map(() => '#FFFFFF')
@@ -59,7 +80,6 @@ export class _DashBoard extends Component {
           if (!acc[label.title]) acc[label.title] = 1
           else acc[label.title] += 1
         })
-
       })
       return acc
     }, {})
@@ -69,7 +89,11 @@ export class _DashBoard extends Component {
       datasets: [{
         data: [...Object.values(mapLabels).map(title => title)],
         backgroundColor: [
-          ...Object.keys(mapLabels).map(() => utilService.getRandomColor())
+          ...Object.keys(mapLabels).map((key, index) => {
+            if (index % 2 === 0)
+              return utilService.getRandomBrightColor()
+            else return utilService.getRandomDarkColor()
+          })
 
         ],
         hoverBackgroundColor: [
@@ -95,72 +119,89 @@ export class _DashBoard extends Component {
   }
 
   render() {
-    if (!this.state.board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
+    if (!this.state.board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
+    const { textSize } = this.state
     return (
-      <div className="statistics-page">
-        <h1>Hello Statisctis</h1>
+
+      <div className="statistics-page flex column" style={{ background: "linear-gradient(to right top, rgba(39, 61, 93, 0.65098), rgba(177, 106, 97, 0.501961))" }}>
+        {/* <div className="statistics-page"> */}
+        <h1>Statistics</h1>
         <header className="dashboard-header flex">
           <div className="dashboard-preview flex column"><span>{this.showTotalCards().cardNum}</span> <span> TOTAL CARDS</span></div>
           <div className="dashboard-preview flex column"><span>{this.showTotalCards().cardUnassignedNum}</span> <span> UNASSIGNED CARDS</span></div>
-          <div className="dashboard-preview flex column"><span>0</span> <span> ADDED TODAY</span></div>
+          <div className="dashboard-preview flex column"><span>3</span> <span> ADDED TODAY</span></div>
         </header>
-        <div className="dashboard-content flex" style={{ margin: '0 auto', height: '600px', width: '600px', flexWrap: 'wrap' }}>
+        <div className="dashboard-content flex" style={{
+          height: "430px",
+          width: "430px",
+          flexWrap: "wrap",
+          margin: "0 auto"
+        }} >
           {/* <Polar className="test" data={this.showStatistics()} /> */}
-          <Bar options={{
+          <Polar options={{
+            responsive: true,
             scales: {
               yAxes: [{
                 stacked: true,
                 gridLines: {
                   display: true,
-                  color: "rgba(255,255,255,0.8)"
+                  color: "rgba(0,0,0,0.8)"
                 }
               }],
               xAxes: [{
                 gridLines: {
-                  display: false
+                  display: false,
                 }
               }]
             },
             title: {
               display: true,
-              text: 'Task Per Group',
-              fontSize: 25
+              text: 'Tasks Per List',
+              fontSize: textSize,
+              fontColor: 'rgb(0, 0, 0)'
             },
             legend: {
               display: true,
-              position: 'right'
+              position: 'right',
+              labels: {
+                fontColor: 'rgb(0, 0, 0)',
+                fontSize: 0.66 * textSize
+              }
             },
-            labels: {
-              fontColor: 'rgb(0, 0, 0)'
-            }
           }} className="test" data={this.showTaskPerGroup()} />
           <Doughnut options={{
+            responsive: true,
             scales: {
               yAxes: [{
                 stacked: true,
                 gridLines: {
                   display: true,
-                  color: "rgba(255,255,255,0.8)"
+                  color: "rgba(0,0,0,0.8)"
                 }
               }],
               xAxes: [{
                 gridLines: {
-                  display: false
+                  display: false,
                 }
               }]
             },
             title: {
               display: true,
-              text: 'Task Per Label',
-              fontSize: 25
+              text: 'Tasks Per Label',
+              fontSize: textSize,
+              fontColor: 'rgb(0, 0, 0)'
             },
             legend: {
               display: true,
-              position: 'right'
+              position: 'right',
+              labels: {
+                fontColor: 'rgb(0, 0, 0)',
+                fontSize: 0.66 * textSize
+              }
             }
           }} className="test" data={this.showTaskPerLabel()} />
         </div>
-      </div>
+      </div >
     )
   }
 }

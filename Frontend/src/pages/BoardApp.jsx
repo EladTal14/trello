@@ -25,12 +25,11 @@ export class _BoardApp extends Component {
         isGroupMenuShown: false
     }
     refBoard = React.createRef()
-    componentDidMount() {
+
+    async componentDidMount() {
         socketService.setup()
-        this.loadBoard()
-
-        socketService.on('load board', (board) => this.updateBoard(board, true))
-
+        await this.loadBoard()
+        socketService.on('load board', board => this.updateBoard(board, true))
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
         this.eventBusRemoveTerminate = eventBusService.on('label-remove', this.onRemoveLabel)
@@ -64,9 +63,8 @@ export class _BoardApp extends Component {
 
     loadBoard = async () => {
         const { boardId } = this.props.match.params
-        // socketService.emit('set label', boardId)
-        await this.props.loadBoard(boardId)
         socketService.emit('set label', boardId)
+        await this.props.loadBoard(boardId)
     }
 
     onAddGroup = async (group) => {
@@ -74,7 +72,6 @@ export class _BoardApp extends Component {
         const copyBoard = { ...board }
         copyBoard.groups.push(group)
         await this.props.saveBoard(copyBoard)
-
         // socketService.emit('group added', board)
     }
 
@@ -172,6 +169,7 @@ export class _BoardApp extends Component {
                 this.refBoard.current.scrollLeft += scrolltoleft
         })
     }
+
     showPreviewCardDetails = (pos) => {
         this.setState({
             userClicked: {
@@ -194,9 +192,9 @@ export class _BoardApp extends Component {
     render() {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
-        if (!board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={400} width={400} timeout={3000} /></div>
+        if (!board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
         let { isDetailsShown, isPreviewDetailsShown, userClicked, isGroupMenuShown } = this.state
-        socketService.emit('set label', this.props.board._id) // was here
+        // socketService.emit('set label', this.props.board._id) // was here
         return (
             < >
                 {this.props.currCard && isDetailsShown &&
@@ -219,6 +217,7 @@ export class _BoardApp extends Component {
                             )}
                         </Droppable>
                     </DragDropContext>
+
                 </section>
             </>
         )
