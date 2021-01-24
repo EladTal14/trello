@@ -48,15 +48,16 @@ pre {
     font-family: "montserrat", sans-serif;
 }
 .member {
-    min-width: 30px;
-    height: 30px;
+    min-width: 28px;
+    height: 28px;
     border-radius: 50%;
-    line-height: 30px;
+    line-height: 28px;
     margin: 0 5px 0 0;
     color: white;
     font-weight: 700;
     text-align: center;
     background-color: #3f72af;
+    background-size: cover;
     &:hover {
         opacity: 0.8;
     }

@@ -6,6 +6,7 @@ import { loadBoard } from '../store/actions/boardAction.js'
 import { loadUsers } from '../store/actions/userAction.js'
 import { utilService } from '../services/utilService.js'
 import Loader from 'react-loader-spinner'
+import { Link } from 'react-router-dom'
 
 export class _DashBoard extends Component {
   state = {
@@ -21,7 +22,7 @@ export class _DashBoard extends Component {
     }
   }
   async componentDidMount() {
-    window.addEventListener('resize', this.updateTextSize)
+    // window.addEventListener('resize', this.updateTextSize)
     const board = this.props.board
     if (!board) {
       let boardId = this.props.match.params.boardId
@@ -31,9 +32,9 @@ export class _DashBoard extends Component {
     this.setState({ board: this.props.board })
 
   }
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateTextSize);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener("resize", this.updateTextSize);
+  // }
   // componentDidUpdate(prevProps, prevState) {
   //   console.log(1);
   //   if (window.innerWidth < 400) this.setState({ textSize: 15 })
@@ -131,6 +132,7 @@ export class _DashBoard extends Component {
           <div className="dashboard-preview flex column"><span>{this.showTotalCards().cardUnassignedNum}</span> <span> UNASSIGNED CARDS</span></div>
           <div className="dashboard-preview flex column"><span>3</span> <span> ADDED TODAY</span></div>
         </header>
+        <button><Link to={`board/${this.state.board._id}`}> Back</Link></button>
         <div className="dashboard-content flex" style={{
           height: "430px",
           width: "430px",

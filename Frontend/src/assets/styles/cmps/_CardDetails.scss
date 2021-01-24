@@ -27,7 +27,7 @@
     }
   }
 
-  .close-modal-btn{
+  .close-modal-btn {
     position: absolute;
     margin-top: 5px;
     font-size: 20px;
@@ -47,7 +47,7 @@
   .trash {
     position: absolute;
     cursor: pointer;
-    top: 9px;
+    top: 13px;
     width: 36px;
     height: 35px;
     right: 68px;
@@ -86,8 +86,8 @@
     .title-textarea:focus {
       background-color: white;
       box-shadow: inset 0 0 0 2px #0079bf;
-      font-weight: 400;
-      font-size: 14px;
+      font-weight: 700;
+      font-size: 1.375rem;
     }
   }
 }

@@ -60,12 +60,15 @@ export class CardAddForm extends Component {
     return (
       <div className="add-card-container">
         { isAddOpen &&
-          <form onSubmit={(ev) => { ev.preventDefault(); return }} className="new-card-form" >
-            <textarea type="text" name="title" value={card.title} onChange={this.handleInput} onBlur={this.closeInput}
+
+          <form onSubmit={this.onSaveCard} className="new-card-form" >
+            {/* <div style={{ height: 40 }}></div> */}
+            {/* <textarea type="text" name="title" value={card.title} onChange={this.handleInput} onBlur={this.closeInput} */}
+            <textarea type="text" name="title" value={card.title} onChange={this.handleInput}
               className="my-input" placeholder="Enter a card title..." autoFocus required
               cols="35" rows="4"></textarea>
             <div className="flex" style={{ marginTop: 5 }}>
-              <button type="submit" onMouseDown={this.onSaveCard} className="submit-card-btn">Add card</button>
+              <button className="submit-card-btn">Add card</button>
               <button onMouseDown={this.closeInput} className="close-input-btn" >
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610646476/close_voj9v3.png" alt="" />
               </button>

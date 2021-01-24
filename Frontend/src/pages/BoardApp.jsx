@@ -22,13 +22,16 @@ export class _BoardApp extends Component {
             x: null,
             y: null
         },
-        isGroupMenuShown: false
+        isGroupMenuShown: false,
+        scrollWidth: 0
     }
     refBoard = React.createRef()
 
     async componentDidMount() {
         socketService.setup()
         await this.loadBoard()
+        // const { scrollWidth } = this.refBoard?.current
+        // this.setState({ scrollWidth })
         socketService.on('load board', board => this.updateBoard(board, true))
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
@@ -37,11 +40,12 @@ export class _BoardApp extends Component {
         this.eventBusShowGroupMenuTerminate = eventBusService.on('show-group-menu', this.showGroupMenu)
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.board === prevProps.board) {
-    //     // if (this.props.board !== prevProps.board && !this.props.board) {
-    //         this.props.loadBoards()
-    //         // this.props.history.push(`board/${this.props.board._id}`)
+    // componentDidUpdate(prevProps, prevState) {
+    //     console.log('prevProps', prevProps);
+    //     console.log('prevState', prevState);
+    //     console.log('this.refBoard.current.scrollWidth', this.refBoard.current.scrollWidth);
+    //     if (prevState.scrollWidth !== this.refBoard.current.scrollWidth) {
+    //         this.setState({ scrollWidth: this.refBoard.current.scrollWidth })
     //     }
     // }
 
@@ -57,7 +61,6 @@ export class _BoardApp extends Component {
     }
 
     updateBoard = (board, isRenderSocket = false) => {
-        console.log('here', board.groups)
         this.props.saveBoard(board, isRenderSocket)
     }
 
@@ -139,6 +142,7 @@ export class _BoardApp extends Component {
     onDragEnd = (result) => {
         const { destination, source, draggableId, type } = result
         const { groups } = this.props.board
+
         if (!destination) return
         if (type === 'group') {
             const dragGroup = groups.find(group => group.id === draggableId)
@@ -193,8 +197,11 @@ export class _BoardApp extends Component {
         const { board } = this.props
         console.log('want to check if a new board is add', board);
         if (!board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
+        // let { isDetailsShown, isPreviewDetailsShown, userClicked, isGroupMenuShown, scrollWidth } = this.state
         let { isDetailsShown, isPreviewDetailsShown, userClicked, isGroupMenuShown } = this.state
-        // socketService.emit('set label', this.props.board._id) // was here
+        // console.log(scrollWidth);
+
+        //socketService.emit('set label', this.props.board._id) // was here
         return (
             < >
                 {this.props.currCard && isDetailsShown &&
@@ -211,6 +218,7 @@ export class _BoardApp extends Component {
                         <Droppable droppableId="app" type="group" direction="horizontal" >
                             {(provided) => (
                                 <div style={{ width: (board.groups.length) * 287 }} ref={provided.innerRef} {...provided.droppableProps}>
+                                    {/* <div style={{ width: scrollWidth }} ref={provided.innerRef} {...provided.droppableProps}> */}
                                     <GroupList updateBoard={this.updateBoard} groups={board.groups} onAddCard={this.onAddCard} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
                                     {provided.placeholder}
                                 </div>

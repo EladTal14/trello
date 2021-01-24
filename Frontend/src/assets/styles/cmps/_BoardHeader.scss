@@ -11,7 +11,7 @@
     cursor: pointer;
     border: none;
     height: 32px;
-    margin: 0 4px;
+    margin: 0 10px 0 5px;
     max-width: 220px;
     padding: 0 10px;
     align-items: center;
@@ -71,6 +71,7 @@
     font-weight: 700;
     text-align: center;
     cursor: pointer;
+    background-size: cover;
     &:hover {
       opacity: 0.8;
     }

@@ -15,6 +15,7 @@ export class CardList extends Component {
         // padding: 5,
         paddingTop: 1,
         paddingBottom: 5,
+        // paddingBottom: 5,
         paddingLeft: 5,
         position: "relative",
         // backgroundColor: (isDraggingOver) ? 'lightgray' : 'unset'
