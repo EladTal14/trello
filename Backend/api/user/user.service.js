@@ -26,7 +26,7 @@ async function query(filterBy = {}) {
             // user.createdAt = Date.now() - (1000 * 60 * 60 * 24 * 3) // 3 days ago
             return user
         })
-        console.log('users from backend', users, 'filterby', criteria);
+        // console.log('users from backend', users, 'filterby', criteria);
         return users
     } catch (err) {
         logger.error('cannot find users', err)
@@ -55,10 +55,10 @@ async function getById(userId) {
 async function getByUsername(username) {
     try {
 
-        console.log(2);
+        // console.log(2);
         const collection = await dbService.getCollection('user')
         const user = await collection.findOne({ username })
-        console.log(user);
+        // console.log(user);
         return user
     } catch (err) {
         logger.error(`while finding user ${username}`, err)
@@ -112,7 +112,7 @@ async function add(user) {
 }
 
 function _buildCriteria(filterBy) {
-    console.log('filter by....', filterBy);
+    // console.log('filter by....', filterBy);
     const {fullname} = filterBy
     const regexName = new RegExp(fullname, 'i')
     const criteria = {
