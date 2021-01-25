@@ -31,7 +31,7 @@ export class FilterCards extends Component {
         card.members = card.members.filter(member => {
           return regex.test(member.fullname)
         })
-        if (!card.members || card.members.length < 1 ) return null
+        // if (!card.members || card.members.length < 1 ) return null
         return card
       })
 
