@@ -35,7 +35,7 @@ function connectSockets(http, session) {
             socket.boardId = boardId
         })
         socket.on('render', (board) => {
-            socket.to(socket.boardId).emit('load board', board)
+            socket.broadcast.to(socket.boardId).emit('load board', board)
         })
     })
 }

@@ -22,12 +22,15 @@ export class _BoardHeader extends Component {
     filterUserBy: {
       fullname: ''
     },
+    isStatisticShown: true
   }
 
 
   componentDidMount() {
     this.props.loadUsers(this.props.filterUserBy)
     this.setState({ board: { title: this.props.board.title } })
+    var w = window.innerWidth;
+    if(w < 450) this.setState({ isStatisticShown: false })
   }
 
   componentDidUpdate(prevProps) {
@@ -109,7 +112,7 @@ export class _BoardHeader extends Component {
 
   render() {
     const { members, users } = this.props
-    const { board, isChanging, isWrapper, isMoreMembersShown } = this.state
+    const { board, isChanging, isWrapper, isMoreMembersShown, isStatisticShown } = this.state
     const currBoardId = this.props.board._id
     if (!board && !currBoardId) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
     return (
@@ -123,12 +126,12 @@ export class _BoardHeader extends Component {
               <input type="text" name="title" value={board.title} onChange={this.handleInput}
                 className="board-title-input" placeholder="Enter board title..." autoComplete="off" />
             </form>
-            <Link to={`/board/${currBoardId}/dashboard`}>
+            {isStatisticShown && <Link to={`/board/${currBoardId}/dashboard`}>
               <button className="board-header-btn flex space-around">
                 <h3>Statistics</h3>
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610626728/pie-chart_fnvwct.png" alt="" />
               </button>
-            </Link>
+            </Link>}
             {/* <FilterCards
               saveBoard={this.props.saveBoard}
               board={this.props.board}

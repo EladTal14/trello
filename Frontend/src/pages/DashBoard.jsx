@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 export class _DashBoard extends Component {
   state = {
     board: null,
-    textSize: 25
+    textSize: 22
   }
   updateTextSize = () => {
     if (window.innerWidth < 500) {
@@ -61,13 +61,13 @@ export class _DashBoard extends Component {
         data: [...Object.values(mapGroup).map(title => title)],
         backgroundColor: [
           ...Object.keys(mapGroup).map((key, index) => {
-            if (index % 2 === 0)
-              return utilService.getRandomBrightColor()
-            else return utilService.getRandomDarkColor()
+            // if (index % 2 === 0)
+            return utilService.getRandomBrightColor(index)
+            // else return utilService.getRandomDarkColor()
           })
         ],
         hoverBackgroundColor: [
-          ...Object.keys(mapGroup).map(() => '#FFFFFF')
+          ...Object.keys(mapGroup).map((index) => utilService.getRandomDarkColor(index))
         ]
       }]
     };
@@ -91,15 +91,48 @@ export class _DashBoard extends Component {
         data: [...Object.values(mapLabels).map(title => title)],
         backgroundColor: [
           ...Object.keys(mapLabels).map((key, index) => {
-            if (index % 2 === 0)
-              return utilService.getRandomBrightColor()
-            else return utilService.getRandomDarkColor()
+            // if (index % 2 === 0)
+            return utilService.getRandomBrightColor(index)
+            // else return utilService.getRandomDarkColor()
           })
 
         ],
         hoverBackgroundColor: [
-          ...Object.keys(mapLabels).map(() => '#FFFFFF')
+          ...Object.keys(mapLabels).map((index) => utilService.getRandomDarkColor(index))
         ]
+      }]
+    };
+  }
+
+  showTaskPerMember = () => {
+    const mapMembers = this.state.board.groups.reduce((acc, group) => {
+      group.cards.forEach(card => {
+        card.members.forEach(member => {
+          if (!acc[member.fullname]) acc[member.fullname] = 1
+          else acc[member.fullname] += 1
+        })
+      })
+      return acc
+    }, {})
+    console.log('dashboard bars', mapMembers)
+    return {
+      labels:
+        [...Object.keys(mapMembers).map(fullname => fullname)],
+      datasets: [{
+        data: [...Object.values(mapMembers).map(fullname => fullname)],
+        backgroundColor: [
+          ...Object.keys(mapMembers).map((key, index) => {
+            // if (index % 2 === 0)
+            return utilService.getRandomBrightColor(index)
+            // else return utilService.getRandomDarkColor()
+          })
+
+        ],
+        hoverBackgroundColor: [
+          // ...Object.keys(mapMembers).map((index) => '#FFFFFF')
+          ...Object.keys(mapMembers).map((index) => utilService.getRandomDarkColor(index))
+        ],
+        label: 'Tasks Per Member'
       }]
     };
   }
@@ -124,7 +157,7 @@ export class _DashBoard extends Component {
     const { textSize } = this.state
     return (
 
-      <div className="statistics-page flex column" style={{ background: "linear-gradient(to right top, rgba(39, 61, 93, 0.65098), rgba(177, 106, 97, 0.501961))" }}>
+      <div className="statistics-page flex column" style={{ background: "linear-gradient(to right top, rgba(35, 35, 35, 0.65098), rgba(21, 21, 21, 0.501961))" }}>
         {/* <div className="statistics-page"> */}
         <h1>Statistics</h1>
         <header className="dashboard-header flex">
@@ -134,8 +167,8 @@ export class _DashBoard extends Component {
         </header>
         <button><Link to={`board/${this.state.board._id}`}> Back</Link></button>
         <div className="dashboard-content flex" style={{
-          height: "430px",
-          width: "430px",
+          // height: "380px",
+          // width: "330px",
           flexWrap: "wrap",
           margin: "0 auto"
         }} >
@@ -149,25 +182,22 @@ export class _DashBoard extends Component {
                   display: true,
                   color: "rgba(0,0,0,0.8)"
                 }
-              }],
-              xAxes: [{
-                gridLines: {
-                  display: false,
-                }
               }]
             },
             title: {
               display: true,
               text: 'Tasks Per List',
               fontSize: textSize,
-              fontColor: 'rgb(0, 0, 0)'
+              fontColor: '#172b4d'
             },
             legend: {
               display: true,
-              position: 'right',
+              position: 'top',
+              align: 'center',
               labels: {
                 fontColor: 'rgb(0, 0, 0)',
-                fontSize: 0.66 * textSize
+                // fontSize: 0.66 * textSize
+                fontSize: 12
               }
             },
           }} className="test" data={this.showTaskPerGroup()} />
@@ -180,28 +210,63 @@ export class _DashBoard extends Component {
                   display: true,
                   color: "rgba(0,0,0,0.8)"
                 }
-              }],
-              xAxes: [{
-                gridLines: {
-                  display: false,
-                }
               }]
             },
             title: {
               display: true,
               text: 'Tasks Per Label',
               fontSize: textSize,
-              fontColor: 'rgb(0, 0, 0)'
+              fontColor: '#172b4d'
             },
             legend: {
               display: true,
-              position: 'right',
+              position: 'top',
               labels: {
                 fontColor: 'rgb(0, 0, 0)',
-                fontSize: 0.66 * textSize
+                fontSize: 12
               }
             }
           }} className="test" data={this.showTaskPerLabel()} />
+          <Bar
+            options={{
+              responsive: true,
+              scales: {
+                yAxes: [{
+                  stacked: true,
+                  gridLines: {
+                    display: true,
+                    color: "rgba(0,0,0,0.8)"
+                  },
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }],
+                xAxes: [{
+                  gridLines: {
+                    display: false,
+                  }
+                }]
+              },
+              title: {
+                display: true,
+                text: 'Tasks Per Member',
+                fontSize: textSize,
+                fontColor: '#172b4d'
+              },
+              // legend: {
+              //   display: true,
+              //   position: 'right',
+              //   labels: {
+              //     fontColor: 'rgb(0, 0, 0)',
+              //     fontSize: 12
+              //   }
+              // },
+              // maintainAspectRatio: false,
+            }}
+            width={120}
+            height={60}
+            className="test" data={this.showTaskPerMember()}
+          />
         </div>
       </div >
     )
