@@ -15,11 +15,10 @@
     max-width: 220px;
     padding: 0 10px;
     align-items: center;
-    background-color: rgba(34, 34, 34, 0.11);
     font-family: montserrat, sans-serif;
-
+    background-color: rgba(34, 34, 34, 0.411);
     &:hover {
-      background-color: rgba(34, 34, 34, 0.185);
+      background-color: rgba(34, 34, 34, 0.507);
     }
 
     h3 {
@@ -59,6 +58,7 @@
   }
   .header-members {
     align-items: center;
+    margin-left: 5px;
   }
 
   .header-member {
@@ -117,13 +117,13 @@
       white-space: nowrap;
       height: 32px;
       background-color: unset;
-      background-color: rgba(34, 34, 34, 0.11);
+      min-width: 230px;
 
+      background-color: rgba(34, 34, 34, 0.411);
       &:hover {
-        background-color: rgba(34, 34, 34, 0.185);
+        background-color: rgba(34, 34, 34, 0.507);
         cursor: text;
       }
-
       &::placeholder {
         color: #172b4d;
         font-size: rem(16px);
@@ -199,6 +199,10 @@
   text-align: center;
 }
 .menu-btn {
+  background-color: rgba(34, 34, 34, 0.411);
+  &:hover {
+    background-color: rgba(34, 34, 34, 0.507);
+  }
   cursor: pointer;
 
   img {
@@ -270,7 +274,6 @@
 @media (min-width: 460px) {
   .board-header {
     .menu-btn {
-      background-color: rgba(34, 34, 34, 0.11);
       color: white;
       margin-top: 0;
     }
@@ -282,7 +285,6 @@
 @media (min-width: 720px) {
   .board-header {
     .menu-btn {
-      background-color: rgba(34, 34, 34, 0.11);
       color: white;
       margin-top: 0;
     }
@@ -301,7 +303,6 @@
     height: 40px;
     align-items: center;
     .menu-btn {
-      background-color: rgba(34, 34, 34, 0.11);
       color: white;
       margin-top: 0;
     }

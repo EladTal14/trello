@@ -80,13 +80,17 @@ function getTodoProgress(card) {
   else return
 
 }
-function getRandomDarkColor() {
-  var colors = ['#00adb5', '#6a2c70', '#b83b5e', '#0000FF', '#9d83eb', '#9a9a9a', '#323232']
+function getRandomDarkColor(idx) {
+  var colors = ['#FF6384', '#36A2EB', '#FFCE56', '#16c79a', '#9e9e9e',
+  '#FF6384', '#36A2EB', '#FFCE56', '#16c79a', '#9e9e9e']
 
-  return colors[getRandomInt(0, 7)];
+  // return colors[getRandomInt(0, 5)];
+  return colors[idx];
 }
-function getRandomBrightColor() {
-  var colors = ['#FFFF00', '#FFA500', '	#00FF00', '#FF0000', '#e16941', '#32cd32', '#cdcd32']
+function getRandomBrightColor(idx) {
+  var colors = ['#FF6384', '#40a7ec', '#FFCE56', '#16c79a', '#c1c1c1',
+  '#FF6384', '#36A2EB', '#FFCE56', '#16c79a', '#c1c1c1']
 
-  return colors[getRandomInt(0, 7)];
+  // return colors[getRandomInt(0, 5)];
+  return colors[idx];
 }
