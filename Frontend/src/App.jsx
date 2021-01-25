@@ -11,11 +11,15 @@ import { Signup } from './pages/Signup'
 import { DashBoard } from './pages/DashBoard'
 
 export function _App({ currBoard }) {
+  Notification.requestPermission(function (status) {
+    // console.log('Notification permission status:', status);
+  });
+
+
   return (
     <div className="App" style={{ backgroundImage: `url(${(currBoard) ? currBoard.style.backgroundImage : 'white'})` }}>
       <AppHeader />
       <Switch>
-
         <Route component={Login1} path="/login1" />
         <Route component={Login} path="/login" />
         <Route component={Signup} path="/signup" />

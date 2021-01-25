@@ -130,6 +130,7 @@ class _CardPreviewDetails extends Component {
 
   getNewPos = (ev, width, height) => {
     const size = { width, height }
+    if (!ev) return
     return utilService.getModalPos(ev, size)
   }
 

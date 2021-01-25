@@ -4,6 +4,7 @@ const cors = require('cors')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const expressSession = require('express-session')
+const webpush = require('web-push')
 
 const app = express()
 const http = require('http').createServer(app)
@@ -28,7 +29,6 @@ if (process.env.NODE_ENV === 'production') {
     }
     app.use(cors(corsOptions))
 }
-
 const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
 const reviewRoutes = require('./api/review/review.routes')
@@ -59,6 +59,5 @@ http.listen(port, () => {
     logger.info('Server is running on port: ' + port)
 })
 
-console.log('I am Here!, am I?')
 
 

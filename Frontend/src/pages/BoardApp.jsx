@@ -30,8 +30,19 @@ export class _BoardApp extends Component {
     async componentDidMount() {
         socketService.setup()
         await this.loadBoard()
-        // const { scrollWidth } = this.refBoard?.current
-        // this.setState({ scrollWidth })
+        // function displayNotification() {
+        //     if (Notification.permission === 'granted') {
+        //         navigator.serviceWorker.getRegistration().then(function (reg) {
+        //             reg.showNotification('Hello world!');
+        //         });
+        //     }
+        // }
+        // console.log(navigator.serviceWorker.getRegistration()
+        //     .then((reg) => {
+        //         console.log(reg);
+        //     })
+        // );
+        // displayNotification()
         socketService.on('load board', board => this.updateBoard(board, true))
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)

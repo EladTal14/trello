@@ -19,8 +19,7 @@ export const userService = {
 // const baseUrl = 'http://localhost:3030/api/auth';
 
 async function query(filterBy) {
-    console.log('fiter by', filterBy)
-    return httpService.get(`user`, filterBy )
+    return httpService.get(`user`, filterBy)
 }
 
 async function login(credentials) {

@@ -12,7 +12,6 @@ async function getUser(req, res) {
 }
 
 async function getUsers(req, res) {
-    console.log('req.filter by', req);
     try {
         const users = await userService.query(req.query)
         res.send(users)

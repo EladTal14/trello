@@ -16,7 +16,6 @@ export function loadBoard(boardId) {
     return async (dispatch) => {
         try {
             const board = await boardService.getBoardById(boardId)
-            console.log('board from DISPATCH', board)
             dispatch({ type: 'SET_BOARD', board })
         } catch (err) {
             console.log('err boardAction LOAD BOARD', err);
@@ -28,11 +27,8 @@ export function saveBoard(board, isRenderSocket = false) {
     return async (dispatch) => {
         try {
             const savedBoard = await boardService.save(board)
-            // console.log('savedBoard', savedBoard);
             if (!isRenderSocket) {
-                console.log('ACTIONboard', board)
                 socketService.emit('render', board)
-                // socketService.emit('render', board)
             }
             dispatch({ type: (board._id) ? 'UPDATE_BOARD' : 'ADD_BOARD', board: savedBoard })
         } catch (err) {
