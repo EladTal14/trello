@@ -33,7 +33,8 @@ async function getById(boardId) {
     try {
         const collection = await dbService.getCollection('board')
         const board = await collection.findOne({ '_id': ObjectId(boardId) })
-
+        // const board = collection.find({ '_id': ObjectId(boardId), "groups.cards.mambers.fullname": "A" })
+        
         // user.givenBoards = await boardService.query({ byUserId: ObjectId(user._id) })
         // user.givenBoards = user.givenBoards.map(board => {
         //     delete board.byUser
@@ -153,25 +154,8 @@ function _buildCriteria(filterBy) {
 
 
 
-// const collection = await dbService.getCollection('board')
-// const board = await collection.findOne({ '_id': ObjectId(boardId) })
-// const txtCriteria = { $regex: 'a', $options: 'i' }
-// criteria.$or = [{ board: txtCriteria }]
 
-// db.quiz.aggregate(
-//     //Match the documents by query. Search for science course
-//     {"$match":{"name":"Science"}},
 
-//     //De-normalize the nested array of chapters.
-//     {"$unwind":"$chapters"},
-//     {"$unwind":"$chapters.tests"},
+// collection.find( { '_id': ObjectId(boardId): { "groups": ["cards": ["members": { fullname: txtCriteria }]] }} } )
 
-//     //Match the document with test name Science Chapter
-//     {"$match":{"chapters.tests.name":"ScienceChap1test2"}},
-
-//     //Unwind nested questions array
-//     {"$unwind":"$chapters.tests.questions"},
-
-//     //Match questions of type mcq
-//     {"$match":{"chapters.tests.questions.type":"mcq"}}
-// ).pretty()
+// { "groups": ["cards": ["members": { fullname: txtCriteria }]] } // the closest
