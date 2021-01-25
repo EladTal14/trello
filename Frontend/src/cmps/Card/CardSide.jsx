@@ -69,6 +69,7 @@ export class CardSide extends Component {
           onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users} /></div>} */}
         {/* <DatePicker /> */}
         <div className="card-side flex column">
+          <h2 className="card-side-header">add to card</h2>
           <button className="side-btn" onClick={this.toggleMembers}>
             <span>
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/user_g2y481.png" alt="" />

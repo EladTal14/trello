@@ -2,6 +2,19 @@
     height: 280px;
     justify-content: space-around;
 
+    .card-side-header{
+        display: block;
+        color: #5e6c84;
+        font-size: rem(14px);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin: 0 8px 4px 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
     .side-btn{
         background-color: rgba(9,30,66,.04);
         width: 170px;

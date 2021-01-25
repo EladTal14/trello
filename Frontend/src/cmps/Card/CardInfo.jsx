@@ -4,7 +4,7 @@ import { CardChecklist } from "./CardChecklist"
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import moment from "moment"
 
-export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, onHandleActivitiesChange, addOrCancelChecklist }) {
+export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, onHandleActivitiesChange, addOrCancelChecklist, onRemoveDueDate }) {
   return (
     <div className="card-info">
 
@@ -22,19 +22,23 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
           </TransitionGroup>
         {/* </div> */}
       </div>}
-
       {card.labels && card.labels.length > 0 && <div className="card-labels-section">
         <h2 className="card-label-h2">Labels</h2>
-        <div className="flex labels-container">
-          {card.labels.map((label, idx) => {
-            return <button key={idx} className="label-btn" style={{ backgroundColor: label.color }}>{label.title}</button>
-          })}
-        </div>
+      <TransitionGroup className="flex labels-container">
+        {/* <div className="flex labels-container"> */}
+          {card.labels.map((label, idx) => 
+             <CSSTransition key={idx} timeout={500} classNames="item">
+             <button key={idx} className="label-btn" style={{ backgroundColor: label.color }}>{label.title}</button>
+          </CSSTransition>)}
+        {/* </div> */}
+        </TransitionGroup>
       </div>}
 
       {card.dueDate && <div className="due-date-wrapper">
         <h2 className="due-date-h2">Due Date</h2>
+        <div className="flex">
         <p className="due-date">{moment(card.dueDate).format('LLL')}</p>
+        <button className="delete-date-btn" onClick={onRemoveDueDate}>✕</button></div>
       </div>}
 
       <div className="card-description">
