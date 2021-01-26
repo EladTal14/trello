@@ -22,7 +22,6 @@ export class _DashBoard extends Component {
     }
   }
   async componentDidMount() {
-    // window.addEventListener('resize', this.updateTextSize)
     const board = this.props.board
     if (!board) {
       let boardId = this.props.match.params.boardId
@@ -32,14 +31,6 @@ export class _DashBoard extends Component {
     this.setState({ board: this.props.board })
 
   }
-  // componentWillUnmount() {
-  //   window.removeEventListener("resize", this.updateTextSize);
-  // }
-  // componentDidUpdate(prevProps, prevState) {
-  //   console.log(1);
-  //   if (window.innerWidth < 400) this.setState({ textSize: 15 })
-
-  // }
 
 
   loadBoard = async (boardId) => {
@@ -51,9 +42,8 @@ export class _DashBoard extends Component {
       acc[group.title] = group.cards.length
       return acc
     }, {})
-    // console.log(mapGroup);
+    
     console.log(Object.keys(mapGroup));
-    // console.log(Object.values(mapGroup).map(title => title));
     return {
       labels:
         [...Object.keys(mapGroup)],
@@ -61,9 +51,7 @@ export class _DashBoard extends Component {
         data: [...Object.values(mapGroup).map(title => title)],
         backgroundColor: [
           ...Object.keys(mapGroup).map((key, index) => {
-            // if (index % 2 === 0)
             return utilService.getRandomBrightColor(index)
-            // else return utilService.getRandomDarkColor()
           })
         ],
         hoverBackgroundColor: [
@@ -91,9 +79,7 @@ export class _DashBoard extends Component {
         data: [...Object.values(mapLabels).map(title => title)],
         backgroundColor: [
           ...Object.keys(mapLabels).map((key, index) => {
-            // if (index % 2 === 0)
             return utilService.getRandomBrightColor(index)
-            // else return utilService.getRandomDarkColor()
           })
 
         ],
@@ -122,14 +108,13 @@ export class _DashBoard extends Component {
         data: [...Object.values(mapMembers).map(fullname => fullname)],
         backgroundColor: [
           ...Object.keys(mapMembers).map((key, index) => {
-            // if (index % 2 === 0)
+       
             return utilService.getRandomBrightColor(index)
-            // else return utilService.getRandomDarkColor()
+     
           })
 
         ],
         hoverBackgroundColor: [
-          // ...Object.keys(mapMembers).map((index) => '#FFFFFF')
           ...Object.keys(mapMembers).map((index) => utilService.getRandomDarkColor(index))
         ],
         label: 'Tasks Per Member'
@@ -169,12 +154,12 @@ export class _DashBoard extends Component {
           <div className="dashboard-preview flex column"><span>3</span> <span> ADDED TODAY</span></div>
         </header>
         <div className="dashboard-content flex" style={{
-          // height: "380px",
-          // width: "330px",
+          height: "380px",
+          width: "330px",
           // flexWrap: "wrap",
-          // margin: "0 auto"
+          margin: "0 auto"
         }} >
-          {/* <Polar className="test" data={this.showStatistics()} /> */}
+  
           <Polar options={{
             responsive: true,
             maintainAspectRatio: true,

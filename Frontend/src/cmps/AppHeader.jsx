@@ -15,7 +15,6 @@ class _AppHeader extends Component {
   }
 
   async componentDidMount() {
-    // console.log(this.props);
     const user = await this.props.loadUser()
     if (user) this.setState({ loggedInUser: user })
   }
@@ -38,10 +37,7 @@ class _AppHeader extends Component {
   }
 
   render() {
-    // window.loggedInUser = this.state
     const { loggedInUser, isAddBoardShow } = this.state
-    // if (!loggedInUser) return <div>Loading...</div>
-    // console.log('LOGGED IN USER', loggedInUser);
     return (
       <>
         {isAddBoardShow && <AddBoard addBoard={this.addBoard} toggleAddBoard={this.toggleAddBoard} />}

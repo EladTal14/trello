@@ -31,7 +31,6 @@ export class GroupPreview extends Component {
                         snapshot={snapshot}
                     >
                         {style => (
-                            // <div>
                             <article className="group-preview" {...provided.draggableProps}
                                 style={getItemStyle(snapshot.isDragging, provided.draggableProps.style, style)}
                                 ref={provided.innerRef}>
@@ -43,7 +42,6 @@ export class GroupPreview extends Component {
                                     grpTitle={group.title} groupId={group.id} onAddCard={onAddCard} />
                                 <CardAdd groupId={group.id} onScroll={this.onScroll} />
                             </article>
-                            // </div>
                         )}
                     </NaturalDragAnimation>
                 )}
@@ -52,8 +50,6 @@ export class GroupPreview extends Component {
     }
 }
 const getItemStyle = (isDragging, draggableStyle, style) => ({
-    // userSelect: 'none',
-    // padding: 8,
     margin: `0 8px 0 0`,
     ...draggableStyle,
     ...style

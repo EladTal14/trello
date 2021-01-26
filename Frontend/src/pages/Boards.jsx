@@ -22,7 +22,6 @@ export class _Boards extends Component {
     addBoard = async (board) => {
         await this.props.saveBoard(board, true)
         const newBoardId = this.props.board._id
-        console.log('newBoardId', newBoardId)
         this.props.history.push(`board/${newBoardId}`)
     }
 
@@ -30,7 +29,6 @@ export class _Boards extends Component {
         const { boards } = this.props
         if (!boards) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
         const { isAddBoardShown } = this.state
-        // console.log('this.props UPDATE', this.props)
         return (
             <>
                 {isAddBoardShown && <AddBoard addBoard={this.addBoard} toggleAddBoard={this.toggleAddBoard} />}

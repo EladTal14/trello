@@ -30,8 +30,6 @@ export class _BoardApp extends Component {
     async componentDidMount() {
         socketService.setup()
         await this.loadBoard()
-        // const { scrollWidth } = this.refBoard?.current
-        // this.setState({ scrollWidth })
         socketService.on('load board', board => this.updateBoard(board, true))
         this.eventBusTerminate = eventBusService.on('show-details', this.toggleDetails)
         this.eventBusLabelTerminate = eventBusService.on('label-added', this.onAddLabel)
@@ -40,14 +38,6 @@ export class _BoardApp extends Component {
         this.eventBusShowGroupMenuTerminate = eventBusService.on('show-group-menu', this.showGroupMenu)
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     console.log('prevProps', prevProps);
-    //     console.log('prevState', prevState);
-    //     console.log('this.refBoard.current.scrollWidth', this.refBoard.current.scrollWidth);
-    //     if (prevState.scrollWidth !== this.refBoard.current.scrollWidth) {
-    //         this.setState({ scrollWidth: this.refBoard.current.scrollWidth })
-    //     }
-    // }
 
     componentWillUnmount() {
         this.eventBusTerminate()
@@ -57,7 +47,7 @@ export class _BoardApp extends Component {
         socketService.terminate()
         this.props.cleanBoard()
         this.eventBusShowGroupMenuTerminate()
-        // this.props.board = null
+
     }
 
     updateBoard = (board, isRenderSocket = false) => {
@@ -75,17 +65,14 @@ export class _BoardApp extends Component {
         const copyBoard = { ...board }
         copyBoard.groups.push(group)
         await this.props.saveBoard(copyBoard)
-        // socketService.emit('group added', board)
     }
 
     onRemoveLabel = async (label) => {
         const { board } = this.props
         const copyBoard = { ...board }
-        // const labels = [...copyBoard.labels]
         const idx = copyBoard.labels.findIndex((currLabel) => currLabel.id === label.id)
         copyBoard.labels.splice(idx, 1)
 
-        // copyBoard.labels = [...labels]
         await this.props.saveBoard(copyBoard)
     }
 
@@ -120,8 +107,7 @@ export class _BoardApp extends Component {
             }
         }
 
-        await this.props.saveBoard(copyBoard)
-        // socketService.emit('card dragged', board) 
+        await this.props.saveBoard(copyBoard) 
     }
 
     onAddCard = async (card, groupId) => {
@@ -135,8 +121,6 @@ export class _BoardApp extends Component {
         copyBoard.activities ? copyBoard.activities.unshift(activity) : copyBoard.activities = new Array(activity)
 
         await this.props.saveBoard(copyBoard)
-
-        // socketService.emit('card added', board)
     }
 
     onDragEnd = (result) => {
@@ -185,7 +169,6 @@ export class _BoardApp extends Component {
     }
 
     showGroupMenu = (ev) => {
-        // console.log(ev);
         this.setState({
             userClicked: { x: ev?.clientX, y: ev?.clientY },
             isGroupMenuShown: !this.state.isGroupMenuShown
@@ -195,18 +178,13 @@ export class _BoardApp extends Component {
 
     render() {
         const { board } = this.props
-        console.log('want to check if a new board is add', board);
         if (!board) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
-        // let { isDetailsShown, isPreviewDetailsShown, userClicked, isGroupMenuShown, scrollWidth } = this.state
         let { isDetailsShown, isPreviewDetailsShown, userClicked, isGroupMenuShown } = this.state
-        // console.log(scrollWidth);
-
-        //socketService.emit('set label', this.props.board._id) // was here
+   
         return (
             < >
                 {this.props.currCard && isDetailsShown &&
                     <>
-                        {/* <div className="modal-cover" onClick={this.toggleDetails}> </div> */}
                         <CardDetails card={this.props.currCard} group={this.props.currGroup} toggleDetails={this.toggleDetails} />
                     </>}
 
@@ -218,7 +196,6 @@ export class _BoardApp extends Component {
                         <Droppable droppableId="app" type="group" direction="horizontal" >
                             {(provided) => (
                                 <div style={{ width: (board.groups.length) * 287 }} ref={provided.innerRef} {...provided.droppableProps}>
-                                    {/* <div style={{ width: scrollWidth }} ref={provided.innerRef} {...provided.droppableProps}> */}
                                     <GroupList updateBoard={this.updateBoard} groups={board.groups} onAddCard={this.onAddCard} onAddGroup={this.onAddGroup} onScroll={this.onScroll} />
                                     {provided.placeholder}
                                 </div>
@@ -238,7 +215,6 @@ const mapStateToProps = state => {
         currCard: state.cardModule.currCard,
         currGroup: state.cardModule.currGroup,
         loggedInUser: state.userModule.loggedInUser
-        // filterBy: state.boardModule.filterBy,
     }
 }
 

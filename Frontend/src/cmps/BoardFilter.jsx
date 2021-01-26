@@ -11,7 +11,6 @@ export class BoardFilter extends Component {
         const field = target.name
         const value = target.value
         this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }),
-            //  () => { this.props.onSetFilter(this.state.filterBy)}
         )
     }
 

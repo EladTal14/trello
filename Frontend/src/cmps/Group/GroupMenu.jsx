@@ -12,7 +12,6 @@ class _GroupMenu extends Component {
     }
 
     componentDidMount() {
-        // this.setState({ card: this.props.card }, () => console.log(this.state.card))
         this.setState({ group: this.props.group, userClicked: this.props?.userClicked, mounted: true })
     }
 

@@ -38,7 +38,6 @@ export class _GroupTitle extends Component {
     handleInput = ({ target }) => {
         const { name } = target
         const value = target.value
-        console.log('target.value', value, name)
         this.setState(prevState => {
             return {
                 group: {
@@ -53,7 +52,6 @@ export class _GroupTitle extends Component {
         ev.preventDefault()
         const groupId = this.props.group.id
         const board = { ...this.props.board }
-        // console.log('board from title', board)
         const { title } = this.state.group
         const groupIdx = board.groups.findIndex(group => group.id === groupId)
         board.groups[groupIdx].title = title
@@ -64,7 +62,6 @@ export class _GroupTitle extends Component {
     showGroupMenu = (ev) => {
         const { group } = this.props
         this.props.setGroup(group)
-        // console.log('curr group', group)
         ev.stopPropagation()
         eventBusService.emit('show-group-menu', ev, true)
     }
@@ -78,19 +75,14 @@ export class _GroupTitle extends Component {
 
     render() {
         const { group, isTitleShown } = this.state
-        // console.log('GROUP_TITLE:', group.title);
         return <section className="group-title" {...this.props.dragHandle}>
             <form onSubmit={this.onSaveTitle} ref={this.textInput} {...this.props.dragHandle} className="title-form flex space-between">
-                {/* <input type="text" ref={this.textInput} name="title" value={group.title} onChange={this.handleInput} */}
-                {/* <TextField id="standard-basic" label="Standard" /> */}
                 {!isTitleShown && <h3 style={{ width: '100%' }} className="title-input title" onClick={this.showInput}>{group.title}</h3>}
                 {isTitleShown && <input type="text" name="title" style={{
                     width: '90%', fontFamily: "montserrat", fontWeight: 600,
                     fontSize: "1rem", paddingTop: 10, paddingBottom: 10
                 }} autoFocus value={group.title} onChange={this.handleInput}
                     className="title-input" placeholder="Enter List title..." autoComplete="off" onBlur={this.onSaveTitle} />}
-                {/* <input type="text" name="title" value={group.title} onChange={this.handleInput}
-                    className="title-input" placeholder="Enter List title..." autoComplete="off" onBlur={this.onSaveTitle} /> */}
                 <button className="more-options-btn" onClick={(ev) => this.showGroupMenu(ev)}><img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/more_e8mezf.png" alt="" /></button>
             </form>
         </section>
@@ -100,8 +92,6 @@ export class _GroupTitle extends Component {
 const mapStateToProps = state => {
     return {
         board: state.boardModule.currBoard,
-        // filterBy: state.boardModule.filterBy,
-        // loggedInUser: state.userModule.loggedInUser,
     }
 }
 
