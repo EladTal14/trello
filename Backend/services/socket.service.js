@@ -2,7 +2,6 @@ const asyncLocalStorage = require('./als.service');
 const logger = require('./logger.service');
 
 var gIo = null
-// Key: sessionId value: socket
 var gSocketBySessionIdMap = {}
 
 function emit({ type, data }) {
@@ -19,10 +18,10 @@ function connectSockets(http, session) {
         autoSave: true
     }));
     gIo.on('connection', socket => {
-        console.log('Someone connected')
+        logger.info('Someone connected :', socket.handshake.sessionID)
         gSocketBySessionIdMap[socket.handshake.sessionID] = socket
         socket.on('disconnect', socket => {
-            console.log('Someone disconnected')
+            logger.info('Someone disconnected')
             if (socket.handshake) {
                 delete gSocketBySessionIdMap[socket.handshake.sessionID]
             }
@@ -40,7 +39,6 @@ function connectSockets(http, session) {
     })
 }
 
-// Send to all sockets BUT not the current socket 
 function broadcast({ type, data }) {
     const store = getStore()
     const { sessionId } = store
