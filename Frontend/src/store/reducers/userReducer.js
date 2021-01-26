@@ -1,6 +1,5 @@
 
 const initialState = {
-  // loggedInUser: null,
   loggedInUser: JSON.parse(sessionStorage.getItem('loggedinUser')) || null,
   users: [],
   filterBy: { fullname: '' }

@@ -6,9 +6,7 @@ module.exports = {
     getCollection
 }
 
-// Database Name
 const dbName = 'trello_db'
-
 var dbConn = null
 
 async function getCollection(collectionName) {

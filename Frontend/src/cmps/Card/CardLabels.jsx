@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { utilService } from '../../services/utilService'
 import { eventBusService } from '../../services/eventBusService'
 import { CSSTransition } from 'react-transition-group'
-// import { cardService } from '../../services/cardService'
-// TODO: maybe put in two cmps
 
 class _CardLabels extends Component {
 
@@ -18,15 +16,10 @@ class _CardLabels extends Component {
     },
     colors: ['#f2d601', '#ff9f19', '#eb5a46', '#c377e0', '#0179bf', '#04c2e0',
       '#61bd50', '#50e898', '#ff78cb', '#344563', '#b3bac5'],
-    // mounted: false
+    mounted: false
   }
 
-  // onClose = () => {
-  //   this.setState({ mounted: false })
-  // }
-
   componentDidMount() {
-    // const { labels } = this.props.currCard //fucked me up
     const { labels } = this.props.card
     if (labels) {
       this.setState(prevState => {
@@ -116,7 +109,6 @@ class _CardLabels extends Component {
   }
 
   onChooseLabel = (label) => {
-    // const readyLabel = cardService.createLabel(label)
     const isDuplicated = this.checkForDuplicate(label)
 
     if (isDuplicated) {
@@ -246,8 +238,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = {
-  // saveBoard,
-}
-
-export const CardLabels = connect(mapStateToProps, mapDispatchToProps)(_CardLabels)
+export const CardLabels = connect(mapStateToProps, null)(_CardLabels)

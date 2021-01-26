@@ -9,20 +9,11 @@ export class FilterCards extends Component {
     }
   }
 
-  componentDidMount() {
-    // this.setCardToShow()
-    // this.setCardToShow(this.props.board.groups)
-    // this.setState({cardsToShow: this.props.board.groups})
-    // console.log('this.props.board', this.props.board.groups)
-    // console.log('this.props.members', this.props.members)
-  }
-
   setCardToShow = () => {
     const prevGroups = this.props.board.groups
     const board = { ...this.props.board }
 
     const regex = new RegExp('adir', 'i')
-    // const regex = new RegExp(this.state.filterBy.fullname, 'i')
 
     const res = prevGroups.filter(group => {
 
@@ -31,7 +22,7 @@ export class FilterCards extends Component {
         card.members = card.members.filter(member => {
           return regex.test(member.fullname)
         })
-        // if (!card.members || card.members.length < 1 ) return null
+        if (!card.members || card.members.length < 1 ) return null
         return card
       })
 
@@ -39,9 +30,6 @@ export class FilterCards extends Component {
     })
 
     board.groups = res
-    // this.props.saveBoard(board)
-    console.log('RES', res)
-
   }
 
   onHandleInputChange = ({ target }) => {

@@ -1,4 +1,3 @@
-import { utilService } from "../../services/utilService"
 import { CardActivityContainer } from "./CardActivityContainer";
 import { CardChecklist } from "./CardChecklist"
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
@@ -10,17 +9,14 @@ export function CardInfo({ card, onHandleInputChange, onHandleChecklistChange, o
 
       {card.members && <div className="members flex column">
         <h2 className="members-header">Members</h2>
-        {/* <div className="members-list flex"> */}
         <TransitionGroup className="members-list flex">
           {card.members.map((member, idx) => 
           <CSSTransition key={idx} timeout={500} classNames="item">
              <span key={idx} className="member" 
              style={{ backgroundImage: `url(${(member.imgUrl) ? member.imgUrl : '#3f72af'})` }}></span>
-             {/* style={{backgroundColor: member.color? member.color: "#3f72af"}}>{utilService.convertName(member.fullname)}</span> */}
              </CSSTransition>
         )}
           </TransitionGroup>
-        {/* </div> */}
       </div>}
       {card.labels && card.labels.length > 0 && <div className="card-labels-section">
         <h2 className="card-label-h2">Labels</h2>

@@ -11,7 +11,7 @@
     border-radius: 3px;
   }
 
-  .statistic-header{
+  .statistic-header {
     width: 642px;
   }
 
@@ -37,13 +37,11 @@
       font-weight: 600;
       background-color: #fbfbfbc7;
     }
-
   }
 
-
-  .back-board-btn{
+  .back-board-btn {
     background-color: rgba(105, 105, 105, 0.4);
-    font-family: 'montserrat', sans-serif;
+    font-family: "montserrat", sans-serif;
     border: none;
     outline: none;
     border-radius: 3px;
@@ -55,10 +53,9 @@
     text-align: center;
     line-height: 20px;
     color: white;
-
-        &:hover{
-            background-color: rgba(9,30,66,.08);
-        }
+    &:hover {
+      background-color: rgba(9, 30, 66, 0.08);
+    }
   }
 }
 .dashboard-content {

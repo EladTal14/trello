@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import { eventBusService } from '../../services/eventBusService'
 import { utilService } from '../../services/utilService'
-import { toggleAddCard } from '../../store/actions/cardAction.js'
 
 export class CardAddForm extends Component {
   state = {
@@ -62,8 +60,6 @@ export class CardAddForm extends Component {
         { isAddOpen &&
 
           <form onSubmit={this.onSaveCard} className="new-card-form" >
-            {/* <div style={{ height: 40 }}></div> */}
-            {/* <textarea type="text" name="title" value={card.title} onChange={this.handleInput} onBlur={this.closeInput} */}
             <textarea type="text" name="title" value={card.title} onChange={this.handleInput}
               className="my-input" placeholder="Enter a card title..." autoFocus required
               cols="35" rows="4"></textarea>

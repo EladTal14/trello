@@ -1,7 +1,5 @@
 const boardService = require('./board.service')
 const logger = require('../../services/logger.service')
-const socketService = require('../../services/socket.service')
-
 
 async function getBoards(req, res) {
     try {
@@ -26,15 +24,12 @@ async function addBoard(req, res) {
     try {
         var board = req.body
         board = await boardService.add(board)
-        // toy.byUser = req.session.toy
-        // toy.aboutUser = await toyService.getById(toy.aboutUserId)
         res.send(board)
     } catch (err) {
         logger.error('Failed to add board', err)
         res.status(500).send({ err: 'Failed to add board' })
     }
 }
-
 
 async function deleteBoard(req, res) {
     try {

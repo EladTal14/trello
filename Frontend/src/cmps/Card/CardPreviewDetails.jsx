@@ -5,7 +5,6 @@ import Calendar from 'react-calendar';
 import { saveBoard } from '../../store/actions/boardAction'
 import { AddMember } from '../AddMember';
 import Loader from 'react-loader-spinner'
-import { eventBusService } from '../../services/eventBusService'
 import { utilService } from '../../services/utilService';
 
 class _CardPreviewDetails extends Component {
@@ -20,7 +19,6 @@ class _CardPreviewDetails extends Component {
   }
 
   componentDidMount() {
-    // this.setState({ card: this.props.card }, () => console.log(this.state.card))
     this.setState({ card: this.props.card, userClicked: this.props?.userClicked })
   }
 
@@ -59,7 +57,6 @@ class _CardPreviewDetails extends Component {
 
   onHandleInputChange = ({ target }) => {
     const { value, name } = target
-    console.log(target, name, value);
     this.setState(prevState => ({
       card: {
         ...prevState.card,
@@ -91,9 +88,7 @@ class _CardPreviewDetails extends Component {
 
   onUpdateMembers = async (member) => {
     const copyCard = { ...this.state.card }
-    console.log('copyCard', copyCard);
     const memberIdx = copyCard.members.findIndex(currMember => currMember._id === member._id)
-    console.log('copyCard', memberIdx);
     if (memberIdx > -1) {
       copyCard.members.splice(memberIdx, 1)
       this.setState({ card: copyCard })
@@ -130,12 +125,12 @@ class _CardPreviewDetails extends Component {
 
   getNewPos = (ev, width, height) => {
     const size = { width, height }
+    if (!ev) return
     return utilService.getModalPos(ev, size)
   }
 
   render() {
     const { userClicked, card, isCreateLabel, isChangeMembers, isChangeDueDate, value, modalChangePos } = this.state
-    console.log('modalChangePos', modalChangePos)
     if (!card) return <div className="loader-wrapper"><Loader className="loader" type="TailSpin" color="gray" height={100} width={100} timeout={3000} /></div>
     return (
       <>

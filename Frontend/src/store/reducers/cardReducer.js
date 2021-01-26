@@ -18,6 +18,3 @@ export function cardReducer(state = initialState, action) {
       return state
   }
 }
-
-// case 'ADD_LABEL':
-//   return { ...state, currCard: { ...state.currCard, labels: [action.label, ...state.currCard.labels] } }
