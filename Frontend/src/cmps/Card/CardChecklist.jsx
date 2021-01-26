@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import { cardService } from '../../services/cardService'
-// import { on, emit } from '../services/eventBusService.js'
 import Loader from 'react-loader-spinner'
 
 export class CardChecklist extends Component {

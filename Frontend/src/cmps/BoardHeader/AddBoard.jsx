@@ -21,11 +21,6 @@ export class AddBoard extends Component {
         this.setState({ mounted: false })
     }
 
-    // coverColors = () => {
-    //     return ['#f9ed69', '#a56cc1', '#f38181', '#95e1d3', '#878ecd', '#3fc1c9',
-    //         '#a1dd70', '#ffcc29']
-    // }
-
     bgColors = () => {
 
         return [{ imgUrlLarge: 'https://res.cloudinary.com/basimgs/image/upload/w_1500/v1610712048/pexels-eberhard-grossgasteiger-1287145_iyiwh5.jpg', imgUrlmedium: 'https://res.cloudinary.com/basimgs/image/upload/w_300/v1610712048/pexels-eberhard-grossgasteiger-1287145_iyiwh5.jpg'},
@@ -40,7 +35,6 @@ export class AddBoard extends Component {
       }
 
     setBgcImg = (imgUrlLarge, imgUrlmedium, idx) => {
-        console.log('the chosen url is', imgUrlLarge);
         this.setState(prevState => {
             return {board: { ...prevState.board, imgUrlLarge, imgUrlmedium}}
         })
@@ -65,7 +59,7 @@ export class AddBoard extends Component {
                     [name]: value
                 }
             }
-        }, () => console.log('input title',this.state.board.title ))
+        })
     }
 
     render() {

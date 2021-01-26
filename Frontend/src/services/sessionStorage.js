@@ -19,4 +19,3 @@ function load(key, defaultValue = null) {
 function clear() {
   sessionStorage.clear()
 }
-

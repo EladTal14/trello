@@ -10,8 +10,6 @@ export class CardPreviewLabel extends Component {
         this.setState({ isLableTitleShown: !this.state.isLableTitleShown })
     }
 
-
-
     render() {
         const { card } = this.props
         const { isLableTitleShown } = this.state

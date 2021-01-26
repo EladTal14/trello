@@ -33,8 +33,7 @@ async function getById(boardId) {
     try {
         const collection = await dbService.getCollection('board')
         const board = await collection.findOne({ '_id': ObjectId(boardId) })
-        // const board = collection.find({ '_id': ObjectId(boardId), "groups.cards.mambers.fullname": "A" })
-        
+
         // user.givenBoards = await boardService.query({ byUserId: ObjectId(user._id) })
         // user.givenBoards = user.givenBoards.map(board => {
         //     delete board.byUser
@@ -150,12 +149,3 @@ function _buildCriteria(filterBy) {
     }
     return criteria
 }
-
-
-
-
-
-
-// collection.find( { '_id': ObjectId(boardId): { "groups": ["cards": ["members": { fullname: txtCriteria }]] }} } )
-
-// { "groups": ["cards": ["members": { fullname: txtCriteria }]] } // the closest

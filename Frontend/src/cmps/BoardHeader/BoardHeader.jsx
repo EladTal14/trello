@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { utilService } from '../../services/utilService'
 import { saveBoard } from '../../store/actions/boardAction'
 import { loadUsers, setUserFilter } from '../../store/actions/userAction'
 import { connect } from 'react-redux'
@@ -8,7 +7,6 @@ import { BoardMenu } from './BoardMenu'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
-import { FilterCards } from './FilterCards'
 
 export class _BoardHeader extends Component {
 
@@ -132,11 +130,6 @@ export class _BoardHeader extends Component {
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610626728/pie-chart_fnvwct.png" alt="" />
               </button>
             </Link>}
-            {/* <FilterCards
-              saveBoard={this.props.saveBoard}
-              board={this.props.board}
-              members={members}
-            /> */}
             <div className="header-members flex">
               <ul className="member-list flex">
                 <TransitionGroup className="members-list flex">
@@ -144,8 +137,6 @@ export class _BoardHeader extends Component {
                     <CSSTransition key={idx} timeout={500} classNames="item">
                       <li key={member.fullname} className="header-member"
                         style={{ backgroundImage: `url(${(member.imgUrl) ? member.imgUrl : '#3f72af'})` }}>
-                        {/* style={{ backgroundColor: member.color ? member.color : "#3f72af" }}> */}
-                        {/* {utilService.convertName(member.fullname)} */}
                       </li>
                     </CSSTransition>
                   )}
@@ -156,7 +147,6 @@ export class _BoardHeader extends Component {
               </button>
             </div>
           </div>
-          {/* <BoardFilter /> */}
           <BoardMenu
             toggleMenu={this.toggleMenu}
             mainRef={this.boardMenuVisibility}
@@ -179,7 +169,6 @@ const mapStateToProps = state => {
     board: state.boardModule.currBoard,
     users: state.userModule.users,
     filterUserBy: state.userModule.filterBy,
-    // loggedInUser: state.userModule.loggedInUser,
   }
 }
 

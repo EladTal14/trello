@@ -1,6 +1,5 @@
 @import "basics/variables.scss";
 @import "basics/functions.scss";
-// @import "basics/mixins.scss";
 @import "basics/typography.scss";
 
 // Basics
@@ -8,13 +7,11 @@
 @import "basics/helpers.scss";
 @import "basics/layout.scss";
 @import "basics/base.scss";
-// @import "basics/buttons.scss";
 
 // Components
 @import "cmps/Loader";
 @import "pages/BoardApp.scss";
 @import "pages/Dashboard.scss";
-
 @import "cmps/AppHeader.scss";
 @import "cmps/CardPreview.scss";
 @import "cmps/CardDetails.scss";
@@ -40,23 +37,10 @@
 @import "cmps/CardPreviewDetails";
 @import "cmps/AddBoard";
 @import "pages/Home";
-// @import "components/cat-card.scss";
+
 .App {
   height: 100vh;
   background-size: cover;
   display: flex;
   flex-direction: column;
 }
-
-//transfer to grouplist
-
-// .my-input {
-//   border: none;
-//   border-radius: 3px;
-//   background-color: unset;
-// }
-
-// .my-input:focus {
-//   background-color: white;
-//   outline: 2px solid rgb(46, 140, 228);
-// }
