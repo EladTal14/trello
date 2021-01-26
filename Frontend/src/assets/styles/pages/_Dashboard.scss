@@ -3,8 +3,6 @@
   width: 100%;
   overflow-y: auto;
   align-items: center;
-  // flex-wrap: wrap;
-  // background-color: linear-gradient(to right top, rgba(177, 106, 97, 0.501961), rgba(39, 61, 93, 0.65098)) !important;
   canvas:not(:first-child) {
     background-color: rgba(255, 255, 255, 0.836);
     margin-top: 10px;
@@ -65,19 +63,3 @@
   flex-wrap: wrap;
   margin: 0 auto;
 }
-// @media (max-width: 540px) {
-//   .dashboard-content {
-//     // height: 400px !important;
-//     max-width: 450px !important;
-//     flex-wrap: wrap !important;
-//     margin: 0 auto !important;
-//   }
-// }
-// @media (max-width: 360px) {
-//   .dashboard-content {
-//     height: 420px !important;
-//     width: 330px !important;
-//     flex-wrap: wrap !important;
-//     margin: 0 auto !important;
-//   }
-// }

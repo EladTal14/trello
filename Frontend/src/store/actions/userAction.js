@@ -56,7 +56,6 @@ export function loadUser(userCred) {
     }
 }
 
-
 export function setUserFilter(filterBy) {
     return (dispatch) => { dispatch({ type: 'SET_FILTER', filterBy }) }
 }

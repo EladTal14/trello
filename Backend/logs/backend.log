@@ -1367,9 +1367,14 @@
 1/25/2021, 3:43:59 PM - ERROR - Failed to get board | {} (sid: 5dNJ7qdRc-VcQ73ZkF8IosfjK53gFu5P)
 1/25/2021, 3:44:06 PM - ERROR - Failed to get board | {} (sid: 5dNJ7qdRc-VcQ73ZkF8IosfjK53gFu5P)
 1/25/2021, 3:44:17 PM - INFO - Server is running on port: 3030 
+<<<<<<< HEAD
+1/26/2021, 9:13:25 AM - INFO - Server is running on port: 3030 
+1/26/2021, 9:32:48 AM - INFO - Server is running on port: 3030 
+=======
 >>>>>>> 45efe9d2da0852f0b62efd4e138e8baf8f9f19b0
 1/25/2021, 10:14:47 PM - INFO - Server is running on port: 3030 
 >>>>>>> 60de312d9efed07b8bb0e793ad8e1a994c280e91
+<<<<<<< HEAD
 1/25/2021, 10:18:57 PM - INFO - Server is running on port: 3030 
 1/25/2021, 10:36:57 PM - INFO - Server is running on port: 3030 
 1/26/2021, 8:49:25 AM - INFO - Server is running on port: 3030 
@@ -1442,3 +1447,5 @@
 1/26/2021, 9:57:32 AM - INFO - Someone disconnected 
 1/26/2021, 9:59:31 AM - INFO - Someone connected : | geyIsiIvxdkFH2UXiMaJe-7Q2LUwHaNG 
 1/26/2021, 9:59:35 AM - INFO - Someone connected : | geyIsiIvxdkFH2UXiMaJe-7Q2LUwHaNG 
+=======
+>>>>>>> f7b6f67d2e5f53917bb4ebadc3d989a7cf0127e9

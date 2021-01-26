@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
-// import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { cardService } from '../../services/cardService';
 import { CardCover } from './CardCover';
 import { CardLabels } from './CardLabels';
 import { AddMember } from '../AddMember';
 import { DatePicker } from './DatePicker';
-// import { DatePicker } from '@material-ui/pickers';
 
 export class CardSide extends Component {
 
   state = {
-    // value: new Date(),
     isDateShown: false,
     isLabelsShown: false,
     isLabelsMenuShown: false,
@@ -40,8 +37,6 @@ export class CardSide extends Component {
     window.isLabelsMenuShown = this.state.isLabelsMenuShown
   }
 
-
-
   onAddChecklist = () => {
     const checklist = cardService.createChecklist()
     this.props.addOrCancelChecklist(checklist)
@@ -50,9 +45,6 @@ export class CardSide extends Component {
   onToggleLabels = () => {
     this.setState({ isLabelsShown: !this.state.isLabelsShown })
   }
-
-
-
 
   render() {
     const { isDateShown, isCoverMenuShown, isMoreMembersShown, isLabelsMenuShown } = this.state
@@ -65,11 +57,7 @@ export class CardSide extends Component {
         {isDateShown && <DatePicker onSavedueDate={this.props.onSavedueDate} toggleDate={this.toggleDate} />}
         {isMoreMembersShown && <AddMember toggleMembers={this.toggleMembers}
           onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users} />}
-        {/* {isMoreMembersShown && <div className="card-details-member-container"><AddMember toggleMembers={this.toggleMembers}
-          onUpdateMembers={this.props.onUpdateMembers} onSetUserFilter={this.props.onSetUserFilter} members={card.members} users={users} /></div>} */}
-        {/* <DatePicker /> */}
         <div className="card-side flex column">
-          <h2 className="card-side-header">add to card</h2>
           <button className="side-btn" onClick={this.toggleMembers}>
             <span>
               <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/user_g2y481.png" alt="" />

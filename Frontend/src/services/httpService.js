@@ -3,7 +3,6 @@ import Axios from 'axios'
 const BASE_URL = process.env.NODE_ENV === 'production'
     ? '/api/'
     : '//localhost:3030/api/'
-// : '//localhost:3030/'
 
 var axios = Axios.create({
     withCredentials: true
@@ -12,7 +11,6 @@ var axios = Axios.create({
 export const httpService = {
     get(endpoint, data) {
         return ajax(endpoint, 'GET', data)
-
     },
     post(endpoint, data) {
         return ajax(endpoint, 'POST', data)

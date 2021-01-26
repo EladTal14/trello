@@ -23,7 +23,6 @@ export class DatePicker extends Component {
         this.setState({ mounted: false })
     }
 
-
     render() {
         const { value, mounted } = this.state
         return (

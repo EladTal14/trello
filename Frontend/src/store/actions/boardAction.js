@@ -1,7 +1,7 @@
 import { boardService } from '../../services/boardService.js'
 import { socketService } from '../../services/socketService.js';
 
-export function loadBoards() { // Action Creator
+export function loadBoards() { 
     return async (dispatch) => {
         try {
             const boards = await boardService.query()

@@ -3,7 +3,6 @@
   .card-preview-details-changes-btn {
     cursor: pointer;
     display: flex;
-    // width: max-content;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     border: 0;
@@ -66,7 +65,6 @@
   font-family: "montserrat", sans-serif;
   line-height: 1.6;
   color: #30343a;
-  // scroll-behavior: smooth;
   font-size: 0.875rem;
   font-size: 14px;
   border-radius: 3px;
@@ -89,11 +87,8 @@
     width: 16px;
     filter: invert(1);
     margin-right: 10px;
-    // position: absolute;
-    // bottom: 0;
   }
 }
 .card-preview-details-label-wrap {
   position: relative;
-  // position: fixed;
 }
