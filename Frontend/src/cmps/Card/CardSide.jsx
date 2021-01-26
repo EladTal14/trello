@@ -37,8 +37,6 @@ export class CardSide extends Component {
     window.isLabelsMenuShown = this.state.isLabelsMenuShown
   }
 
-
-
   onAddChecklist = () => {
     const checklist = cardService.createChecklist()
     this.props.addOrCancelChecklist(checklist)
@@ -47,9 +45,6 @@ export class CardSide extends Component {
   onToggleLabels = () => {
     this.setState({ isLabelsShown: !this.state.isLabelsShown })
   }
-
-
-
 
   render() {
     const { isDateShown, isCoverMenuShown, isMoreMembersShown, isLabelsMenuShown } = this.state

@@ -123,6 +123,15 @@ class _CardDetails extends Component {
     }), () => this.saveChanges())
   }
 
+  onRemoveDueDate = () => {
+    this.setState(prevState => ({
+      card: {
+        ...prevState.card,
+        dueDate: ''
+      }
+    }), () => this.saveChanges())
+  }
+
   onRemoveCard = () => {
     const { board, group } = this.props
     const { card } = this.state
@@ -214,6 +223,7 @@ class _CardDetails extends Component {
                   onHandleInputChange={this.onHandleInputChange}
                   onHandleActivitiesChange={this.onHandleActivitiesChange}
                   addOrCancelChecklist={this.addOrCancelChecklist}
+                  onRemoveDueDate={this.onRemoveDueDate}
                 />
                 <CardSide
                   card={card}

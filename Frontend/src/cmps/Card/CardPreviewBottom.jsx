@@ -14,7 +14,7 @@ export function CardPreviewBottom({ card }) {
                 <img src="https://res.cloudinary.com/basimgs/image/upload/v1610704026/messenger_ypya0t.png" alt="" />
                 <p className="comments">{card.comments.length}</p></div>}
             {card.checklist && <div className={(progress.done===progress.total)? 'check-list-container complete flex' : 'chec-klist-container flex'}>
-                <img src="https://res.cloudinary.com/basimgs/image/upload/v1610625361/check-box_pzd2ul.png" alt="" />
+                <img src="https://res.cloudinary.com/basimgs/image/upload/v1610794290/check-box_srgv0c.png" alt="" />
                 <p className="chec-klist">{progress.done}/{progress.total}</p></div>}
             {card.members && <div className="preview-members-container flex">
                 {card.members.map(member => {

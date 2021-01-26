@@ -159,22 +159,25 @@ export class _DashBoard extends Component {
 
       <div className="statistics-page flex column" style={{ background: "linear-gradient(to right top, rgba(35, 35, 35, 0.65098), rgba(21, 21, 21, 0.501961))" }}>
         {/* <div className="statistics-page"> */}
+        <div className="statistic-header flex space-between">
+        <Link to={`board/${this.state.board._id}`} className="back-board-btn">Back</Link>
         <h1>Statistics</h1>
+        </div>
         <header className="dashboard-header flex">
           <div className="dashboard-preview flex column"><span>{this.showTotalCards().cardNum}</span> <span> TOTAL CARDS</span></div>
           <div className="dashboard-preview flex column"><span>{this.showTotalCards().cardUnassignedNum}</span> <span> UNASSIGNED CARDS</span></div>
           <div className="dashboard-preview flex column"><span>3</span> <span> ADDED TODAY</span></div>
         </header>
-        <button><Link to={`board/${this.state.board._id}`}> Back</Link></button>
         <div className="dashboard-content flex" style={{
           // height: "380px",
           // width: "330px",
-          flexWrap: "wrap",
-          margin: "0 auto"
+          // flexWrap: "wrap",
+          // margin: "0 auto"
         }} >
           {/* <Polar className="test" data={this.showStatistics()} /> */}
           <Polar options={{
             responsive: true,
+            maintainAspectRatio: true,
             scales: {
               yAxes: [{
                 stacked: true,
@@ -203,6 +206,7 @@ export class _DashBoard extends Component {
           }} className="test" data={this.showTaskPerGroup()} />
           <Doughnut options={{
             responsive: true,
+            maintainAspectRatio: true,
             scales: {
               yAxes: [{
                 stacked: true,
@@ -230,6 +234,7 @@ export class _DashBoard extends Component {
           <Bar
             options={{
               responsive: true,
+              maintainAspectRatio: true,
               scales: {
                 yAxes: [{
                   stacked: true,
